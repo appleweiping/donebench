@@ -1,0 +1,3 @@
+agent,model,cc_f1,task_success,near_miss_detection_rate,self_violation_rate
+heuristic,mock,0.9411764705882353,0.0,0.6,0.5
+spec_first,mock,1.0,1.0,1.0,0.0

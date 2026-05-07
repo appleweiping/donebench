@@ -1,0 +1,5 @@
+suite,provider,model,access_date,agent,split,trials,cc_f1,task_success,near_miss_detection_rate,self_violation_rate,notes
+full_api,TBD,TBD,TBD,direct,test,3,TBD,TBD,TBD,TBD,placeholder
+full_api,TBD,TBD,TBD,plan_first,test,3,TBD,TBD,TBD,TBD,placeholder
+full_api,TBD,TBD,TBD,spec_first,test,3,TBD,TBD,TBD,TBD,placeholder
+full_api,TBD,TBD,TBD,oracle_spec,test,3,TBD,TBD,TBD,TBD,placeholder

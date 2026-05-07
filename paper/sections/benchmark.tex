@@ -1,0 +1,14 @@
+\section{DoneBench}
+Each task contains a user goal, visible tool environment, initial state, policies, gold criterion atoms, a DoneSpec verifier, near-miss mutated final states, and a reference solution trace.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.86\linewidth}{Task input $\rightarrow$ pre-execution spec $\rightarrow$ near-miss verifier test $\rightarrow$ tool execution $\rightarrow$ gold and own-spec grading.}}
+\caption{DoneBench pipeline.}
+\end{figure}
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.86\linewidth}{Domains: calendar, email, spreadsheet/database, CRM workflow, and file/document operations. Each item has state, policies, side-effect constraints, temporal constraints, and mutations.}}
+\caption{Domain/task construction schema.}
+\end{figure}

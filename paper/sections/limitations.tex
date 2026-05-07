@@ -1,0 +1,8 @@
+\section{Limitations}
+The current dataset is controlled and generator-assisted rather than a real GUI or SaaS environment. This is a deliberate tradeoff for isolating completion-semantics grounding, but it means DoneBench should be positioned as complementary to WebArena, OSWorld, WorkArena, and tau-bench rather than more realistic than them. We therefore report lexical and structural diversity audits, family-leakage tables, and a task-construction datasheet; strong claims about semantic validity require the queued double-annotation and adjudication subset to be completed. Criterion matching is deterministic for atom outputs but still needs human calibration for free-form paraphrases. API-backed results may drift as hosted models change.
+
+\section{Ethics and Release Considerations}
+The benchmark avoids private data and paid services by default. Release should include dataset documentation, task-audit procedures, and clear caveats about synthetic workflow coverage.
+
+\section{Conclusion}
+DoneBench makes a falsifiable question measurable: whether agents know what task completion requires before they act, and whether they can operationalize those criteria during execution.

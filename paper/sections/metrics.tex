@@ -1,0 +1,25 @@
+\section{Metrics}
+Completion Criterion F1 measures atom-level agreement between predicted and gold hard criteria. Overconstraint rate counts unmatched predicted hard atoms; underspecification rate counts unmatched gold hard atoms.
+
+Near-miss detection and verifier robustness evaluate whether the agent's own DoneSpec rejects superficially successful but invalid states. Spec-execution alignment measures whether the final state and trace violate the agent's own hard criteria.
+
+\begin{figure}[h]
+\centering
+\fbox{\parbox{0.86\linewidth}{Good spec/good execution; good spec/bad execution; bad spec/good execution; bad spec/bad execution.}}
+\caption{Four-quadrant spec/execution taxonomy.}
+\end{figure}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{ll}
+\toprule
+Metric & Purpose \\
+\midrule
+CC-F1 & Pre-execution completion semantics \\
+Near-miss detection & Rejection of invalid final states \\
+Task success & Gold deterministic final-state grading \\
+Self-violation rate & Execution against own criteria \\
+\bottomrule
+\end{tabular}
+\caption{Metrics.}
+\end{table}

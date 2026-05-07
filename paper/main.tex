@@ -1,0 +1,32 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+\title{Do LLM Agents Know When They Are Done?\\Evaluating Specification Grounding in Tool-Using Agents}
+\author{DoneBench Contributors}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+DoneBench evaluates whether tool-using agents can infer, formalize, stress-test, and act according to task-completion criteria before executing underspecified stateful tasks. Unlike benchmarks that hide success criteria in human or benchmark-provided graders, DoneBench makes completion-semantics construction itself the tested capability.
+\end{abstract}
+
+\input{sections/intro}
+\input{sections/related_work}
+\input{sections/benchmark}
+\input{sections/metrics}
+\input{sections/experiments}
+\input{sections/results}
+\input{sections/analysis}
+\input{sections/limitations}
+
+\appendix
+\input{sections/reproducibility}
+
+\bibliographystyle{plain}
+\bibliography{references}
+\end{document}

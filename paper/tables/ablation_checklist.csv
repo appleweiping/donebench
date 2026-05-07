@@ -1,0 +1,7 @@
+ablation,comparison,purpose,status
+planning_control,direct_vs_plan_first,separate planning quality from completion-semantics construction,placeholder
+specification_effect,plan_first_vs_spec_first,test whether explicit done criteria improve execution,placeholder
+execution_gap,spec_first_vs_oracle_spec,estimate failures after specification ambiguity is removed,placeholder
+near_miss_family_breakdown,mutation_type_by_agent,identify which invalid final states fool verifiers,placeholder
+token_matched_prompting,plan_first_vs_spec_first_equal_budget,control for extra prompt tokens,future
+criterion_format_sensitivity,dsl_vs_free_form,test whether gains depend on DoneSpec output format,future

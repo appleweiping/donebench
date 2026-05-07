@@ -1,0 +1,6 @@
+domain,num_tasks,dev,test,near_misses_per_task
+calendar,60,10,50,5
+email,60,10,50,5
+sheet_db,60,10,50,5
+crm_workflow,60,10,50,5
+file_doc,60,10,50,5

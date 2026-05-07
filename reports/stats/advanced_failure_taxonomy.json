@@ -5,12 +5,12 @@
     "mutation_taxon": "policy_confirmation_missing",
     "model": "deepseek_v4_flash",
     "agent": "direct",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5736,
-    "mean_false_accept_rate": 0.42640000000000006,
-    "mean_donespec_valid": 0.956,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5599999999999999,
+    "mean_false_accept_rate": 0.44,
+    "mean_donespec_valid": 0.9333333333333333,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.522
+    "mean_self_violation_rate": 0.5333333333333333
   },
   {
     "failure_class": "policy/confirmation failure",
@@ -18,12 +18,12 @@
     "mutation_taxon": "policy_confirmation_missing",
     "model": "deepseek_v4_flash",
     "agent": "plan_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5711999999999999,
-    "mean_false_accept_rate": 0.4288,
-    "mean_donespec_valid": 0.952,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5599999999999999,
+    "mean_false_accept_rate": 0.44,
+    "mean_donespec_valid": 0.9333333333333333,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.524
+    "mean_self_violation_rate": 0.5333333333333333
   },
   {
     "failure_class": "policy/confirmation failure",
@@ -31,12 +31,12 @@
     "mutation_taxon": "policy_confirmation_missing",
     "model": "deepseek_v4_flash",
     "agent": "spec_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5688,
-    "mean_false_accept_rate": 0.4312,
-    "mean_donespec_valid": 0.948,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5599999999999999,
+    "mean_false_accept_rate": 0.44,
+    "mean_donespec_valid": 0.9333333333333333,
     "mean_task_success": 1.0,
-    "mean_self_violation_rate": 0.052
+    "mean_self_violation_rate": 0.06666666666666667
   },
   {
     "failure_class": "policy/confirmation failure",
@@ -44,12 +44,12 @@
     "mutation_taxon": "policy_confirmation_missing",
     "model": "deepseek_v4_pro",
     "agent": "direct",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5711999999999999,
-    "mean_false_accept_rate": 0.4288,
-    "mean_donespec_valid": 0.952,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.6,
+    "mean_false_accept_rate": 0.4,
+    "mean_donespec_valid": 1.0,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.524
+    "mean_self_violation_rate": 0.5
   },
   {
     "failure_class": "policy/confirmation failure",
@@ -57,12 +57,12 @@
     "mutation_taxon": "policy_confirmation_missing",
     "model": "deepseek_v4_pro",
     "agent": "plan_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5664,
-    "mean_false_accept_rate": 0.43360000000000004,
-    "mean_donespec_valid": 0.944,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5866666666666667,
+    "mean_false_accept_rate": 0.4133333333333334,
+    "mean_donespec_valid": 0.9777777777777777,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.528
+    "mean_self_violation_rate": 0.5111111111111111
   },
   {
     "failure_class": "policy/confirmation failure",
@@ -70,12 +70,12 @@
     "mutation_taxon": "policy_confirmation_missing",
     "model": "deepseek_v4_pro",
     "agent": "spec_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5688,
-    "mean_false_accept_rate": 0.4312,
-    "mean_donespec_valid": 0.948,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5333333333333333,
+    "mean_false_accept_rate": 0.4666666666666667,
+    "mean_donespec_valid": 0.8888888888888888,
     "mean_task_success": 1.0,
-    "mean_self_violation_rate": 0.052
+    "mean_self_violation_rate": 0.1111111111111111
   },
   {
     "failure_class": "side-effect failure",
@@ -83,12 +83,12 @@
     "mutation_taxon": "unrelated_side_effect",
     "model": "deepseek_v4_flash",
     "agent": "direct",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5736,
-    "mean_false_accept_rate": 0.42640000000000006,
-    "mean_donespec_valid": 0.956,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5599999999999999,
+    "mean_false_accept_rate": 0.44,
+    "mean_donespec_valid": 0.9333333333333333,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.522
+    "mean_self_violation_rate": 0.5333333333333333
   },
   {
     "failure_class": "side-effect failure",
@@ -96,12 +96,12 @@
     "mutation_taxon": "unrelated_side_effect",
     "model": "deepseek_v4_flash",
     "agent": "plan_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5711999999999999,
-    "mean_false_accept_rate": 0.4288,
-    "mean_donespec_valid": 0.952,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5599999999999999,
+    "mean_false_accept_rate": 0.44,
+    "mean_donespec_valid": 0.9333333333333333,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.524
+    "mean_self_violation_rate": 0.5333333333333333
   },
   {
     "failure_class": "side-effect failure",
@@ -109,12 +109,12 @@
     "mutation_taxon": "unrelated_side_effect",
     "model": "deepseek_v4_flash",
     "agent": "spec_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5688,
-    "mean_false_accept_rate": 0.4312,
-    "mean_donespec_valid": 0.948,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5599999999999999,
+    "mean_false_accept_rate": 0.44,
+    "mean_donespec_valid": 0.9333333333333333,
     "mean_task_success": 1.0,
-    "mean_self_violation_rate": 0.052
+    "mean_self_violation_rate": 0.06666666666666667
   },
   {
     "failure_class": "side-effect failure",
@@ -122,12 +122,12 @@
     "mutation_taxon": "unrelated_side_effect",
     "model": "deepseek_v4_pro",
     "agent": "direct",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5711999999999999,
-    "mean_false_accept_rate": 0.4288,
-    "mean_donespec_valid": 0.952,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.6,
+    "mean_false_accept_rate": 0.4,
+    "mean_donespec_valid": 1.0,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.524
+    "mean_self_violation_rate": 0.5
   },
   {
     "failure_class": "side-effect failure",
@@ -135,12 +135,12 @@
     "mutation_taxon": "unrelated_side_effect",
     "model": "deepseek_v4_pro",
     "agent": "plan_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5664,
-    "mean_false_accept_rate": 0.43360000000000004,
-    "mean_donespec_valid": 0.944,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5866666666666667,
+    "mean_false_accept_rate": 0.4133333333333334,
+    "mean_donespec_valid": 0.9777777777777777,
     "mean_task_success": 0.0,
-    "mean_self_violation_rate": 0.528
+    "mean_self_violation_rate": 0.5111111111111111
   },
   {
     "failure_class": "side-effect failure",
@@ -148,11 +148,11 @@
     "mutation_taxon": "unrelated_side_effect",
     "model": "deepseek_v4_pro",
     "agent": "spec_first",
-    "n_trials": 250,
-    "mean_near_miss_detection_rate": 0.5688,
-    "mean_false_accept_rate": 0.4312,
-    "mean_donespec_valid": 0.948,
+    "n_trials": 45,
+    "mean_near_miss_detection_rate": 0.5333333333333333,
+    "mean_false_accept_rate": 0.4666666666666667,
+    "mean_donespec_valid": 0.8888888888888888,
     "mean_task_success": 1.0,
-    "mean_self_violation_rate": 0.052
+    "mean_self_violation_rate": 0.1111111111111111
   }
 ]

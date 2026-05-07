@@ -12,12 +12,14 @@ DoneBench tasks isolate completion-semantics grounding: the model must infer wha
 
 ## Audit Signals
 
-- Number of tasks: 300
+- Number of tasks: 600
 - High lexical duplicate pairs: 0
 - Criterion structural signature groups: 20
 - DoneSpec structural signature groups: 5
 - Task-pattern dev/test overlaps: 15
-- Scenario dev/test overlaps: 1
+- Scenario dev/test overlaps: 7
+- Mean typed tool specs per task: 5.75
+- Semi-real workflow surface tasks: 600
 
 ## Known Risks
 

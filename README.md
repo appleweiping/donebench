@@ -48,15 +48,15 @@ Each task includes a user goal, visible tool environment, initial state, policie
 
 ## Dataset
 
-The checked-in top-conference-scale generated dataset contains 300 tasks:
+The checked-in top-conference-scale generated dataset contains 600 tasks:
 
-- 60 calendar/scheduling
-- 60 email/communication
-- 60 spreadsheet/database
-- 60 CRM/workflow
-- 60 file/document operation
+- 120 calendar/scheduling
+- 120 email/communication
+- 120 spreadsheet/database
+- 120 CRM/workflow
+- 120 file/document operation
 
-The default split is 50 dev and 250 test tasks.
+The default split is 100 dev and 500 test tasks. Each task includes typed tool specifications, preconditions, side-effect metadata, a state schema, a reference trace, and five near-miss final states.
 
 ## Reproducing Smoke Results
 
@@ -133,6 +133,8 @@ C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.c
 ```
 
 If DeepSeek returns rate-limit errors, rerun the same command with `--resume --max-workers 32`, then `24` or `16` if needed. Completed rows are never recomputed.
+
+The current `topconf_deepseek_core` suite plans 500 test tasks x 3 agents x 2 DeepSeek models x 1 trial = 3000 trials. Historical `results/topconf_deepseek_core_trial0.jsonl` files are pilot traces from an earlier dataset version and should not be treated as the official topconf-4 result table.
 
 For submission, replace placeholders in `paper/tables/api_results_template.csv` with audited aggregates, record provider/model identifiers and access dates, and report whether missing credentials were skipped.
 

@@ -1,12 +1,12 @@
 {
   "model": "mock",
-  "num_audited": 50,
+  "num_audited": 100,
   "num_needs_adjudication": 0,
   "by_risk": {
-    "low": 50
+    "low": 100
   },
   "risk_labels": {
-    "no_heuristic_risk": 50
+    "no_heuristic_risk": 100
   },
   "outputs": {
     "opinions": "reports\\audit\\ai_audit_opinions.jsonl",

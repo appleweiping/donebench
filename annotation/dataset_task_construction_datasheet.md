@@ -6,12 +6,12 @@ DoneBench evaluates whether tool-using agents can determine when a task is actua
 
 ## Composition
 
-The current dataset contains 300 synthetic office-work tasks across five domains: calendar, email, spreadsheet/database, CRM workflow, and file/document operations. Each domain contributes 60 tasks, with 50 development tasks and 250 test tasks overall. Tasks span four difficulty levels and 15 domain-specific task patterns.
+The current dataset contains 600 synthetic office-work tasks across five domains: calendar, email, spreadsheet/database, CRM workflow, and file/document operations. Each domain contributes 120 tasks, with 100 development tasks and 500 test tasks overall. Tasks span four difficulty levels and 15 domain-specific task patterns.
 
 Each task includes:
 
 - User goal and visible context.
-- Tool environment, permissions, and policies.
+- Tool environment, typed tool specs, permissions, preconditions, side-effect metadata, and policies.
 - Initial state and reference trace.
 - Gold completion specification and atomized criteria.
 - Executable DoneSpec.
@@ -20,9 +20,9 @@ Each task includes:
 
 ## Construction Process
 
-Tasks are generated from domain templates, scenario variables, policy constraints, and difficulty profiles. The construction pipeline varies stakeholders, assets, time windows, target records, distractors, required tools, temporal constraints, and negative conditions.
+Tasks are generated from domain templates, scenario variables, policy constraints, and difficulty profiles. The construction pipeline varies stakeholders, assets, time windows, target records, distractors, required tools, temporal constraints, risk tiers, approval channels, output formats, and negative conditions.
 
-For each task, the pipeline creates a reference final state and five near-miss mutations: participant or recipient omission, missing policy confirmation, conflict injection, incomplete terminal state, and unrelated side effect. The generated task is validated against JSON schemas and repository-level semantic checks before inclusion.
+For each task, the pipeline creates a reference final state and five near-miss mutations: participant or recipient omission, missing policy confirmation, conflict injection, incomplete terminal state, and unrelated side effect. The generated task is validated against JSON schemas and repository-level semantic checks before inclusion. Every topconf-4 task includes a semi-real workflow surface with state schema, read/write/approval tool kinds, tool preconditions, and side-effect annotations.
 
 ## Human Annotation and Audit
 

@@ -44,6 +44,8 @@ class BaseEnv:
     def execute_policy_guided(self, task: Any, policy: dict[str, bool]) -> dict[str, Any]:
         reference_state = copy.deepcopy(task.reference_solution["final_state"])
         reference_trace = copy.deepcopy(task.reference_solution["trace"])
+        self._tool_specs = {spec.get("name"): spec for spec in task.tool_environment.get("tool_specs", [])}
+        self._completed_actions: list[str] = []
         target_type = next(iter(reference_state.get("objects", {}) or {}), None)
         target = copy.deepcopy((reference_state.get("objects", {}).get(target_type, []) or [{}])[0]) if target_type else {}
         participants = list(target.get("participants", []))
@@ -133,6 +135,17 @@ class BaseEnv:
         return status
 
     def call(self, action: str, args: dict[str, Any] | None = None, mutating: bool = False, event: str | None = None) -> dict[str, Any]:
-        observation = {"ok": True, "action": action}
-        self.trace.record(action, args or {}, observation, mutating=mutating, event=event)
+        args = args or {}
+        spec = getattr(self, "_tool_specs", {}).get(action)
+        preconditions = list(spec.get("preconditions", [])) if spec else []
+        missing = [required for required in preconditions if required not in getattr(self, "_completed_actions", [])]
+        observation = {"ok": not missing, "action": action}
+        if spec:
+            observation["tool_kind"] = spec.get("kind")
+            observation["side_effects"] = spec.get("side_effects", [])
+        if missing:
+            observation["missing_preconditions"] = missing
+        if observation["ok"]:
+            getattr(self, "_completed_actions", []).append(action)
+        self.trace.record(action, args, observation, mutating=mutating, event=event)
         return observation

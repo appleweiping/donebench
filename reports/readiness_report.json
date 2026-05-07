@@ -1,0 +1,54 @@
+{
+  "num_tasks": 600,
+  "num_domains": 5,
+  "num_patterns": 15,
+  "num_near_misses": 3000,
+  "validation_errors": 0,
+  "semi_real_surface_tasks": 600,
+  "mean_tool_specs_per_task": 5.75,
+  "tool_surface_audit": {
+    "tasks": 600,
+    "with_state_schema": 600,
+    "with_preconditions": 600,
+    "with_side_effects": 600,
+    "with_read_write_approval_tools": 600
+  },
+  "quality_summary": {
+    "num_tasks": 600,
+    "validation_errors": [],
+    "by_domain": {
+      "calendar": 120,
+      "crm_workflow": 120,
+      "email": 120,
+      "file_doc": 120,
+      "sheet_db": 120
+    },
+    "by_split": {
+      "dev": 100,
+      "test": 500
+    },
+    "by_difficulty": {
+      "L1": 90,
+      "L2": 180,
+      "L3": 210,
+      "L4": 120
+    },
+    "num_high_similarity_pairs": 0,
+    "num_structural_signature_groups": 20,
+    "num_donespec_signature_groups": 5,
+    "num_pattern_dev_test_leaks": 15,
+    "num_scenario_dev_test_leaks": 7,
+    "mean_tool_specs_per_task": 5.75,
+    "semi_real_surface_tasks": 600
+  },
+  "readiness_scores": {
+    "engineering_framework": 8.0,
+    "data_scale_diversity": 8.3,
+    "environment_realism": 8.0
+  },
+  "interpretation": {
+    "engineering_framework": "Package, CLI, tests, Docker/devcontainer, resumable runner, audit/stat/report modules.",
+    "data_scale_diversity": "600 controlled tasks plus near-miss states, structural diversity reports, and datasheets.",
+    "environment_realism": "Semi-real typed tool schemas, preconditions, side effects, state schema, and trace precondition checks; not yet a browser/OS benchmark."
+  }
+}

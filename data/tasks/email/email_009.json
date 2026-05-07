@@ -3,7 +3,7 @@
   "domain": "email",
   "difficulty": "L1",
   "task_pattern": "email_forward_digest",
-  "user_goal": "Send the Cedar migration Reviewed digest forward closure to noah@example.com, include the approved attachment, and avoid any unapproved recipient or premature send.",
+  "user_goal": "Using the approved inline confirmation path, send the Cedar migration Reviewed digest forward closure to noah@example.com, include the approved attachment, and avoid any unapproved recipient or premature send. The completion state must be externally visible, not merely drafted.",
   "visible_context": {
     "user_profile": {
       "timezone": "Europe/Berlin",
@@ -25,6 +25,111 @@
       "window": "Wednesday midday",
       "asset": "migration worksheet",
       "folder": "platform archive folder"
+    },
+    "risk_tier": "standard",
+    "approval_channel": "inline_confirmation",
+    "output_format": "email_thread",
+    "semi_real_surface": {
+      "state_schema": {
+        "objects": {
+          "email_message": "array<object>"
+        },
+        "conflicts": "array<object>",
+        "permissions": "object<boolean>",
+        "satisfied_policies": "array<string>",
+        "sent": "array<object>",
+        "modified_objects": "array<string>",
+        "distractors": "array<object>",
+        "audit_log": "array<object>"
+      },
+      "tool_specs": [
+        {
+          "name": "email.inspect_state",
+          "kind": "read",
+          "args_schema": {
+            "id": "string"
+          },
+          "returns_schema": {
+            "found": "boolean",
+            "record": "object|null"
+          },
+          "preconditions": [],
+          "side_effects": []
+        },
+        {
+          "name": "email.check_constraints",
+          "kind": "read",
+          "args_schema": {
+            "participants": "array<string>",
+            "risk_tier": "string"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "blocking_conflicts": "array<object>",
+            "policy_refs": "array<string>"
+          },
+          "preconditions": [
+            "email.inspect_state"
+          ],
+          "side_effects": []
+        },
+        {
+          "name": "confirm",
+          "kind": "approval",
+          "args_schema": {
+            "summary": "string",
+            "approval_channel": "string"
+          },
+          "returns_schema": {
+            "confirmed": "boolean",
+            "approver": "string"
+          },
+          "preconditions": [
+            "email.inspect_state",
+            "email.check_constraints"
+          ],
+          "side_effects": [
+            "records_user_confirmation"
+          ]
+        },
+        {
+          "name": "email.apply_update",
+          "kind": "write",
+          "args_schema": {
+            "id": "string",
+            "patch": "object"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "version": "integer"
+          },
+          "preconditions": [
+            "confirm"
+          ],
+          "side_effects": [
+            "mutates_target_record"
+          ]
+        },
+        {
+          "name": "send_email",
+          "kind": "write",
+          "args_schema": {
+            "to": "array<string>",
+            "object_id": "string"
+          },
+          "returns_schema": {
+            "sent": "boolean",
+            "delivery_id": "string"
+          },
+          "preconditions": [
+            "confirm",
+            "email.apply_update"
+          ],
+          "side_effects": [
+            "external_notification"
+          ]
+        }
+      ]
     }
   },
   "tool_environment": {
@@ -38,7 +143,108 @@
     "permissions": [
       "read",
       "mutate_after_confirmation"
-    ]
+    ],
+    "tool_specs": [
+      {
+        "name": "email.inspect_state",
+        "kind": "read",
+        "args_schema": {
+          "id": "string"
+        },
+        "returns_schema": {
+          "found": "boolean",
+          "record": "object|null"
+        },
+        "preconditions": [],
+        "side_effects": []
+      },
+      {
+        "name": "email.check_constraints",
+        "kind": "read",
+        "args_schema": {
+          "participants": "array<string>",
+          "risk_tier": "string"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "blocking_conflicts": "array<object>",
+          "policy_refs": "array<string>"
+        },
+        "preconditions": [
+          "email.inspect_state"
+        ],
+        "side_effects": []
+      },
+      {
+        "name": "confirm",
+        "kind": "approval",
+        "args_schema": {
+          "summary": "string",
+          "approval_channel": "string"
+        },
+        "returns_schema": {
+          "confirmed": "boolean",
+          "approver": "string"
+        },
+        "preconditions": [
+          "email.inspect_state",
+          "email.check_constraints"
+        ],
+        "side_effects": [
+          "records_user_confirmation"
+        ]
+      },
+      {
+        "name": "email.apply_update",
+        "kind": "write",
+        "args_schema": {
+          "id": "string",
+          "patch": "object"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "version": "integer"
+        },
+        "preconditions": [
+          "confirm"
+        ],
+        "side_effects": [
+          "mutates_target_record"
+        ]
+      },
+      {
+        "name": "send_email",
+        "kind": "write",
+        "args_schema": {
+          "to": "array<string>",
+          "object_id": "string"
+        },
+        "returns_schema": {
+          "sent": "boolean",
+          "delivery_id": "string"
+        },
+        "preconditions": [
+          "confirm",
+          "email.apply_update"
+        ],
+        "side_effects": [
+          "external_notification"
+        ]
+      }
+    ],
+    "state_schema": {
+      "objects": {
+        "email_message": "array<object>"
+      },
+      "conflicts": "array<object>",
+      "permissions": "object<boolean>",
+      "satisfied_policies": "array<string>",
+      "sent": "array<object>",
+      "modified_objects": "array<string>",
+      "distractors": "array<object>",
+      "audit_log": "array<object>"
+    },
+    "surface": "semi_real_workflow_v1"
   },
   "initial_state": {
     "objects": {
@@ -52,6 +258,7 @@
     "satisfied_policies": [],
     "sent": [],
     "modified_objects": [],
+    "audit_log": [],
     "distractors": []
   },
   "policies": [
@@ -317,7 +524,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_forward_digest",
-              "scenario_id": "cedar_migration"
+              "scenario_id": "cedar_migration",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "email_thread",
+              "due_window": "Wednesday midday"
             }
           ]
         },
@@ -339,6 +550,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_009",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
         "distractors": []
       }
     },
@@ -370,7 +588,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_forward_digest",
-              "scenario_id": "cedar_migration"
+              "scenario_id": "cedar_migration",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "email_thread",
+              "due_window": "Wednesday midday"
             }
           ]
         },
@@ -390,6 +612,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_009",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
         "distractors": []
       }
     },
@@ -421,7 +650,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_forward_digest",
-              "scenario_id": "cedar_migration"
+              "scenario_id": "cedar_migration",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "email_thread",
+              "due_window": "Wednesday midday"
             }
           ]
         },
@@ -449,6 +682,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_009",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
         "distractors": []
       }
     },
@@ -481,7 +721,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_forward_digest",
-              "scenario_id": "cedar_migration"
+              "scenario_id": "cedar_migration",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "email_thread",
+              "due_window": "Wednesday midday"
             }
           ]
         },
@@ -495,6 +739,13 @@
         ],
         "sent": [],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_009",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
         "distractors": []
       }
     },
@@ -526,7 +777,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_forward_digest",
-              "scenario_id": "cedar_migration"
+              "scenario_id": "cedar_migration",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "email_thread",
+              "due_window": "Wednesday midday"
             }
           ]
         },
@@ -550,6 +805,13 @@
         "modified_objects": [
           "unrelated_record"
         ],
+        "audit_log": [
+          {
+            "object_id": "ema_009",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
         "distractors": []
       }
     }
@@ -571,10 +833,14 @@
         "args": {
           "participants": [
             "noah@example.com"
-          ]
+          ],
+          "risk_tier": "standard"
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "policy_refs": [
+            "email_approval_policy"
+          ]
         },
         "mutating": false
       },
@@ -582,20 +848,26 @@
         "action": "confirm",
         "event": "user_confirmation",
         "args": {
-          "summary": "ready to apply Cedar migration Reviewed digest forward closure"
+          "summary": "ready to apply Cedar migration Reviewed digest forward closure",
+          "approval_channel": "inline_confirmation"
         },
         "observation": {
-          "confirmed": true
+          "confirmed": true,
+          "approver": "user"
         },
         "mutating": false
       },
       {
         "action": "email.apply_update",
         "args": {
-          "id": "ema_009"
+          "id": "ema_009",
+          "patch": {
+            "status": "sent"
+          }
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "version": 9
         },
         "mutating": true
       },
@@ -604,10 +876,12 @@
         "args": {
           "to": [
             "noah@example.com"
-          ]
+          ],
+          "object_id": "ema_009"
         },
         "observation": {
-          "sent": true
+          "sent": true,
+          "delivery_id": "delivery_ema_009"
         },
         "mutating": true
       }
@@ -632,7 +906,11 @@
             "no_formula_damage": true,
             "exported": true,
             "pattern_id": "email_forward_digest",
-            "scenario_id": "cedar_migration"
+            "scenario_id": "cedar_migration",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation",
+            "output_format": "email_thread",
+            "due_window": "Wednesday midday"
           }
         ]
       },
@@ -654,18 +932,28 @@
         }
       ],
       "modified_objects": [],
+      "audit_log": [
+        {
+          "object_id": "ema_009",
+          "risk_tier": "standard",
+          "approval_channel": "inline_confirmation"
+        }
+      ],
       "distractors": []
     }
   },
   "generation_metadata": {
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "pattern_id": "email_forward_digest",
     "scenario_id": "cedar_migration",
+    "risk_tier": "standard",
+    "approval_channel": "inline_confirmation",
+    "output_format": "email_thread",
     "difficulty_distribution": {
-      "L1": 9,
-      "L2": 18,
-      "L3": 21,
-      "L4": 12
+      "L1": 18,
+      "L2": 36,
+      "L3": 42,
+      "L4": 24
     },
     "mutation_taxonomy": [
       "conflict_injection",
@@ -683,7 +971,7 @@
     "has_negative_condition": true,
     "has_temporal_condition": true,
     "mutation_count": 5,
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "task_pattern": "email_forward_digest",
     "scenario_id": "cedar_migration",
     "difficulty_profile": "single target with direct policy gate",

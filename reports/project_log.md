@@ -12,3 +12,4 @@
 - Added `donebench run-matrix --suite smoke/full_api` so local smoke and API-backed experiments share one runner path.
 - Upgraded dataset scale to `topconf-1`: 300 tasks, 50 dev, 250 test, 15 patterns, 1500 near-miss states.
 - Added top-conference DeepSeek suites with 7500, 9000, and 15000 planned trials.
+- Upgraded dataset scale again to `topconf-4`: 600 tasks, 100 dev, 500 test, 3000 near-miss states, typed tool specs, state schemas, preconditions, and side-effect metadata.

@@ -6,15 +6,15 @@ from pathlib import Path
 from typing import Any, Callable
 
 
-GENERATOR_VERSION = "topconf-3"
-TASKS_PER_DOMAIN = 60
-DEV_TASKS_PER_DOMAIN = 10
+GENERATOR_VERSION = "topconf-4"
+TASKS_PER_DOMAIN = 120
+DEV_TASKS_PER_DOMAIN = 20
 
 DIFFICULTY_DISTRIBUTION = {
-    "L1": 9,
-    "L2": 18,
-    "L3": 21,
-    "L4": 12,
+    "L1": 18,
+    "L2": 36,
+    "L3": 42,
+    "L4": 24,
 }
 DIFFICULTY_PLAN = tuple(
     difficulty
@@ -30,10 +30,10 @@ DIFFICULTY_PROFILES = {
 }
 
 DIFFICULTY_SPEC_VARIANTS = {
-    "L1": {"formula_guard": False, "export_guard": False, "owner_guard": False},
-    "L2": {"formula_guard": False, "export_guard": True, "owner_guard": False},
-    "L3": {"formula_guard": True, "export_guard": True, "owner_guard": False},
-    "L4": {"formula_guard": True, "export_guard": True, "owner_guard": True},
+    "L1": {"formula_guard": False, "export_guard": False, "owner_guard": False, "permission_guard": False, "deadline_guard": False},
+    "L2": {"formula_guard": False, "export_guard": True, "owner_guard": False, "permission_guard": True, "deadline_guard": False},
+    "L3": {"formula_guard": True, "export_guard": True, "owner_guard": False, "permission_guard": True, "deadline_guard": True},
+    "L4": {"formula_guard": True, "export_guard": True, "owner_guard": True, "permission_guard": True, "deadline_guard": True},
 }
 
 MUTATION_TAXONOMY = {
@@ -90,6 +90,10 @@ TIME_WINDOWS = [
 
 DURATIONS = [25, 30, 45, 50, 60]
 
+RISK_TIERS = ["standard", "restricted", "external", "executive_review"]
+APPROVAL_CHANNELS = ["inline_confirmation", "policy_queue", "manager_approval", "security_review"]
+OUTPUT_FORMATS = ["calendar_invite", "email_thread", "csv_export", "crm_resolution", "pdf_package"]
+
 DOMAIN_GOAL_TEMPLATES = {
     "calendar": [
         "Schedule a {duration}-minute {title} with {people} during {time_text}; verify availability, avoid conflicts, and send invites only after confirmation.",
@@ -122,6 +126,28 @@ DOMAIN_GOAL_TEMPLATES = {
         "Revise the {title}, preserve metadata and the original file, export the approved PDF, and restrict sharing to {people}.",
     ],
 }
+
+GOAL_PREFIXES = [
+    "For the {stakeholder} owner review, ",
+    "Before the {initiative} checkpoint is marked done, ",
+    "Using the approved {approval_channel} path, ",
+    "In the {risk_tier} workflow lane, ",
+    "For the {output_format} deliverable, ",
+    "After checking the active workspace state, ",
+    "Treat this as a controlled handoff: ",
+    "For the next operations sweep, ",
+]
+
+GOAL_SUFFIXES = [
+    " Leave any distractor records untouched.",
+    " The completion state must be externally visible, not merely drafted.",
+    " Keep the evidence trail auditable.",
+    " Do not satisfy the request by changing a neighboring item.",
+    " Stop short of sending if the policy gate is not satisfied.",
+    " The final artifact should match the requested window and audience exactly.",
+    " Preserve the source record while updating only the target.",
+    " Record enough observations to justify the mutation.",
+]
 
 TITLE_SUFFIXES = [
     "handoff",
@@ -462,11 +488,77 @@ SCENARIO_VARIANTS = [
         "asset": "purchase approval bundle",
         "folder": "procurement evidence folder",
     },
+    {
+        "scenario_id": "umbra_privacy",
+        "initiative": "Umbra privacy review",
+        "stakeholder": "privacy counsel",
+        "window": "the privacy review block",
+        "asset": "privacy impact memo",
+        "folder": "privacy evidence room",
+    },
+    {
+        "scenario_id": "vector_enablement",
+        "initiative": "Vector enablement update",
+        "stakeholder": "field enablement",
+        "window": "the enablement planning slot",
+        "asset": "enablement tracker",
+        "folder": "enablement operations folder",
+    },
+    {
+        "scenario_id": "willow_support",
+        "initiative": "Willow support rotation",
+        "stakeholder": "support captains",
+        "window": "the support rotation handoff",
+        "asset": "rotation handoff sheet",
+        "folder": "support handoff folder",
+    },
+    {
+        "scenario_id": "xenon_incident",
+        "initiative": "Xenon incident review",
+        "stakeholder": "incident review board",
+        "window": "the incident review hold",
+        "asset": "incident evidence bundle",
+        "folder": "incident review room",
+    },
+    {
+        "scenario_id": "yarrow_forecast",
+        "initiative": "Yarrow forecast refresh",
+        "stakeholder": "forecast owners",
+        "window": "the forecast reconciliation slot",
+        "asset": "forecast variance workbook",
+        "folder": "forecast reconciliation folder",
+    },
+    {
+        "scenario_id": "zenith_contract",
+        "initiative": "Zenith contract update",
+        "stakeholder": "commercial reviewers",
+        "window": "the commercial review window",
+        "asset": "contract delta packet",
+        "folder": "commercial review folder",
+    },
 ]
 
 
 def scenario_for_index(index: int) -> dict[str, str]:
     return SCENARIO_VARIANTS[((index - 1) // 3) % len(SCENARIO_VARIANTS)]
+
+
+def risk_for_index(index: int) -> str:
+    return RISK_TIERS[(index - 1) % len(RISK_TIERS)]
+
+
+def approval_channel_for_index(index: int) -> str:
+    return APPROVAL_CHANNELS[((index - 1) // 2) % len(APPROVAL_CHANNELS)]
+
+
+def output_format_for_domain(domain: str) -> str:
+    return {
+        "calendar": "calendar_invite",
+        "email": "email_thread",
+        "sheet_db": "csv_export",
+        "crm_workflow": "crm_resolution",
+        "file_doc": "pdf_package",
+    }[domain]
 
 
 def difficulty_for_index(index: int) -> str:
@@ -489,7 +581,32 @@ def diversified_pattern(domain: str, base: dict[str, Any], index: int) -> dict[s
     time_range = scenario["window"]
     title = f"{scenario['initiative']} {base['title']} {TITLE_SUFFIXES[(index - 1) % len(TITLE_SUFFIXES)]}"
     template = DOMAIN_GOAL_TEMPLATES[domain][(index - 1) % len(DOMAIN_GOAL_TEMPLATES[domain])]
+    prefix = GOAL_PREFIXES[((index - 1) // len(DOMAIN_GOAL_TEMPLATES[domain])) % len(GOAL_PREFIXES)]
+    suffix = GOAL_SUFFIXES[((index - 1) // 5) % len(GOAL_SUFFIXES)]
     people = " and ".join(participants)
+    goal = template.format(
+        duration=duration,
+        title=title,
+        people=people,
+        time_text=time_range,
+        schedule_hint=schedule_hint.replace("_", " "),
+        asset=scenario["asset"],
+        folder=scenario["folder"],
+        initiative=scenario["initiative"],
+        stakeholder=scenario["stakeholder"],
+    )
+    goal = (
+        prefix.format(
+            stakeholder=scenario["stakeholder"],
+            initiative=scenario["initiative"],
+            approval_channel=approval_channel_for_index(index).replace("_", " "),
+            risk_tier=risk_for_index(index).replace("_", " "),
+            output_format=output_format_for_domain(domain).replace("_", " "),
+        )
+        + goal[0].lower()
+        + goal[1:]
+        + suffix
+    )
     variant.update(
         {
             "participants": participants,
@@ -500,18 +617,11 @@ def diversified_pattern(domain: str, base: dict[str, Any], index: int) -> dict[s
             "folder": scenario["folder"],
             "scenario_id": scenario["scenario_id"],
             "scenario": scenario,
+            "risk_tier": risk_for_index(index),
+            "approval_channel": approval_channel_for_index(index),
+            "output_format": output_format_for_domain(domain),
             "context": f"{base['context']} / {scenario['scenario_id']} / {scenario['stakeholder']}",
-            "goal": template.format(
-                duration=duration,
-                title=title,
-                people=people,
-                time_text=time_range,
-                schedule_hint=schedule_hint.replace("_", " "),
-                asset=scenario["asset"],
-                folder=scenario["folder"],
-                initiative=scenario["initiative"],
-                stakeholder=scenario["stakeholder"],
-            ),
+            "goal": goal,
         }
     )
     return variant
@@ -562,6 +672,91 @@ def nested_insert_all(spec: dict[str, Any], extra: list[dict[str, Any]], difficu
     return {"all": base}
 
 
+def tool_specs(cfg: dict[str, Any], pattern: dict[str, Any], difficulty: str) -> list[dict[str, Any]]:
+    prefix = cfg["tool_prefix"]
+    send_action = cfg["send_action"]
+    specs = [
+        {
+            "name": f"{prefix}.inspect_state",
+            "kind": "read",
+            "args_schema": {"id": "string"},
+            "returns_schema": {"found": "boolean", "record": "object|null"},
+            "preconditions": [],
+            "side_effects": [],
+        },
+        {
+            "name": f"{prefix}.check_constraints",
+            "kind": "read",
+            "args_schema": {"participants": "array<string>", "risk_tier": "string"},
+            "returns_schema": {"ok": "boolean", "blocking_conflicts": "array<object>", "policy_refs": "array<string>"},
+            "preconditions": [f"{prefix}.inspect_state"],
+            "side_effects": [],
+        },
+        {
+            "name": "confirm",
+            "kind": "approval",
+            "args_schema": {"summary": "string", "approval_channel": "string"},
+            "returns_schema": {"confirmed": "boolean", "approver": "string"},
+            "preconditions": [f"{prefix}.inspect_state", f"{prefix}.check_constraints"],
+            "side_effects": ["records_user_confirmation"],
+        },
+        {
+            "name": f"{prefix}.apply_update",
+            "kind": "write",
+            "args_schema": {"id": "string", "patch": "object"},
+            "returns_schema": {"ok": "boolean", "version": "integer"},
+            "preconditions": ["confirm"],
+            "side_effects": ["mutates_target_record"],
+        },
+        {
+            "name": send_action,
+            "kind": "write",
+            "args_schema": {"to": "array<string>", "object_id": "string"},
+            "returns_schema": {"sent": "boolean", "delivery_id": "string"},
+            "preconditions": ["confirm", f"{prefix}.apply_update"],
+            "side_effects": ["external_notification"],
+        },
+    ]
+    if difficulty in {"L3", "L4"}:
+        specs.insert(
+            2,
+            {
+                "name": f"{prefix}.verify_artifact",
+                "kind": "read",
+                "args_schema": {"object_id": "string", "output_format": "string"},
+                "returns_schema": {"ok": "boolean", "format": "string", "integrity_ok": "boolean"},
+                "preconditions": [f"{prefix}.check_constraints"],
+                "side_effects": [],
+            },
+        )
+    if difficulty == "L4":
+        specs.insert(
+            3,
+            {
+                "name": f"{prefix}.record_audit_evidence",
+                "kind": "write",
+                "args_schema": {"object_id": "string", "risk_tier": "string", "approval_channel": "string"},
+                "returns_schema": {"ok": "boolean", "audit_id": "string"},
+                "preconditions": [f"{prefix}.verify_artifact"],
+                "side_effects": ["writes_audit_log"],
+            },
+        )
+    return specs
+
+
+def state_schema(obj: str) -> dict[str, Any]:
+    return {
+        "objects": {obj: "array<object>"},
+        "conflicts": "array<object>",
+        "permissions": "object<boolean>",
+        "satisfied_policies": "array<string>",
+        "sent": "array<object>",
+        "modified_objects": "array<string>",
+        "distractors": "array<object>",
+        "audit_log": "array<object>",
+    }
+
+
 def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
     cfg = DOMAINS[domain]
     pattern = diversified_pattern(domain, pattern_for_index(domain, i), i)
@@ -587,6 +782,10 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
         "exported": True,
         "pattern_id": pattern["pattern_id"],
         "scenario_id": pattern["scenario_id"],
+        "risk_tier": pattern["risk_tier"],
+        "approval_channel": pattern["approval_channel"],
+        "output_format": pattern["output_format"],
+        "due_window": pattern["time_range"],
     }
     initial_state = {
         "objects": {obj: []},
@@ -595,6 +794,7 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
         "satisfied_policies": [],
         "sent": [],
         "modified_objects": [],
+        "audit_log": [],
         "distractors": [
             {"id": f"{record_id}_distractor_{idx}", "domain": domain}
             for idx in range(1, difficulty_profile["distractor_count"] + 1)
@@ -607,15 +807,24 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
         "satisfied_policies": [policy_id],
         "sent": [{"message_type": cfg["send_type"], "to": participant_values, "object_id": record_id}],
         "modified_objects": [],
+        "audit_log": [{"object_id": record_id, "risk_tier": pattern["risk_tier"], "approval_channel": pattern["approval_channel"]}],
         "distractors": initial_state["distractors"],
     }
     trace = [
         {"action": f"{cfg['tool_prefix']}.inspect_state", "args": {"id": record_id}, "observation": {"found": True}, "mutating": False},
-        {"action": f"{cfg['tool_prefix']}.check_constraints", "args": {"participants": participant_values}, "observation": {"ok": True}, "mutating": False},
-        {"action": "confirm", "event": "user_confirmation", "args": {"summary": f"ready to apply {pattern['title']}"}, "observation": {"confirmed": True}, "mutating": False},
-        {"action": f"{cfg['tool_prefix']}.apply_update", "args": {"id": record_id}, "observation": {"ok": True}, "mutating": True},
-        {"action": cfg["send_action"], "args": {"to": participant_values}, "observation": {"sent": True}, "mutating": True},
+        {"action": f"{cfg['tool_prefix']}.check_constraints", "args": {"participants": participant_values, "risk_tier": pattern["risk_tier"]}, "observation": {"ok": True, "policy_refs": [policy_id]}, "mutating": False},
     ]
+    if difficulty in {"L3", "L4"}:
+        trace.append({"action": f"{cfg['tool_prefix']}.verify_artifact", "args": {"object_id": record_id, "output_format": pattern["output_format"]}, "observation": {"ok": True, "integrity_ok": True}, "mutating": False})
+    if difficulty == "L4":
+        trace.append({"action": f"{cfg['tool_prefix']}.record_audit_evidence", "args": {"object_id": record_id, "risk_tier": pattern["risk_tier"], "approval_channel": pattern["approval_channel"]}, "observation": {"ok": True, "audit_id": f"audit_{record_id}"}, "mutating": True})
+    trace.extend(
+        [
+            {"action": "confirm", "event": "user_confirmation", "args": {"summary": f"ready to apply {pattern['title']}", "approval_channel": pattern["approval_channel"]}, "observation": {"confirmed": True, "approver": "user"}, "mutating": False},
+            {"action": f"{cfg['tool_prefix']}.apply_update", "args": {"id": record_id, "patch": {"status": cfg["required_value"]}}, "observation": {"ok": True, "version": i}, "mutating": True},
+            {"action": cfg["send_action"], "args": {"to": participant_values, "object_id": record_id}, "observation": {"sent": True, "delivery_id": f"delivery_{record_id}"}, "mutating": True},
+        ]
+    )
     base_donespec = {
         "all": [
             {"exists": {"object": obj, "where": {"id": record_id}}},
@@ -649,6 +858,12 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
     if spec_variant["owner_guard"]:
         extra_donespec.append({"equals": {"field": f"objects.{obj}.0.owner", "value": "case-owner@example.com"}})
         atoms.append(atom(task_id, 7, "success", "The final record remains assigned to the approved owner.", "ownership", f"{obj}.owner", "equals", "case-owner@example.com", f"{cfg['tool_prefix']}.inspect_state"))
+    if spec_variant["permission_guard"]:
+        extra_donespec.append({"permission_ok": {"action": cfg["send_action"]}})
+        atoms.append(atom(task_id, 8, "success", "The outbound or sharing action is permitted in the tool environment.", "permission", f"permissions.{cfg['send_action']}", "equals", True, f"{cfg['tool_prefix']}.check_constraints"))
+    if spec_variant["deadline_guard"]:
+        extra_donespec.append({"equals": {"field": f"objects.{obj}.0.due_window", "value": pattern["time_range"]}})
+        atoms.append(atom(task_id, 9, "success", "The final artifact stays inside the requested time or review window.", "temporal", f"{obj}.due_window", "equals", pattern["time_range"], f"{cfg['tool_prefix']}.check_constraints"))
     donespec = nested_insert_all(base_donespec, extra_donespec, difficulty, i)
 
     near_misses = []
@@ -685,16 +900,28 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
             "task_context": pattern["context"],
             "difficulty_profile": difficulty_profile,
             "scenario": pattern["scenario"],
+            "risk_tier": pattern["risk_tier"],
+            "approval_channel": pattern["approval_channel"],
+            "output_format": pattern["output_format"],
+            "semi_real_surface": {
+                "state_schema": state_schema(obj),
+                "tool_specs": tool_specs(cfg, pattern, difficulty),
+            },
         },
         "tool_environment": {
             "tools": [
                 f"{cfg['tool_prefix']}.inspect_state",
                 f"{cfg['tool_prefix']}.check_constraints",
+                *([f"{cfg['tool_prefix']}.verify_artifact"] if difficulty in {"L3", "L4"} else []),
+                *([f"{cfg['tool_prefix']}.record_audit_evidence"] if difficulty == "L4" else []),
                 f"{cfg['tool_prefix']}.apply_update",
                 cfg["send_action"],
                 "confirm",
             ],
             "permissions": ["read", "mutate_after_confirmation"],
+            "tool_specs": tool_specs(cfg, pattern, difficulty),
+            "state_schema": state_schema(obj),
+            "surface": "semi_real_workflow_v1",
         },
         "initial_state": initial_state,
         "policies": [{"policy_id": policy_id, "text": policy_text}],
@@ -713,6 +940,9 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
             "generator_version": GENERATOR_VERSION,
             "pattern_id": pattern["pattern_id"],
             "scenario_id": pattern["scenario_id"],
+            "risk_tier": pattern["risk_tier"],
+            "approval_channel": pattern["approval_channel"],
+            "output_format": pattern["output_format"],
             "difficulty_distribution": DIFFICULTY_DISTRIBUTION,
             "mutation_taxonomy": sorted(MUTATION_TAXONOMY),
         },

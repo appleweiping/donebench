@@ -1,6 +1,6 @@
 {
   "input": "annotation\\human_audit_queue.jsonl",
-  "num_items": 50,
+  "num_items": 100,
   "num_double_annotated": 0,
   "num_needs_adjudication": 0,
   "decision_agreement": {

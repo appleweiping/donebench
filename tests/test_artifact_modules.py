@@ -6,6 +6,7 @@ from donebench.scripts.ai_audit import run_ai_audit
 from donebench.scripts.cost_report import write_cost_report
 from donebench.scripts.export_openreview_package import export_package
 from donebench.scripts.human_audit_queue import write_human_audit_queue
+from donebench.scripts.generate_seed_tasks import DOMAINS, TASKS_PER_DOMAIN
 from donebench.scripts.repro_manifest import write_repro_manifest
 
 
@@ -16,7 +17,7 @@ def test_cost_report_and_manifest(tmp_path):
     manifest = write_repro_manifest(tmp_path / "repro.json", results=input_path)
     assert cost["calls"] > 0
     assert manifest["donebench_version"]
-    assert manifest["dataset"]["num_tasks"] == 300
+    assert manifest["dataset"]["num_tasks"] == len(DOMAINS) * TASKS_PER_DOMAIN
     assert manifest["environment"]["docker_build"] == "docker build -t donebench-repro ."
     assert any(model["id"] == "mock" for model in manifest["model_access"])
     assert "cost_report_command" in manifest["cost_latency_retry"]
@@ -31,7 +32,7 @@ def test_openreview_package_exports_checklist_and_model_notes():
     checklist = Path("reports/openreview_checklist.md")
     model_notes = Path("reports/model_access_cost_latency_retry.md")
 
-    assert "Generated task count: 300" in text
+    assert f"Generated task count: {len(DOMAINS) * TASKS_PER_DOMAIN}" in text
     assert "`Dockerfile`" in text
     assert "`data/tasks/`" in text
     assert checklist.exists()

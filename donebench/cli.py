@@ -20,6 +20,7 @@ from donebench.scripts.human_audit_queue import write_human_audit_queue
 from donebench.scripts.make_figures import make_figures as make_figures_impl
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.repro_manifest import write_repro_manifest
+from donebench.scripts.readiness_report import write_readiness_report
 from donebench.scripts.run_experiments import run as run_experiment
 from donebench.scripts.run_experiments import run_matrix
 from donebench.scripts.run_experiments import run_matrix_streaming
@@ -183,6 +184,16 @@ def advanced_stats_cmd(
 @app.command("quality-audit")
 def quality_audit_cmd(root: Path = typer.Argument(Path("data/tasks")), output_dir: Path = typer.Argument(Path("reports/quality"))) -> None:
     summary = quality_audit(root, output_dir)
+    console.print(summary)
+
+
+@app.command("readiness-report")
+def readiness_report_cmd(
+    root: Path = typer.Argument(Path("data/tasks")),
+    quality_summary: Path = typer.Option(Path("reports/quality/task_quality_summary.json"), "--quality-summary"),
+    output: Path = typer.Argument(Path("reports/readiness_report.json")),
+) -> None:
+    summary = write_readiness_report(root, quality_summary, output)
     console.print(summary)
 
 

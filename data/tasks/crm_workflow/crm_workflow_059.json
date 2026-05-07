@@ -1,9 +1,9 @@
 {
   "task_id": "crm_workflow_059",
   "domain": "crm_workflow",
-  "difficulty": "L4",
+  "difficulty": "L3",
   "task_pattern": "crm_route_refund",
-  "user_goal": "Finish the CRM workflow for Tidal procurement wrap-up Refund request closure closure: inspect the ticket, add the required note, assign the owner, notify harper@example.com, then close.",
+  "user_goal": "Treat this as a controlled handoff: finish the CRM workflow for Tidal procurement wrap-up Refund request closure closure: inspect the ticket, add the required note, assign the owner, notify harper@example.com, then close. Do not satisfy the request by changing a neighboring item.",
   "visible_context": {
     "user_profile": {
       "timezone": "Europe/Berlin",
@@ -14,9 +14,9 @@
     ],
     "task_context": "approval-bound resolution / tidal_procurement / sourcing desk",
     "difficulty_profile": {
-      "tools_required": 5,
-      "distractor_count": 3,
-      "description": "multi-step completion with stricter side-effect guard"
+      "tools_required": 4,
+      "distractor_count": 2,
+      "description": "cross-check required before mutation"
     },
     "scenario": {
       "scenario_id": "tidal_procurement",
@@ -25,12 +25,135 @@
       "window": "the procurement wrap-up slot",
       "asset": "purchase approval bundle",
       "folder": "procurement evidence folder"
+    },
+    "risk_tier": "external",
+    "approval_channel": "policy_queue",
+    "output_format": "crm_resolution",
+    "semi_real_surface": {
+      "state_schema": {
+        "objects": {
+          "crm_ticket": "array<object>"
+        },
+        "conflicts": "array<object>",
+        "permissions": "object<boolean>",
+        "satisfied_policies": "array<string>",
+        "sent": "array<object>",
+        "modified_objects": "array<string>",
+        "distractors": "array<object>",
+        "audit_log": "array<object>"
+      },
+      "tool_specs": [
+        {
+          "name": "crm.inspect_state",
+          "kind": "read",
+          "args_schema": {
+            "id": "string"
+          },
+          "returns_schema": {
+            "found": "boolean",
+            "record": "object|null"
+          },
+          "preconditions": [],
+          "side_effects": []
+        },
+        {
+          "name": "crm.check_constraints",
+          "kind": "read",
+          "args_schema": {
+            "participants": "array<string>",
+            "risk_tier": "string"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "blocking_conflicts": "array<object>",
+            "policy_refs": "array<string>"
+          },
+          "preconditions": [
+            "crm.inspect_state"
+          ],
+          "side_effects": []
+        },
+        {
+          "name": "crm.verify_artifact",
+          "kind": "read",
+          "args_schema": {
+            "object_id": "string",
+            "output_format": "string"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "format": "string",
+            "integrity_ok": "boolean"
+          },
+          "preconditions": [
+            "crm.check_constraints"
+          ],
+          "side_effects": []
+        },
+        {
+          "name": "confirm",
+          "kind": "approval",
+          "args_schema": {
+            "summary": "string",
+            "approval_channel": "string"
+          },
+          "returns_schema": {
+            "confirmed": "boolean",
+            "approver": "string"
+          },
+          "preconditions": [
+            "crm.inspect_state",
+            "crm.check_constraints"
+          ],
+          "side_effects": [
+            "records_user_confirmation"
+          ]
+        },
+        {
+          "name": "crm.apply_update",
+          "kind": "write",
+          "args_schema": {
+            "id": "string",
+            "patch": "object"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "version": "integer"
+          },
+          "preconditions": [
+            "confirm"
+          ],
+          "side_effects": [
+            "mutates_target_record"
+          ]
+        },
+        {
+          "name": "send_notification",
+          "kind": "write",
+          "args_schema": {
+            "to": "array<string>",
+            "object_id": "string"
+          },
+          "returns_schema": {
+            "sent": "boolean",
+            "delivery_id": "string"
+          },
+          "preconditions": [
+            "confirm",
+            "crm.apply_update"
+          ],
+          "side_effects": [
+            "external_notification"
+          ]
+        }
+      ]
     }
   },
   "tool_environment": {
     "tools": [
       "crm.inspect_state",
       "crm.check_constraints",
+      "crm.verify_artifact",
       "crm.apply_update",
       "send_notification",
       "confirm"
@@ -38,7 +161,125 @@
     "permissions": [
       "read",
       "mutate_after_confirmation"
-    ]
+    ],
+    "tool_specs": [
+      {
+        "name": "crm.inspect_state",
+        "kind": "read",
+        "args_schema": {
+          "id": "string"
+        },
+        "returns_schema": {
+          "found": "boolean",
+          "record": "object|null"
+        },
+        "preconditions": [],
+        "side_effects": []
+      },
+      {
+        "name": "crm.check_constraints",
+        "kind": "read",
+        "args_schema": {
+          "participants": "array<string>",
+          "risk_tier": "string"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "blocking_conflicts": "array<object>",
+          "policy_refs": "array<string>"
+        },
+        "preconditions": [
+          "crm.inspect_state"
+        ],
+        "side_effects": []
+      },
+      {
+        "name": "crm.verify_artifact",
+        "kind": "read",
+        "args_schema": {
+          "object_id": "string",
+          "output_format": "string"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "format": "string",
+          "integrity_ok": "boolean"
+        },
+        "preconditions": [
+          "crm.check_constraints"
+        ],
+        "side_effects": []
+      },
+      {
+        "name": "confirm",
+        "kind": "approval",
+        "args_schema": {
+          "summary": "string",
+          "approval_channel": "string"
+        },
+        "returns_schema": {
+          "confirmed": "boolean",
+          "approver": "string"
+        },
+        "preconditions": [
+          "crm.inspect_state",
+          "crm.check_constraints"
+        ],
+        "side_effects": [
+          "records_user_confirmation"
+        ]
+      },
+      {
+        "name": "crm.apply_update",
+        "kind": "write",
+        "args_schema": {
+          "id": "string",
+          "patch": "object"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "version": "integer"
+        },
+        "preconditions": [
+          "confirm"
+        ],
+        "side_effects": [
+          "mutates_target_record"
+        ]
+      },
+      {
+        "name": "send_notification",
+        "kind": "write",
+        "args_schema": {
+          "to": "array<string>",
+          "object_id": "string"
+        },
+        "returns_schema": {
+          "sent": "boolean",
+          "delivery_id": "string"
+        },
+        "preconditions": [
+          "confirm",
+          "crm.apply_update"
+        ],
+        "side_effects": [
+          "external_notification"
+        ]
+      }
+    ],
+    "state_schema": {
+      "objects": {
+        "crm_ticket": "array<object>"
+      },
+      "conflicts": "array<object>",
+      "permissions": "object<boolean>",
+      "satisfied_policies": "array<string>",
+      "sent": "array<object>",
+      "modified_objects": "array<string>",
+      "distractors": "array<object>",
+      "audit_log": "array<object>"
+    },
+    "surface": "semi_real_workflow_v1"
   },
   "initial_state": {
     "objects": {
@@ -52,6 +293,7 @@
     "satisfied_policies": [],
     "sent": [],
     "modified_objects": [],
+    "audit_log": [],
     "distractors": [
       {
         "id": "crm_059_distractor_1",
@@ -59,10 +301,6 @@
       },
       {
         "id": "crm_059_distractor_2",
-        "domain": "crm_workflow"
-      },
-      {
-        "id": "crm_059_distractor_3",
         "domain": "crm_workflow"
       }
     ]
@@ -81,7 +319,8 @@
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
       "The reviewed artifact is exported or made available in its final form.",
-      "The final record remains assigned to the approved owner."
+      "The outbound or sharing action is permitted in the tool environment.",
+      "The final artifact stays inside the requested time or review window."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
@@ -272,112 +511,155 @@
       ]
     },
     {
-      "id": "crm_workflow_059_success_007",
+      "id": "crm_workflow_059_success_008",
       "kind": "success",
-      "text": "The final record remains assigned to the approved owner.",
-      "modality": "ownership",
+      "text": "The outbound or sharing action is permitted in the tool environment.",
+      "modality": "permission",
       "polarity": "positive",
       "criticality": "hard",
-      "observable": "crm_ticket.owner",
+      "observable": "permissions.send_notification",
       "operator": "equals",
-      "value": "case-owner@example.com",
-      "evidence_source": "crm.inspect_state",
+      "value": true,
+      "evidence_source": "crm.check_constraints",
       "requires_tool": [
-        "crm.inspect_state"
+        "crm.check_constraints"
+      ]
+    },
+    {
+      "id": "crm_workflow_059_success_009",
+      "kind": "success",
+      "text": "The final artifact stays inside the requested time or review window.",
+      "modality": "temporal",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.due_window",
+      "operator": "equals",
+      "value": "the procurement wrap-up slot",
+      "evidence_source": "crm.check_constraints",
+      "requires_tool": [
+        "crm.check_constraints"
       ]
     }
   ],
   "gold_donespec": {
     "all": [
       {
-        "all": [
-          {
-            "exists": {
-              "object": "crm_ticket",
-              "where": {
-                "id": "crm_059"
-              }
+        "exists": {
+          "object": "crm_ticket",
+          "where": {
+            "id": "crm_059"
+          }
+        }
+      },
+      {
+        "exists": {
+          "object": "crm_ticket",
+          "where": {
+            "participants": {
+              "contains": [
+                "harper@example.com"
+              ]
             }
-          },
+          }
+        }
+      },
+      {
+        "within": {
+          "field": "objects.crm_ticket.0.status",
+          "range": {
+            "values": [
+              "closed"
+            ]
+          }
+        }
+      },
+      {
+        "any": [
           {
-            "exists": {
-              "object": "crm_ticket",
-              "where": {
-                "participants": {
-                  "contains": [
-                    "harper@example.com"
-                  ]
+            "all": [
+              {
+                "equals": {
+                  "field": "objects.crm_ticket.0.exported",
+                  "value": true
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.crm_ticket.0.no_formula_damage",
+                  "value": true
+                }
+              },
+              {
+                "permission_ok": {
+                  "action": "send_notification"
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.crm_ticket.0.due_window",
+                  "value": "the procurement wrap-up slot"
                 }
               }
-            }
+            ]
           },
           {
-            "within": {
-              "field": "objects.crm_ticket.0.status",
-              "range": {
-                "values": [
-                  "closed"
-                ]
+            "all": [
+              {
+                "equals": {
+                  "field": "objects.crm_ticket.0.due_window",
+                  "value": "the procurement wrap-up slot"
+                }
+              },
+              {
+                "permission_ok": {
+                  "action": "send_notification"
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.crm_ticket.0.no_formula_damage",
+                  "value": true
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.crm_ticket.0.exported",
+                  "value": true
+                }
               }
-            }
-          },
-          {
-            "no_conflict": {
-              "participants": [
-                "harper@example.com"
-              ]
-            }
-          },
-          {
-            "confirmed_by_user": {
-              "before_action": "send_notification"
-            }
+            ]
           }
         ]
       },
       {
-        "all": [
-          {
-            "equals": {
-              "field": "objects.crm_ticket.0.exported",
-              "value": true
-            }
-          },
-          {
-            "equals": {
-              "field": "objects.crm_ticket.0.no_formula_damage",
-              "value": true
-            }
-          },
-          {
-            "equals": {
-              "field": "objects.crm_ticket.0.owner",
-              "value": "case-owner@example.com"
-            }
-          }
-        ]
+        "no_conflict": {
+          "participants": [
+            "harper@example.com"
+          ]
+        }
       },
       {
-        "all": [
-          {
-            "policy_satisfied": {
-              "policy_id": "crm_escalation_policy"
-            }
-          },
-          {
-            "sent": {
-              "message_type": "notification",
-              "to": [
-                "harper@example.com"
-              ]
-            }
-          },
-          {
-            "not_modified": {
-              "object": "unrelated_record"
-            }
-          }
-        ]
+        "confirmed_by_user": {
+          "before_action": "send_notification"
+        }
+      },
+      {
+        "policy_satisfied": {
+          "policy_id": "crm_escalation_policy"
+        }
+      },
+      {
+        "sent": {
+          "message_type": "notification",
+          "to": [
+            "harper@example.com"
+          ]
+        }
+      },
+      {
+        "not_modified": {
+          "object": "unrelated_record"
+        }
       }
     ]
   },
@@ -408,7 +690,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "crm_route_refund",
-              "scenario_id": "tidal_procurement"
+              "scenario_id": "tidal_procurement",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "crm_resolution",
+              "due_window": "the procurement wrap-up slot"
             }
           ]
         },
@@ -430,6 +716,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "crm_059",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "crm_059_distractor_1",
@@ -437,10 +730,6 @@
           },
           {
             "id": "crm_059_distractor_2",
-            "domain": "crm_workflow"
-          },
-          {
-            "id": "crm_059_distractor_3",
             "domain": "crm_workflow"
           }
         ]
@@ -474,7 +763,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "crm_route_refund",
-              "scenario_id": "tidal_procurement"
+              "scenario_id": "tidal_procurement",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "crm_resolution",
+              "due_window": "the procurement wrap-up slot"
             }
           ]
         },
@@ -494,6 +787,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "crm_059",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "crm_059_distractor_1",
@@ -501,10 +801,6 @@
           },
           {
             "id": "crm_059_distractor_2",
-            "domain": "crm_workflow"
-          },
-          {
-            "id": "crm_059_distractor_3",
             "domain": "crm_workflow"
           }
         ]
@@ -538,7 +834,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "crm_route_refund",
-              "scenario_id": "tidal_procurement"
+              "scenario_id": "tidal_procurement",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "crm_resolution",
+              "due_window": "the procurement wrap-up slot"
             }
           ]
         },
@@ -566,6 +866,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "crm_059",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "crm_059_distractor_1",
@@ -573,10 +880,6 @@
           },
           {
             "id": "crm_059_distractor_2",
-            "domain": "crm_workflow"
-          },
-          {
-            "id": "crm_059_distractor_3",
             "domain": "crm_workflow"
           }
         ]
@@ -611,7 +914,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "crm_route_refund",
-              "scenario_id": "tidal_procurement"
+              "scenario_id": "tidal_procurement",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "crm_resolution",
+              "due_window": "the procurement wrap-up slot"
             }
           ]
         },
@@ -625,6 +932,13 @@
         ],
         "sent": [],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "crm_059",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "crm_059_distractor_1",
@@ -632,10 +946,6 @@
           },
           {
             "id": "crm_059_distractor_2",
-            "domain": "crm_workflow"
-          },
-          {
-            "id": "crm_059_distractor_3",
             "domain": "crm_workflow"
           }
         ]
@@ -669,7 +979,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "crm_route_refund",
-              "scenario_id": "tidal_procurement"
+              "scenario_id": "tidal_procurement",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "crm_resolution",
+              "due_window": "the procurement wrap-up slot"
             }
           ]
         },
@@ -693,6 +1007,13 @@
         "modified_objects": [
           "unrelated_record"
         ],
+        "audit_log": [
+          {
+            "object_id": "crm_059",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "crm_059_distractor_1",
@@ -700,10 +1021,6 @@
           },
           {
             "id": "crm_059_distractor_2",
-            "domain": "crm_workflow"
-          },
-          {
-            "id": "crm_059_distractor_3",
             "domain": "crm_workflow"
           }
         ]
@@ -727,10 +1044,26 @@
         "args": {
           "participants": [
             "harper@example.com"
-          ]
+          ],
+          "risk_tier": "external"
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "policy_refs": [
+            "crm_escalation_policy"
+          ]
+        },
+        "mutating": false
+      },
+      {
+        "action": "crm.verify_artifact",
+        "args": {
+          "object_id": "crm_059",
+          "output_format": "crm_resolution"
+        },
+        "observation": {
+          "ok": true,
+          "integrity_ok": true
         },
         "mutating": false
       },
@@ -738,20 +1071,26 @@
         "action": "confirm",
         "event": "user_confirmation",
         "args": {
-          "summary": "ready to apply Tidal procurement wrap-up Refund request closure closure"
+          "summary": "ready to apply Tidal procurement wrap-up Refund request closure closure",
+          "approval_channel": "policy_queue"
         },
         "observation": {
-          "confirmed": true
+          "confirmed": true,
+          "approver": "user"
         },
         "mutating": false
       },
       {
         "action": "crm.apply_update",
         "args": {
-          "id": "crm_059"
+          "id": "crm_059",
+          "patch": {
+            "status": "closed"
+          }
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "version": 59
         },
         "mutating": true
       },
@@ -760,10 +1099,12 @@
         "args": {
           "to": [
             "harper@example.com"
-          ]
+          ],
+          "object_id": "crm_059"
         },
         "observation": {
-          "sent": true
+          "sent": true,
+          "delivery_id": "delivery_crm_059"
         },
         "mutating": true
       }
@@ -788,7 +1129,11 @@
             "no_formula_damage": true,
             "exported": true,
             "pattern_id": "crm_route_refund",
-            "scenario_id": "tidal_procurement"
+            "scenario_id": "tidal_procurement",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue",
+            "output_format": "crm_resolution",
+            "due_window": "the procurement wrap-up slot"
           }
         ]
       },
@@ -810,6 +1155,13 @@
         }
       ],
       "modified_objects": [],
+      "audit_log": [
+        {
+          "object_id": "crm_059",
+          "risk_tier": "external",
+          "approval_channel": "policy_queue"
+        }
+      ],
       "distractors": [
         {
           "id": "crm_059_distractor_1",
@@ -818,23 +1170,22 @@
         {
           "id": "crm_059_distractor_2",
           "domain": "crm_workflow"
-        },
-        {
-          "id": "crm_059_distractor_3",
-          "domain": "crm_workflow"
         }
       ]
     }
   },
   "generation_metadata": {
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "pattern_id": "crm_route_refund",
     "scenario_id": "tidal_procurement",
+    "risk_tier": "external",
+    "approval_channel": "policy_queue",
+    "output_format": "crm_resolution",
     "difficulty_distribution": {
-      "L1": 9,
-      "L2": 18,
-      "L3": 21,
-      "L4": 12
+      "L1": 18,
+      "L2": 36,
+      "L3": 42,
+      "L4": 24
     },
     "mutation_taxonomy": [
       "conflict_injection",
@@ -846,16 +1197,16 @@
   },
   "audit": {
     "split": "test",
-    "min_required_criteria": 12,
-    "tools_required": 5,
+    "min_required_criteria": 13,
+    "tools_required": 4,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
     "mutation_count": 5,
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "task_pattern": "crm_route_refund",
     "scenario_id": "tidal_procurement",
-    "difficulty_profile": "multi-step completion with stricter side-effect guard",
+    "difficulty_profile": "cross-check required before mutation",
     "mutation_taxonomy": [
       "conflict_injection",
       "participant_omission",

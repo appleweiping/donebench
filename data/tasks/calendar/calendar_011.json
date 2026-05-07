@@ -1,9 +1,9 @@
 {
   "task_id": "calendar_011",
   "domain": "calendar",
-  "difficulty": "L2",
+  "difficulty": "L1",
   "task_pattern": "calendar_reschedule_review",
-  "user_goal": "Create the confirmed Delta pricing review Product review reschedule handoff for harper@example.com and logan@example.com in Thursday late morning, checking calendars first and avoiding any invite before approval.",
+  "user_goal": "Using the approved policy queue path, create the confirmed Delta pricing review Product review reschedule handoff for harper@example.com and logan@example.com in Thursday late morning, checking calendars first and avoiding any invite before approval. Keep the evidence trail auditable.",
   "visible_context": {
     "user_profile": {
       "timezone": "Europe/Berlin",
@@ -15,8 +15,8 @@
     "task_context": "existing event update / delta_pricing / revenue desk",
     "difficulty_profile": {
       "tools_required": 3,
-      "distractor_count": 1,
-      "description": "single target plus one distractor"
+      "distractor_count": 0,
+      "description": "single target with direct policy gate"
     },
     "scenario": {
       "scenario_id": "delta_pricing",
@@ -25,6 +25,111 @@
       "window": "Thursday late morning",
       "asset": "pricing appendix",
       "folder": "pricing review folder"
+    },
+    "risk_tier": "external",
+    "approval_channel": "policy_queue",
+    "output_format": "calendar_invite",
+    "semi_real_surface": {
+      "state_schema": {
+        "objects": {
+          "calendar_event": "array<object>"
+        },
+        "conflicts": "array<object>",
+        "permissions": "object<boolean>",
+        "satisfied_policies": "array<string>",
+        "sent": "array<object>",
+        "modified_objects": "array<string>",
+        "distractors": "array<object>",
+        "audit_log": "array<object>"
+      },
+      "tool_specs": [
+        {
+          "name": "calendar.inspect_state",
+          "kind": "read",
+          "args_schema": {
+            "id": "string"
+          },
+          "returns_schema": {
+            "found": "boolean",
+            "record": "object|null"
+          },
+          "preconditions": [],
+          "side_effects": []
+        },
+        {
+          "name": "calendar.check_constraints",
+          "kind": "read",
+          "args_schema": {
+            "participants": "array<string>",
+            "risk_tier": "string"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "blocking_conflicts": "array<object>",
+            "policy_refs": "array<string>"
+          },
+          "preconditions": [
+            "calendar.inspect_state"
+          ],
+          "side_effects": []
+        },
+        {
+          "name": "confirm",
+          "kind": "approval",
+          "args_schema": {
+            "summary": "string",
+            "approval_channel": "string"
+          },
+          "returns_schema": {
+            "confirmed": "boolean",
+            "approver": "string"
+          },
+          "preconditions": [
+            "calendar.inspect_state",
+            "calendar.check_constraints"
+          ],
+          "side_effects": [
+            "records_user_confirmation"
+          ]
+        },
+        {
+          "name": "calendar.apply_update",
+          "kind": "write",
+          "args_schema": {
+            "id": "string",
+            "patch": "object"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "version": "integer"
+          },
+          "preconditions": [
+            "confirm"
+          ],
+          "side_effects": [
+            "mutates_target_record"
+          ]
+        },
+        {
+          "name": "send_invites",
+          "kind": "write",
+          "args_schema": {
+            "to": "array<string>",
+            "object_id": "string"
+          },
+          "returns_schema": {
+            "sent": "boolean",
+            "delivery_id": "string"
+          },
+          "preconditions": [
+            "confirm",
+            "calendar.apply_update"
+          ],
+          "side_effects": [
+            "external_notification"
+          ]
+        }
+      ]
     }
   },
   "tool_environment": {
@@ -38,7 +143,108 @@
     "permissions": [
       "read",
       "mutate_after_confirmation"
-    ]
+    ],
+    "tool_specs": [
+      {
+        "name": "calendar.inspect_state",
+        "kind": "read",
+        "args_schema": {
+          "id": "string"
+        },
+        "returns_schema": {
+          "found": "boolean",
+          "record": "object|null"
+        },
+        "preconditions": [],
+        "side_effects": []
+      },
+      {
+        "name": "calendar.check_constraints",
+        "kind": "read",
+        "args_schema": {
+          "participants": "array<string>",
+          "risk_tier": "string"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "blocking_conflicts": "array<object>",
+          "policy_refs": "array<string>"
+        },
+        "preconditions": [
+          "calendar.inspect_state"
+        ],
+        "side_effects": []
+      },
+      {
+        "name": "confirm",
+        "kind": "approval",
+        "args_schema": {
+          "summary": "string",
+          "approval_channel": "string"
+        },
+        "returns_schema": {
+          "confirmed": "boolean",
+          "approver": "string"
+        },
+        "preconditions": [
+          "calendar.inspect_state",
+          "calendar.check_constraints"
+        ],
+        "side_effects": [
+          "records_user_confirmation"
+        ]
+      },
+      {
+        "name": "calendar.apply_update",
+        "kind": "write",
+        "args_schema": {
+          "id": "string",
+          "patch": "object"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "version": "integer"
+        },
+        "preconditions": [
+          "confirm"
+        ],
+        "side_effects": [
+          "mutates_target_record"
+        ]
+      },
+      {
+        "name": "send_invites",
+        "kind": "write",
+        "args_schema": {
+          "to": "array<string>",
+          "object_id": "string"
+        },
+        "returns_schema": {
+          "sent": "boolean",
+          "delivery_id": "string"
+        },
+        "preconditions": [
+          "confirm",
+          "calendar.apply_update"
+        ],
+        "side_effects": [
+          "external_notification"
+        ]
+      }
+    ],
+    "state_schema": {
+      "objects": {
+        "calendar_event": "array<object>"
+      },
+      "conflicts": "array<object>",
+      "permissions": "object<boolean>",
+      "satisfied_policies": "array<string>",
+      "sent": "array<object>",
+      "modified_objects": "array<string>",
+      "distractors": "array<object>",
+      "audit_log": "array<object>"
+    },
+    "surface": "semi_real_workflow_v1"
   },
   "initial_state": {
     "objects": {
@@ -52,12 +258,8 @@
     "satisfied_policies": [],
     "sent": [],
     "modified_objects": [],
-    "distractors": [
-      {
-        "id": "cal_011_distractor_1",
-        "domain": "calendar"
-      }
-    ]
+    "audit_log": [],
+    "distractors": []
   },
   "policies": [
     {
@@ -71,8 +273,7 @@
       "All required participants or recipients are included.",
       "The final status is sent.",
       "No required participant has a conflict or blocking condition.",
-      "The required outbound message or share action is completed.",
-      "The reviewed artifact is exported or made available in its final form."
+      "The required outbound message or share action is completed."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
@@ -231,21 +432,6 @@
       "requires_tool": [
         "calendar.check_constraints"
       ]
-    },
-    {
-      "id": "calendar_011_success_006",
-      "kind": "success",
-      "text": "The reviewed artifact is exported or made available in its final form.",
-      "modality": "artifact",
-      "polarity": "positive",
-      "criticality": "hard",
-      "observable": "calendar_event.exported",
-      "operator": "equals",
-      "value": true,
-      "evidence_source": "calendar.inspect_state",
-      "requires_tool": [
-        "calendar.inspect_state"
-      ]
     }
   ],
   "gold_donespec": {
@@ -288,16 +474,6 @@
             "logan@example.com"
           ]
         }
-      },
-      {
-        "all": [
-          {
-            "equals": {
-              "field": "objects.calendar_event.0.exported",
-              "value": true
-            }
-          }
-        ]
       },
       {
         "confirmed_by_user": {
@@ -354,7 +530,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_reschedule_review",
-              "scenario_id": "delta_pricing"
+              "scenario_id": "delta_pricing",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "calendar_invite",
+              "due_window": "Thursday late morning"
             }
           ]
         },
@@ -377,12 +557,14 @@
           }
         ],
         "modified_objects": [],
-        "distractors": [
+        "audit_log": [
           {
-            "id": "cal_011_distractor_1",
-            "domain": "calendar"
+            "object_id": "cal_011",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
           }
-        ]
+        ],
+        "distractors": []
       }
     },
     {
@@ -414,7 +596,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_reschedule_review",
-              "scenario_id": "delta_pricing"
+              "scenario_id": "delta_pricing",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "calendar_invite",
+              "due_window": "Thursday late morning"
             }
           ]
         },
@@ -435,12 +621,14 @@
           }
         ],
         "modified_objects": [],
-        "distractors": [
+        "audit_log": [
           {
-            "id": "cal_011_distractor_1",
-            "domain": "calendar"
+            "object_id": "cal_011",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
           }
-        ]
+        ],
+        "distractors": []
       }
     },
     {
@@ -472,7 +660,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_reschedule_review",
-              "scenario_id": "delta_pricing"
+              "scenario_id": "delta_pricing",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "calendar_invite",
+              "due_window": "Thursday late morning"
             }
           ]
         },
@@ -502,12 +694,14 @@
           }
         ],
         "modified_objects": [],
-        "distractors": [
+        "audit_log": [
           {
-            "id": "cal_011_distractor_1",
-            "domain": "calendar"
+            "object_id": "cal_011",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
           }
-        ]
+        ],
+        "distractors": []
       }
     },
     {
@@ -540,7 +734,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_reschedule_review",
-              "scenario_id": "delta_pricing"
+              "scenario_id": "delta_pricing",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "calendar_invite",
+              "due_window": "Thursday late morning"
             }
           ]
         },
@@ -554,12 +752,14 @@
         ],
         "sent": [],
         "modified_objects": [],
-        "distractors": [
+        "audit_log": [
           {
-            "id": "cal_011_distractor_1",
-            "domain": "calendar"
+            "object_id": "cal_011",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
           }
-        ]
+        ],
+        "distractors": []
       }
     },
     {
@@ -591,7 +791,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_reschedule_review",
-              "scenario_id": "delta_pricing"
+              "scenario_id": "delta_pricing",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "calendar_invite",
+              "due_window": "Thursday late morning"
             }
           ]
         },
@@ -616,12 +820,14 @@
         "modified_objects": [
           "unrelated_record"
         ],
-        "distractors": [
+        "audit_log": [
           {
-            "id": "cal_011_distractor_1",
-            "domain": "calendar"
+            "object_id": "cal_011",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
           }
-        ]
+        ],
+        "distractors": []
       }
     }
   ],
@@ -643,10 +849,14 @@
           "participants": [
             "harper@example.com",
             "logan@example.com"
-          ]
+          ],
+          "risk_tier": "external"
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "policy_refs": [
+            "calendar_confirmation_policy"
+          ]
         },
         "mutating": false
       },
@@ -654,20 +864,26 @@
         "action": "confirm",
         "event": "user_confirmation",
         "args": {
-          "summary": "ready to apply Delta pricing review Product review reschedule handoff"
+          "summary": "ready to apply Delta pricing review Product review reschedule handoff",
+          "approval_channel": "policy_queue"
         },
         "observation": {
-          "confirmed": true
+          "confirmed": true,
+          "approver": "user"
         },
         "mutating": false
       },
       {
         "action": "calendar.apply_update",
         "args": {
-          "id": "cal_011"
+          "id": "cal_011",
+          "patch": {
+            "status": "sent"
+          }
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "version": 11
         },
         "mutating": true
       },
@@ -677,10 +893,12 @@
           "to": [
             "harper@example.com",
             "logan@example.com"
-          ]
+          ],
+          "object_id": "cal_011"
         },
         "observation": {
-          "sent": true
+          "sent": true,
+          "delivery_id": "delivery_cal_011"
         },
         "mutating": true
       }
@@ -706,7 +924,11 @@
             "no_formula_damage": true,
             "exported": true,
             "pattern_id": "calendar_reschedule_review",
-            "scenario_id": "delta_pricing"
+            "scenario_id": "delta_pricing",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue",
+            "output_format": "calendar_invite",
+            "due_window": "Thursday late morning"
           }
         ]
       },
@@ -729,23 +951,28 @@
         }
       ],
       "modified_objects": [],
-      "distractors": [
+      "audit_log": [
         {
-          "id": "cal_011_distractor_1",
-          "domain": "calendar"
+          "object_id": "cal_011",
+          "risk_tier": "external",
+          "approval_channel": "policy_queue"
         }
-      ]
+      ],
+      "distractors": []
     }
   },
   "generation_metadata": {
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "pattern_id": "calendar_reschedule_review",
     "scenario_id": "delta_pricing",
+    "risk_tier": "external",
+    "approval_channel": "policy_queue",
+    "output_format": "calendar_invite",
     "difficulty_distribution": {
-      "L1": 9,
-      "L2": 18,
-      "L3": 21,
-      "L4": 12
+      "L1": 18,
+      "L2": 36,
+      "L3": 42,
+      "L4": 24
     },
     "mutation_taxonomy": [
       "conflict_injection",
@@ -756,17 +983,17 @@
     ]
   },
   "audit": {
-    "split": "test",
-    "min_required_criteria": 10,
+    "split": "dev",
+    "min_required_criteria": 9,
     "tools_required": 3,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
     "mutation_count": 5,
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "task_pattern": "calendar_reschedule_review",
     "scenario_id": "delta_pricing",
-    "difficulty_profile": "single target plus one distractor",
+    "difficulty_profile": "single target with direct policy gate",
     "mutation_taxonomy": [
       "conflict_injection",
       "participant_omission",

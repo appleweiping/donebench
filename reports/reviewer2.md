@@ -39,7 +39,7 @@ Do not claim stronger UI/environment realism than WebArena, OSWorld, or WorkAren
     Response: report both atom/DSL and free-form normalization settings; keep hidden test tasks and near-miss mutations separate from model prompts.
 
 11. "The dataset is large but templated."
-    Response: current topconf-2 is a scalable scaffold with 300 tasks and 1500 near-miss states; quality audit reports near-duplicate risk explicitly. Camera-ready claims require heterogeneous task expansion and human audit before final submission.
+    Response: current topconf-4 has 600 tasks, 3000 near-miss states, typed tool specs, state schemas, preconditions, side-effect metadata, and quality-audit outputs showing zero high-similarity goal pairs. It is still generated, so camera-ready claims require completed human audit and ideally a hand-authored heterogeneity subset.
 
 12. "The paper tables are cherry-picked smoke results."
     Response: the artifact separates smoke, full API, domain-stratified, taxonomy, and ablation outputs. `paper/tables/experiment_matrix.csv` defines the intended run grid, while API-backed rows remain placeholders until credentials, budgets, and audited aggregates are available.
@@ -78,10 +78,10 @@ Do not claim stronger UI/environment realism than WebArena, OSWorld, or WorkAren
     Response: the modules correspond to separate observables: criterion construction, verifier robustness, final-state success, and own-spec self-violation. The paper must report each metric separately and show disagreement cases where final success hides bad specs or good specs are violated during execution.
 
 24. "The benchmark is toy because state is synthetic."
-    Response: concede the current environment is controlled rather than UI-realistic. The non-toy claim should rest on semantic density: 300 tasks across 5 domains, 15 patterns, 20 scenarios, 4 difficulty levels, 1,500 near-miss states, policies, side-effect constraints, required observations, reference traces, deterministic graders, and audit metadata.
+    Response: concede the current environment is controlled rather than UI-realistic. The non-toy claim should rest on semantic density: 600 tasks across 5 domains, 15 patterns, 26 scenarios, 4 difficulty levels, 3,000 near-miss states, typed tool specs, state schemas, preconditions, side-effect metadata, policies, required observations, reference traces, deterministic graders, and audit metadata.
 
 25. "Generated tasks are template clones."
-    Response: current topconf-2 is balanced but vulnerable. Before strong claims, add a hand-authored or human-adjudicated heterogeneity subset and report near-duplicate audits, per-pattern results, and examples of irregular policies and failure cases.
+    Response: current topconf-4 reports zero high-similarity user-goal pairs and includes structural signature, family-leakage, pattern split, and scenario split audits. Before strongest claims, add a hand-authored or human-adjudicated heterogeneity subset and report examples of irregular policies and failure cases.
 
 26. "The paper is overclaiming."
     Response: use careful language: DoneBench is not a complete replacement for WebArena/OSWorld/WorkArena/tau-bench. It isolates specification grounding, a layer those benchmarks assume through hidden graders.

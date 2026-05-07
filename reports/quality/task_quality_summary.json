@@ -1,26 +1,28 @@
 {
-  "num_tasks": 300,
+  "num_tasks": 600,
   "validation_errors": [],
   "by_domain": {
-    "calendar": 60,
-    "crm_workflow": 60,
-    "email": 60,
-    "file_doc": 60,
-    "sheet_db": 60
+    "calendar": 120,
+    "crm_workflow": 120,
+    "email": 120,
+    "file_doc": 120,
+    "sheet_db": 120
   },
   "by_split": {
-    "dev": 50,
-    "test": 250
+    "dev": 100,
+    "test": 500
   },
   "by_difficulty": {
-    "L1": 45,
-    "L2": 90,
-    "L3": 105,
-    "L4": 60
+    "L1": 90,
+    "L2": 180,
+    "L3": 210,
+    "L4": 120
   },
   "num_high_similarity_pairs": 0,
   "num_structural_signature_groups": 20,
   "num_donespec_signature_groups": 5,
   "num_pattern_dev_test_leaks": 15,
-  "num_scenario_dev_test_leaks": 1
+  "num_scenario_dev_test_leaks": 7,
+  "mean_tool_specs_per_task": 5.75,
+  "semi_real_surface_tasks": 600
 }

@@ -1,12 +1,13 @@
 from typer.testing import CliRunner
 
 from donebench.cli import app
+from donebench.scripts.generate_seed_tasks import DOMAINS, TASKS_PER_DOMAIN
 
 
 def test_cli_validate_smoke():
     result = CliRunner().invoke(app, ["validate", "data/tasks"])
     assert result.exit_code == 0
-    assert "Validated 300 tasks" in result.output
+    assert f"Validated {len(DOMAINS) * TASKS_PER_DOMAIN} tasks" in result.output
 
 
 def test_cli_ai_audit_smoke(tmp_path):

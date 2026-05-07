@@ -1,9 +1,9 @@
 {
   "task_id": "file_doc_052",
   "domain": "file_doc",
-  "difficulty": "L4",
+  "difficulty": "L2",
   "task_pattern": "file_revise_document",
-  "user_goal": "Revise the Ridge budget pass Revised document checkpoint, preserve metadata and the original file, export the approved PDF, and restrict sharing to dana@example.com and sam@example.com.",
+  "user_goal": "For the pdf package deliverable, revise the Ridge budget pass Revised document checkpoint, preserve metadata and the original file, export the approved PDF, and restrict sharing to dana@example.com and sam@example.com. Keep the evidence trail auditable.",
   "visible_context": {
     "user_profile": {
       "timezone": "Europe/Berlin",
@@ -14,9 +14,9 @@
     ],
     "task_context": "controlled revision / ridge_budget / finance partners",
     "difficulty_profile": {
-      "tools_required": 5,
-      "distractor_count": 3,
-      "description": "multi-step completion with stricter side-effect guard"
+      "tools_required": 3,
+      "distractor_count": 1,
+      "description": "single target plus one distractor"
     },
     "scenario": {
       "scenario_id": "ridge_budget",
@@ -25,6 +25,111 @@
       "window": "the budget review block",
       "asset": "budget variance sheet",
       "folder": "budget review folder"
+    },
+    "risk_tier": "executive_review",
+    "approval_channel": "policy_queue",
+    "output_format": "pdf_package",
+    "semi_real_surface": {
+      "state_schema": {
+        "objects": {
+          "file": "array<object>"
+        },
+        "conflicts": "array<object>",
+        "permissions": "object<boolean>",
+        "satisfied_policies": "array<string>",
+        "sent": "array<object>",
+        "modified_objects": "array<string>",
+        "distractors": "array<object>",
+        "audit_log": "array<object>"
+      },
+      "tool_specs": [
+        {
+          "name": "file.inspect_state",
+          "kind": "read",
+          "args_schema": {
+            "id": "string"
+          },
+          "returns_schema": {
+            "found": "boolean",
+            "record": "object|null"
+          },
+          "preconditions": [],
+          "side_effects": []
+        },
+        {
+          "name": "file.check_constraints",
+          "kind": "read",
+          "args_schema": {
+            "participants": "array<string>",
+            "risk_tier": "string"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "blocking_conflicts": "array<object>",
+            "policy_refs": "array<string>"
+          },
+          "preconditions": [
+            "file.inspect_state"
+          ],
+          "side_effects": []
+        },
+        {
+          "name": "confirm",
+          "kind": "approval",
+          "args_schema": {
+            "summary": "string",
+            "approval_channel": "string"
+          },
+          "returns_schema": {
+            "confirmed": "boolean",
+            "approver": "string"
+          },
+          "preconditions": [
+            "file.inspect_state",
+            "file.check_constraints"
+          ],
+          "side_effects": [
+            "records_user_confirmation"
+          ]
+        },
+        {
+          "name": "file.apply_update",
+          "kind": "write",
+          "args_schema": {
+            "id": "string",
+            "patch": "object"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "version": "integer"
+          },
+          "preconditions": [
+            "confirm"
+          ],
+          "side_effects": [
+            "mutates_target_record"
+          ]
+        },
+        {
+          "name": "file.share",
+          "kind": "write",
+          "args_schema": {
+            "to": "array<string>",
+            "object_id": "string"
+          },
+          "returns_schema": {
+            "sent": "boolean",
+            "delivery_id": "string"
+          },
+          "preconditions": [
+            "confirm",
+            "file.apply_update"
+          ],
+          "side_effects": [
+            "external_notification"
+          ]
+        }
+      ]
     }
   },
   "tool_environment": {
@@ -38,7 +143,108 @@
     "permissions": [
       "read",
       "mutate_after_confirmation"
-    ]
+    ],
+    "tool_specs": [
+      {
+        "name": "file.inspect_state",
+        "kind": "read",
+        "args_schema": {
+          "id": "string"
+        },
+        "returns_schema": {
+          "found": "boolean",
+          "record": "object|null"
+        },
+        "preconditions": [],
+        "side_effects": []
+      },
+      {
+        "name": "file.check_constraints",
+        "kind": "read",
+        "args_schema": {
+          "participants": "array<string>",
+          "risk_tier": "string"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "blocking_conflicts": "array<object>",
+          "policy_refs": "array<string>"
+        },
+        "preconditions": [
+          "file.inspect_state"
+        ],
+        "side_effects": []
+      },
+      {
+        "name": "confirm",
+        "kind": "approval",
+        "args_schema": {
+          "summary": "string",
+          "approval_channel": "string"
+        },
+        "returns_schema": {
+          "confirmed": "boolean",
+          "approver": "string"
+        },
+        "preconditions": [
+          "file.inspect_state",
+          "file.check_constraints"
+        ],
+        "side_effects": [
+          "records_user_confirmation"
+        ]
+      },
+      {
+        "name": "file.apply_update",
+        "kind": "write",
+        "args_schema": {
+          "id": "string",
+          "patch": "object"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "version": "integer"
+        },
+        "preconditions": [
+          "confirm"
+        ],
+        "side_effects": [
+          "mutates_target_record"
+        ]
+      },
+      {
+        "name": "file.share",
+        "kind": "write",
+        "args_schema": {
+          "to": "array<string>",
+          "object_id": "string"
+        },
+        "returns_schema": {
+          "sent": "boolean",
+          "delivery_id": "string"
+        },
+        "preconditions": [
+          "confirm",
+          "file.apply_update"
+        ],
+        "side_effects": [
+          "external_notification"
+        ]
+      }
+    ],
+    "state_schema": {
+      "objects": {
+        "file": "array<object>"
+      },
+      "conflicts": "array<object>",
+      "permissions": "object<boolean>",
+      "satisfied_policies": "array<string>",
+      "sent": "array<object>",
+      "modified_objects": "array<string>",
+      "distractors": "array<object>",
+      "audit_log": "array<object>"
+    },
+    "surface": "semi_real_workflow_v1"
   },
   "initial_state": {
     "objects": {
@@ -52,17 +258,10 @@
     "satisfied_policies": [],
     "sent": [],
     "modified_objects": [],
+    "audit_log": [],
     "distractors": [
       {
         "id": "fil_052_distractor_1",
-        "domain": "file_doc"
-      },
-      {
-        "id": "fil_052_distractor_2",
-        "domain": "file_doc"
-      },
-      {
-        "id": "fil_052_distractor_3",
         "domain": "file_doc"
       }
     ]
@@ -81,12 +280,11 @@
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
       "The reviewed artifact is exported or made available in its final form.",
-      "The final record remains assigned to the approved owner."
+      "The outbound or sharing action is permitted in the tool environment."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
-      "Changing an unrelated record is an unacceptable side effect.",
-      "Formula, metadata, or source integrity must not be damaged."
+      "Changing an unrelated record is an unacceptable side effect."
     ],
     "required_observations": [
       "The agent must inspect the current target state before mutating it.",
@@ -258,80 +456,61 @@
       ]
     },
     {
-      "id": "file_doc_052_failure_003",
-      "kind": "failure",
-      "text": "Formula, metadata, or source integrity must not be damaged.",
-      "modality": "integrity",
-      "polarity": "negative",
+      "id": "file_doc_052_success_008",
+      "kind": "success",
+      "text": "The outbound or sharing action is permitted in the tool environment.",
+      "modality": "permission",
+      "polarity": "positive",
       "criticality": "hard",
-      "observable": "file.no_formula_damage",
+      "observable": "permissions.file.share",
       "operator": "equals",
       "value": true,
       "evidence_source": "file.check_constraints",
       "requires_tool": [
         "file.check_constraints"
       ]
-    },
-    {
-      "id": "file_doc_052_success_007",
-      "kind": "success",
-      "text": "The final record remains assigned to the approved owner.",
-      "modality": "ownership",
-      "polarity": "positive",
-      "criticality": "hard",
-      "observable": "file.owner",
-      "operator": "equals",
-      "value": "case-owner@example.com",
-      "evidence_source": "file.inspect_state",
-      "requires_tool": [
-        "file.inspect_state"
-      ]
     }
   ],
   "gold_donespec": {
     "all": [
       {
-        "all": [
-          {
-            "exists": {
-              "object": "file",
-              "where": {
-                "id": "fil_052"
-              }
-            }
-          },
-          {
-            "exists": {
-              "object": "file",
-              "where": {
-                "participants": {
-                  "contains": [
-                    "dana@example.com",
-                    "sam@example.com"
-                  ]
-                }
-              }
-            }
-          },
-          {
-            "within": {
-              "field": "objects.file.0.status",
-              "range": {
-                "values": [
-                  "shared"
-                ]
-              }
-            }
-          },
-          {
-            "no_conflict": {
-              "participants": [
+        "exists": {
+          "object": "file",
+          "where": {
+            "id": "fil_052"
+          }
+        }
+      },
+      {
+        "exists": {
+          "object": "file",
+          "where": {
+            "participants": {
+              "contains": [
                 "dana@example.com",
                 "sam@example.com"
               ]
             }
           }
-        ]
+        }
+      },
+      {
+        "within": {
+          "field": "objects.file.0.status",
+          "range": {
+            "values": [
+              "shared"
+            ]
+          }
+        }
+      },
+      {
+        "no_conflict": {
+          "participants": [
+            "dana@example.com",
+            "sam@example.com"
+          ]
+        }
       },
       {
         "all": [
@@ -342,46 +521,35 @@
             }
           },
           {
-            "equals": {
-              "field": "objects.file.0.no_formula_damage",
-              "value": true
-            }
-          },
-          {
-            "equals": {
-              "field": "objects.file.0.owner",
-              "value": "case-owner@example.com"
+            "permission_ok": {
+              "action": "file.share"
             }
           }
         ]
       },
       {
-        "all": [
-          {
-            "confirmed_by_user": {
-              "before_action": "file.share"
-            }
-          },
-          {
-            "policy_satisfied": {
-              "policy_id": "file_sharing_policy"
-            }
-          },
-          {
-            "sent": {
-              "message_type": "notification",
-              "to": [
-                "dana@example.com",
-                "sam@example.com"
-              ]
-            }
-          },
-          {
-            "not_modified": {
-              "object": "unrelated_record"
-            }
-          }
-        ]
+        "confirmed_by_user": {
+          "before_action": "file.share"
+        }
+      },
+      {
+        "policy_satisfied": {
+          "policy_id": "file_sharing_policy"
+        }
+      },
+      {
+        "sent": {
+          "message_type": "notification",
+          "to": [
+            "dana@example.com",
+            "sam@example.com"
+          ]
+        }
+      },
+      {
+        "not_modified": {
+          "object": "unrelated_record"
+        }
       }
     ]
   },
@@ -414,7 +582,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "file_revise_document",
-              "scenario_id": "ridge_budget"
+              "scenario_id": "ridge_budget",
+              "risk_tier": "executive_review",
+              "approval_channel": "policy_queue",
+              "output_format": "pdf_package",
+              "due_window": "the budget review block"
             }
           ]
         },
@@ -437,17 +609,16 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "fil_052",
+            "risk_tier": "executive_review",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "fil_052_distractor_1",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_2",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_3",
             "domain": "file_doc"
           }
         ]
@@ -482,7 +653,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "file_revise_document",
-              "scenario_id": "ridge_budget"
+              "scenario_id": "ridge_budget",
+              "risk_tier": "executive_review",
+              "approval_channel": "policy_queue",
+              "output_format": "pdf_package",
+              "due_window": "the budget review block"
             }
           ]
         },
@@ -503,17 +678,16 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "fil_052",
+            "risk_tier": "executive_review",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "fil_052_distractor_1",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_2",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_3",
             "domain": "file_doc"
           }
         ]
@@ -548,7 +722,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "file_revise_document",
-              "scenario_id": "ridge_budget"
+              "scenario_id": "ridge_budget",
+              "risk_tier": "executive_review",
+              "approval_channel": "policy_queue",
+              "output_format": "pdf_package",
+              "due_window": "the budget review block"
             }
           ]
         },
@@ -578,17 +756,16 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "fil_052",
+            "risk_tier": "executive_review",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "fil_052_distractor_1",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_2",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_3",
             "domain": "file_doc"
           }
         ]
@@ -624,7 +801,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "file_revise_document",
-              "scenario_id": "ridge_budget"
+              "scenario_id": "ridge_budget",
+              "risk_tier": "executive_review",
+              "approval_channel": "policy_queue",
+              "output_format": "pdf_package",
+              "due_window": "the budget review block"
             }
           ]
         },
@@ -638,17 +819,16 @@
         ],
         "sent": [],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "fil_052",
+            "risk_tier": "executive_review",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "fil_052_distractor_1",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_2",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_3",
             "domain": "file_doc"
           }
         ]
@@ -683,7 +863,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "file_revise_document",
-              "scenario_id": "ridge_budget"
+              "scenario_id": "ridge_budget",
+              "risk_tier": "executive_review",
+              "approval_channel": "policy_queue",
+              "output_format": "pdf_package",
+              "due_window": "the budget review block"
             }
           ]
         },
@@ -708,17 +892,16 @@
         "modified_objects": [
           "unrelated_record"
         ],
+        "audit_log": [
+          {
+            "object_id": "fil_052",
+            "risk_tier": "executive_review",
+            "approval_channel": "policy_queue"
+          }
+        ],
         "distractors": [
           {
             "id": "fil_052_distractor_1",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_2",
-            "domain": "file_doc"
-          },
-          {
-            "id": "fil_052_distractor_3",
             "domain": "file_doc"
           }
         ]
@@ -743,10 +926,14 @@
           "participants": [
             "dana@example.com",
             "sam@example.com"
-          ]
+          ],
+          "risk_tier": "executive_review"
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "policy_refs": [
+            "file_sharing_policy"
+          ]
         },
         "mutating": false
       },
@@ -754,20 +941,26 @@
         "action": "confirm",
         "event": "user_confirmation",
         "args": {
-          "summary": "ready to apply Ridge budget pass Revised document checkpoint"
+          "summary": "ready to apply Ridge budget pass Revised document checkpoint",
+          "approval_channel": "policy_queue"
         },
         "observation": {
-          "confirmed": true
+          "confirmed": true,
+          "approver": "user"
         },
         "mutating": false
       },
       {
         "action": "file.apply_update",
         "args": {
-          "id": "fil_052"
+          "id": "fil_052",
+          "patch": {
+            "status": "shared"
+          }
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "version": 52
         },
         "mutating": true
       },
@@ -777,10 +970,12 @@
           "to": [
             "dana@example.com",
             "sam@example.com"
-          ]
+          ],
+          "object_id": "fil_052"
         },
         "observation": {
-          "sent": true
+          "sent": true,
+          "delivery_id": "delivery_fil_052"
         },
         "mutating": true
       }
@@ -806,7 +1001,11 @@
             "no_formula_damage": true,
             "exported": true,
             "pattern_id": "file_revise_document",
-            "scenario_id": "ridge_budget"
+            "scenario_id": "ridge_budget",
+            "risk_tier": "executive_review",
+            "approval_channel": "policy_queue",
+            "output_format": "pdf_package",
+            "due_window": "the budget review block"
           }
         ]
       },
@@ -829,31 +1028,33 @@
         }
       ],
       "modified_objects": [],
+      "audit_log": [
+        {
+          "object_id": "fil_052",
+          "risk_tier": "executive_review",
+          "approval_channel": "policy_queue"
+        }
+      ],
       "distractors": [
         {
           "id": "fil_052_distractor_1",
-          "domain": "file_doc"
-        },
-        {
-          "id": "fil_052_distractor_2",
-          "domain": "file_doc"
-        },
-        {
-          "id": "fil_052_distractor_3",
           "domain": "file_doc"
         }
       ]
     }
   },
   "generation_metadata": {
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "pattern_id": "file_revise_document",
     "scenario_id": "ridge_budget",
+    "risk_tier": "executive_review",
+    "approval_channel": "policy_queue",
+    "output_format": "pdf_package",
     "difficulty_distribution": {
-      "L1": 9,
-      "L2": 18,
-      "L3": 21,
-      "L4": 12
+      "L1": 18,
+      "L2": 36,
+      "L3": 42,
+      "L4": 24
     },
     "mutation_taxonomy": [
       "conflict_injection",
@@ -865,16 +1066,16 @@
   },
   "audit": {
     "split": "test",
-    "min_required_criteria": 12,
-    "tools_required": 5,
+    "min_required_criteria": 11,
+    "tools_required": 3,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
     "mutation_count": 5,
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "task_pattern": "file_revise_document",
     "scenario_id": "ridge_budget",
-    "difficulty_profile": "multi-step completion with stricter side-effect guard",
+    "difficulty_profile": "single target plus one distractor",
     "mutation_taxonomy": [
       "conflict_injection",
       "participant_omission",

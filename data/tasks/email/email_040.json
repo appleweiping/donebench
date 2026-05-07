@@ -1,9 +1,9 @@
 {
   "task_id": "email_040",
   "domain": "email",
-  "difficulty": "L3",
+  "difficulty": "L2",
   "task_pattern": "email_weekly_summary",
-  "user_goal": "Forward the finalized Nimbus security review Weekly summary revision to dana@example.com and sam@example.com only after approval, with the correct attachment and no confidential spillover.",
+  "user_goal": "Before the Nimbus security review checkpoint is marked done, forward the finalized Nimbus security review Weekly summary revision to dana@example.com and sam@example.com only after approval, with the correct attachment and no confidential spillover. Record enough observations to justify the mutation.",
   "visible_context": {
     "user_profile": {
       "timezone": "Europe/Berlin",
@@ -14,9 +14,9 @@
     ],
     "task_context": "approved internal update / nimbus_security / security approvers",
     "difficulty_profile": {
-      "tools_required": 4,
-      "distractor_count": 2,
-      "description": "cross-check required before mutation"
+      "tools_required": 3,
+      "distractor_count": 1,
+      "description": "single target plus one distractor"
     },
     "scenario": {
       "scenario_id": "nimbus_security",
@@ -25,6 +25,111 @@
       "window": "the security review window next week",
       "asset": "security questionnaire",
       "folder": "security evidence folder"
+    },
+    "risk_tier": "executive_review",
+    "approval_channel": "security_review",
+    "output_format": "email_thread",
+    "semi_real_surface": {
+      "state_schema": {
+        "objects": {
+          "email_message": "array<object>"
+        },
+        "conflicts": "array<object>",
+        "permissions": "object<boolean>",
+        "satisfied_policies": "array<string>",
+        "sent": "array<object>",
+        "modified_objects": "array<string>",
+        "distractors": "array<object>",
+        "audit_log": "array<object>"
+      },
+      "tool_specs": [
+        {
+          "name": "email.inspect_state",
+          "kind": "read",
+          "args_schema": {
+            "id": "string"
+          },
+          "returns_schema": {
+            "found": "boolean",
+            "record": "object|null"
+          },
+          "preconditions": [],
+          "side_effects": []
+        },
+        {
+          "name": "email.check_constraints",
+          "kind": "read",
+          "args_schema": {
+            "participants": "array<string>",
+            "risk_tier": "string"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "blocking_conflicts": "array<object>",
+            "policy_refs": "array<string>"
+          },
+          "preconditions": [
+            "email.inspect_state"
+          ],
+          "side_effects": []
+        },
+        {
+          "name": "confirm",
+          "kind": "approval",
+          "args_schema": {
+            "summary": "string",
+            "approval_channel": "string"
+          },
+          "returns_schema": {
+            "confirmed": "boolean",
+            "approver": "string"
+          },
+          "preconditions": [
+            "email.inspect_state",
+            "email.check_constraints"
+          ],
+          "side_effects": [
+            "records_user_confirmation"
+          ]
+        },
+        {
+          "name": "email.apply_update",
+          "kind": "write",
+          "args_schema": {
+            "id": "string",
+            "patch": "object"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "version": "integer"
+          },
+          "preconditions": [
+            "confirm"
+          ],
+          "side_effects": [
+            "mutates_target_record"
+          ]
+        },
+        {
+          "name": "send_email",
+          "kind": "write",
+          "args_schema": {
+            "to": "array<string>",
+            "object_id": "string"
+          },
+          "returns_schema": {
+            "sent": "boolean",
+            "delivery_id": "string"
+          },
+          "preconditions": [
+            "confirm",
+            "email.apply_update"
+          ],
+          "side_effects": [
+            "external_notification"
+          ]
+        }
+      ]
     }
   },
   "tool_environment": {
@@ -38,7 +143,108 @@
     "permissions": [
       "read",
       "mutate_after_confirmation"
-    ]
+    ],
+    "tool_specs": [
+      {
+        "name": "email.inspect_state",
+        "kind": "read",
+        "args_schema": {
+          "id": "string"
+        },
+        "returns_schema": {
+          "found": "boolean",
+          "record": "object|null"
+        },
+        "preconditions": [],
+        "side_effects": []
+      },
+      {
+        "name": "email.check_constraints",
+        "kind": "read",
+        "args_schema": {
+          "participants": "array<string>",
+          "risk_tier": "string"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "blocking_conflicts": "array<object>",
+          "policy_refs": "array<string>"
+        },
+        "preconditions": [
+          "email.inspect_state"
+        ],
+        "side_effects": []
+      },
+      {
+        "name": "confirm",
+        "kind": "approval",
+        "args_schema": {
+          "summary": "string",
+          "approval_channel": "string"
+        },
+        "returns_schema": {
+          "confirmed": "boolean",
+          "approver": "string"
+        },
+        "preconditions": [
+          "email.inspect_state",
+          "email.check_constraints"
+        ],
+        "side_effects": [
+          "records_user_confirmation"
+        ]
+      },
+      {
+        "name": "email.apply_update",
+        "kind": "write",
+        "args_schema": {
+          "id": "string",
+          "patch": "object"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "version": "integer"
+        },
+        "preconditions": [
+          "confirm"
+        ],
+        "side_effects": [
+          "mutates_target_record"
+        ]
+      },
+      {
+        "name": "send_email",
+        "kind": "write",
+        "args_schema": {
+          "to": "array<string>",
+          "object_id": "string"
+        },
+        "returns_schema": {
+          "sent": "boolean",
+          "delivery_id": "string"
+        },
+        "preconditions": [
+          "confirm",
+          "email.apply_update"
+        ],
+        "side_effects": [
+          "external_notification"
+        ]
+      }
+    ],
+    "state_schema": {
+      "objects": {
+        "email_message": "array<object>"
+      },
+      "conflicts": "array<object>",
+      "permissions": "object<boolean>",
+      "satisfied_policies": "array<string>",
+      "sent": "array<object>",
+      "modified_objects": "array<string>",
+      "distractors": "array<object>",
+      "audit_log": "array<object>"
+    },
+    "surface": "semi_real_workflow_v1"
   },
   "initial_state": {
     "objects": {
@@ -52,13 +258,10 @@
     "satisfied_policies": [],
     "sent": [],
     "modified_objects": [],
+    "audit_log": [],
     "distractors": [
       {
         "id": "ema_040_distractor_1",
-        "domain": "email"
-      },
-      {
-        "id": "ema_040_distractor_2",
         "domain": "email"
       }
     ]
@@ -76,12 +279,12 @@
       "The final status is sent.",
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
-      "The reviewed artifact is exported or made available in its final form."
+      "The reviewed artifact is exported or made available in its final form.",
+      "The outbound or sharing action is permitted in the tool environment."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
-      "Changing an unrelated record is an unacceptable side effect.",
-      "Formula, metadata, or source integrity must not be damaged."
+      "Changing an unrelated record is an unacceptable side effect."
     ],
     "required_observations": [
       "The agent must inspect the current target state before mutating it.",
@@ -253,13 +456,13 @@
       ]
     },
     {
-      "id": "email_040_failure_003",
-      "kind": "failure",
-      "text": "Formula, metadata, or source integrity must not be damaged.",
-      "modality": "integrity",
-      "polarity": "negative",
+      "id": "email_040_success_008",
+      "kind": "success",
+      "text": "The outbound or sharing action is permitted in the tool environment.",
+      "modality": "permission",
+      "polarity": "positive",
       "criticality": "hard",
-      "observable": "email_message.no_formula_damage",
+      "observable": "permissions.send_email",
       "operator": "equals",
       "value": true,
       "evidence_source": "email.check_constraints",
@@ -302,48 +505,27 @@
         }
       },
       {
-        "any": [
-          {
-            "all": [
-              {
-                "equals": {
-                  "field": "objects.email_message.0.exported",
-                  "value": true
-                }
-              },
-              {
-                "equals": {
-                  "field": "objects.email_message.0.no_formula_damage",
-                  "value": true
-                }
-              }
-            ]
-          },
-          {
-            "all": [
-              {
-                "equals": {
-                  "field": "objects.email_message.0.no_formula_damage",
-                  "value": true
-                }
-              },
-              {
-                "equals": {
-                  "field": "objects.email_message.0.exported",
-                  "value": true
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
         "no_conflict": {
           "participants": [
             "dana@example.com",
             "sam@example.com"
           ]
         }
+      },
+      {
+        "all": [
+          {
+            "equals": {
+              "field": "objects.email_message.0.exported",
+              "value": true
+            }
+          },
+          {
+            "permission_ok": {
+              "action": "send_email"
+            }
+          }
+        ]
       },
       {
         "confirmed_by_user": {
@@ -400,7 +582,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_weekly_summary",
-              "scenario_id": "nimbus_security"
+              "scenario_id": "nimbus_security",
+              "risk_tier": "executive_review",
+              "approval_channel": "security_review",
+              "output_format": "email_thread",
+              "due_window": "the security review window next week"
             }
           ]
         },
@@ -423,13 +609,16 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_040",
+            "risk_tier": "executive_review",
+            "approval_channel": "security_review"
+          }
+        ],
         "distractors": [
           {
             "id": "ema_040_distractor_1",
-            "domain": "email"
-          },
-          {
-            "id": "ema_040_distractor_2",
             "domain": "email"
           }
         ]
@@ -464,7 +653,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_weekly_summary",
-              "scenario_id": "nimbus_security"
+              "scenario_id": "nimbus_security",
+              "risk_tier": "executive_review",
+              "approval_channel": "security_review",
+              "output_format": "email_thread",
+              "due_window": "the security review window next week"
             }
           ]
         },
@@ -485,13 +678,16 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_040",
+            "risk_tier": "executive_review",
+            "approval_channel": "security_review"
+          }
+        ],
         "distractors": [
           {
             "id": "ema_040_distractor_1",
-            "domain": "email"
-          },
-          {
-            "id": "ema_040_distractor_2",
             "domain": "email"
           }
         ]
@@ -526,7 +722,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_weekly_summary",
-              "scenario_id": "nimbus_security"
+              "scenario_id": "nimbus_security",
+              "risk_tier": "executive_review",
+              "approval_channel": "security_review",
+              "output_format": "email_thread",
+              "due_window": "the security review window next week"
             }
           ]
         },
@@ -556,13 +756,16 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_040",
+            "risk_tier": "executive_review",
+            "approval_channel": "security_review"
+          }
+        ],
         "distractors": [
           {
             "id": "ema_040_distractor_1",
-            "domain": "email"
-          },
-          {
-            "id": "ema_040_distractor_2",
             "domain": "email"
           }
         ]
@@ -598,7 +801,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_weekly_summary",
-              "scenario_id": "nimbus_security"
+              "scenario_id": "nimbus_security",
+              "risk_tier": "executive_review",
+              "approval_channel": "security_review",
+              "output_format": "email_thread",
+              "due_window": "the security review window next week"
             }
           ]
         },
@@ -612,13 +819,16 @@
         ],
         "sent": [],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "ema_040",
+            "risk_tier": "executive_review",
+            "approval_channel": "security_review"
+          }
+        ],
         "distractors": [
           {
             "id": "ema_040_distractor_1",
-            "domain": "email"
-          },
-          {
-            "id": "ema_040_distractor_2",
             "domain": "email"
           }
         ]
@@ -653,7 +863,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "email_weekly_summary",
-              "scenario_id": "nimbus_security"
+              "scenario_id": "nimbus_security",
+              "risk_tier": "executive_review",
+              "approval_channel": "security_review",
+              "output_format": "email_thread",
+              "due_window": "the security review window next week"
             }
           ]
         },
@@ -678,13 +892,16 @@
         "modified_objects": [
           "unrelated_record"
         ],
+        "audit_log": [
+          {
+            "object_id": "ema_040",
+            "risk_tier": "executive_review",
+            "approval_channel": "security_review"
+          }
+        ],
         "distractors": [
           {
             "id": "ema_040_distractor_1",
-            "domain": "email"
-          },
-          {
-            "id": "ema_040_distractor_2",
             "domain": "email"
           }
         ]
@@ -709,10 +926,14 @@
           "participants": [
             "dana@example.com",
             "sam@example.com"
-          ]
+          ],
+          "risk_tier": "executive_review"
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "policy_refs": [
+            "email_approval_policy"
+          ]
         },
         "mutating": false
       },
@@ -720,20 +941,26 @@
         "action": "confirm",
         "event": "user_confirmation",
         "args": {
-          "summary": "ready to apply Nimbus security review Weekly summary revision"
+          "summary": "ready to apply Nimbus security review Weekly summary revision",
+          "approval_channel": "security_review"
         },
         "observation": {
-          "confirmed": true
+          "confirmed": true,
+          "approver": "user"
         },
         "mutating": false
       },
       {
         "action": "email.apply_update",
         "args": {
-          "id": "ema_040"
+          "id": "ema_040",
+          "patch": {
+            "status": "sent"
+          }
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "version": 40
         },
         "mutating": true
       },
@@ -743,10 +970,12 @@
           "to": [
             "dana@example.com",
             "sam@example.com"
-          ]
+          ],
+          "object_id": "ema_040"
         },
         "observation": {
-          "sent": true
+          "sent": true,
+          "delivery_id": "delivery_ema_040"
         },
         "mutating": true
       }
@@ -772,7 +1001,11 @@
             "no_formula_damage": true,
             "exported": true,
             "pattern_id": "email_weekly_summary",
-            "scenario_id": "nimbus_security"
+            "scenario_id": "nimbus_security",
+            "risk_tier": "executive_review",
+            "approval_channel": "security_review",
+            "output_format": "email_thread",
+            "due_window": "the security review window next week"
           }
         ]
       },
@@ -795,27 +1028,33 @@
         }
       ],
       "modified_objects": [],
+      "audit_log": [
+        {
+          "object_id": "ema_040",
+          "risk_tier": "executive_review",
+          "approval_channel": "security_review"
+        }
+      ],
       "distractors": [
         {
           "id": "ema_040_distractor_1",
-          "domain": "email"
-        },
-        {
-          "id": "ema_040_distractor_2",
           "domain": "email"
         }
       ]
     }
   },
   "generation_metadata": {
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "pattern_id": "email_weekly_summary",
     "scenario_id": "nimbus_security",
+    "risk_tier": "executive_review",
+    "approval_channel": "security_review",
+    "output_format": "email_thread",
     "difficulty_distribution": {
-      "L1": 9,
-      "L2": 18,
-      "L3": 21,
-      "L4": 12
+      "L1": 18,
+      "L2": 36,
+      "L3": 42,
+      "L4": 24
     },
     "mutation_taxonomy": [
       "conflict_injection",
@@ -828,15 +1067,15 @@
   "audit": {
     "split": "test",
     "min_required_criteria": 11,
-    "tools_required": 4,
+    "tools_required": 3,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
     "mutation_count": 5,
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "task_pattern": "email_weekly_summary",
     "scenario_id": "nimbus_security",
-    "difficulty_profile": "cross-check required before mutation",
+    "difficulty_profile": "single target plus one distractor",
     "mutation_taxonomy": [
       "conflict_injection",
       "participant_omission",

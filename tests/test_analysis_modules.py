@@ -8,17 +8,33 @@ from donebench.scripts.invalid_donespec_taxonomy import classify_invalid_donespe
 from donebench.scripts.invalid_donespec_taxonomy import failure_detection_by_family
 from donebench.scripts.invalid_donespec_taxonomy import load_task_metadata
 from donebench.scripts.quality_audit import quality_audit
+from donebench.scripts.generate_seed_tasks import DOMAINS, TASKS_PER_DOMAIN
+from donebench.scripts.readiness_report import write_readiness_report
 
 
 def test_quality_audit_outputs(tmp_path):
     summary = quality_audit(Path("data/tasks"), tmp_path)
-    assert summary["num_tasks"] == 300
+    assert summary["num_tasks"] == len(DOMAINS) * TASKS_PER_DOMAIN
     assert not summary["validation_errors"]
     assert "num_structural_signature_groups" in summary
+    assert summary["semi_real_surface_tasks"] == len(DOMAINS) * TASKS_PER_DOMAIN
     assert (tmp_path / "task_quality_audit.csv").exists()
     assert (tmp_path / "task_structural_signatures.csv").exists()
     assert (tmp_path / "task_family_leakage.csv").exists()
     assert (tmp_path / "task_construction_datasheet.md").exists()
+
+
+def test_readiness_report_outputs(tmp_path):
+    quality_audit(Path("data/tasks"), tmp_path / "quality")
+    report = write_readiness_report(
+        Path("data/tasks"),
+        tmp_path / "quality" / "task_quality_summary.json",
+        tmp_path / "readiness.json",
+    )
+    assert report["num_tasks"] == len(DOMAINS) * TASKS_PER_DOMAIN
+    assert report["readiness_scores"]["engineering_framework"] >= 8.0
+    assert report["readiness_scores"]["data_scale_diversity"] >= 8.0
+    assert report["readiness_scores"]["environment_realism"] >= 8.0
 
 
 def test_advanced_stats_and_failure_mining(tmp_path):

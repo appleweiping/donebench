@@ -2,13 +2,22 @@ IMAGE ?= donebench-repro
 RESULTS ?= results/smoke.jsonl
 COST_INPUT ?= results/topconf_deepseek_core_trial0.jsonl
 
-.PHONY: test validate smoke figures paper repro-smoke repro-package repro-manifest openreview-package cost-report docker-build docker-smoke
+.PHONY: test validate audit quality readiness smoke figures paper repro-smoke repro-package repro-manifest openreview-package cost-report docker-build docker-smoke
 
 test:
 	pytest
 
 validate:
 	donebench validate data/tasks
+
+audit:
+	donebench audit-tasks data/tasks
+
+quality:
+	donebench quality-audit data/tasks reports/quality
+
+readiness:
+	donebench readiness-report data/tasks reports/readiness_report.json
 
 smoke:
 	donebench validate data/tasks
@@ -23,7 +32,7 @@ full-api:
 
 repro-smoke: smoke repro-manifest openreview-package
 
-repro-package: validate repro-manifest openreview-package
+repro-package: validate audit quality readiness repro-manifest openreview-package
 
 repro-manifest:
 	donebench repro-manifest reports/repro_manifest.json --results $(RESULTS)

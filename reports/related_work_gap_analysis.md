@@ -6,7 +6,7 @@ Date: 2026-05-07
 
 DoneBench has a defensible gap if the paper is framed as a benchmark for **completion semantics as an agent output**. The closest prior work evaluates whether agents finish tasks, follow policies, generate application-evaluation criteria, generate software specifications/tests, or verify pre-existing plans. None of the surveyed artifacts make the agent infer, formalize, stress-test, and then obey its own task-completion criteria across stateful workflow environments.
 
-The weak point is not the conceptual gap. The weak point is artifact maturity: the current dataset is 300 synthetic/generated tasks across 5 domains, with 15 task patterns, 20 scenarios, and 1,500 near-miss states. Top-conference claims need stronger human audit, more heterogeneous task authoring, and clearer evidence that tasks are not template clones.
+The weak point is not the conceptual gap. The weak point is artifact maturity: the current dataset is 600 synthetic/generated tasks across 5 domains, with 15 task patterns, 26 scenarios, 3,000 near-miss states, and typed semi-real workflow tool surfaces. Top-conference claims still need completed human audit and live-model results, but the scale and engineering surface are now closer to modern benchmark artifacts.
 
 ## Benchmark Artifact Map
 
@@ -28,9 +28,9 @@ The weak point is not the conceptual gap. The weak point is artifact maturity: t
 
 1. **Human audit with inter-annotator evidence.** Current audit hooks and AI audit summaries help, but Reviewer 2 can still say the gold atoms are generator artifacts. Need a paper subset with human-written or human-adjudicated criteria, agreement, and correction rate.
 
-2. **Non-templated task provenance.** The topconf-2 dataset is balanced and scalable, but its 15 patterns x 20 scenarios structure is easy to attack as templated. Add or reserve a hand-authored "hard heterogeneity" subset with varied tool schemas, irregular policies, and less regular near-miss construction.
+2. **Non-templated task provenance.** The topconf-4 dataset is balanced and scalable, and the quality audit currently reports zero high-similarity goal pairs. It remains generated, so a hand-authored "hard heterogeneity" subset would still strengthen the final paper.
 
-3. **Real or semi-real workflow surfaces.** WorkArena and OSWorld will make reviewers ask why DoneBench uses simplified state dictionaries instead of browser/desktop environments. The answer can be "orthogonal axis," but a small adapter into a realistic SaaS/mock UI would make that answer stronger.
+3. **Real or semi-real workflow surfaces.** topconf-4 now includes semi-real typed tool specs, preconditions, side-effect metadata, state schemas, and trace precondition checks for every task. WorkArena and OSWorld remain stronger on GUI/SaaS realism, so DoneBench should still claim controlled semantic realism rather than UI realism.
 
 4. **Token-matched and information-matched ablations.** Spec-first can be dismissed as longer prompting unless Direct, Plan-first, Spec-first, repair, and Oracle-spec are controlled for token budget and exposed information.
 
@@ -58,7 +58,7 @@ The weak point is not the conceptual gap. The weak point is artifact maturity: t
 
 ## Places That Can Sound Toy or Stitched Together
 
-1. **"300 tasks" can sound large-but-template-generated.** Always pair the number with the structure: 5 domains, 15 patterns, 20 scenarios, 4 difficulty levels, 1,500 near-miss states, reference traces, policies, side-effect constraints, and deterministic graders. Then admit the audit/heterogeneity limitation.
+1. **"600 tasks" can still sound generated.** Always pair the number with the structure: 5 domains, 15 patterns, 26 scenarios, 4 difficulty levels, 3,000 near-miss states, typed tool specs, state schemas, preconditions, side-effect metadata, reference traces, policies, and deterministic graders. Then admit the audit/heterogeneity limitation.
 
 2. **State dictionaries can sound less realistic than WebArena/OSWorld.** Do not fight realism benchmarks on their axis. Say DoneBench trades UI fidelity for controlled completion-semantics measurement and can be layered onto richer environments later.
 

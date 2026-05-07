@@ -113,6 +113,8 @@ def quality_audit(root: Path, output_dir: Path) -> dict[str, Any]:
                 "num_failure_atoms": len([a for a in task.criterion_atoms if a.kind == "failure"]),
                 "num_required_observations": len([a for a in task.criterion_atoms if a.kind == "required_observation"]),
                 "num_near_misses": len(task.near_miss_states),
+                "num_tool_specs": len(task.tool_environment.get("tool_specs", [])),
+                "semi_real_surface": task.tool_environment.get("surface", ""),
                 "mutation_taxa": "|".join(sorted(set(mutation_taxa))),
             }
         )
@@ -140,6 +142,8 @@ def quality_audit(root: Path, output_dir: Path) -> dict[str, Any]:
         "num_donespec_signature_groups": int(structure["donespec_signature"].nunique()),
         "num_pattern_dev_test_leaks": int(leakage[(leakage["field"] == "task_pattern") & (leakage["leaks_across_dev_test"])].shape[0]),
         "num_scenario_dev_test_leaks": int(leakage[(leakage["field"] == "scenario_id") & (leakage["leaks_across_dev_test"])].shape[0]),
+        "mean_tool_specs_per_task": float(df["num_tool_specs"].mean()),
+        "semi_real_surface_tasks": int((df["semi_real_surface"] == "semi_real_workflow_v1").sum()),
     }
     df.to_csv(output_dir / "task_quality_audit.csv", index=False)
     duplicates.to_csv(output_dir / "task_near_duplicates.csv", index=False)
@@ -174,6 +178,8 @@ def write_datasheet(summary: dict[str, Any], path: Path) -> None:
         f"- DoneSpec structural signature groups: {summary['num_donespec_signature_groups']}",
         f"- Task-pattern dev/test overlaps: {summary['num_pattern_dev_test_leaks']}",
         f"- Scenario dev/test overlaps: {summary['num_scenario_dev_test_leaks']}",
+        f"- Mean typed tool specs per task: {summary['mean_tool_specs_per_task']:.2f}",
+        f"- Semi-real workflow surface tasks: {summary['semi_real_surface_tasks']}",
         "",
         "## Known Risks",
         "",

@@ -3,7 +3,7 @@
   "domain": "calendar",
   "difficulty": "L2",
   "task_pattern": "calendar_focus_block",
-  "user_goal": "Schedule a 25-minute Granite compliance check Approved focus block handoff with noah@example.com and ava@example.com during next Tuesday morning; verify availability, avoid conflicts, and send invites only after confirmation.",
+  "user_goal": "After checking the active workspace state, schedule a 25-minute Granite compliance check Approved focus block handoff with noah@example.com and ava@example.com during next Tuesday morning; verify availability, avoid conflicts, and send invites only after confirmation. Stop short of sending if the policy gate is not satisfied.",
   "visible_context": {
     "user_profile": {
       "timezone": "Europe/Berlin",
@@ -25,6 +25,111 @@
       "window": "next Tuesday morning",
       "asset": "control evidence list",
       "folder": "compliance review folder"
+    },
+    "risk_tier": "standard",
+    "approval_channel": "manager_approval",
+    "output_format": "calendar_invite",
+    "semi_real_surface": {
+      "state_schema": {
+        "objects": {
+          "calendar_event": "array<object>"
+        },
+        "conflicts": "array<object>",
+        "permissions": "object<boolean>",
+        "satisfied_policies": "array<string>",
+        "sent": "array<object>",
+        "modified_objects": "array<string>",
+        "distractors": "array<object>",
+        "audit_log": "array<object>"
+      },
+      "tool_specs": [
+        {
+          "name": "calendar.inspect_state",
+          "kind": "read",
+          "args_schema": {
+            "id": "string"
+          },
+          "returns_schema": {
+            "found": "boolean",
+            "record": "object|null"
+          },
+          "preconditions": [],
+          "side_effects": []
+        },
+        {
+          "name": "calendar.check_constraints",
+          "kind": "read",
+          "args_schema": {
+            "participants": "array<string>",
+            "risk_tier": "string"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "blocking_conflicts": "array<object>",
+            "policy_refs": "array<string>"
+          },
+          "preconditions": [
+            "calendar.inspect_state"
+          ],
+          "side_effects": []
+        },
+        {
+          "name": "confirm",
+          "kind": "approval",
+          "args_schema": {
+            "summary": "string",
+            "approval_channel": "string"
+          },
+          "returns_schema": {
+            "confirmed": "boolean",
+            "approver": "string"
+          },
+          "preconditions": [
+            "calendar.inspect_state",
+            "calendar.check_constraints"
+          ],
+          "side_effects": [
+            "records_user_confirmation"
+          ]
+        },
+        {
+          "name": "calendar.apply_update",
+          "kind": "write",
+          "args_schema": {
+            "id": "string",
+            "patch": "object"
+          },
+          "returns_schema": {
+            "ok": "boolean",
+            "version": "integer"
+          },
+          "preconditions": [
+            "confirm"
+          ],
+          "side_effects": [
+            "mutates_target_record"
+          ]
+        },
+        {
+          "name": "send_invites",
+          "kind": "write",
+          "args_schema": {
+            "to": "array<string>",
+            "object_id": "string"
+          },
+          "returns_schema": {
+            "sent": "boolean",
+            "delivery_id": "string"
+          },
+          "preconditions": [
+            "confirm",
+            "calendar.apply_update"
+          ],
+          "side_effects": [
+            "external_notification"
+          ]
+        }
+      ]
     }
   },
   "tool_environment": {
@@ -38,7 +143,108 @@
     "permissions": [
       "read",
       "mutate_after_confirmation"
-    ]
+    ],
+    "tool_specs": [
+      {
+        "name": "calendar.inspect_state",
+        "kind": "read",
+        "args_schema": {
+          "id": "string"
+        },
+        "returns_schema": {
+          "found": "boolean",
+          "record": "object|null"
+        },
+        "preconditions": [],
+        "side_effects": []
+      },
+      {
+        "name": "calendar.check_constraints",
+        "kind": "read",
+        "args_schema": {
+          "participants": "array<string>",
+          "risk_tier": "string"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "blocking_conflicts": "array<object>",
+          "policy_refs": "array<string>"
+        },
+        "preconditions": [
+          "calendar.inspect_state"
+        ],
+        "side_effects": []
+      },
+      {
+        "name": "confirm",
+        "kind": "approval",
+        "args_schema": {
+          "summary": "string",
+          "approval_channel": "string"
+        },
+        "returns_schema": {
+          "confirmed": "boolean",
+          "approver": "string"
+        },
+        "preconditions": [
+          "calendar.inspect_state",
+          "calendar.check_constraints"
+        ],
+        "side_effects": [
+          "records_user_confirmation"
+        ]
+      },
+      {
+        "name": "calendar.apply_update",
+        "kind": "write",
+        "args_schema": {
+          "id": "string",
+          "patch": "object"
+        },
+        "returns_schema": {
+          "ok": "boolean",
+          "version": "integer"
+        },
+        "preconditions": [
+          "confirm"
+        ],
+        "side_effects": [
+          "mutates_target_record"
+        ]
+      },
+      {
+        "name": "send_invites",
+        "kind": "write",
+        "args_schema": {
+          "to": "array<string>",
+          "object_id": "string"
+        },
+        "returns_schema": {
+          "sent": "boolean",
+          "delivery_id": "string"
+        },
+        "preconditions": [
+          "confirm",
+          "calendar.apply_update"
+        ],
+        "side_effects": [
+          "external_notification"
+        ]
+      }
+    ],
+    "state_schema": {
+      "objects": {
+        "calendar_event": "array<object>"
+      },
+      "conflicts": "array<object>",
+      "permissions": "object<boolean>",
+      "satisfied_policies": "array<string>",
+      "sent": "array<object>",
+      "modified_objects": "array<string>",
+      "distractors": "array<object>",
+      "audit_log": "array<object>"
+    },
+    "surface": "semi_real_workflow_v1"
   },
   "initial_state": {
     "objects": {
@@ -52,6 +258,7 @@
     "satisfied_policies": [],
     "sent": [],
     "modified_objects": [],
+    "audit_log": [],
     "distractors": [
       {
         "id": "cal_021_distractor_1",
@@ -72,7 +279,8 @@
       "The final status is sent.",
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
-      "The reviewed artifact is exported or made available in its final form."
+      "The reviewed artifact is exported or made available in its final form.",
+      "The outbound or sharing action is permitted in the tool environment."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
@@ -246,6 +454,21 @@
       "requires_tool": [
         "calendar.inspect_state"
       ]
+    },
+    {
+      "id": "calendar_021_success_008",
+      "kind": "success",
+      "text": "The outbound or sharing action is permitted in the tool environment.",
+      "modality": "permission",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "permissions.send_invites",
+      "operator": "equals",
+      "value": true,
+      "evidence_source": "calendar.check_constraints",
+      "requires_tool": [
+        "calendar.check_constraints"
+      ]
     }
   ],
   "gold_donespec": {
@@ -295,6 +518,11 @@
             "equals": {
               "field": "objects.calendar_event.0.exported",
               "value": true
+            }
+          },
+          {
+            "permission_ok": {
+              "action": "send_invites"
             }
           }
         ]
@@ -354,7 +582,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_focus_block",
-              "scenario_id": "granite_compliance"
+              "scenario_id": "granite_compliance",
+              "risk_tier": "standard",
+              "approval_channel": "manager_approval",
+              "output_format": "calendar_invite",
+              "due_window": "next Tuesday morning"
             }
           ]
         },
@@ -377,6 +609,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_021",
+            "risk_tier": "standard",
+            "approval_channel": "manager_approval"
+          }
+        ],
         "distractors": [
           {
             "id": "cal_021_distractor_1",
@@ -414,7 +653,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_focus_block",
-              "scenario_id": "granite_compliance"
+              "scenario_id": "granite_compliance",
+              "risk_tier": "standard",
+              "approval_channel": "manager_approval",
+              "output_format": "calendar_invite",
+              "due_window": "next Tuesday morning"
             }
           ]
         },
@@ -435,6 +678,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_021",
+            "risk_tier": "standard",
+            "approval_channel": "manager_approval"
+          }
+        ],
         "distractors": [
           {
             "id": "cal_021_distractor_1",
@@ -472,7 +722,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_focus_block",
-              "scenario_id": "granite_compliance"
+              "scenario_id": "granite_compliance",
+              "risk_tier": "standard",
+              "approval_channel": "manager_approval",
+              "output_format": "calendar_invite",
+              "due_window": "next Tuesday morning"
             }
           ]
         },
@@ -502,6 +756,13 @@
           }
         ],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_021",
+            "risk_tier": "standard",
+            "approval_channel": "manager_approval"
+          }
+        ],
         "distractors": [
           {
             "id": "cal_021_distractor_1",
@@ -540,7 +801,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_focus_block",
-              "scenario_id": "granite_compliance"
+              "scenario_id": "granite_compliance",
+              "risk_tier": "standard",
+              "approval_channel": "manager_approval",
+              "output_format": "calendar_invite",
+              "due_window": "next Tuesday morning"
             }
           ]
         },
@@ -554,6 +819,13 @@
         ],
         "sent": [],
         "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_021",
+            "risk_tier": "standard",
+            "approval_channel": "manager_approval"
+          }
+        ],
         "distractors": [
           {
             "id": "cal_021_distractor_1",
@@ -591,7 +863,11 @@
               "no_formula_damage": true,
               "exported": true,
               "pattern_id": "calendar_focus_block",
-              "scenario_id": "granite_compliance"
+              "scenario_id": "granite_compliance",
+              "risk_tier": "standard",
+              "approval_channel": "manager_approval",
+              "output_format": "calendar_invite",
+              "due_window": "next Tuesday morning"
             }
           ]
         },
@@ -615,6 +891,13 @@
         ],
         "modified_objects": [
           "unrelated_record"
+        ],
+        "audit_log": [
+          {
+            "object_id": "cal_021",
+            "risk_tier": "standard",
+            "approval_channel": "manager_approval"
+          }
         ],
         "distractors": [
           {
@@ -643,10 +926,14 @@
           "participants": [
             "noah@example.com",
             "ava@example.com"
-          ]
+          ],
+          "risk_tier": "standard"
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "policy_refs": [
+            "calendar_confirmation_policy"
+          ]
         },
         "mutating": false
       },
@@ -654,20 +941,26 @@
         "action": "confirm",
         "event": "user_confirmation",
         "args": {
-          "summary": "ready to apply Granite compliance check Approved focus block handoff"
+          "summary": "ready to apply Granite compliance check Approved focus block handoff",
+          "approval_channel": "manager_approval"
         },
         "observation": {
-          "confirmed": true
+          "confirmed": true,
+          "approver": "user"
         },
         "mutating": false
       },
       {
         "action": "calendar.apply_update",
         "args": {
-          "id": "cal_021"
+          "id": "cal_021",
+          "patch": {
+            "status": "sent"
+          }
         },
         "observation": {
-          "ok": true
+          "ok": true,
+          "version": 21
         },
         "mutating": true
       },
@@ -677,10 +970,12 @@
           "to": [
             "noah@example.com",
             "ava@example.com"
-          ]
+          ],
+          "object_id": "cal_021"
         },
         "observation": {
-          "sent": true
+          "sent": true,
+          "delivery_id": "delivery_cal_021"
         },
         "mutating": true
       }
@@ -706,7 +1001,11 @@
             "no_formula_damage": true,
             "exported": true,
             "pattern_id": "calendar_focus_block",
-            "scenario_id": "granite_compliance"
+            "scenario_id": "granite_compliance",
+            "risk_tier": "standard",
+            "approval_channel": "manager_approval",
+            "output_format": "calendar_invite",
+            "due_window": "next Tuesday morning"
           }
         ]
       },
@@ -729,6 +1028,13 @@
         }
       ],
       "modified_objects": [],
+      "audit_log": [
+        {
+          "object_id": "cal_021",
+          "risk_tier": "standard",
+          "approval_channel": "manager_approval"
+        }
+      ],
       "distractors": [
         {
           "id": "cal_021_distractor_1",
@@ -738,14 +1044,17 @@
     }
   },
   "generation_metadata": {
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "pattern_id": "calendar_focus_block",
     "scenario_id": "granite_compliance",
+    "risk_tier": "standard",
+    "approval_channel": "manager_approval",
+    "output_format": "calendar_invite",
     "difficulty_distribution": {
-      "L1": 9,
-      "L2": 18,
-      "L3": 21,
-      "L4": 12
+      "L1": 18,
+      "L2": 36,
+      "L3": 42,
+      "L4": 24
     },
     "mutation_taxonomy": [
       "conflict_injection",
@@ -757,13 +1066,13 @@
   },
   "audit": {
     "split": "test",
-    "min_required_criteria": 10,
+    "min_required_criteria": 11,
     "tools_required": 3,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
     "mutation_count": 5,
-    "generator_version": "topconf-3",
+    "generator_version": "topconf-4",
     "task_pattern": "calendar_focus_block",
     "scenario_id": "granite_compliance",
     "difficulty_profile": "single target plus one distractor",

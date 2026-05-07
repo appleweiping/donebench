@@ -1,0 +1,1 @@
+Write a concise action plan before execution. Emphasize tool order and dependencies, but do not deliberately enumerate all success, failure, near-miss, or self-violation criteria unless they are necessary for the plan.

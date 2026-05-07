@@ -1,0 +1,120 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DoneBench Task",
+  "type": "object",
+  "required": [
+    "task_id",
+    "domain",
+    "difficulty",
+    "user_goal",
+    "visible_context",
+    "tool_environment",
+    "initial_state",
+    "policies",
+    "gold_completion_spec",
+    "criterion_atoms",
+    "gold_donespec",
+    "near_miss_states",
+    "reference_solution",
+    "audit"
+  ],
+  "properties": {
+    "task_id": { "type": "string" },
+    "domain": { "enum": ["calendar", "email", "sheet_db", "crm_workflow", "file_doc"] },
+    "difficulty": { "enum": ["L1", "L2", "L3", "L4"] },
+    "task_pattern": {
+      "type": "string",
+      "description": "Generator-assigned pattern id within the domain, for example calendar_schedule_sync."
+    },
+    "user_goal": { "type": "string" },
+    "visible_context": { "type": "object" },
+    "tool_environment": { "type": "object" },
+    "initial_state": { "type": "object" },
+    "policies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["policy_id", "text"],
+        "properties": {
+          "policy_id": { "type": "string" },
+          "text": { "type": "string" }
+        }
+      }
+    },
+    "gold_completion_spec": { "type": "object" },
+    "criterion_atoms": {
+      "type": "array",
+      "minItems": 5
+    },
+    "gold_donespec": { "$ref": "spec.schema.json" },
+    "near_miss_states": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "object",
+        "required": ["mutation_id", "mutation_class", "violated_criteria", "final_state"],
+        "properties": {
+          "mutation_id": { "type": "string" },
+          "mutation_class": { "type": "string" },
+          "mutation_taxon": {
+            "type": "string",
+            "description": "Stable taxonomy key used by generator and audit stats."
+          },
+          "failure_mode": { "type": "string" },
+          "violated_criteria": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "final_state": { "type": "object" }
+        }
+      }
+    },
+    "reference_solution": { "type": "object" },
+    "generation_metadata": {
+      "type": "object",
+      "properties": {
+        "generator_version": { "type": "string" },
+        "pattern_id": { "type": "string" },
+        "difficulty_distribution": {
+          "type": "object",
+          "additionalProperties": { "type": "integer", "minimum": 0 }
+        },
+        "mutation_taxonomy": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "audit": {
+      "type": "object",
+      "required": [
+        "split",
+        "min_required_criteria",
+        "tools_required",
+        "has_side_effect",
+        "has_negative_condition",
+        "has_temporal_condition",
+        "mutation_count"
+      ],
+      "properties": {
+        "split": { "enum": ["dev", "test"] },
+        "min_required_criteria": { "type": "integer", "minimum": 0 },
+        "tools_required": { "type": "integer", "minimum": 0 },
+        "has_side_effect": { "type": "boolean" },
+        "has_negative_condition": { "type": "boolean" },
+        "has_temporal_condition": { "type": "boolean" },
+        "mutation_count": { "type": "integer", "minimum": 0 },
+        "generator_version": { "type": "string" },
+        "task_pattern": { "type": "string" },
+        "difficulty_profile": { "type": "string" },
+        "mutation_taxonomy": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

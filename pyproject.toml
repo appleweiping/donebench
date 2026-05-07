@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "donebench"
+version = "0.1.0"
+description = "DoneBench: evaluating whether tool-using agents know what counts as task completion."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "DoneBench Contributors" }]
+dependencies = [
+  "pydantic>=2.7",
+  "typer>=0.12",
+  "pandas>=2.2",
+  "numpy>=1.26",
+  "scikit-learn>=1.4",
+  "jsonschema>=4.22",
+  "matplotlib>=3.8",
+  "rich>=13.7",
+  "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.2"]
+llm = ["litellm>=1.40"]
+
+[project.scripts]
+donebench = "donebench.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["donebench*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

@@ -1,0 +1,155 @@
+models:
+  mock:
+    provider: mock
+    model: mock
+    enabled: true
+  gpt_compatible:
+    provider: openai_compatible
+    model: gpt-4.1-mini
+    env: OPENAI_API_KEY
+    base_url: https://api.openai.com/v1
+    enabled: true
+    notes: "OpenAI-compatible chat completions endpoint; change base_url for Azure, Together, Fireworks, or other compatible gateways."
+  gpt_4_1_mini:
+    provider: openai_compatible
+    model: gpt-4.1-mini
+    env: OPENAI_API_KEY
+    base_url: https://api.openai.com/v1
+    enabled: true
+    notes: "Default cost-conscious GPT condition. Set OPENAI_API_KEY."
+    extra:
+      temperature: 0
+  gpt_4_1:
+    provider: openai_compatible
+    model: gpt-4.1
+    env: OPENAI_API_KEY
+    base_url: https://api.openai.com/v1
+    enabled: true
+    notes: "Stronger GPT condition. Set OPENAI_API_KEY."
+    extra:
+      temperature: 0
+  gpt_5_1:
+    provider: openai_compatible
+    model: gpt-5.1
+    env: OPENAI_API_KEY
+    base_url: https://api.openai.com/v1
+    enabled: true
+    notes: "Current GPT flagship-style condition with Chat Completions support. Set OPENAI_API_KEY."
+    extra:
+      temperature: 0
+  gpt_5_5:
+    provider: openai_compatible
+    model: gpt-5.5
+    env: OPENAI_API_KEY
+    base_url: https://api.openai.com/v1
+    enabled: true
+    notes: "Current strongest GPT condition per OpenAI model docs; disable if your account does not have access."
+    extra:
+      temperature: 0
+  deepseek_v4_flash:
+    provider: openai_compatible
+    model: deepseek-v4-flash
+    env: DEEPSEEK_API_KEY
+    base_url: https://api.deepseek.com
+    enabled: true
+    notes: "DeepSeek V4 Flash through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
+    extra:
+      temperature: 0
+      max_tokens: 1200
+  deepseek_v4_pro:
+    provider: openai_compatible
+    model: deepseek-v4-pro
+    env: DEEPSEEK_API_KEY
+    base_url: https://api.deepseek.com
+    enabled: true
+    notes: "DeepSeek V4 Pro through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
+    extra:
+      temperature: 0
+      max_tokens: 1200
+  deepseek_chat:
+    provider: openai_compatible
+    model: deepseek-chat
+    env: DEEPSEEK_API_KEY
+    base_url: https://api.deepseek.com
+    enabled: true
+    notes: "DeepSeek chat model through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
+    extra:
+      temperature: 0
+      max_tokens: 1200
+  deepseek_reasoner:
+    provider: openai_compatible
+    model: deepseek-reasoner
+    env: DEEPSEEK_API_KEY
+    base_url: https://api.deepseek.com
+    enabled: true
+    notes: "DeepSeek reasoning model through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
+    extra:
+      temperature: 0
+      max_tokens: 1200
+  claude_compatible:
+    provider: anthropic
+    model: claude-opus-4-7
+    env: ANTHROPIC_API_KEY
+    enabled: true
+    notes: "Claude Opus 4.7 frontier condition. Set ANTHROPIC_API_KEY."
+    extra:
+      temperature: 0
+  claude_opus_4_7:
+    provider: anthropic
+    model: claude-opus-4-7
+    env: ANTHROPIC_API_KEY
+    enabled: true
+    notes: "Claude Opus 4.7 frontier condition. Set ANTHROPIC_API_KEY."
+    extra:
+      temperature: 0
+  claude_sonnet_4_6:
+    provider: anthropic
+    model: claude-sonnet-4-6
+    env: ANTHROPIC_API_KEY
+    enabled: true
+    notes: "Claude Sonnet 4.6 balanced condition. Set ANTHROPIC_API_KEY."
+    extra:
+      temperature: 0
+  gemini_compatible:
+    provider: gemini
+    model: gemini-3-pro-preview
+    env: GEMINI_API_KEY
+    enabled: true
+    notes: "Gemini 3 Pro Preview frontier condition. Set GEMINI_API_KEY."
+    extra:
+      temperature: 0
+  gemini_3_pro_preview:
+    provider: gemini
+    model: gemini-3-pro-preview
+    env: GEMINI_API_KEY
+    enabled: true
+    notes: "Gemini 3 Pro Preview frontier condition. Set GEMINI_API_KEY."
+    extra:
+      temperature: 0
+  gemini_3_flash_preview:
+    provider: gemini
+    model: gemini-3-flash-preview
+    env: GEMINI_API_KEY
+    enabled: true
+    notes: "Gemini 3 Flash Preview balanced/fast condition. Set GEMINI_API_KEY."
+    extra:
+      temperature: 0
+  ollama_local:
+    provider: ollama
+    model: llama3.1
+    base_url: http://localhost:11434
+    enabled: false
+    notes: "Local Ollama-style endpoint; set enabled=true after starting Ollama. OLLAMA_BASE_URL overrides base_url when set."
+  openrouter_compatible:
+    provider: openrouter
+    model: openrouter/auto
+    env: OPENROUTER_API_KEY
+    base_url: https://openrouter.ai/api/v1
+    enabled: true
+    notes: "OpenRouter-compatible endpoint; set OPENROUTER_API_KEY."
+  vllm_local:
+    provider: vllm
+    model: meta-llama/Llama-3.1-8B-Instruct
+    env: VLLM_BASE_URL
+    enabled: false
+    notes: "Local OpenAI-compatible vLLM endpoint; set enabled=true and VLLM_BASE_URL, for example http://localhost:8000/v1."

@@ -1,0 +1,1 @@
+Execute the task directly using the available tools. Do not write a detailed completion specification first. If asked for criteria, report only the minimal implicit checks you would rely on while acting.

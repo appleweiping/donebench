@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DoneSpec",
+  "type": "object",
+  "description": "Executable DoneSpec DSL object. Recursive primitive validation is handled by donebench.core.dsl.",
+  "minProperties": 1,
+  "properties": {
+    "all": {
+      "type": "array",
+      "description": "Every child condition must pass."
+    },
+    "any": {
+      "type": "array",
+      "description": "At least one child condition must pass."
+    },
+    "not": {
+      "type": "object",
+      "description": "Negates a child condition."
+    },
+    "exists": { "type": "object" },
+    "equals": { "type": "object" },
+    "contains": { "type": "object" },
+    "within": { "type": "object" },
+    "no_conflict": { "type": "object" },
+    "before": { "type": "object" },
+    "after": { "type": "object" },
+    "sent": { "type": "object" },
+    "not_modified": { "type": "object" },
+    "permission_ok": { "type": "object" },
+    "confirmed_by_user": { "type": "object" },
+    "policy_satisfied": { "type": "object" }
+  },
+  "additionalProperties": false
+}

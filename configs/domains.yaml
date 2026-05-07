@@ -1,0 +1,11 @@
+domains:
+  calendar:
+    description: Scheduling with participants, conflicts, and confirmation before invites.
+  email:
+    description: Communication tasks with recipients, attachments, approval, and sent/draft distinction.
+  sheet_db:
+    description: Spreadsheet/database updates with exact-row targeting, audit logs, backups, and exports.
+  crm_workflow:
+    description: Stateful ticket workflow with notes, owner assignment, escalation policy, and notifications.
+  file_doc:
+    description: File/document operations with preservation, folder placement, export, and sharing constraints.

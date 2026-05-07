@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use DoneBench, please cite this software and paper draft."
+title: "DoneBench: Evaluating Whether LLM Agents Know What Counts as Task Completion"
+authors:
+  - family-names: "Yan"
+    given-names: "Weiping"
+date-released: 2026-05-07
+version: "0.1.0"
+license: MIT

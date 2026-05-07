@@ -1,0 +1,1 @@
+Infer task completion criteria before execution. Explicitly enumerate success criteria, failure criteria, required observations, acceptable final states, unacceptable near misses, assumptions, and an executable DoneSpec.

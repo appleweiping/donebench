@@ -1,0 +1,149 @@
+{
+  "input": "annotation\\human_audit_queue.jsonl",
+  "num_items": 50,
+  "num_double_annotated": 0,
+  "num_needs_adjudication": 0,
+  "decision_agreement": {
+    "n": 0,
+    "agreement": null,
+    "kappa": null,
+    "confusion": {
+      "accept": {
+        "accept": 0,
+        "revise": 0,
+        "reject": 0
+      },
+      "revise": {
+        "accept": 0,
+        "revise": 0,
+        "reject": 0
+      },
+      "reject": {
+        "accept": 0,
+        "revise": 0,
+        "reject": 0
+      }
+    }
+  },
+  "check_agreement": {
+    "criteria_complete": {
+      "n": 0,
+      "agreement": null,
+      "kappa": null,
+      "confusion": {
+        "pass": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "warn": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "fail": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        }
+      }
+    },
+    "donespec_matches_criteria": {
+      "n": 0,
+      "agreement": null,
+      "kappa": null,
+      "confusion": {
+        "pass": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "warn": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "fail": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        }
+      }
+    },
+    "near_misses_are_valid": {
+      "n": 0,
+      "agreement": null,
+      "kappa": null,
+      "confusion": {
+        "pass": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "warn": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "fail": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        }
+      }
+    },
+    "reference_trace_is_plausible": {
+      "n": 0,
+      "agreement": null,
+      "kappa": null,
+      "confusion": {
+        "pass": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "warn": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "fail": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        }
+      }
+    },
+    "not_too_templated": {
+      "n": 0,
+      "agreement": null,
+      "kappa": null,
+      "confusion": {
+        "pass": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "warn": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        },
+        "fail": {
+          "pass": 0,
+          "warn": 0,
+          "fail": 0
+        }
+      }
+    }
+  },
+  "adjudication_summary": {
+    "final_decisions": {},
+    "disagreement_categories": {}
+  },
+  "outputs": {
+    "summary": "reports\\audit\\human_annotation_agreement.json",
+    "task_summary": "reports\\audit\\human_annotation_task_summary.csv",
+    "adjudication": "reports\\audit\\human_adjudication_queue.jsonl"
+  }
+}

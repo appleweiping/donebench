@@ -1,0 +1,200 @@
+[
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "n": 85,
+    "cc_f1": 0.9144919958933798,
+    "donespec_valid": 0.9176470588235294,
+    "near_miss_detection_rate": 0.5505882352941177,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5411764705882353
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "n": 85,
+    "cc_f1": 0.9289866534849232,
+    "donespec_valid": 0.9529411764705882,
+    "near_miss_detection_rate": 0.571764705882353,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5235294117647059
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "n": 85,
+    "cc_f1": 0.9201684129019768,
+    "donespec_valid": 0.9529411764705882,
+    "near_miss_detection_rate": 0.571764705882353,
+    "task_success": 1.0,
+    "self_violation_rate": 0.047058823529411764
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "n": 85,
+    "cc_f1": 0.9346743222175746,
+    "donespec_valid": 0.9764705882352941,
+    "near_miss_detection_rate": 0.5858823529411765,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5117647058823529
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "n": 85,
+    "cc_f1": 0.9343818810946837,
+    "donespec_valid": 0.9882352941176471,
+    "near_miss_detection_rate": 0.5929411764705882,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5058823529411764
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "n": 85,
+    "cc_f1": 0.9250055135176242,
+    "donespec_valid": 0.9176470588235294,
+    "near_miss_detection_rate": 0.5505882352941177,
+    "task_success": 1.0,
+    "self_violation_rate": 0.08235294117647059
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "n": 105,
+    "cc_f1": 0.9374434389140271,
+    "donespec_valid": 0.9809523809523809,
+    "near_miss_detection_rate": 0.5885714285714285,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5095238095238095
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "n": 105,
+    "cc_f1": 0.9254686489980608,
+    "donespec_valid": 0.9619047619047619,
+    "near_miss_detection_rate": 0.5771428571428571,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5190476190476191
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "n": 105,
+    "cc_f1": 0.9199682670270907,
+    "donespec_valid": 0.9523809523809523,
+    "near_miss_detection_rate": 0.5714285714285714,
+    "task_success": 1.0,
+    "self_violation_rate": 0.047619047619047616
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "n": 105,
+    "cc_f1": 0.922120232708468,
+    "donespec_valid": 0.9428571428571428,
+    "near_miss_detection_rate": 0.5657142857142856,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5285714285714286
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "n": 105,
+    "cc_f1": 0.9241610490349987,
+    "donespec_valid": 0.9333333333333333,
+    "near_miss_detection_rate": 0.5599999999999999,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5333333333333333
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "n": 105,
+    "cc_f1": 0.9244066857512236,
+    "donespec_valid": 0.9523809523809523,
+    "near_miss_detection_rate": 0.5714285714285713,
+    "task_success": 1.0,
+    "self_violation_rate": 0.047619047619047616
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "n": 60,
+    "cc_f1": 0.9364705882352939,
+    "donespec_valid": 0.9666666666666667,
+    "near_miss_detection_rate": 0.5800000000000002,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5166666666666667
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "n": 60,
+    "cc_f1": 0.9208306399482868,
+    "donespec_valid": 0.9333333333333333,
+    "near_miss_detection_rate": 0.5600000000000002,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5333333333333333
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "n": 60,
+    "cc_f1": 0.9156108597285066,
+    "donespec_valid": 0.9333333333333333,
+    "near_miss_detection_rate": 0.5600000000000002,
+    "task_success": 1.0,
+    "self_violation_rate": 0.06666666666666667
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "n": 60,
+    "cc_f1": 0.9166348357524827,
+    "donespec_valid": 0.9333333333333333,
+    "near_miss_detection_rate": 0.5600000000000002,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5333333333333333
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "n": 60,
+    "cc_f1": 0.9109851912793088,
+    "donespec_valid": 0.9,
+    "near_miss_detection_rate": 0.5400000000000001,
+    "task_success": 0.0,
+    "self_violation_rate": 0.55
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "n": 60,
+    "cc_f1": 0.9388235294117646,
+    "donespec_valid": 0.9833333333333333,
+    "near_miss_detection_rate": 0.5900000000000001,
+    "task_success": 1.0,
+    "self_violation_rate": 0.016666666666666666
+  }
+]

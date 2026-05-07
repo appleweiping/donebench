@@ -18,6 +18,7 @@ from donebench.scripts.failure_mining import mine_failures
 from donebench.scripts.generate_seed_tasks import generate
 from donebench.scripts.human_audit_queue import write_human_audit_queue
 from donebench.scripts.make_figures import make_figures as make_figures_impl
+from donebench.scripts.parse_transparency import write_parse_transparency
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.repro_manifest import write_repro_manifest
 from donebench.scripts.readiness_report import write_readiness_report
@@ -211,6 +212,15 @@ def cost_report_cmd(
     fallback_output_tokens: int = typer.Option(1200, "--fallback-output-tokens"),
 ) -> None:
     summary = write_cost_report(input_path, output_dir, task_root=task_root, fallback_output_tokens=fallback_output_tokens)
+    console.print(summary)
+
+
+@app.command("parse-transparency")
+def parse_transparency_cmd(
+    input_path: Path = typer.Argument(...),
+    output_dir: Path = typer.Argument(Path("reports/parse_transparency")),
+) -> None:
+    summary = write_parse_transparency(input_path, output_dir)
     console.print(summary)
 
 

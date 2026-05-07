@@ -1,0 +1,20 @@
+{
+  "input": "results\\topconf_deepseek_core_topconf4_parsed.jsonl",
+  "rows": 3000,
+  "status_counts": {
+    "parsed": 2692,
+    "fallback": 308
+  },
+  "parse_rate": 0.8973333333333333,
+  "fallback_rate": 0.10266666666666667,
+  "outputs": [
+    "parse_transparency_by_domain.csv",
+    "parse_transparency_by_domain.json",
+    "parse_transparency_by_model_agent.csv",
+    "parse_transparency_by_model_agent.json",
+    "parse_transparency_by_status.csv",
+    "parse_transparency_by_status.json",
+    "parse_transparency_trials.csv",
+    "parse_transparency_trials.json"
+  ]
+}

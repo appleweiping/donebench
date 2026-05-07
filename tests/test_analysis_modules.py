@@ -1,3 +1,4 @@
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -7,6 +8,7 @@ from donebench.scripts.failure_mining import mine_failures
 from donebench.scripts.invalid_donespec_taxonomy import classify_invalid_donespec
 from donebench.scripts.invalid_donespec_taxonomy import failure_detection_by_family
 from donebench.scripts.invalid_donespec_taxonomy import load_task_metadata
+from donebench.scripts.parse_transparency import write_parse_transparency
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.generate_seed_tasks import DOMAINS, TASKS_PER_DOMAIN
 from donebench.scripts.readiness_report import write_readiness_report
@@ -109,3 +111,39 @@ def test_policy_and_side_effect_failure_taxonomy():
     summary = failure_detection_by_family(df, task_meta)
     assert set(summary["failure_family"]) == {"policy_confirmation", "side_effect"}
     assert {"failure_class", "mutation_taxon", "mean_false_accept_rate"}.issubset(summary.columns)
+
+
+def test_parse_transparency_outputs(tmp_path):
+    input_path = tmp_path / "results.jsonl"
+    rows = [
+        {
+            "task_id": "task_001",
+            "domain": "calendar",
+            "difficulty": "L1",
+            "model": "m",
+            "agent": "spec_first",
+            "diagnostics": {
+                "llm_parse_status": "parsed",
+                "attempts": 1,
+                "latency_s": 2.0,
+                "prompt_chars": 100,
+                "raw_output_chars": 200,
+                "usage": {"prompt_tokens": 10, "completion_tokens": 20, "total_tokens": 30},
+            },
+        },
+        {
+            "task_id": "task_002",
+            "domain": "calendar",
+            "difficulty": "L1",
+            "model": "m",
+            "agent": "spec_first",
+            "diagnostics": {"llm_parse_status": "fallback", "attempts": 2},
+        },
+    ]
+    input_path.write_text("\n".join(json.dumps(row) for row in rows), encoding="utf-8")
+    summary = write_parse_transparency(input_path, tmp_path / "parse")
+    by_agent = pd.read_csv(tmp_path / "parse" / "parse_transparency_by_model_agent.csv")
+    assert summary["rows"] == 2
+    assert summary["status_counts"] == {"parsed": 1, "fallback": 1}
+    assert by_agent.loc[0, "parse_rate"] == 0.5
+    assert (tmp_path / "parse" / "parse_transparency_by_status.json").exists()

@@ -1,11 +1,11 @@
 \section{Experimental Setup}
-The local smoke configuration runs without paid APIs using deterministic MockLLM-compatible agents. API-backed adapters are configured but treated as optional until credentials and budget are available.
+The local smoke configuration runs without paid APIs using deterministic MockLLM-compatible agents. API-backed adapters use LiteLLM-compatible provider settings and are launched through the resumable streaming runner with \texttt{--resume} and configurable \texttt{--max-workers}. Missing credentials are skipped when \texttt{skip\_missing\_credentials: true}, which keeps artifact smoke tests reproducible on machines without API access.
 
 Experiments measure criterion inference, spec-first execution, own-spec violations, verifier robustness, and model scaling. Statistical reporting uses task-level bootstrap confidence intervals and domain/difficulty stratification.
 
 \subsection{Planned Evaluation Matrix}
 
-The MVP paper artifact separates deterministic smoke tests from API-backed paper runs. Smoke tests are intended for every checkout and continuous integration. API-backed runs are intended for the final paper tables once credentials, budget, and model identifiers are fixed.
+The artifact separates deterministic smoke tests from API-backed paper runs. Smoke tests are intended for every checkout and continuous integration. The current live-model paper run uses the \texttt{topconf\_deepseek\_core} suite on the topconf-4 test split.
 
 \begin{table}[h]
 \centering
@@ -14,7 +14,8 @@ The MVP paper artifact separates deterministic smoke tests from API-backed paper
 Suite & Split & Agents & Models \\
 \midrule
 Smoke & dev & Heuristic, Spec-first & Mock \\
-Full API & test & Direct, Plan-first, Spec-first, Oracle-spec & GPT-, Claude-, Gemini-, OpenRouter-compatible, Ollama \\
+Topconf DeepSeek core & test & Direct, Plan-first, Spec-first & DeepSeek Flash, DeepSeek Pro \\
+Planned cross-family API & test & Direct, Plan-first, Spec-first, Oracle-spec & GPT, Claude, Gemini, OpenRouter-compatible \\
 \bottomrule
 \end{tabular}
 \caption{Experiment suites mirrored by \texttt{configs/experiments.yaml}.}
@@ -30,10 +31,10 @@ Direct runs execute with only implicit completion checks. Plan-first elicits act
 \toprule
 Ablation & Purpose & Paper status \\
 \midrule
-Direct vs. Plan-first & Separate planning from completion semantics & Placeholder \\
-Plan-first vs. Spec-first & Test the value of explicit done criteria & Placeholder \\
-Spec-first vs. Oracle-spec & Estimate residual execution failure & Placeholder \\
-Near-miss mutation families & Stress-test verifier robustness & Placeholder \\
+Direct vs. Plan-first & Separate planning from completion semantics & DeepSeek core reported \\
+Plan-first vs. Spec-first & Test the value of explicit done criteria & DeepSeek core reported \\
+Spec-first vs. Oracle-spec & Estimate residual execution failure & Harness only; live run pending \\
+Near-miss mutation families & Stress-test verifier robustness & Reported in failure taxonomy \\
 Token-matched prompting & Control for prompt length & Future paper run \\
 Free-form criterion normalization & Test DSL sensitivity & Future paper run \\
 \bottomrule

@@ -1,0 +1,11 @@
+domain,model,agent,n,cc_f1,donespec_valid,near_miss_detection_rate,task_success,self_violation_rate
+calendar,deepseek_v4_flash,spec_first,100,0.4919783869381392,0.83,0.498,0.13,0.17
+calendar,deepseek_v4_pro,spec_first,100,0.6150097351393018,0.73,0.4379999999999999,0.11,0.27
+crm_workflow,deepseek_v4_flash,spec_first,100,0.6076067314925843,0.86,0.5159999999999999,0.07,0.14
+crm_workflow,deepseek_v4_pro,spec_first,100,0.6887713922644264,0.68,0.408,0.02,0.32
+email,deepseek_v4_flash,spec_first,100,0.5768961459824631,0.79,0.474,0.14,0.21
+email,deepseek_v4_pro,spec_first,100,0.6820541097824716,0.71,0.4259999999999999,0.05,0.29
+file_doc,deepseek_v4_flash,spec_first,100,0.579268155357602,0.85,0.51,0.36,0.15
+file_doc,deepseek_v4_pro,spec_first,100,0.7424847958199352,0.77,0.462,0.09,0.23
+sheet_db,deepseek_v4_flash,spec_first,100,0.5774212790992976,0.89,0.5339999999999999,0.57,0.11
+sheet_db,deepseek_v4_pro,spec_first,100,0.6735691692843732,0.8,0.48,0.15,0.2

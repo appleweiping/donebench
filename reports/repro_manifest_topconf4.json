@@ -1,0 +1,504 @@
+{
+  "donebench_version": "0.1.0",
+  "git_commit": "c15eb9586163a1371ca608278be003362d724659",
+  "python": "3.12.0",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "results": "results\\topconf_deepseek_core_topconf4.jsonl",
+  "environment": {
+    "local_install": "python -m pip install -e \".[dev]\"",
+    "llm_install": "python -m pip install -e \".[dev,llm]\"",
+    "docker_build": "docker build -t donebench-repro .",
+    "docker_smoke": "docker run --rm donebench-repro make repro-smoke",
+    "devcontainer": ".devcontainer/devcontainer.json"
+  },
+  "dataset": {
+    "task_root": "data\\tasks",
+    "num_tasks": 600,
+    "num_validation_errors": 0,
+    "by_domain": {
+      "calendar": 120,
+      "crm_workflow": 120,
+      "email": 120,
+      "file_doc": 120,
+      "sheet_db": 120
+    },
+    "by_split": {
+      "dev": 100,
+      "test": 500
+    },
+    "by_difficulty": {
+      "L1": 90,
+      "L2": 180,
+      "L3": 210,
+      "L4": 120
+    }
+  },
+  "experiment_defaults": {
+    "default_split": "dev",
+    "agents": [
+      "heuristic",
+      "spec_first",
+      "direct",
+      "plan_first",
+      "oracle_spec"
+    ],
+    "models": [
+      "mock"
+    ],
+    "trials_per_model": 1,
+    "skip_missing_credentials": true,
+    "recommended_max_workers": {
+      "smoke": 2,
+      "api_default": 32,
+      "topconf": 64
+    },
+    "suites": [
+      "deepseek_family",
+      "deepseek_family_connectivity",
+      "deepseek_family_dev",
+      "deepseek_family_mini",
+      "deepseek_gpt",
+      "deepseek_gpt_dev",
+      "deepseek_gpt_frontier",
+      "four_model",
+      "four_model_dev",
+      "full_api",
+      "smoke",
+      "topconf_deepseek_core",
+      "topconf_deepseek_full",
+      "topconf_deepseek_pilot",
+      "topconf_deepseek_replicates",
+      "topconf_deepseek_stress"
+    ]
+  },
+  "model_access": [
+    {
+      "id": "claude_compatible",
+      "provider": "anthropic",
+      "provider_model": "claude-opus-4-7",
+      "enabled": true,
+      "credential_env": "ANTHROPIC_API_KEY",
+      "base_url": null,
+      "credentials_available_at_manifest_time": false,
+      "notes": "Claude Opus 4.7 frontier condition. Set ANTHROPIC_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "claude_opus_4_7",
+      "provider": "anthropic",
+      "provider_model": "claude-opus-4-7",
+      "enabled": true,
+      "credential_env": "ANTHROPIC_API_KEY",
+      "base_url": null,
+      "credentials_available_at_manifest_time": false,
+      "notes": "Claude Opus 4.7 frontier condition. Set ANTHROPIC_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "claude_sonnet_4_6",
+      "provider": "anthropic",
+      "provider_model": "claude-sonnet-4-6",
+      "enabled": true,
+      "credential_env": "ANTHROPIC_API_KEY",
+      "base_url": null,
+      "credentials_available_at_manifest_time": false,
+      "notes": "Claude Sonnet 4.6 balanced condition. Set ANTHROPIC_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "deepseek_chat",
+      "provider": "openai_compatible",
+      "provider_model": "deepseek-chat",
+      "enabled": true,
+      "credential_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "credentials_available_at_manifest_time": true,
+      "notes": "DeepSeek chat model through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY.",
+      "extra": {
+        "temperature": 0,
+        "max_tokens": 1200
+      }
+    },
+    {
+      "id": "deepseek_reasoner",
+      "provider": "openai_compatible",
+      "provider_model": "deepseek-reasoner",
+      "enabled": true,
+      "credential_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "credentials_available_at_manifest_time": true,
+      "notes": "DeepSeek reasoning model through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY.",
+      "extra": {
+        "temperature": 0,
+        "max_tokens": 1200
+      }
+    },
+    {
+      "id": "deepseek_v4_flash",
+      "provider": "openai_compatible",
+      "provider_model": "deepseek-v4-flash",
+      "enabled": true,
+      "credential_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "credentials_available_at_manifest_time": true,
+      "notes": "DeepSeek V4 Flash through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY.",
+      "extra": {
+        "temperature": 0,
+        "max_tokens": 1200
+      }
+    },
+    {
+      "id": "deepseek_v4_pro",
+      "provider": "openai_compatible",
+      "provider_model": "deepseek-v4-pro",
+      "enabled": true,
+      "credential_env": "DEEPSEEK_API_KEY",
+      "base_url": "https://api.deepseek.com",
+      "credentials_available_at_manifest_time": true,
+      "notes": "DeepSeek V4 Pro through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY.",
+      "extra": {
+        "temperature": 0,
+        "max_tokens": 1200
+      }
+    },
+    {
+      "id": "gemini_3_flash_preview",
+      "provider": "gemini",
+      "provider_model": "gemini-3-flash-preview",
+      "enabled": true,
+      "credential_env": "GEMINI_API_KEY",
+      "base_url": null,
+      "credentials_available_at_manifest_time": false,
+      "notes": "Gemini 3 Flash Preview balanced/fast condition. Set GEMINI_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "gemini_3_pro_preview",
+      "provider": "gemini",
+      "provider_model": "gemini-3-pro-preview",
+      "enabled": true,
+      "credential_env": "GEMINI_API_KEY",
+      "base_url": null,
+      "credentials_available_at_manifest_time": false,
+      "notes": "Gemini 3 Pro Preview frontier condition. Set GEMINI_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "gemini_compatible",
+      "provider": "gemini",
+      "provider_model": "gemini-3-pro-preview",
+      "enabled": true,
+      "credential_env": "GEMINI_API_KEY",
+      "base_url": null,
+      "credentials_available_at_manifest_time": false,
+      "notes": "Gemini 3 Pro Preview frontier condition. Set GEMINI_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "gpt_4_1",
+      "provider": "openai_compatible",
+      "provider_model": "gpt-4.1",
+      "enabled": true,
+      "credential_env": "OPENAI_API_KEY",
+      "base_url": "https://api.openai.com/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "Stronger GPT condition. Set OPENAI_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "gpt_4_1_mini",
+      "provider": "openai_compatible",
+      "provider_model": "gpt-4.1-mini",
+      "enabled": true,
+      "credential_env": "OPENAI_API_KEY",
+      "base_url": "https://api.openai.com/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "Default cost-conscious GPT condition. Set OPENAI_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "gpt_5_1",
+      "provider": "openai_compatible",
+      "provider_model": "gpt-5.1",
+      "enabled": true,
+      "credential_env": "OPENAI_API_KEY",
+      "base_url": "https://api.openai.com/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "Current GPT flagship-style condition with Chat Completions support. Set OPENAI_API_KEY.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "gpt_5_5",
+      "provider": "openai_compatible",
+      "provider_model": "gpt-5.5",
+      "enabled": true,
+      "credential_env": "OPENAI_API_KEY",
+      "base_url": "https://api.openai.com/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "Current strongest GPT condition per OpenAI model docs; disable if your account does not have access.",
+      "extra": {
+        "temperature": 0
+      }
+    },
+    {
+      "id": "gpt_compatible",
+      "provider": "openai_compatible",
+      "provider_model": "gpt-4.1-mini",
+      "enabled": true,
+      "credential_env": "OPENAI_API_KEY",
+      "base_url": "https://api.openai.com/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "OpenAI-compatible chat completions endpoint; change base_url for Azure, Together, Fireworks, or other compatible gateways.",
+      "extra": {}
+    },
+    {
+      "id": "mock",
+      "provider": "mock",
+      "provider_model": "mock",
+      "enabled": true,
+      "credential_env": null,
+      "base_url": null,
+      "credentials_available_at_manifest_time": true,
+      "notes": "",
+      "extra": {}
+    },
+    {
+      "id": "ollama_local",
+      "provider": "ollama",
+      "provider_model": "llama3.1",
+      "enabled": false,
+      "credential_env": null,
+      "base_url": "http://localhost:11434",
+      "credentials_available_at_manifest_time": true,
+      "notes": "Local Ollama-style endpoint; set enabled=true after starting Ollama. OLLAMA_BASE_URL overrides base_url when set.",
+      "extra": {}
+    },
+    {
+      "id": "openrouter_compatible",
+      "provider": "openrouter",
+      "provider_model": "openrouter/auto",
+      "enabled": true,
+      "credential_env": "OPENROUTER_API_KEY",
+      "base_url": "https://openrouter.ai/api/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "OpenRouter-compatible endpoint; set OPENROUTER_API_KEY.",
+      "extra": {}
+    },
+    {
+      "id": "vllm_local",
+      "provider": "vllm",
+      "provider_model": "meta-llama/Llama-3.1-8B-Instruct",
+      "enabled": false,
+      "credential_env": "VLLM_BASE_URL",
+      "base_url": null,
+      "credentials_available_at_manifest_time": false,
+      "notes": "Local OpenAI-compatible vLLM endpoint; set enabled=true and VLLM_BASE_URL, for example http://localhost:8000/v1.",
+      "extra": {}
+    }
+  ],
+  "cost_latency_retry": {
+    "cost_report_command": "donebench cost-report results/<run>.jsonl reports/costs",
+    "per_call_report": "reports/costs/api_call_costs.csv",
+    "by_model_report": "reports/costs/api_cost_by_model.csv",
+    "summary_report": "reports/costs/api_cost_summary.json",
+    "diagnostic_fields": [
+      "latency_s",
+      "usage",
+      "attempts",
+      "provider",
+      "provider_model"
+    ],
+    "default_attempts": 3,
+    "default_retry_backoff_s": 2.0,
+    "resume_key": [
+      "task_id",
+      "agent",
+      "model",
+      "trial"
+    ],
+    "resume_command_example": "donebench run-matrix --suite topconf_deepseek_core --output results/topconf_deepseek_core.jsonl --resume --max-workers 32"
+  },
+  "artifacts": [
+    {
+      "path": "README.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 8277
+    },
+    {
+      "path": "Dockerfile",
+      "present": true,
+      "kind": "file",
+      "bytes": 448
+    },
+    {
+      "path": ".devcontainer/devcontainer.json",
+      "present": true,
+      "kind": "file",
+      "bytes": 838
+    },
+    {
+      "path": "Makefile",
+      "present": true,
+      "kind": "file",
+      "bytes": 1453
+    },
+    {
+      "path": "pyproject.toml",
+      "present": true,
+      "kind": "file",
+      "bytes": 806
+    },
+    {
+      "path": "configs/experiments.yaml",
+      "present": true,
+      "kind": "file",
+      "bytes": 3287
+    },
+    {
+      "path": "configs/models.yaml",
+      "present": true,
+      "kind": "file",
+      "bytes": 4749
+    },
+    {
+      "path": "data/tasks",
+      "present": true,
+      "kind": "directory",
+      "files": 600
+    },
+    {
+      "path": "donebench",
+      "present": true,
+      "kind": "directory",
+      "files": 93
+    },
+    {
+      "path": "tests",
+      "present": true,
+      "kind": "directory",
+      "files": 20
+    },
+    {
+      "path": "results/smoke.jsonl",
+      "present": true,
+      "kind": "file",
+      "bytes": 32436
+    },
+    {
+      "path": "results/smoke.manifest.json",
+      "present": true,
+      "kind": "file",
+      "bytes": 166
+    },
+    {
+      "path": "reports/costs/api_call_costs.csv",
+      "present": true,
+      "kind": "file",
+      "bytes": 123292
+    },
+    {
+      "path": "reports/costs/api_cost_by_model.csv",
+      "present": true,
+      "kind": "file",
+      "bytes": 254
+    },
+    {
+      "path": "reports/costs/api_cost_summary.json",
+      "present": true,
+      "kind": "file",
+      "bytes": 142
+    },
+    {
+      "path": "reports/openreview_package_manifest.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 2750
+    },
+    {
+      "path": "reports/openreview_checklist.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 1437
+    },
+    {
+      "path": "reports/model_access_cost_latency_retry.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 1624
+    },
+    {
+      "path": "reports/quality/task_construction_datasheet.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 1210
+    },
+    {
+      "path": "reports/quality/task_family_leakage.csv",
+      "present": true,
+      "kind": "file",
+      "bytes": 17046
+    },
+    {
+      "path": "reports/audit/human_annotation_agreement.json",
+      "present": true,
+      "kind": "file",
+      "bytes": 3003
+    },
+    {
+      "path": "annotation/dataset_task_construction_datasheet.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 4556
+    },
+    {
+      "path": "paper/main.tex",
+      "present": true,
+      "kind": "file",
+      "bytes": 1010
+    },
+    {
+      "path": "paper/tables",
+      "present": true,
+      "kind": "directory",
+      "files": 5
+    },
+    {
+      "path": "paper/figures",
+      "present": true,
+      "kind": "directory",
+      "files": 2
+    }
+  ],
+  "commands": {
+    "validate": "donebench validate data/tasks",
+    "audit": "donebench audit-tasks data/tasks",
+    "smoke": "make repro-smoke",
+    "package": "make repro-package",
+    "docker_smoke": "make docker-smoke",
+    "main_run": "donebench run-matrix --suite topconf_deepseek_core --output results/topconf_deepseek_core.jsonl --resume --max-workers 64",
+    "cost_report": "donebench cost-report results/topconf_deepseek_core_trial0.jsonl reports/costs",
+    "advanced_stats": "donebench advanced-stats results/topconf_deepseek_core_trial0.jsonl reports/stats",
+    "quality_audit": "donebench quality-audit data/tasks reports/quality",
+    "failure_mining": "donebench mine-failures results/topconf_deepseek_core_trial0.jsonl reports/failures",
+    "openreview_package": "donebench export-paper-package"
+  }
+}

@@ -1,0 +1,3 @@
+task_id,domain,difficulty,agent,model,trial,cc_precision,cc_recall,cc_f1,success_f1,failure_f1,required_observation_recall,overconstraint_rate,underspecification_rate,donespec_valid,near_miss_detection_rate,near_miss_false_accept_rate,valid_accept_rate,verifier_robustness_balanced_accuracy,task_success,own_spec_pass,spec_action_consistency,self_violation_rate,quadrant
+file_doc_026,file_doc,L2,spec_first,deepseek_v4_pro,0,1.0,0.8181818181818182,0.9,0.923076923076923,0.6666666666666666,1.0,0.0,0.18181818181818182,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,good_spec_bad_execution
+calendar_118,calendar,L4,spec_first,deepseek_v4_pro,0,1.0,0.7857142857142857,0.88,0.9411764705882353,0.5,1.0,0.0,0.21428571428571427,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,1.0,good_spec_bad_execution

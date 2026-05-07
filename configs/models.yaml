@@ -55,7 +55,7 @@ models:
     notes: "DeepSeek V4 Flash through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
     extra:
       temperature: 0
-      max_tokens: 1200
+      max_tokens: 2400
   deepseek_v4_pro:
     provider: openai_compatible
     model: deepseek-v4-pro
@@ -65,7 +65,7 @@ models:
     notes: "DeepSeek V4 Pro through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
     extra:
       temperature: 0
-      max_tokens: 1200
+      max_tokens: 2400
   deepseek_chat:
     provider: openai_compatible
     model: deepseek-chat
@@ -75,7 +75,7 @@ models:
     notes: "DeepSeek chat model through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
     extra:
       temperature: 0
-      max_tokens: 1200
+      max_tokens: 2400
   deepseek_reasoner:
     provider: openai_compatible
     model: deepseek-reasoner
@@ -85,7 +85,7 @@ models:
     notes: "DeepSeek reasoning model through the OpenAI-compatible DeepSeek API. Set DEEPSEEK_API_KEY."
     extra:
       temperature: 0
-      max_tokens: 1200
+      max_tokens: 2400
   claude_compatible:
     provider: anthropic
     model: claude-opus-4-7

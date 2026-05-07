@@ -19,20 +19,44 @@ def build_spec_prompt(task: Task, mode: str) -> str:
         "domain": task.domain,
         "difficulty": task.difficulty,
         "user_goal": task.user_goal,
-        "visible_context": task.visible_context,
-        "tool_environment": task.tool_environment,
-        "initial_state_summary": task.initial_state,
+        "visible_context": {
+            "policy_refs": task.visible_context.get("organization_policy_refs", []),
+            "risk_tier": task.visible_context.get("risk_tier"),
+            "approval_channel": task.visible_context.get("approval_channel"),
+            "output_format": task.visible_context.get("output_format"),
+            "difficulty_profile": task.visible_context.get("difficulty_profile", {}),
+        },
+        "tool_environment": {
+            "tools": task.tool_environment.get("tools", []),
+            "permissions": task.tool_environment.get("permissions", []),
+            "surface": task.tool_environment.get("surface"),
+        },
+        "initial_state_summary": {
+            "object_types": sorted((task.initial_state.get("objects") or {}).keys()),
+            "num_distractors": len(task.initial_state.get("distractors", [])),
+            "permissions": task.initial_state.get("permissions", {}),
+        },
         "policies": [policy.model_dump() for policy in task.policies],
+    }
+    template = {
+        "success_conditions": ["string"],
+        "failure_conditions": ["string"],
+        "required_observations": ["string"],
+        "acceptable_final_states": ["string"],
+        "unacceptable_near_misses": ["string"],
+        "donespec": {},
+        "assumptions": ["string"],
+        "clarifications_needed": ["string"],
     }
     return (
         f"Agent mode: {mode}.\n"
         f"Mode instruction: {mode_instruction}\n"
         "You are being evaluated on Specification Grounding, not generic planning. "
         "Return only information that this mode would explicitly produce before execution. "
-        "Return only JSON with keys: success_conditions, failure_conditions, "
-        "required_observations, acceptable_final_states, unacceptable_near_misses, "
-        "donespec, assumptions, clarifications_needed. Use the DoneSpec DSL when possible.\n"
-        f"Task:\n{json.dumps(payload, indent=2)}"
+        "Return a single compact JSON object, with no markdown and no prose outside JSON. "
+        "Use these exact keys and keep each list short. If unsure about DoneSpec, set donespec to {}.\n"
+        f"JSON template:\n{json.dumps(template, separators=(',', ':'))}\n"
+        f"Task:\n{json.dumps(payload, separators=(',', ':'))}"
     )
 
 
@@ -92,7 +116,12 @@ def construct_llm_spec(task: Task, llm: Any, mode: str, fallback: Phase1Output) 
 def _extract_json(text: str) -> dict[str, Any]:
     text = text.strip()
     if text.startswith("{"):
-        return json.loads(text)
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError:
+            repaired = _repair_truncated_json(text)
+            if repaired:
+                return json.loads(repaired)
     fenced = re.search(r"```(?:json)?\s*(\{.*?\})\s*```", text, flags=re.DOTALL)
     if fenced:
         return json.loads(fenced.group(1))
@@ -101,3 +130,18 @@ def _extract_json(text: str) -> dict[str, Any]:
     if start >= 0 and end > start:
         return json.loads(text[start : end + 1])
     raise ValueError("No JSON object found in model output")
+
+
+def _repair_truncated_json(text: str) -> str | None:
+    text = text.strip()
+    if not text.startswith("{"):
+        return None
+    open_braces = text.count("{") - text.count("}")
+    open_brackets = text.count("[") - text.count("]")
+    if open_brackets < 0 or open_braces < 0:
+        return None
+    if text.count('"') % 2 == 1:
+        text += '"'
+    text += "]" * open_brackets
+    text += "}" * open_braces
+    return text

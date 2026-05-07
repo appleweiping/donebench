@@ -1,0 +1,245 @@
+{
+  "generator_version": "topconf-3",
+  "total_tasks": 300,
+  "by_domain": {
+    "calendar": 60,
+    "crm_workflow": 60,
+    "email": 60,
+    "file_doc": 60,
+    "sheet_db": 60
+  },
+  "by_split": {
+    "dev": 50,
+    "test": 250
+  },
+  "by_difficulty": {
+    "L1": 45,
+    "L2": 90,
+    "L3": 105,
+    "L4": 60
+  },
+  "by_pattern": {
+    "calendar_focus_block": 20,
+    "calendar_reschedule_review": 20,
+    "calendar_schedule_sync": 20,
+    "crm_close_escalation": 20,
+    "crm_reopen_sla": 20,
+    "crm_route_refund": 20,
+    "email_customer_reply": 20,
+    "email_forward_digest": 20,
+    "email_weekly_summary": 20,
+    "file_archive_contract": 20,
+    "file_revise_document": 20,
+    "file_share_packet": 20,
+    "sheet_append_forecast": 20,
+    "sheet_dedupe_contact": 20,
+    "sheet_update_account": 20
+  },
+  "by_scenario": {
+    "aurora_rollout": 15,
+    "beacon_renewal": 15,
+    "cedar_migration": 15,
+    "delta_pricing": 15,
+    "ember_followup": 15,
+    "fjord_launch": 15,
+    "granite_compliance": 15,
+    "harbor_onboarding": 15,
+    "iris_qbr": 15,
+    "juniper_vendor": 15,
+    "keystone_billing": 15,
+    "lumen_pilot": 15,
+    "meridian_hiring": 15,
+    "nimbus_security": 15,
+    "orchard_campaign": 15,
+    "prairie_refresh": 15,
+    "quartz_roadmap": 15,
+    "ridge_budget": 15,
+    "summit_training": 15,
+    "tidal_procurement": 15
+  },
+  "by_domain_difficulty": {
+    "calendar": {
+      "L1": 9,
+      "L2": 18,
+      "L3": 21,
+      "L4": 12
+    },
+    "crm_workflow": {
+      "L1": 9,
+      "L2": 18,
+      "L3": 21,
+      "L4": 12
+    },
+    "email": {
+      "L1": 9,
+      "L2": 18,
+      "L3": 21,
+      "L4": 12
+    },
+    "file_doc": {
+      "L1": 9,
+      "L2": 18,
+      "L3": 21,
+      "L4": 12
+    },
+    "sheet_db": {
+      "L1": 9,
+      "L2": 18,
+      "L3": 21,
+      "L4": 12
+    }
+  },
+  "by_domain_pattern": {
+    "calendar": {
+      "calendar_focus_block": 20,
+      "calendar_reschedule_review": 20,
+      "calendar_schedule_sync": 20
+    },
+    "crm_workflow": {
+      "crm_close_escalation": 20,
+      "crm_reopen_sla": 20,
+      "crm_route_refund": 20
+    },
+    "email": {
+      "email_customer_reply": 20,
+      "email_forward_digest": 20,
+      "email_weekly_summary": 20
+    },
+    "file_doc": {
+      "file_archive_contract": 20,
+      "file_revise_document": 20,
+      "file_share_packet": 20
+    },
+    "sheet_db": {
+      "sheet_append_forecast": 20,
+      "sheet_dedupe_contact": 20,
+      "sheet_update_account": 20
+    }
+  },
+  "by_domain_scenario": {
+    "calendar": {
+      "aurora_rollout": 3,
+      "beacon_renewal": 3,
+      "cedar_migration": 3,
+      "delta_pricing": 3,
+      "ember_followup": 3,
+      "fjord_launch": 3,
+      "granite_compliance": 3,
+      "harbor_onboarding": 3,
+      "iris_qbr": 3,
+      "juniper_vendor": 3,
+      "keystone_billing": 3,
+      "lumen_pilot": 3,
+      "meridian_hiring": 3,
+      "nimbus_security": 3,
+      "orchard_campaign": 3,
+      "prairie_refresh": 3,
+      "quartz_roadmap": 3,
+      "ridge_budget": 3,
+      "summit_training": 3,
+      "tidal_procurement": 3
+    },
+    "crm_workflow": {
+      "aurora_rollout": 3,
+      "beacon_renewal": 3,
+      "cedar_migration": 3,
+      "delta_pricing": 3,
+      "ember_followup": 3,
+      "fjord_launch": 3,
+      "granite_compliance": 3,
+      "harbor_onboarding": 3,
+      "iris_qbr": 3,
+      "juniper_vendor": 3,
+      "keystone_billing": 3,
+      "lumen_pilot": 3,
+      "meridian_hiring": 3,
+      "nimbus_security": 3,
+      "orchard_campaign": 3,
+      "prairie_refresh": 3,
+      "quartz_roadmap": 3,
+      "ridge_budget": 3,
+      "summit_training": 3,
+      "tidal_procurement": 3
+    },
+    "email": {
+      "aurora_rollout": 3,
+      "beacon_renewal": 3,
+      "cedar_migration": 3,
+      "delta_pricing": 3,
+      "ember_followup": 3,
+      "fjord_launch": 3,
+      "granite_compliance": 3,
+      "harbor_onboarding": 3,
+      "iris_qbr": 3,
+      "juniper_vendor": 3,
+      "keystone_billing": 3,
+      "lumen_pilot": 3,
+      "meridian_hiring": 3,
+      "nimbus_security": 3,
+      "orchard_campaign": 3,
+      "prairie_refresh": 3,
+      "quartz_roadmap": 3,
+      "ridge_budget": 3,
+      "summit_training": 3,
+      "tidal_procurement": 3
+    },
+    "file_doc": {
+      "aurora_rollout": 3,
+      "beacon_renewal": 3,
+      "cedar_migration": 3,
+      "delta_pricing": 3,
+      "ember_followup": 3,
+      "fjord_launch": 3,
+      "granite_compliance": 3,
+      "harbor_onboarding": 3,
+      "iris_qbr": 3,
+      "juniper_vendor": 3,
+      "keystone_billing": 3,
+      "lumen_pilot": 3,
+      "meridian_hiring": 3,
+      "nimbus_security": 3,
+      "orchard_campaign": 3,
+      "prairie_refresh": 3,
+      "quartz_roadmap": 3,
+      "ridge_budget": 3,
+      "summit_training": 3,
+      "tidal_procurement": 3
+    },
+    "sheet_db": {
+      "aurora_rollout": 3,
+      "beacon_renewal": 3,
+      "cedar_migration": 3,
+      "delta_pricing": 3,
+      "ember_followup": 3,
+      "fjord_launch": 3,
+      "granite_compliance": 3,
+      "harbor_onboarding": 3,
+      "iris_qbr": 3,
+      "juniper_vendor": 3,
+      "keystone_billing": 3,
+      "lumen_pilot": 3,
+      "meridian_hiring": 3,
+      "nimbus_security": 3,
+      "orchard_campaign": 3,
+      "prairie_refresh": 3,
+      "quartz_roadmap": 3,
+      "ridge_budget": 3,
+      "summit_training": 3,
+      "tidal_procurement": 3
+    }
+  },
+  "by_mutation_taxon": {
+    "conflict_injection": 300,
+    "participant_omission": 300,
+    "policy_confirmation_missing": 300,
+    "terminal_state_incomplete": 300,
+    "unrelated_side_effect": 300
+  },
+  "by_mutation_class": {
+    "conflict violation": 300,
+    "near-success state": 300,
+    "omission": 300,
+    "policy/confirmation violation": 300,
+    "side-effect violation": 300
+  }
+}

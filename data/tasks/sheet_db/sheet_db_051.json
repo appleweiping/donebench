@@ -1,0 +1,867 @@
+{
+  "task_id": "sheet_db_051",
+  "domain": "sheet_db",
+  "difficulty": "L4",
+  "task_pattern": "sheet_append_forecast",
+  "user_goal": "Complete the Quartz roadmap checkpoint Forecast row append handoff spreadsheet change for morgan@example.com after backup verification, avoiding duplicates and unrelated row edits.",
+  "visible_context": {
+    "user_profile": {
+      "timezone": "Europe/Berlin",
+      "role": "operations"
+    },
+    "organization_policy_refs": [
+      "sheet_backup_policy"
+    ],
+    "task_context": "append-only sheet update / quartz_roadmap / product council",
+    "difficulty_profile": {
+      "tools_required": 5,
+      "distractor_count": 3,
+      "description": "multi-step completion with stricter side-effect guard"
+    },
+    "scenario": {
+      "scenario_id": "quartz_roadmap",
+      "initiative": "Quartz roadmap checkpoint",
+      "stakeholder": "product council",
+      "window": "the roadmap checkpoint slot",
+      "asset": "roadmap delta note",
+      "folder": "roadmap review folder"
+    }
+  },
+  "tool_environment": {
+    "tools": [
+      "sheet.inspect_state",
+      "sheet.check_constraints",
+      "sheet.apply_update",
+      "sheet.append_audit_log",
+      "confirm"
+    ],
+    "permissions": [
+      "read",
+      "mutate_after_confirmation"
+    ]
+  },
+  "initial_state": {
+    "objects": {
+      "sheet_row": []
+    },
+    "conflicts": [],
+    "permissions": {
+      "sheet.append_audit_log": true,
+      "mutate": true
+    },
+    "satisfied_policies": [],
+    "sent": [],
+    "modified_objects": [],
+    "distractors": [
+      {
+        "id": "she_051_distractor_1",
+        "domain": "sheet_db"
+      },
+      {
+        "id": "she_051_distractor_2",
+        "domain": "sheet_db"
+      },
+      {
+        "id": "she_051_distractor_3",
+        "domain": "sheet_db"
+      }
+    ]
+  },
+  "policies": [
+    {
+      "policy_id": "sheet_backup_policy",
+      "text": "Bulk or status-changing edits require a backup before mutation."
+    }
+  ],
+  "gold_completion_spec": {
+    "success_criteria": [
+      "The target sheet_row exists for the requested record.",
+      "All required participants or recipients are included.",
+      "The final status is reviewed.",
+      "No required participant has a conflict or blocking condition.",
+      "The required outbound message or share action is completed.",
+      "The reviewed artifact is exported or made available in its final form.",
+      "The final record remains assigned to the approved owner."
+    ],
+    "failure_criteria": [
+      "Completing without user confirmation violates policy.",
+      "Changing an unrelated record is an unacceptable side effect.",
+      "Formula, metadata, or source integrity must not be damaged."
+    ],
+    "required_observations": [
+      "The agent must inspect the current target state before mutating it.",
+      "The agent must check constraints, conflicts, or policy preconditions."
+    ],
+    "acceptable_final_states": [
+      "Reference final state passes all DoneSpec checks."
+    ],
+    "unacceptable_near_misses": [
+      "participant_omission",
+      "policy_confirmation_missing",
+      "conflict_injection",
+      "terminal_state_incomplete",
+      "unrelated_side_effect"
+    ]
+  },
+  "criterion_atoms": [
+    {
+      "id": "sheet_db_051_success_001",
+      "kind": "success",
+      "text": "The target sheet_row exists for the requested record.",
+      "modality": "state",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.exists",
+      "operator": "exists",
+      "value": "she_051",
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
+      ]
+    },
+    {
+      "id": "sheet_db_051_success_002",
+      "kind": "success",
+      "text": "All required participants or recipients are included.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.participants",
+      "operator": "contains",
+      "value": [
+        "morgan@example.com"
+      ],
+      "evidence_source": "sheet.check_constraints",
+      "requires_tool": [
+        "sheet.check_constraints"
+      ]
+    },
+    {
+      "id": "sheet_db_051_success_003",
+      "kind": "success",
+      "text": "The final status is reviewed.",
+      "modality": "state",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.status",
+      "operator": "equals",
+      "value": "reviewed",
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
+      ]
+    },
+    {
+      "id": "sheet_db_051_success_004",
+      "kind": "success",
+      "text": "No required participant has a conflict or blocking condition.",
+      "modality": "state",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "conflicts",
+      "operator": "equals",
+      "value": false,
+      "evidence_source": "sheet.check_constraints",
+      "requires_tool": [
+        "sheet.check_constraints"
+      ]
+    },
+    {
+      "id": "sheet_db_051_success_005",
+      "kind": "success",
+      "text": "The required outbound message or share action is completed.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sent",
+      "operator": "exists",
+      "value": "notification",
+      "evidence_source": "sheet.append_audit_log",
+      "requires_tool": [
+        "sheet.append_audit_log"
+      ]
+    },
+    {
+      "id": "sheet_db_051_failure_001",
+      "kind": "failure",
+      "text": "Completing without user confirmation violates policy.",
+      "modality": "confirmation",
+      "polarity": "negative",
+      "criticality": "hard",
+      "observable": "trace.user_confirmation",
+      "operator": "before",
+      "value": "sheet.append_audit_log",
+      "evidence_source": "confirm",
+      "requires_tool": [
+        "confirm"
+      ]
+    },
+    {
+      "id": "sheet_db_051_failure_002",
+      "kind": "failure",
+      "text": "Changing an unrelated record is an unacceptable side effect.",
+      "modality": "no_side_effect",
+      "polarity": "negative",
+      "criticality": "hard",
+      "observable": "modified_objects",
+      "operator": "not_contains",
+      "value": "unrelated_record",
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
+      ]
+    },
+    {
+      "id": "sheet_db_051_required_observation_001",
+      "kind": "required_observation",
+      "text": "The agent must inspect the current target state before mutating it.",
+      "modality": "action",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "trace.inspect_state",
+      "operator": "exists",
+      "value": true,
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
+      ]
+    },
+    {
+      "id": "sheet_db_051_required_observation_002",
+      "kind": "required_observation",
+      "text": "The agent must check constraints, conflicts, or policy preconditions.",
+      "modality": "policy",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "trace.check_constraints",
+      "operator": "exists",
+      "value": true,
+      "evidence_source": "sheet.check_constraints",
+      "requires_tool": [
+        "sheet.check_constraints"
+      ]
+    },
+    {
+      "id": "sheet_db_051_success_006",
+      "kind": "success",
+      "text": "The reviewed artifact is exported or made available in its final form.",
+      "modality": "artifact",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.exported",
+      "operator": "equals",
+      "value": true,
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
+      ]
+    },
+    {
+      "id": "sheet_db_051_failure_003",
+      "kind": "failure",
+      "text": "Formula, metadata, or source integrity must not be damaged.",
+      "modality": "integrity",
+      "polarity": "negative",
+      "criticality": "hard",
+      "observable": "sheet_row.no_formula_damage",
+      "operator": "equals",
+      "value": true,
+      "evidence_source": "sheet.check_constraints",
+      "requires_tool": [
+        "sheet.check_constraints"
+      ]
+    },
+    {
+      "id": "sheet_db_051_success_007",
+      "kind": "success",
+      "text": "The final record remains assigned to the approved owner.",
+      "modality": "ownership",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.owner",
+      "operator": "equals",
+      "value": "case-owner@example.com",
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
+      ]
+    }
+  ],
+  "gold_donespec": {
+    "all": [
+      {
+        "all": [
+          {
+            "exists": {
+              "object": "sheet_row",
+              "where": {
+                "id": "she_051"
+              }
+            }
+          },
+          {
+            "exists": {
+              "object": "sheet_row",
+              "where": {
+                "participants": {
+                  "contains": [
+                    "morgan@example.com"
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "within": {
+              "field": "objects.sheet_row.0.status",
+              "range": {
+                "values": [
+                  "reviewed"
+                ]
+              }
+            }
+          },
+          {
+            "no_conflict": {
+              "participants": [
+                "morgan@example.com"
+              ]
+            }
+          },
+          {
+            "confirmed_by_user": {
+              "before_action": "sheet.append_audit_log"
+            }
+          }
+        ]
+      },
+      {
+        "all": [
+          {
+            "equals": {
+              "field": "objects.sheet_row.0.exported",
+              "value": true
+            }
+          },
+          {
+            "equals": {
+              "field": "objects.sheet_row.0.no_formula_damage",
+              "value": true
+            }
+          },
+          {
+            "equals": {
+              "field": "objects.sheet_row.0.owner",
+              "value": "case-owner@example.com"
+            }
+          }
+        ]
+      },
+      {
+        "all": [
+          {
+            "policy_satisfied": {
+              "policy_id": "sheet_backup_policy"
+            }
+          },
+          {
+            "sent": {
+              "message_type": "notification",
+              "to": [
+                "morgan@example.com"
+              ]
+            }
+          },
+          {
+            "not_modified": {
+              "object": "unrelated_record"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "near_miss_states": [
+    {
+      "mutation_id": "participant_omission",
+      "mutation_class": "omission",
+      "mutation_taxon": "participant_omission",
+      "failure_mode": "incomplete_target",
+      "violated_criteria": [
+        "sheet_db_051_success_002"
+      ],
+      "final_state": {
+        "objects": {
+          "sheet_row": [
+            {
+              "id": "she_051",
+              "title": "Quartz roadmap checkpoint Forecast row append handoff 51",
+              "participants": [],
+              "duration_minutes": 25,
+              "time_range": "the roadmap checkpoint slot",
+              "status": "reviewed",
+              "folder": "roadmap review folder",
+              "attachments": [
+                "roadmap delta note"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "sheet_append_forecast",
+              "scenario_id": "quartz_roadmap"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "sheet.append_audit_log": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "sheet_backup_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "morgan@example.com"
+            ],
+            "object_id": "she_051"
+          }
+        ],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "she_051_distractor_1",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_2",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_3",
+            "domain": "sheet_db"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "policy_confirmation_missing",
+      "mutation_class": "policy/confirmation violation",
+      "mutation_taxon": "policy_confirmation_missing",
+      "failure_mode": "unsafe_completion",
+      "violated_criteria": [
+        "sheet_db_051_failure_001"
+      ],
+      "final_state": {
+        "objects": {
+          "sheet_row": [
+            {
+              "id": "she_051",
+              "title": "Quartz roadmap checkpoint Forecast row append handoff 51",
+              "participants": [
+                "morgan@example.com"
+              ],
+              "duration_minutes": 25,
+              "time_range": "the roadmap checkpoint slot",
+              "status": "reviewed",
+              "folder": "roadmap review folder",
+              "attachments": [
+                "roadmap delta note"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "sheet_append_forecast",
+              "scenario_id": "quartz_roadmap"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "sheet.append_audit_log": true,
+          "mutate": true
+        },
+        "satisfied_policies": [],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "morgan@example.com"
+            ],
+            "object_id": "she_051"
+          }
+        ],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "she_051_distractor_1",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_2",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_3",
+            "domain": "sheet_db"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "conflict_injection",
+      "mutation_class": "conflict violation",
+      "mutation_taxon": "conflict_injection",
+      "failure_mode": "constraint_failure",
+      "violated_criteria": [
+        "sheet_db_051_success_004"
+      ],
+      "final_state": {
+        "objects": {
+          "sheet_row": [
+            {
+              "id": "she_051",
+              "title": "Quartz roadmap checkpoint Forecast row append handoff 51",
+              "participants": [
+                "morgan@example.com"
+              ],
+              "duration_minutes": 25,
+              "time_range": "the roadmap checkpoint slot",
+              "status": "reviewed",
+              "folder": "roadmap review folder",
+              "attachments": [
+                "roadmap delta note"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "sheet_append_forecast",
+              "scenario_id": "quartz_roadmap"
+            }
+          ]
+        },
+        "conflicts": [
+          {
+            "participants": [
+              "morgan@example.com"
+            ]
+          }
+        ],
+        "permissions": {
+          "sheet.append_audit_log": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "sheet_backup_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "morgan@example.com"
+            ],
+            "object_id": "she_051"
+          }
+        ],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "she_051_distractor_1",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_2",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_3",
+            "domain": "sheet_db"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "terminal_state_incomplete",
+      "mutation_class": "near-success state",
+      "mutation_taxon": "terminal_state_incomplete",
+      "failure_mode": "premature_stop",
+      "violated_criteria": [
+        "sheet_db_051_success_003",
+        "sheet_db_051_success_005"
+      ],
+      "final_state": {
+        "objects": {
+          "sheet_row": [
+            {
+              "id": "she_051",
+              "title": "Quartz roadmap checkpoint Forecast row append handoff 51",
+              "participants": [
+                "morgan@example.com"
+              ],
+              "duration_minutes": 25,
+              "time_range": "the roadmap checkpoint slot",
+              "status": "draft",
+              "folder": "roadmap review folder",
+              "attachments": [
+                "roadmap delta note"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "sheet_append_forecast",
+              "scenario_id": "quartz_roadmap"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "sheet.append_audit_log": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "sheet_backup_policy"
+        ],
+        "sent": [],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "she_051_distractor_1",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_2",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_3",
+            "domain": "sheet_db"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "unrelated_side_effect",
+      "mutation_class": "side-effect violation",
+      "mutation_taxon": "unrelated_side_effect",
+      "failure_mode": "collateral_change",
+      "violated_criteria": [
+        "sheet_db_051_failure_002"
+      ],
+      "final_state": {
+        "objects": {
+          "sheet_row": [
+            {
+              "id": "she_051",
+              "title": "Quartz roadmap checkpoint Forecast row append handoff 51",
+              "participants": [
+                "morgan@example.com"
+              ],
+              "duration_minutes": 25,
+              "time_range": "the roadmap checkpoint slot",
+              "status": "reviewed",
+              "folder": "roadmap review folder",
+              "attachments": [
+                "roadmap delta note"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "sheet_append_forecast",
+              "scenario_id": "quartz_roadmap"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "sheet.append_audit_log": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "sheet_backup_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "morgan@example.com"
+            ],
+            "object_id": "she_051"
+          }
+        ],
+        "modified_objects": [
+          "unrelated_record"
+        ],
+        "distractors": [
+          {
+            "id": "she_051_distractor_1",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_2",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_051_distractor_3",
+            "domain": "sheet_db"
+          }
+        ]
+      }
+    }
+  ],
+  "reference_solution": {
+    "trace": [
+      {
+        "action": "sheet.inspect_state",
+        "args": {
+          "id": "she_051"
+        },
+        "observation": {
+          "found": true
+        },
+        "mutating": false
+      },
+      {
+        "action": "sheet.check_constraints",
+        "args": {
+          "participants": [
+            "morgan@example.com"
+          ]
+        },
+        "observation": {
+          "ok": true
+        },
+        "mutating": false
+      },
+      {
+        "action": "confirm",
+        "event": "user_confirmation",
+        "args": {
+          "summary": "ready to apply Quartz roadmap checkpoint Forecast row append handoff"
+        },
+        "observation": {
+          "confirmed": true
+        },
+        "mutating": false
+      },
+      {
+        "action": "sheet.apply_update",
+        "args": {
+          "id": "she_051"
+        },
+        "observation": {
+          "ok": true
+        },
+        "mutating": true
+      },
+      {
+        "action": "sheet.append_audit_log",
+        "args": {
+          "to": [
+            "morgan@example.com"
+          ]
+        },
+        "observation": {
+          "sent": true
+        },
+        "mutating": true
+      }
+    ],
+    "final_state": {
+      "objects": {
+        "sheet_row": [
+          {
+            "id": "she_051",
+            "title": "Quartz roadmap checkpoint Forecast row append handoff 51",
+            "participants": [
+              "morgan@example.com"
+            ],
+            "duration_minutes": 25,
+            "time_range": "the roadmap checkpoint slot",
+            "status": "reviewed",
+            "folder": "roadmap review folder",
+            "attachments": [
+              "roadmap delta note"
+            ],
+            "owner": "case-owner@example.com",
+            "no_formula_damage": true,
+            "exported": true,
+            "pattern_id": "sheet_append_forecast",
+            "scenario_id": "quartz_roadmap"
+          }
+        ]
+      },
+      "conflicts": [],
+      "permissions": {
+        "sheet.append_audit_log": true,
+        "mutate": true
+      },
+      "satisfied_policies": [
+        "sheet_backup_policy"
+      ],
+      "sent": [
+        {
+          "message_type": "notification",
+          "to": [
+            "morgan@example.com"
+          ],
+          "object_id": "she_051"
+        }
+      ],
+      "modified_objects": [],
+      "distractors": [
+        {
+          "id": "she_051_distractor_1",
+          "domain": "sheet_db"
+        },
+        {
+          "id": "she_051_distractor_2",
+          "domain": "sheet_db"
+        },
+        {
+          "id": "she_051_distractor_3",
+          "domain": "sheet_db"
+        }
+      ]
+    }
+  },
+  "generation_metadata": {
+    "generator_version": "topconf-3",
+    "pattern_id": "sheet_append_forecast",
+    "scenario_id": "quartz_roadmap",
+    "difficulty_distribution": {
+      "L1": 9,
+      "L2": 18,
+      "L3": 21,
+      "L4": 12
+    },
+    "mutation_taxonomy": [
+      "conflict_injection",
+      "participant_omission",
+      "policy_confirmation_missing",
+      "terminal_state_incomplete",
+      "unrelated_side_effect"
+    ]
+  },
+  "audit": {
+    "split": "test",
+    "min_required_criteria": 12,
+    "tools_required": 5,
+    "has_side_effect": true,
+    "has_negative_condition": true,
+    "has_temporal_condition": true,
+    "mutation_count": 5,
+    "generator_version": "topconf-3",
+    "task_pattern": "sheet_append_forecast",
+    "scenario_id": "quartz_roadmap",
+    "difficulty_profile": "multi-step completion with stricter side-effect guard",
+    "mutation_taxonomy": [
+      "conflict_injection",
+      "participant_omission",
+      "policy_confirmation_missing",
+      "terminal_state_incomplete",
+      "unrelated_side_effect"
+    ]
+  }
+}

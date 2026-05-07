@@ -1,0 +1,26 @@
+{
+  "num_tasks": 300,
+  "validation_errors": [],
+  "by_domain": {
+    "calendar": 60,
+    "crm_workflow": 60,
+    "email": 60,
+    "file_doc": 60,
+    "sheet_db": 60
+  },
+  "by_split": {
+    "dev": 50,
+    "test": 250
+  },
+  "by_difficulty": {
+    "L1": 45,
+    "L2": 90,
+    "L3": 105,
+    "L4": 60
+  },
+  "num_high_similarity_pairs": 0,
+  "num_structural_signature_groups": 20,
+  "num_donespec_signature_groups": 5,
+  "num_pattern_dev_test_leaks": 15,
+  "num_scenario_dev_test_leaks": 1
+}

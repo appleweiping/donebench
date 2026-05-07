@@ -1,0 +1,759 @@
+{
+  "task_id": "crm_workflow_014",
+  "domain": "crm_workflow",
+  "difficulty": "L2",
+  "task_pattern": "crm_route_refund",
+  "user_goal": "Close the Ember incident follow-up Refund request closure briefing after verifying escalation policy, recording the resolution, assigning ownership, and notifying priya@example.com.",
+  "visible_context": {
+    "user_profile": {
+      "timezone": "Europe/Berlin",
+      "role": "operations"
+    },
+    "organization_policy_refs": [
+      "crm_escalation_policy"
+    ],
+    "task_context": "approval-bound resolution / ember_followup / incident commanders",
+    "difficulty_profile": {
+      "tools_required": 3,
+      "distractor_count": 1,
+      "description": "single target plus one distractor"
+    },
+    "scenario": {
+      "scenario_id": "ember_followup",
+      "initiative": "Ember incident follow-up",
+      "stakeholder": "incident commanders",
+      "window": "Friday early afternoon",
+      "asset": "incident summary",
+      "folder": "incident evidence folder"
+    }
+  },
+  "tool_environment": {
+    "tools": [
+      "crm.inspect_state",
+      "crm.check_constraints",
+      "crm.apply_update",
+      "send_notification",
+      "confirm"
+    ],
+    "permissions": [
+      "read",
+      "mutate_after_confirmation"
+    ]
+  },
+  "initial_state": {
+    "objects": {
+      "crm_ticket": []
+    },
+    "conflicts": [],
+    "permissions": {
+      "send_notification": true,
+      "mutate": true
+    },
+    "satisfied_policies": [],
+    "sent": [],
+    "modified_objects": [],
+    "distractors": [
+      {
+        "id": "crm_014_distractor_1",
+        "domain": "crm_workflow"
+      }
+    ]
+  },
+  "policies": [
+    {
+      "policy_id": "crm_escalation_policy",
+      "text": "High-priority cases require note, owner assignment, and notification before closure."
+    }
+  ],
+  "gold_completion_spec": {
+    "success_criteria": [
+      "The target crm_ticket exists for the requested record.",
+      "All required participants or recipients are included.",
+      "The final status is closed.",
+      "No required participant has a conflict or blocking condition.",
+      "The required outbound message or share action is completed.",
+      "The reviewed artifact is exported or made available in its final form."
+    ],
+    "failure_criteria": [
+      "Completing without user confirmation violates policy.",
+      "Changing an unrelated record is an unacceptable side effect."
+    ],
+    "required_observations": [
+      "The agent must inspect the current target state before mutating it.",
+      "The agent must check constraints, conflicts, or policy preconditions."
+    ],
+    "acceptable_final_states": [
+      "Reference final state passes all DoneSpec checks."
+    ],
+    "unacceptable_near_misses": [
+      "participant_omission",
+      "policy_confirmation_missing",
+      "conflict_injection",
+      "terminal_state_incomplete",
+      "unrelated_side_effect"
+    ]
+  },
+  "criterion_atoms": [
+    {
+      "id": "crm_workflow_014_success_001",
+      "kind": "success",
+      "text": "The target crm_ticket exists for the requested record.",
+      "modality": "state",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.exists",
+      "operator": "exists",
+      "value": "crm_014",
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_success_002",
+      "kind": "success",
+      "text": "All required participants or recipients are included.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.participants",
+      "operator": "contains",
+      "value": [
+        "priya@example.com"
+      ],
+      "evidence_source": "crm.check_constraints",
+      "requires_tool": [
+        "crm.check_constraints"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_success_003",
+      "kind": "success",
+      "text": "The final status is closed.",
+      "modality": "state",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.status",
+      "operator": "equals",
+      "value": "closed",
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_success_004",
+      "kind": "success",
+      "text": "No required participant has a conflict or blocking condition.",
+      "modality": "state",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "conflicts",
+      "operator": "equals",
+      "value": false,
+      "evidence_source": "crm.check_constraints",
+      "requires_tool": [
+        "crm.check_constraints"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_success_005",
+      "kind": "success",
+      "text": "The required outbound message or share action is completed.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sent",
+      "operator": "exists",
+      "value": "notification",
+      "evidence_source": "send_notification",
+      "requires_tool": [
+        "send_notification"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_failure_001",
+      "kind": "failure",
+      "text": "Completing without user confirmation violates policy.",
+      "modality": "confirmation",
+      "polarity": "negative",
+      "criticality": "hard",
+      "observable": "trace.user_confirmation",
+      "operator": "before",
+      "value": "send_notification",
+      "evidence_source": "confirm",
+      "requires_tool": [
+        "confirm"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_failure_002",
+      "kind": "failure",
+      "text": "Changing an unrelated record is an unacceptable side effect.",
+      "modality": "no_side_effect",
+      "polarity": "negative",
+      "criticality": "hard",
+      "observable": "modified_objects",
+      "operator": "not_contains",
+      "value": "unrelated_record",
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_required_observation_001",
+      "kind": "required_observation",
+      "text": "The agent must inspect the current target state before mutating it.",
+      "modality": "action",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "trace.inspect_state",
+      "operator": "exists",
+      "value": true,
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_required_observation_002",
+      "kind": "required_observation",
+      "text": "The agent must check constraints, conflicts, or policy preconditions.",
+      "modality": "policy",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "trace.check_constraints",
+      "operator": "exists",
+      "value": true,
+      "evidence_source": "crm.check_constraints",
+      "requires_tool": [
+        "crm.check_constraints"
+      ]
+    },
+    {
+      "id": "crm_workflow_014_success_006",
+      "kind": "success",
+      "text": "The reviewed artifact is exported or made available in its final form.",
+      "modality": "artifact",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.exported",
+      "operator": "equals",
+      "value": true,
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
+      ]
+    }
+  ],
+  "gold_donespec": {
+    "all": [
+      {
+        "exists": {
+          "object": "crm_ticket",
+          "where": {
+            "id": "crm_014"
+          }
+        }
+      },
+      {
+        "exists": {
+          "object": "crm_ticket",
+          "where": {
+            "participants": {
+              "contains": [
+                "priya@example.com"
+              ]
+            }
+          }
+        }
+      },
+      {
+        "within": {
+          "field": "objects.crm_ticket.0.status",
+          "range": {
+            "values": [
+              "closed"
+            ]
+          }
+        }
+      },
+      {
+        "no_conflict": {
+          "participants": [
+            "priya@example.com"
+          ]
+        }
+      },
+      {
+        "all": [
+          {
+            "equals": {
+              "field": "objects.crm_ticket.0.exported",
+              "value": true
+            }
+          }
+        ]
+      },
+      {
+        "confirmed_by_user": {
+          "before_action": "send_notification"
+        }
+      },
+      {
+        "policy_satisfied": {
+          "policy_id": "crm_escalation_policy"
+        }
+      },
+      {
+        "sent": {
+          "message_type": "notification",
+          "to": [
+            "priya@example.com"
+          ]
+        }
+      },
+      {
+        "not_modified": {
+          "object": "unrelated_record"
+        }
+      }
+    ]
+  },
+  "near_miss_states": [
+    {
+      "mutation_id": "participant_omission",
+      "mutation_class": "omission",
+      "mutation_taxon": "participant_omission",
+      "failure_mode": "incomplete_target",
+      "violated_criteria": [
+        "crm_workflow_014_success_002"
+      ],
+      "final_state": {
+        "objects": {
+          "crm_ticket": [
+            {
+              "id": "crm_014",
+              "title": "Ember incident follow-up Refund request closure briefing 14",
+              "participants": [],
+              "duration_minutes": 50,
+              "time_range": "Friday early afternoon",
+              "status": "closed",
+              "folder": "incident evidence folder",
+              "attachments": [
+                "incident summary"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "crm_route_refund",
+              "scenario_id": "ember_followup"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_notification": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "crm_escalation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "priya@example.com"
+            ],
+            "object_id": "crm_014"
+          }
+        ],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "crm_014_distractor_1",
+            "domain": "crm_workflow"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "policy_confirmation_missing",
+      "mutation_class": "policy/confirmation violation",
+      "mutation_taxon": "policy_confirmation_missing",
+      "failure_mode": "unsafe_completion",
+      "violated_criteria": [
+        "crm_workflow_014_failure_001"
+      ],
+      "final_state": {
+        "objects": {
+          "crm_ticket": [
+            {
+              "id": "crm_014",
+              "title": "Ember incident follow-up Refund request closure briefing 14",
+              "participants": [
+                "priya@example.com"
+              ],
+              "duration_minutes": 50,
+              "time_range": "Friday early afternoon",
+              "status": "closed",
+              "folder": "incident evidence folder",
+              "attachments": [
+                "incident summary"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "crm_route_refund",
+              "scenario_id": "ember_followup"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_notification": true,
+          "mutate": true
+        },
+        "satisfied_policies": [],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "priya@example.com"
+            ],
+            "object_id": "crm_014"
+          }
+        ],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "crm_014_distractor_1",
+            "domain": "crm_workflow"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "conflict_injection",
+      "mutation_class": "conflict violation",
+      "mutation_taxon": "conflict_injection",
+      "failure_mode": "constraint_failure",
+      "violated_criteria": [
+        "crm_workflow_014_success_004"
+      ],
+      "final_state": {
+        "objects": {
+          "crm_ticket": [
+            {
+              "id": "crm_014",
+              "title": "Ember incident follow-up Refund request closure briefing 14",
+              "participants": [
+                "priya@example.com"
+              ],
+              "duration_minutes": 50,
+              "time_range": "Friday early afternoon",
+              "status": "closed",
+              "folder": "incident evidence folder",
+              "attachments": [
+                "incident summary"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "crm_route_refund",
+              "scenario_id": "ember_followup"
+            }
+          ]
+        },
+        "conflicts": [
+          {
+            "participants": [
+              "priya@example.com"
+            ]
+          }
+        ],
+        "permissions": {
+          "send_notification": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "crm_escalation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "priya@example.com"
+            ],
+            "object_id": "crm_014"
+          }
+        ],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "crm_014_distractor_1",
+            "domain": "crm_workflow"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "terminal_state_incomplete",
+      "mutation_class": "near-success state",
+      "mutation_taxon": "terminal_state_incomplete",
+      "failure_mode": "premature_stop",
+      "violated_criteria": [
+        "crm_workflow_014_success_003",
+        "crm_workflow_014_success_005"
+      ],
+      "final_state": {
+        "objects": {
+          "crm_ticket": [
+            {
+              "id": "crm_014",
+              "title": "Ember incident follow-up Refund request closure briefing 14",
+              "participants": [
+                "priya@example.com"
+              ],
+              "duration_minutes": 50,
+              "time_range": "Friday early afternoon",
+              "status": "draft",
+              "folder": "incident evidence folder",
+              "attachments": [
+                "incident summary"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "crm_route_refund",
+              "scenario_id": "ember_followup"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_notification": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "crm_escalation_policy"
+        ],
+        "sent": [],
+        "modified_objects": [],
+        "distractors": [
+          {
+            "id": "crm_014_distractor_1",
+            "domain": "crm_workflow"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "unrelated_side_effect",
+      "mutation_class": "side-effect violation",
+      "mutation_taxon": "unrelated_side_effect",
+      "failure_mode": "collateral_change",
+      "violated_criteria": [
+        "crm_workflow_014_failure_002"
+      ],
+      "final_state": {
+        "objects": {
+          "crm_ticket": [
+            {
+              "id": "crm_014",
+              "title": "Ember incident follow-up Refund request closure briefing 14",
+              "participants": [
+                "priya@example.com"
+              ],
+              "duration_minutes": 50,
+              "time_range": "Friday early afternoon",
+              "status": "closed",
+              "folder": "incident evidence folder",
+              "attachments": [
+                "incident summary"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "crm_route_refund",
+              "scenario_id": "ember_followup"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_notification": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "crm_escalation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "priya@example.com"
+            ],
+            "object_id": "crm_014"
+          }
+        ],
+        "modified_objects": [
+          "unrelated_record"
+        ],
+        "distractors": [
+          {
+            "id": "crm_014_distractor_1",
+            "domain": "crm_workflow"
+          }
+        ]
+      }
+    }
+  ],
+  "reference_solution": {
+    "trace": [
+      {
+        "action": "crm.inspect_state",
+        "args": {
+          "id": "crm_014"
+        },
+        "observation": {
+          "found": true
+        },
+        "mutating": false
+      },
+      {
+        "action": "crm.check_constraints",
+        "args": {
+          "participants": [
+            "priya@example.com"
+          ]
+        },
+        "observation": {
+          "ok": true
+        },
+        "mutating": false
+      },
+      {
+        "action": "confirm",
+        "event": "user_confirmation",
+        "args": {
+          "summary": "ready to apply Ember incident follow-up Refund request closure briefing"
+        },
+        "observation": {
+          "confirmed": true
+        },
+        "mutating": false
+      },
+      {
+        "action": "crm.apply_update",
+        "args": {
+          "id": "crm_014"
+        },
+        "observation": {
+          "ok": true
+        },
+        "mutating": true
+      },
+      {
+        "action": "send_notification",
+        "args": {
+          "to": [
+            "priya@example.com"
+          ]
+        },
+        "observation": {
+          "sent": true
+        },
+        "mutating": true
+      }
+    ],
+    "final_state": {
+      "objects": {
+        "crm_ticket": [
+          {
+            "id": "crm_014",
+            "title": "Ember incident follow-up Refund request closure briefing 14",
+            "participants": [
+              "priya@example.com"
+            ],
+            "duration_minutes": 50,
+            "time_range": "Friday early afternoon",
+            "status": "closed",
+            "folder": "incident evidence folder",
+            "attachments": [
+              "incident summary"
+            ],
+            "owner": "case-owner@example.com",
+            "no_formula_damage": true,
+            "exported": true,
+            "pattern_id": "crm_route_refund",
+            "scenario_id": "ember_followup"
+          }
+        ]
+      },
+      "conflicts": [],
+      "permissions": {
+        "send_notification": true,
+        "mutate": true
+      },
+      "satisfied_policies": [
+        "crm_escalation_policy"
+      ],
+      "sent": [
+        {
+          "message_type": "notification",
+          "to": [
+            "priya@example.com"
+          ],
+          "object_id": "crm_014"
+        }
+      ],
+      "modified_objects": [],
+      "distractors": [
+        {
+          "id": "crm_014_distractor_1",
+          "domain": "crm_workflow"
+        }
+      ]
+    }
+  },
+  "generation_metadata": {
+    "generator_version": "topconf-3",
+    "pattern_id": "crm_route_refund",
+    "scenario_id": "ember_followup",
+    "difficulty_distribution": {
+      "L1": 9,
+      "L2": 18,
+      "L3": 21,
+      "L4": 12
+    },
+    "mutation_taxonomy": [
+      "conflict_injection",
+      "participant_omission",
+      "policy_confirmation_missing",
+      "terminal_state_incomplete",
+      "unrelated_side_effect"
+    ]
+  },
+  "audit": {
+    "split": "test",
+    "min_required_criteria": 10,
+    "tools_required": 3,
+    "has_side_effect": true,
+    "has_negative_condition": true,
+    "has_temporal_condition": true,
+    "mutation_count": 5,
+    "generator_version": "topconf-3",
+    "task_pattern": "crm_route_refund",
+    "scenario_id": "ember_followup",
+    "difficulty_profile": "single target plus one distractor",
+    "mutation_taxonomy": [
+      "conflict_injection",
+      "participant_omission",
+      "policy_confirmation_missing",
+      "terminal_state_incomplete",
+      "unrelated_side_effect"
+    ]
+  }
+}

@@ -12,7 +12,10 @@ from donebench.core.matching import normalize_freeform_criteria
 from donebench.core.schema import Phase1Output, Task
 
 
-def build_spec_prompt(task: Task, mode: str) -> str:
+TOKEN_MATCHED_BUDGET_CHARS = 3200
+
+
+def build_spec_prompt(task: Task, mode: str, budget_chars: int | None = None) -> str:
     mode_instruction = load_mode_instruction(mode)
     payload = {
         "task_id": task.task_id,
@@ -48,7 +51,7 @@ def build_spec_prompt(task: Task, mode: str) -> str:
         "assumptions": ["string"],
         "clarifications_needed": ["string"],
     }
-    return (
+    prompt = (
         f"Agent mode: {mode}.\n"
         f"Mode instruction: {mode_instruction}\n"
         "You are being evaluated on Specification Grounding, not generic planning. "
@@ -58,6 +61,9 @@ def build_spec_prompt(task: Task, mode: str) -> str:
         f"JSON template:\n{json.dumps(template, separators=(',', ':'))}\n"
         f"Task:\n{json.dumps(payload, separators=(',', ':'))}"
     )
+    if budget_chars:
+        prompt = _pad_to_budget(prompt, budget_chars)
+    return prompt
 
 
 def load_mode_instruction(mode: str) -> str:
@@ -67,12 +73,14 @@ def load_mode_instruction(mode: str) -> str:
     return "Infer task completion criteria before execution."
 
 
-def construct_llm_spec(task: Task, llm: Any, mode: str, fallback: Phase1Output) -> Phase1Output:
+def construct_llm_spec(task: Task, llm: Any, mode: str, fallback: Phase1Output, budget_chars: int | None = None) -> Phase1Output:
     if isinstance(llm, MockLLM):
+        if budget_chars:
+            fallback.diagnostics["token_matched_budget_chars"] = budget_chars
         return fallback
     meta: dict[str, Any] = {}
     try:
-        prompt = build_spec_prompt(task, mode)
+        prompt = build_spec_prompt(task, mode, budget_chars=budget_chars)
         if hasattr(llm, "complete_with_metadata"):
             result = llm.complete_with_metadata(prompt)
             raw = result.text
@@ -98,6 +106,8 @@ def construct_llm_spec(task: Task, llm: Any, mode: str, fallback: Phase1Output) 
 
     output.diagnostics["llm_parse_status"] = "parsed"
     output.diagnostics.update(meta)
+    if budget_chars:
+        output.diagnostics["token_matched_budget_chars"] = budget_chars
     if not output.criterion_atoms:
         freeform = (
             output.success_conditions
@@ -111,6 +121,19 @@ def construct_llm_spec(task: Task, llm: Any, mode: str, fallback: Phase1Output) 
         output.donespec = fallback.donespec
         output.assumptions.append("No executable DoneSpec was parsed; fell back to baseline DoneSpec for execution harness.")
     return output
+
+
+def _pad_to_budget(prompt: str, budget_chars: int) -> str:
+    if len(prompt) >= budget_chars:
+        return prompt
+    pad = (
+        "\nToken-match control: use the available thinking space only according to the mode instruction. "
+        "Do not reveal hidden criteria beyond what the mode permits."
+    )
+    parts = [prompt]
+    while sum(len(part) for part in parts) < budget_chars:
+        parts.append(pad)
+    return "".join(parts)[:budget_chars]
 
 
 def _extract_json(text: str) -> dict[str, Any]:

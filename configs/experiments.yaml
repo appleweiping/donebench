@@ -78,6 +78,30 @@ experiment_suites:
     models: [deepseek_v4_flash, deepseek_v4_pro]
     trials_per_model: 1
     recommended_max_workers: 64
+  topconf_deepseek_toolplan_pilot:
+    split: test
+    agents: [direct, plan_first, spec_first]
+    models: [deepseek_v4_flash, deepseek_v4_pro]
+    trials_per_model: 1
+    recommended_max_workers: 64
+  topconf_deepseek_toolplan_full:
+    split: test
+    agents: [direct, plan_first, spec_first]
+    models: [deepseek_v4_flash, deepseek_v4_pro, deepseek_chat, deepseek_reasoner]
+    trials_per_model: 3
+    recommended_max_workers: 64
+  topconf_deepseek_token_matched:
+    split: test
+    agents: [direct_token_matched, plan_first_token_matched, spec_first_token_matched]
+    models: [deepseek_v4_flash, deepseek_v4_pro]
+    trials_per_model: 1
+    recommended_max_workers: 64
+  four_model_token_matched:
+    split: test
+    agents: [direct_token_matched, plan_first_token_matched, spec_first_token_matched]
+    models: [deepseek_v4_flash, gpt_5_5, gemini_3_pro_preview, claude_opus_4_7]
+    trials_per_model: 1
+    recommended_max_workers: 64
   topconf_deepseek_replicates:
     split: test
     agents: [direct, plan_first, spec_first]

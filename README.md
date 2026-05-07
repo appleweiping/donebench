@@ -140,6 +140,16 @@ The current `topconf_deepseek_core` suite plans 500 test tasks x 3 agents x 2 De
 
 For submission, use tool-plan executor rows for main execution claims, record provider/model identifiers and access dates, and report whether missing credentials were skipped. Historical parsed DeepSeek topconf-4 aggregates remain useful as a specification-grounding run; any new execution claims should be regenerated after the tool-plan executor change.
 
+The preferred one-command path is the pipeline command. It runs the suite, resumes completed rows, and writes stats, failures, parse transparency, action diagnostics, costs, paper tables, and a run manifest under a single run directory:
+
+```powershell
+donebench experiment-pipeline topconf_deepseek_toolplan_pilot --limit 50 --resume --max-workers 0
+donebench experiment-pipeline topconf_deepseek_toolplan_full --resume --max-workers 0
+donebench experiment-pipeline topconf_deepseek_token_matched --resume --max-workers 0
+```
+
+`--max-workers 0` uses the suite recommendation. Outputs are isolated under `results/runs/<suite>/trials.jsonl` and `reports/runs/<suite>/`, avoiding accidental aggregation across historical result files.
+
 ## Reproducibility Package
 
 Reviewer-facing package metadata is generated with:

@@ -4,6 +4,9 @@ from pathlib import Path
 import pandas as pd
 
 from donebench.scripts.advanced_stats import write_advanced_stats
+from donebench.scripts.action_diagnostics import write_action_diagnostics
+from donebench.scripts.audit_gate import write_audit_gate
+from donebench.scripts.experiment_pipeline import run_experiment_pipeline
 from donebench.scripts.failure_mining import mine_failures
 from donebench.scripts.invalid_donespec_taxonomy import classify_invalid_donespec
 from donebench.scripts.invalid_donespec_taxonomy import failure_detection_by_family
@@ -147,3 +150,57 @@ def test_parse_transparency_outputs(tmp_path):
     assert summary["status_counts"] == {"parsed": 1, "fallback": 1}
     assert by_agent.loc[0, "parse_rate"] == 0.5
     assert (tmp_path / "parse" / "parse_transparency_by_status.json").exists()
+
+
+def test_action_diagnostics_outputs(tmp_path):
+    input_path = tmp_path / "results.jsonl"
+    row = {
+        "task_id": "task_001",
+        "domain": "calendar",
+        "difficulty": "L1",
+        "model": "m",
+        "agent": "spec_first",
+        "trial": 0,
+        "diagnostics": {"execution_mode": "tool_plan_executor", "llm_parse_status": "parsed", "action_parse_status": "parsed"},
+        "phase2": {"task_success": False, "own_spec_pass": False, "self_violation_rate": 1.0, "num_tool_calls": 2, "num_mutating_tool_calls": 1},
+        "execution_trace": [
+            {"action": "calendar.inspect_state", "observation": {"ok": True}, "mutating": False},
+            {"action": "calendar.apply_update", "observation": {"ok": False, "missing_preconditions": ["confirm"]}, "mutating": True},
+        ],
+    }
+    input_path.write_text(json.dumps(row) + "\n", encoding="utf-8")
+    summary = write_action_diagnostics(input_path, tmp_path / "actions")
+    failures = pd.read_csv(tmp_path / "actions" / "action_failure_modes.csv")
+    assert summary["tool_plan_rate"] == 1.0
+    assert failures.loc[0, "precondition_failure_rate"] == 1.0
+
+
+def test_experiment_pipeline_smoke(tmp_path):
+    output = tmp_path / "smoke.jsonl"
+    summary = run_experiment_pipeline("smoke", output=output, report_root=tmp_path / "reports", limit=1, max_workers=2)
+    assert output.exists()
+    assert summary["new_rows"] == 2
+    report_dir = tmp_path / "reports" / "runs" / "smoke"
+    assert (report_dir / "stats" / "advanced_summary_ci.csv").exists()
+    assert (report_dir / "actions" / "action_diagnostics_summary.json").exists()
+    assert (report_dir / "paper_tables" / "main_results_with_execution.csv").exists()
+
+
+def test_audit_gate_outputs(tmp_path):
+    queue = tmp_path / "queue.jsonl"
+    queue.write_text(
+        json.dumps(
+            {
+                "task_id": "t1",
+                "human_annotation": {
+                    "annotator_a": {"decision": "accept", "checks": {"criteria_complete": "pass"}},
+                    "annotator_b": {"decision": "accept", "checks": {"criteria_complete": "pass"}},
+                },
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=tmp_path / "missing.jsonl")
+    assert summary["num_double_annotated"] == 1
+    assert summary["double_annotation_rate"] == 1.0

@@ -50,12 +50,44 @@ def test_spec_guided_executor_models_missing_completion_semantics():
 def test_tool_plan_executor_executes_reference_trace_without_copying_final_state():
     task = load_task(Path("data/tasks/email/email_001.json"))
     env = make_env(task.domain, task.initial_state)
-    calls = [ToolCall(action=step["action"], args=step.get("args", {}), mutating=step.get("mutating", False)) for step in task.reference_solution["trace"]]
+    target = task.reference_solution["final_state"]["objects"]["email_message"][0]
+    calls = [
+        ToolCall(action="email.inspect_state", args={"id": target["id"]}),
+        ToolCall(action="email.check_constraints", args={"participants": target["participants"], "risk_tier": target["risk_tier"]}),
+        ToolCall(action="confirm", args={"summary": "ready", "approval_channel": target["approval_channel"]}),
+        ToolCall(action="email.apply_update", args={"id": target["id"], "patch": target}, mutating=True),
+        ToolCall(action="send_email", args={"to": target["participants"], "object_id": target["id"], "message_type": "email"}, mutating=True),
+    ]
     final_state, trace = env.execute_tool_plan(task, calls)
     score = score_phase2(task, task.gold_donespec, final_state, trace)
     assert score["task_success"] is True
     assert final_state == task.reference_solution["final_state"]
     assert trace[0]["action"] == "email.inspect_state"
+
+
+def test_tool_plan_executor_does_not_leak_reference_target_on_inspect():
+    task = load_task(Path("data/tasks/email/email_001.json"))
+    env = make_env(task.domain, task.initial_state)
+    final_state, trace = env.execute_tool_plan(task, [ToolCall(action="email.inspect_state", args={"id": "ema_001"})])
+    assert trace[0]["observation"]["found"] is False
+    assert trace[0]["observation"]["record"] is None
+    assert final_state == task.initial_state
+
+
+def test_tool_plan_executor_partial_patch_does_not_autofill_gold_fields():
+    task = load_task(Path("data/tasks/email/email_001.json"))
+    env = make_env(task.domain, task.initial_state)
+    calls = [
+        ToolCall(action="email.inspect_state", args={"id": "ema_001"}),
+        ToolCall(action="email.check_constraints", args={"participants": ["alice@example.com"], "risk_tier": "standard"}),
+        ToolCall(action="confirm", args={"summary": "ready", "approval_channel": "inline_confirmation"}),
+        ToolCall(action="email.apply_update", args={"id": "ema_001", "patch": {"status": "sent"}}, mutating=True),
+        ToolCall(action="send_email", args={"to": ["alice@example.com"], "object_id": "ema_001", "message_type": "email"}, mutating=True),
+    ]
+    final_state, trace = env.execute_tool_plan(task, calls)
+    score = score_phase2(task, task.gold_donespec, final_state, trace)
+    assert score["task_success"] is False
+    assert final_state["objects"]["email_message"][0] == {"status": "sent", "id": "ema_001"}
 
 
 def test_tool_plan_executor_enforces_confirmation_preconditions():

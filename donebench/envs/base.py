@@ -46,7 +46,7 @@ class BaseEnv:
         self._tool_specs = {spec.get("name"): spec for spec in task.tool_environment.get("tool_specs", [])}
         self._completed_actions = []
         self._task = task
-        self._target_type, self._target_template = self._target_from_reference(task)
+        self._target_type = self._target_type_from_initial_state(task)
         for item in tool_calls:
             call = item if isinstance(item, ToolCall) else ToolCall.model_validate(item)
             self._execute_one_tool_call(call)
@@ -174,15 +174,15 @@ class BaseEnv:
             return "draft"
         return status
 
-    def _target_from_reference(self, task: Any) -> tuple[str | None, dict[str, Any]]:
-        objects = task.reference_solution.get("final_state", {}).get("objects", {})
-        for object_type, rows in objects.items():
-            if rows:
-                return object_type, copy.deepcopy(rows[0])
-        return None, {}
+    def _target_type_from_initial_state(self, task: Any) -> str | None:
+        objects = task.initial_state.get("objects", {})
+        if objects:
+            return next(iter(objects))
+        state_schema = task.tool_environment.get("state_schema", {}).get("objects", {})
+        return next(iter(state_schema), None)
 
     def _target_id(self) -> Any:
-        return getattr(self, "_target_template", {}).get("id")
+        return None
 
     def _ensure_target(self) -> dict[str, Any]:
         target_type = getattr(self, "_target_type", None)
@@ -190,7 +190,7 @@ class BaseEnv:
             return {}
         objects = self.state.setdefault("objects", {}).setdefault(target_type, [])
         if not objects:
-            target = copy.deepcopy(getattr(self, "_target_template", {}))
+            target = {}
             objects.append(target)
         return objects[0]
 
@@ -200,9 +200,7 @@ class BaseEnv:
         rows = self.state.get("objects", {}).get(target_type, []) if target_type else []
         found = any(row.get("id") == target_id for row in rows)
         record = next((copy.deepcopy(row) for row in rows if row.get("id") == target_id), None)
-        if record is None and target_id == self._target_id():
-            record = copy.deepcopy(getattr(self, "_target_template", {}))
-        return {"found": bool(record or found), "record": record}
+        return {"found": found, "record": record}
 
     def _constraint_observation(self, args: dict[str, Any]) -> dict[str, Any]:
         participants = list(args.get("participants") or args.get("to") or [])
@@ -222,6 +220,8 @@ class BaseEnv:
             return {"ok": False, "error": "mutate_permission_denied"}
         target = self._ensure_target()
         patch = dict(args.get("patch") or {})
+        if args.get("title") is not None:
+            patch.setdefault("title", args.get("title"))
         if "participants" not in patch and args.get("participants") is not None:
             patch["participants"] = args.get("participants")
         if "status" not in patch and args.get("status") is not None:
@@ -229,7 +229,7 @@ class BaseEnv:
         if "exported" not in patch and args.get("exported") is not None:
             patch["exported"] = args.get("exported")
         target.update(patch)
-        target["id"] = target.get("id") or args.get("id") or self._target_id()
+        target["id"] = target.get("id") or args.get("id")
         if getattr(self, "_task", None):
             self.state.setdefault("audit_log", []).append(
                 {
@@ -245,10 +245,19 @@ class BaseEnv:
         if permission is not True:
             return {"ok": False, "error": "send_permission_denied"}
         recipients = list(args.get("to") or args.get("audience") or [])
-        object_id = args.get("object_id") or args.get("id") or self._target_id()
-        message_type = self._message_type_for_task(getattr(self, "_task", None)) if getattr(self, "_task", None) else "notification"
+        object_id = args.get("object_id") or args.get("id")
+        message_type = args.get("message_type") or self._message_type_from_action(action)
         self.state.setdefault("sent", []).append({"message_type": message_type, "to": recipients, "object_id": object_id})
         return {"sent": True, "delivery_id": f"delivery_{object_id}", "to": recipients}
+
+    def _message_type_from_action(self, action: str) -> str:
+        if action == "send_invites":
+            return "invite"
+        if action == "send_email":
+            return "email"
+        if action == "file.share":
+            return "share"
+        return "notification"
 
     def call(self, action: str, args: dict[str, Any] | None = None, mutating: bool = False, event: str | None = None) -> dict[str, Any]:
         args = args or {}

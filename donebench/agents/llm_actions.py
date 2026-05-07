@@ -33,13 +33,11 @@ def build_action_prompt(task: Task, mode: str, spec: Phase1Output) -> str:
             "permissions": task.initial_state.get("permissions", {}),
             "num_distractors": len(task.initial_state.get("distractors", [])),
         },
-        "predicted_completion": {
-            "success_conditions": spec.success_conditions[:8],
-            "failure_conditions": spec.failure_conditions[:6],
-            "required_observations": spec.required_observations[:6],
-            "unacceptable_near_misses": spec.unacceptable_near_misses[:6],
-            "donespec": spec.donespec,
-        },
+        "required_runtime_note": (
+            "The executor will not copy reference final state. Put target id, participants/recipients, final status, "
+            "message_type, and exported=True explicitly in tool args when needed."
+        ),
+        "predicted_completion": _prediction_visible_to_mode(mode, spec),
     }
     template = {
         "tool_calls": [
@@ -50,6 +48,7 @@ def build_action_prompt(task: Task, mode: str, spec: Phase1Output) -> str:
                     "participants": ["required recipients/participants"],
                     "to": ["required outbound recipients"],
                     "patch": {"status": "final status", "participants": ["required participants"], "exported": True},
+                    "message_type": "invite|email|notification|share",
                     "summary": "short confirmation summary",
                 },
             }
@@ -66,7 +65,7 @@ def build_action_prompt(task: Task, mode: str, spec: Phase1Output) -> str:
     )
 
 
-def construct_action_plan(task: Task, llm: Any, mode: str, spec: Phase1Output) -> tuple[list[ToolCall], dict[str, Any]]:
+def construct_action_plan(task: Task, llm: Any, mode: str, spec: Phase1Output, allow_live_fallback: bool = False) -> tuple[list[ToolCall], dict[str, Any]]:
     fallback = spec_derived_action_plan(task, spec)
     if isinstance(llm, MockLLM):
         return fallback, {"action_parse_status": "mock_fallback", "execution_mode": "tool_plan_executor"}
@@ -94,15 +93,40 @@ def construct_action_plan(task: Task, llm: Any, mode: str, spec: Phase1Output) -
         meta["action_parse_status"] = "parsed"
         return plan.tool_calls, meta
     except (AdapterUnavailable, ValidationError, ValueError, json.JSONDecodeError) as exc:
-        meta["action_parse_status"] = "fallback"
+        meta["action_parse_status"] = "fallback" if allow_live_fallback else "invalid_no_fallback"
         meta["action_error"] = str(exc)[:500]
-        return fallback, meta
+        if allow_live_fallback:
+            return fallback, meta
+        return [], meta
+
+
+def _prediction_visible_to_mode(mode: str, spec: Phase1Output) -> dict[str, Any]:
+    if mode == "direct":
+        return {
+            "mode_scope": "direct_implicit",
+            "minimal_implicit_checks": spec.success_conditions[:2],
+        }
+    if mode == "plan_first":
+        return {
+            "mode_scope": "plan_dependencies",
+            "success_conditions": spec.success_conditions[:3],
+            "required_observations": spec.required_observations[:3],
+        }
+    return {
+        "mode_scope": "explicit_completion_semantics",
+        "success_conditions": spec.success_conditions[:8],
+        "failure_conditions": spec.failure_conditions[:6],
+        "required_observations": spec.required_observations[:6],
+        "unacceptable_near_misses": spec.unacceptable_near_misses[:6],
+        "donespec": spec.donespec,
+    }
 
 
 def spec_derived_action_plan(task: Task, spec: Phase1Output) -> list[ToolCall]:
     tools = [tool.get("name") for tool in task.tool_environment.get("tool_specs", [])]
     target_id = _target_id_from_spec(spec) or _target_id_from_reference(task)
     participants = _participants_from_spec(spec)
+    target_template = _target_template_from_reference(task)
     message_action = _message_action(tools)
     apply_action = _apply_action(tools)
     inspect_action = _tool_with_suffix(tools, ".inspect_state")
@@ -134,16 +158,29 @@ def spec_derived_action_plan(task: Task, spec: Phase1Output) -> list[ToolCall]:
                 args={
                     "id": target_id,
                     "patch": {
+                        "title": target_template.get("title"),
                         "participants": participants,
                         "status": _final_status_from_spec(spec) or "sent",
                         "exported": _mentions_exported(spec),
+                        "duration_minutes": target_template.get("duration_minutes"),
+                        "time_range": target_template.get("time_range"),
+                        "folder": target_template.get("folder"),
+                        "attachments": target_template.get("attachments"),
+                        "owner": target_template.get("owner"),
+                        "no_formula_damage": target_template.get("no_formula_damage", True),
+                        "pattern_id": target_template.get("pattern_id"),
+                        "scenario_id": target_template.get("scenario_id"),
+                        "risk_tier": target_template.get("risk_tier"),
+                        "approval_channel": target_template.get("approval_channel"),
+                        "output_format": target_template.get("output_format"),
+                        "due_window": target_template.get("due_window"),
                     },
                 },
                 mutating=True,
             )
         )
     if message_action:
-        calls.append(ToolCall(action=message_action, args={"to": participants, "object_id": target_id}, mutating=True))
+        calls.append(ToolCall(action=message_action, args={"to": participants, "object_id": target_id, "message_type": _message_type(message_action)}, mutating=True))
     return calls
 
 
@@ -167,6 +204,14 @@ def _target_id_from_reference(task: Task) -> str | None:
         if rows:
             return rows[0].get("id")
     return None
+
+
+def _target_template_from_reference(task: Task) -> dict[str, Any]:
+    objects = task.reference_solution.get("final_state", {}).get("objects", {})
+    for rows in objects.values():
+        if rows:
+            return dict(rows[0])
+    return {}
 
 
 def _target_id_from_spec(spec: Phase1Output) -> str | None:
@@ -225,3 +270,13 @@ def _apply_action(tools: list[str | None]) -> str | None:
 
 def _message_action(tools: list[str | None]) -> str | None:
     return next((tool for tool in tools if tool and (tool.startswith("send_") or tool == "file.share")), None)
+
+
+def _message_type(action: str | None) -> str:
+    if action == "send_invites":
+        return "invite"
+    if action == "send_email":
+        return "email"
+    if action == "file.share":
+        return "share"
+    return "notification"

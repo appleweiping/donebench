@@ -2,7 +2,7 @@ IMAGE ?= donebench-repro
 RESULTS ?= results/smoke.jsonl
 COST_INPUT ?= results/topconf_deepseek_core_trial0.jsonl
 
-.PHONY: test validate audit quality readiness smoke figures paper repro-smoke repro-package repro-manifest openreview-package cost-report docker-build docker-smoke
+.PHONY: test validate audit quality readiness smoke figures paper repro-smoke repro-package repro-manifest openreview-package cost-report topconf-pilot topconf-full topconf-token-matched topconf-postprocess docker-build docker-smoke
 
 test:
 	pytest
@@ -42,6 +42,18 @@ openreview-package:
 
 cost-report:
 	donebench cost-report $(COST_INPUT) reports/costs
+
+topconf-pilot:
+	donebench experiment-pipeline topconf_deepseek_toolplan_pilot --limit 50 --resume --max-workers 0
+
+topconf-full:
+	donebench experiment-pipeline topconf_deepseek_toolplan_full --resume --max-workers 0
+
+topconf-token-matched:
+	donebench experiment-pipeline topconf_deepseek_token_matched --resume --max-workers 0
+
+topconf-postprocess:
+	donebench experiment-pipeline topconf_deepseek_toolplan_pilot --postprocess-only
 
 docker-build:
 	docker build -t $(IMAGE) .

@@ -214,7 +214,8 @@ def write_advanced_stats(
         "advanced_passk_consistency": pass_at_k_consistency(df),
     }
     diffs = [paired_model_diff(df, metric, model_a, model_b) for metric in METRICS]
-    tables["advanced_paired_model_diff"] = pd.concat([d for d in diffs if not d.empty], ignore_index=True) if diffs else pd.DataFrame()
+    non_empty_diffs = [d for d in diffs if not d.empty]
+    tables["advanced_paired_model_diff"] = pd.concat(non_empty_diffs, ignore_index=True) if non_empty_diffs else pd.DataFrame()
     tables["advanced_paired_bootstrap_all_models"] = paired_bootstrap_all_models(df)
     tables["advanced_quadrants"] = pd.DataFrame(Counter(df["quadrant"]).items(), columns=["quadrant", "count"])
     tables["advanced_invalid_donespec_taxonomy"] = invalid_donespec_summary(df)

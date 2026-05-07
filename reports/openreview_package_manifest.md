@@ -12,7 +12,7 @@ Generated task count: 600
 - [present] `configs/experiments.yaml` (3287 bytes): Named experiment suites, splits, agents, and retry-friendly worker recommendations.
 - [present] `configs/models.yaml` (4749 bytes): Provider/model identifiers, credential environment variables, and decoding settings.
 - [present] `data/tasks/` (600 files): Benchmark tasks with gold DoneSpec criteria and near-miss states.
-- [present] `donebench/` (93 files): Benchmark, DSL, agents, experiment runner, and reporting scripts.
+- [present] `donebench/` (95 files): Benchmark, DSL, agents, experiment runner, and reporting scripts.
 - [present] `tests/` (20 files): Unit and smoke tests for schemas, metrics, artifact utilities, and CLI paths.
 
 ## Optional Generated Artifacts
@@ -27,7 +27,7 @@ Generated task count: 600
 - [present] `reports/stats/` (40 files): Advanced statistics and confidence interval tables.
 - [present] `reports/failures/` (19 files): Failure mining tables for qualitative analysis.
 - [present] `paper/main.tex` (1010 bytes): Paper draft scaffold.
-- [present] `paper/tables/` (5 files): Paper table CSV snapshots/templates.
+- [present] `paper/tables/` (7 files): Paper table CSV snapshots/templates.
 - [present] `paper/figures/` (2 files): Generated figure PNGs.
 
 ## Reviewer Entry Points

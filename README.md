@@ -46,6 +46,8 @@ make docker-smoke
 
 Each task includes a user goal, visible tool environment, initial state, policies, atomized gold criteria, executable DoneSpec, near-miss mutated final states, a passing reference trace, and audit metadata. Primary grading is deterministic through the DoneSpec DSL rather than LLM-as-judge.
 
+Execution has two deliberately separated paths. `execute_reference` remains a sanity-check harness for validating gold traces. Paper-facing agent rows use the tool-plan executor: agents emit structured tool calls, the environment enforces listed tools, preconditions, permissions, confirmation gates, and side-effect accounting, then DoneSpec graders score the resulting state and trace. Rows produced by this path include `diagnostics.execution_mode = "tool_plan_executor"`.
+
 ## Dataset
 
 The checked-in top-conference-scale generated dataset contains 600 tasks:
@@ -136,7 +138,7 @@ If DeepSeek returns rate-limit errors, rerun the same command with `--resume --m
 
 The current `topconf_deepseek_core` suite plans 500 test tasks x 3 agents x 2 DeepSeek models x 1 trial = 3000 trials. Historical `results/topconf_deepseek_core_trial0.jsonl` files are pilot traces from an earlier dataset version and should not be treated as the official topconf-4 result table.
 
-For submission, replace placeholders in `paper/tables/api_results_template.csv` with audited aggregates, record provider/model identifiers and access dates, and report whether missing credentials were skipped.
+For submission, use tool-plan executor rows for main execution claims, record provider/model identifiers and access dates, and report whether missing credentials were skipped. Historical parsed DeepSeek topconf-4 aggregates remain useful as a specification-grounding run; any new execution claims should be regenerated after the tool-plan executor change.
 
 ## Reproducibility Package
 

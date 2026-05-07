@@ -1,7 +1,7 @@
 \section{Experimental Setup}
 The local smoke configuration runs without paid APIs using deterministic MockLLM-compatible agents. API-backed adapters use LiteLLM-compatible provider settings and are launched through the resumable streaming runner with \texttt{--resume} and configurable \texttt{--max-workers}. Missing credentials are skipped when \texttt{skip\_missing\_credentials: true}, which keeps artifact smoke tests reproducible on machines without API access.
 
-Experiments measure criterion inference, spec-first execution, own-spec violations, verifier robustness, and model scaling. Statistical reporting uses task-level bootstrap confidence intervals and domain/difficulty stratification.
+Experiments measure criterion inference, spec-first execution, own-spec violations, verifier robustness, and model scaling. Statistical reporting uses task-level bootstrap confidence intervals and domain/difficulty stratification. Main execution claims should use rows whose diagnostics report \texttt{execution\_mode=tool\_plan\_executor}; reference-harness paths are retained only for validation and smoke checks.
 
 \subsection{Planned Evaluation Matrix}
 
@@ -23,7 +23,7 @@ Planned cross-family API & test & Direct, Plan-first, Spec-first, Oracle-spec & 
 
 \subsection{Baselines and Ablations}
 
-Direct runs execute with only implicit completion checks. Plan-first elicits action order and dependencies before acting. Spec-first explicitly elicits completion criteria and a DoneSpec before acting. Oracle-spec receives the gold verifier and estimates the execution gap after specification ambiguity is removed. Mock and oracle-backed paths are treated as harness sanity checks; paper claims should use live-model rows and separately report token-matched controls.
+Direct runs execute with only implicit completion checks. Plan-first elicits action order and dependencies before acting. Spec-first explicitly elicits completion criteria and a DoneSpec before acting. All three protocols feed a structured tool-call plan into the same environment executor. Oracle-spec receives the gold verifier and estimates the execution gap after specification ambiguity is removed. Mock and oracle-backed paths are treated as harness sanity checks; paper claims should use live-model rows and separately report token-matched controls.
 
 \begin{table}[h]
 \centering

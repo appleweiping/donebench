@@ -1,9 +1,11 @@
 \section{DoneBench}
 Each task contains a user goal, visible tool environment, initial state, policies, gold criterion atoms, a DoneSpec verifier, near-miss mutated final states, and a reference solution trace.
 
+DoneBench separates reference validation from agent execution. The reference trace is used to validate that the gold DoneSpec accepts at least one intended completion and rejects near misses. Agent trials instead use a tool-plan executor: the model emits structured tool calls, the environment checks tool availability and preconditions, records confirmations and side effects, mutates the state through domain tool semantics, and then grades the resulting state and trace. This prevents the execution score from being a direct copy of the benchmark-provided final state.
+
 \begin{figure}[h]
 \centering
-\fbox{\parbox{0.86\linewidth}{Task input $\rightarrow$ pre-execution spec $\rightarrow$ near-miss verifier test $\rightarrow$ tool execution $\rightarrow$ gold and own-spec grading.}}
+\fbox{\parbox{0.86\linewidth}{Task input $\rightarrow$ pre-execution spec $\rightarrow$ near-miss verifier test $\rightarrow$ structured tool plan $\rightarrow$ environment execution $\rightarrow$ gold and own-spec grading.}}
 \caption{DoneBench pipeline.}
 \end{figure}
 

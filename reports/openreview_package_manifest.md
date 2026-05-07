@@ -4,7 +4,7 @@ Generated task count: 600
 
 ## Required Files
 
-- [present] `README.md` (8277 bytes): Top-level setup, one-command reproduction, Docker, and API notes.
+- [present] `README.md` (8900 bytes): Top-level setup, one-command reproduction, Docker, and API notes.
 - [present] `Dockerfile` (448 bytes): Pinned Python 3.12 container used for local smoke reproduction.
 - [present] `.devcontainer/devcontainer.json` (838 bytes): VS Code/Codespaces-compatible development container.
 - [present] `Makefile` (1453 bytes): Reviewer entry points: repro-smoke, repro-package, docker-smoke, cost-report.
@@ -12,7 +12,7 @@ Generated task count: 600
 - [present] `configs/experiments.yaml` (3287 bytes): Named experiment suites, splits, agents, and retry-friendly worker recommendations.
 - [present] `configs/models.yaml` (4749 bytes): Provider/model identifiers, credential environment variables, and decoding settings.
 - [present] `data/tasks/` (600 files): Benchmark tasks with gold DoneSpec criteria and near-miss states.
-- [present] `donebench/` (95 files): Benchmark, DSL, agents, experiment runner, and reporting scripts.
+- [present] `donebench/` (97 files): Benchmark, DSL, agents, experiment runner, and reporting scripts.
 - [present] `tests/` (20 files): Unit and smoke tests for schemas, metrics, artifact utilities, and CLI paths.
 
 ## Optional Generated Artifacts

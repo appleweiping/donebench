@@ -2,7 +2,7 @@ from pathlib import Path
 
 from donebench.core.registry import make_env
 from donebench.core.metrics import score_phase2
-from donebench.core.schema import Phase1Output
+from donebench.core.schema import Phase1Output, ToolCall
 from donebench.core.validation import load_task
 
 
@@ -45,3 +45,38 @@ def test_spec_guided_executor_models_missing_completion_semantics():
     score = score_phase2(task, task.gold_donespec, final_state, trace)
     assert score["task_success"] is False
     assert "calendar_confirmation_policy" not in final_state["satisfied_policies"]
+
+
+def test_tool_plan_executor_executes_reference_trace_without_copying_final_state():
+    task = load_task(Path("data/tasks/email/email_001.json"))
+    env = make_env(task.domain, task.initial_state)
+    calls = [ToolCall(action=step["action"], args=step.get("args", {}), mutating=step.get("mutating", False)) for step in task.reference_solution["trace"]]
+    final_state, trace = env.execute_tool_plan(task, calls)
+    score = score_phase2(task, task.gold_donespec, final_state, trace)
+    assert score["task_success"] is True
+    assert final_state == task.reference_solution["final_state"]
+    assert trace[0]["action"] == "email.inspect_state"
+
+
+def test_tool_plan_executor_enforces_confirmation_preconditions():
+    task = load_task(Path("data/tasks/email/email_001.json"))
+    env = make_env(task.domain, task.initial_state)
+    calls = [
+        ToolCall(action="email.inspect_state", args={"id": "ema_001"}),
+        ToolCall(action="email.check_constraints", args={"participants": ["alice@example.com"], "risk_tier": "standard"}),
+        ToolCall(action="email.apply_update", args={"id": "ema_001", "patch": {"status": "sent", "participants": ["alice@example.com"], "exported": True}}, mutating=True),
+        ToolCall(action="send_email", args={"to": ["alice@example.com"], "object_id": "ema_001"}, mutating=True),
+    ]
+    final_state, trace = env.execute_tool_plan(task, calls)
+    score = score_phase2(task, task.gold_donespec, final_state, trace)
+    assert score["task_success"] is False
+    assert any(step["observation"].get("missing_preconditions") == ["confirm"] for step in trace)
+    assert final_state["sent"] == []
+
+
+def test_tool_plan_executor_rejects_unknown_tools_without_mutation():
+    task = load_task(Path("data/tasks/calendar/calendar_001.json"))
+    env = make_env(task.domain, task.initial_state)
+    final_state, trace = env.execute_tool_plan(task, [ToolCall(action="calendar.secret_write", args={"id": "cal_001"}, mutating=True)])
+    assert trace[0]["observation"]["error"] == "unknown_tool"
+    assert final_state == task.initial_state

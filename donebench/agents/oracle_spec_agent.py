@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from donebench.agents.base import Agent
+from donebench.agents.llm_actions import spec_derived_action_plan
 from donebench.core.schema import Phase1Output, Task
 
 
@@ -19,4 +20,6 @@ class OracleSpecAgent(Agent):
         )
 
     def execute(self, task: Task, env, spec: Phase1Output) -> tuple[dict, list[dict]]:
-        return env.execute_reference(task)
+        spec.diagnostics["execution_mode"] = "tool_plan_executor"
+        spec.diagnostics["action_parse_status"] = "oracle_spec_derived"
+        return env.execute_tool_plan(task, spec_derived_action_plan(task, spec))

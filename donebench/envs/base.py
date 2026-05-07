@@ -3,6 +3,7 @@ from __future__ import annotations
 import copy
 from typing import Any
 
+from donebench.core.schema import ToolCall
 from donebench.core.trace import TraceLogger
 
 
@@ -40,6 +41,45 @@ class BaseEnv:
     def execute_spec_guided(self, task: Any, spec: Any) -> tuple[dict[str, Any], list[dict[str, Any]]]:
         final_state = self.execute_policy_guided(task, self._policy_from_spec(spec))
         return final_state, copy.deepcopy(self.trace.steps)
+
+    def execute_tool_plan(self, task: Any, tool_calls: list[ToolCall | dict[str, Any]]) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+        self._tool_specs = {spec.get("name"): spec for spec in task.tool_environment.get("tool_specs", [])}
+        self._completed_actions = []
+        self._task = task
+        self._target_type, self._target_template = self._target_from_reference(task)
+        for item in tool_calls:
+            call = item if isinstance(item, ToolCall) else ToolCall.model_validate(item)
+            self._execute_one_tool_call(call)
+        return self.snapshot(), copy.deepcopy(self.trace.steps)
+
+    def _execute_one_tool_call(self, tool_call: ToolCall) -> dict[str, Any]:
+        action = tool_call.action
+        args = dict(tool_call.args or {})
+        spec = getattr(self, "_tool_specs", {}).get(action)
+        if not spec:
+            observation = {"ok": False, "action": action, "error": "unknown_tool"}
+            self.trace.record(action, args, observation, mutating=tool_call.mutating)
+            return observation
+        kind = spec.get("kind")
+        mutating = bool(tool_call.mutating or kind == "write")
+        event = "user_confirmation" if action == "confirm" else None
+        observation = self.call(action, args, mutating=mutating, event=event)
+        if not observation.get("ok"):
+            return observation
+        if action.endswith(".inspect_state"):
+            observation.update(self._inspect_observation(args))
+        elif action.endswith(".check_constraints"):
+            observation.update(self._constraint_observation(args))
+        elif action == "confirm":
+            observation.update(self._confirm(args))
+        elif action.endswith(".apply_update"):
+            observation.update(self._apply_update(args, action))
+        elif action.startswith("send_") or action == "file.share":
+            observation.update(self._send_or_share(args, action))
+        if args.get("modify_unrelated") is True:
+            self.state.setdefault("modified_objects", []).append("unrelated_record")
+            observation["side_effect"] = "unrelated_record"
+        return observation
 
     def execute_policy_guided(self, task: Any, policy: dict[str, bool]) -> dict[str, Any]:
         reference_state = copy.deepcopy(task.reference_solution["final_state"])
@@ -133,6 +173,82 @@ class BaseEnv:
         if status in {"sent", "closed", "shared", "reviewed"}:
             return "draft"
         return status
+
+    def _target_from_reference(self, task: Any) -> tuple[str | None, dict[str, Any]]:
+        objects = task.reference_solution.get("final_state", {}).get("objects", {})
+        for object_type, rows in objects.items():
+            if rows:
+                return object_type, copy.deepcopy(rows[0])
+        return None, {}
+
+    def _target_id(self) -> Any:
+        return getattr(self, "_target_template", {}).get("id")
+
+    def _ensure_target(self) -> dict[str, Any]:
+        target_type = getattr(self, "_target_type", None)
+        if not target_type:
+            return {}
+        objects = self.state.setdefault("objects", {}).setdefault(target_type, [])
+        if not objects:
+            target = copy.deepcopy(getattr(self, "_target_template", {}))
+            objects.append(target)
+        return objects[0]
+
+    def _inspect_observation(self, args: dict[str, Any]) -> dict[str, Any]:
+        target_type = getattr(self, "_target_type", None)
+        target_id = args.get("id") or self._target_id()
+        rows = self.state.get("objects", {}).get(target_type, []) if target_type else []
+        found = any(row.get("id") == target_id for row in rows)
+        record = next((copy.deepcopy(row) for row in rows if row.get("id") == target_id), None)
+        if record is None and target_id == self._target_id():
+            record = copy.deepcopy(getattr(self, "_target_template", {}))
+        return {"found": bool(record or found), "record": record}
+
+    def _constraint_observation(self, args: dict[str, Any]) -> dict[str, Any]:
+        participants = list(args.get("participants") or args.get("to") or [])
+        conflicts = self.state.get("conflicts", [])
+        blocking = [conflict for conflict in conflicts if set(participants).intersection(conflict.get("participants", []))]
+        policy_refs = [policy.policy_id for policy in getattr(self, "_task", None).policies] if getattr(self, "_task", None) else []
+        return {"blocking_conflicts": blocking, "policy_refs": policy_refs, "constraints_ok": not blocking}
+
+    def _confirm(self, args: dict[str, Any]) -> dict[str, Any]:
+        confirmed = args.get("confirmed", args.get("approve", True)) is not False
+        if confirmed and getattr(self, "_task", None):
+            self.state["satisfied_policies"] = [policy.policy_id for policy in self._task.policies]
+        return {"confirmed": confirmed, "approver": "user" if confirmed else None}
+
+    def _apply_update(self, args: dict[str, Any], action: str) -> dict[str, Any]:
+        if self.state.get("permissions", {}).get("mutate", True) is not True:
+            return {"ok": False, "error": "mutate_permission_denied"}
+        target = self._ensure_target()
+        patch = dict(args.get("patch") or {})
+        if "participants" not in patch and args.get("participants") is not None:
+            patch["participants"] = args.get("participants")
+        if "status" not in patch and args.get("status") is not None:
+            patch["status"] = args.get("status")
+        if "exported" not in patch and args.get("exported") is not None:
+            patch["exported"] = args.get("exported")
+        target.update(patch)
+        target["id"] = target.get("id") or args.get("id") or self._target_id()
+        if getattr(self, "_task", None):
+            self.state.setdefault("audit_log", []).append(
+                {
+                    "object_id": target.get("id"),
+                    "risk_tier": self._task.visible_context.get("risk_tier"),
+                    "approval_channel": self._task.visible_context.get("approval_channel"),
+                }
+            )
+        return {"updated": True, "target_id": target.get("id"), "version": len(self.trace.steps)}
+
+    def _send_or_share(self, args: dict[str, Any], action: str) -> dict[str, Any]:
+        permission = self.state.get("permissions", {}).get(action, True)
+        if permission is not True:
+            return {"ok": False, "error": "send_permission_denied"}
+        recipients = list(args.get("to") or args.get("audience") or [])
+        object_id = args.get("object_id") or args.get("id") or self._target_id()
+        message_type = self._message_type_for_task(getattr(self, "_task", None)) if getattr(self, "_task", None) else "notification"
+        self.state.setdefault("sent", []).append({"message_type": message_type, "to": recipients, "object_id": object_id})
+        return {"sent": True, "delivery_id": f"delivery_{object_id}", "to": recipients}
 
     def call(self, action: str, args: dict[str, Any] | None = None, mutating: bool = False, event: str | None = None) -> dict[str, Any]:
         args = args or {}

@@ -107,7 +107,10 @@ def write_paper_tables(report_dir: Path) -> dict[str, str]:
     table = pd.read_csv(stats_path)
     if parse_path.exists():
         parse = pd.read_csv(parse_path)
-        table = table.merge(parse[["model", "agent", "parse_rate", "fallback_rate"]], on=["model", "agent"], how="left")
+        parse_keep = ["model", "agent", "parse_rate", "fallback_rate"]
+        if "repaired_rate" in parse.columns:
+            parse_keep.append("repaired_rate")
+        table = table.merge(parse[parse_keep], on=["model", "agent"], how="left")
     if actions_path.exists():
         actions = pd.read_csv(actions_path)
         keep = [

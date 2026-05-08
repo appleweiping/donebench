@@ -340,14 +340,9 @@ def normalize_model_audit(payload: dict[str, Any], fallback: dict[str, Any]) -> 
 
 
 def extract_json(text: str) -> dict[str, Any]:
-    text = text.strip()
-    if text.startswith("{"):
-        return json.loads(text)
-    start = text.find("{")
-    end = text.rfind("}")
-    if start >= 0 and end > start:
-        return json.loads(text[start : end + 1])
-    raise ValueError("No JSON object found in AI audit output")
+    from donebench.agents.llm_spec import _extract_json
+
+    return _extract_json(text)
 
 
 def write_audit_outputs(records: list[dict[str, Any]], output_dir: Path, model_id: str) -> dict[str, Any]:
@@ -358,19 +353,29 @@ def write_audit_outputs(records: list[dict[str, Any]], output_dir: Path, model_i
 
     write_jsonl(records, opinions_path)
     adjudication = [record for record in records if record.get("needs_adjudication")]
+    high_risk = [record for record in records if record.get("overall_risk") == "high"]
+    fallback = [record for record in records if record.get("audit_source") != "model"]
     write_jsonl(adjudication, adjudication_path)
+    write_jsonl(high_risk, output_dir / "ai_audit_high_risk.jsonl")
+    write_jsonl(fallback, output_dir / "ai_audit_fallback_queue.jsonl")
 
     by_risk = Counter(record["overall_risk"] for record in records)
+    by_source = Counter(record.get("audit_source", "missing") for record in records)
     labels = Counter(label for record in records for label in record.get("risk_labels", []))
     summary = {
         "model": model_id,
         "num_audited": len(records),
         "num_needs_adjudication": len(adjudication),
+        "num_high_risk": len(high_risk),
+        "num_fallback_audits": len(fallback),
         "by_risk": dict(by_risk),
+        "by_source": dict(by_source),
         "risk_labels": dict(labels),
         "outputs": {
             "opinions": str(opinions_path),
             "adjudication": str(adjudication_path),
+            "high_risk": str(output_dir / "ai_audit_high_risk.jsonl"),
+            "fallback": str(output_dir / "ai_audit_fallback_queue.jsonl"),
             "summary": str(summary_path),
         },
     }

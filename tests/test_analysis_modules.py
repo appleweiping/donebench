@@ -133,6 +133,8 @@ def test_parse_transparency_outputs(tmp_path):
                 "prompt_chars": 100,
                 "raw_output_chars": 200,
                 "usage": {"prompt_tokens": 10, "completion_tokens": 20, "total_tokens": 30},
+                "json_repair_strategy": "balanced_slice+repair",
+                "json_repair_attempts": ["raw", "raw+repair", "balanced_slice", "balanced_slice+repair"],
             },
         },
         {
@@ -149,8 +151,13 @@ def test_parse_transparency_outputs(tmp_path):
     by_agent = pd.read_csv(tmp_path / "parse" / "parse_transparency_by_model_agent.csv")
     assert summary["rows"] == 2
     assert summary["status_counts"] == {"parsed": 1, "fallback": 1}
+    assert summary["paper_ready_parse_gate"] is False
+    assert summary["num_quarantined_model_agent_cells"] == 1
     assert by_agent.loc[0, "parse_rate"] == 0.5
+    assert by_agent.loc[0, "repaired_rate"] == 0.5
+    assert bool(by_agent.loc[0, "quarantine_recommended"]) is True
     assert (tmp_path / "parse" / "parse_transparency_by_status.json").exists()
+    assert (tmp_path / "parse" / "parse_transparency_by_repair.csv").exists()
 
 
 def test_action_diagnostics_outputs(tmp_path):
@@ -202,9 +209,44 @@ def test_audit_gate_outputs(tmp_path):
         + "\n",
         encoding="utf-8",
     )
-    summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=tmp_path / "missing.jsonl")
+    ai_audit = tmp_path / "ai.jsonl"
+    ai_audit.write_text(
+        json.dumps({"task_id": "t1", "audit_source": "model", "overall_risk": "low", "needs_adjudication": False})
+        + "\n",
+        encoding="utf-8",
+    )
+    summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=ai_audit)
     assert summary["num_double_annotated"] == 1
     assert summary["double_annotation_rate"] == 1.0
+    assert summary["paper_ready_ai_assisted_audit"] is True
+    assert summary["paper_ready_audit_gate"] is True
+
+
+def test_audit_gate_blocks_untrusted_ai_audit(tmp_path):
+    queue = tmp_path / "queue.jsonl"
+    queue.write_text(
+        json.dumps(
+            {
+                "task_id": "t1",
+                "human_annotation": {
+                    "annotator_a": {"decision": "accept", "checks": {"criteria_complete": "pass"}},
+                    "annotator_b": {"decision": "accept", "checks": {"criteria_complete": "pass"}},
+                },
+            }
+        )
+        + "\n",
+        encoding="utf-8",
+    )
+    ai_audit = tmp_path / "ai.jsonl"
+    ai_audit.write_text(
+        json.dumps({"task_id": "t1", "audit_source": "mock_fallback", "overall_risk": "low", "needs_adjudication": False})
+        + "\n",
+        encoding="utf-8",
+    )
+    summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=ai_audit)
+    assert summary["num_ai_fallback_audits"] == 1
+    assert summary["paper_ready_ai_assisted_audit"] is False
+    assert "trusted_ai_audit_coverage_below_threshold" in summary["blockers"]
 
 
 def test_pilot_findings_outputs(tmp_path):

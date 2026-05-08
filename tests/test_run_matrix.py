@@ -2,6 +2,7 @@ from pathlib import Path
 
 from donebench.core.config import load_experiment, load_models
 from donebench.agents.llm_actions import build_action_prompt, construct_action_plan
+from donebench.agents.llm_spec import construct_llm_spec
 from donebench.agents.llm_adapters import CompletionResult
 from donebench.scripts.run_experiments import run_matrix
 from donebench.scripts.run_experiments import select_tasks
@@ -84,6 +85,25 @@ def test_live_action_parse_failure_does_not_fallback_to_oracle_plan():
     plan, diagnostics = construct_action_plan(task, BrokenLLM(), "spec_construction", spec)
     assert plan == []
     assert diagnostics["action_parse_status"] == "invalid_no_fallback"
+
+
+def test_spec_parser_repairs_fenced_trailing_comma_json():
+    class MessyLLM:
+        def complete_with_metadata(self, prompt: str) -> CompletionResult:
+            return CompletionResult(
+                text='```json\n{"success_conditions":["done",],"failure_conditions":"none","donespec":{}}\n```',
+                latency_s=0.0,
+                model="messy",
+                provider="test",
+            )
+
+    task = load_task(Path("data/tasks/calendar/calendar_001.json"))
+    fallback = Phase1Output(donespec=task.gold_donespec)
+    output = construct_llm_spec(task, MessyLLM(), "spec_construction", fallback)
+    assert output.diagnostics["llm_parse_status"] == "parsed"
+    assert output.diagnostics["json_repair_strategy"].endswith("+repair")
+    assert output.success_conditions == ["done"]
+    assert output.failure_conditions == ["none"]
 
 
 def test_select_tasks_stratifies_domain_limit():

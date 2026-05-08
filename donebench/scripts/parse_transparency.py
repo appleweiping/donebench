@@ -8,6 +8,9 @@ from typing import Any
 import pandas as pd
 
 
+MAX_PAPER_READY_FALLBACK_RATE = 0.30
+
+
 def _load_rows(input_path: Path) -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     with input_path.open("r", encoding="utf-8") as f:
@@ -42,6 +45,9 @@ def _flatten(rows: list[dict[str, Any]]) -> pd.DataFrame:
                 "provider": row.get("provider") or diagnostics.get("provider"),
                 "provider_model": row.get("provider_model") or diagnostics.get("provider_model"),
                 "parse_status": status,
+                "json_repair_strategy": diagnostics.get("json_repair_strategy", ""),
+                "json_repair_attempts": len(diagnostics.get("json_repair_attempts", []) or []),
+                "llm_error": diagnostics.get("llm_error", ""),
                 "parsed": status == "parsed",
                 "fallback": status == "fallback",
                 "attempts": _to_float(diagnostics.get("attempts")),
@@ -88,8 +94,16 @@ def write_parse_transparency(input_path: Path, output_dir: Path) -> dict[str, An
             mean_total_tokens=("total_tokens", "mean"),
             mean_prompt_chars=("prompt_chars", "mean"),
             mean_raw_output_chars=("raw_output_chars", "mean"),
+            repaired_rate=("json_repair_strategy", lambda values: float(sum(bool(value and value != "raw") for value in values) / len(values)) if len(values) else 0.0),
         )
         .reset_index()
+    )
+    grouped["quarantine_recommended"] = grouped["fallback_rate"] >= MAX_PAPER_READY_FALLBACK_RATE
+    by_repair = (
+        df.groupby(["model", "agent", "parse_status", "json_repair_strategy"], dropna=False)
+        .size()
+        .reset_index(name="n")
+        .sort_values(["model", "agent", "parse_status", "json_repair_strategy"])
     )
     by_status = (
         df.groupby(["model", "agent", "parse_status"], dropna=False)
@@ -108,6 +122,7 @@ def write_parse_transparency(input_path: Path, output_dir: Path) -> dict[str, An
         "parse_transparency_by_model_agent.csv": grouped,
         "parse_transparency_by_status.csv": by_status,
         "parse_transparency_by_domain.csv": by_domain,
+        "parse_transparency_by_repair.csv": by_repair,
     }
     for name, table in outputs.items():
         table.to_csv(output_dir / name, index=False)
@@ -119,6 +134,9 @@ def write_parse_transparency(input_path: Path, output_dir: Path) -> dict[str, An
         "status_counts": dict(status_counts),
         "parse_rate": float(df["parsed"].mean()),
         "fallback_rate": float(df["fallback"].mean()),
+        "max_paper_ready_fallback_rate": MAX_PAPER_READY_FALLBACK_RATE,
+        "num_quarantined_model_agent_cells": int(grouped["quarantine_recommended"].sum()),
+        "paper_ready_parse_gate": bool(grouped["quarantine_recommended"].sum() == 0),
         "outputs": sorted([*outputs.keys(), *[name.replace(".csv", ".json") for name in outputs]]),
     }
     (output_dir / "parse_transparency_summary.json").write_text(json.dumps(summary, indent=2), encoding="utf-8")

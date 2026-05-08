@@ -1,0 +1,4 @@
+run_key,run,calls,input_tokens,output_tokens,estimated_cost_usd,summed_provider_latency_hours
+standard_toolplan,Standard tool-plan pilot,300,136680,515316,0.3591,3.52
+token_matched,Token-matched pilot,300,201944,457061,0.3353,3.2
+replicates_5x,5-trial replicates pilot,1500,683400,2596265,1.8117,17.58

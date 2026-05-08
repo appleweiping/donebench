@@ -22,6 +22,7 @@ from donebench.scripts.generate_seed_tasks import generate
 from donebench.scripts.human_audit_queue import write_human_audit_queue
 from donebench.scripts.make_figures import make_figures as make_figures_impl
 from donebench.scripts.parse_transparency import write_parse_transparency
+from donebench.scripts.pilot_findings import write_pilot_findings
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.repro_manifest import write_repro_manifest
 from donebench.scripts.readiness_report import write_readiness_report
@@ -262,6 +263,15 @@ def experiment_pipeline_cmd(
         resume=resume,
         postprocess_only=postprocess_only,
     )
+    console.print(summary)
+
+
+@app.command("pilot-findings")
+def pilot_findings_cmd(
+    output: Path = typer.Option(Path("reports/pilot_findings.md"), "--output"),
+    comparison_csv: Path = typer.Option(Path("paper/tables/pilot_comparison.csv"), "--comparison-csv"),
+) -> None:
+    summary = write_pilot_findings(output=output, comparison_csv=comparison_csv)
     console.print(summary)
 
 

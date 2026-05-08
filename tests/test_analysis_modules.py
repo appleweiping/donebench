@@ -12,6 +12,7 @@ from donebench.scripts.invalid_donespec_taxonomy import classify_invalid_donespe
 from donebench.scripts.invalid_donespec_taxonomy import failure_detection_by_family
 from donebench.scripts.invalid_donespec_taxonomy import load_task_metadata
 from donebench.scripts.parse_transparency import write_parse_transparency
+from donebench.scripts.pilot_findings import write_pilot_findings
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.generate_seed_tasks import DOMAINS, TASKS_PER_DOMAIN
 from donebench.scripts.readiness_report import write_readiness_report
@@ -204,3 +205,19 @@ def test_audit_gate_outputs(tmp_path):
     summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=tmp_path / "missing.jsonl")
     assert summary["num_double_annotated"] == 1
     assert summary["double_annotation_rate"] == 1.0
+
+
+def test_pilot_findings_outputs(tmp_path):
+    output = tmp_path / "pilot_findings.md"
+    comparison = tmp_path / "pilot_comparison.csv"
+    summary = write_pilot_findings(output=output, comparison_csv=comparison)
+    table = pd.read_csv(comparison)
+    text = output.read_text(encoding="utf-8")
+    assert summary["rows"] == 18
+    assert output.exists()
+    assert comparison.exists()
+    assert (tmp_path / "pilot_domain_patterns.csv").exists()
+    assert (tmp_path / "pilot_parse_caveats.csv").exists()
+    assert "Reviewer-Safe Claims" in text
+    assert "Full-Run Decision" in text
+    assert {"task_success_pct", "pass_at_k_pct", "consistency_pct", "parse_rate_pct"}.issubset(table.columns)

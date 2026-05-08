@@ -42,6 +42,10 @@ File/document & 36.0 & 9.0 & 57.9 & 74.2 \\
 
 The official parsed run uses the compressed prompt and JSON repair path. Overall, 2692 of 3000 calls parsed cleanly (89.7\%); the remaining 308 rows used the deterministic fallback parser. Parse rate varies substantially by model and protocol, with DeepSeek Pro spec-first the main weak cell at 63.6\%. We therefore report parse transparency alongside model scores and avoid treating fallback-heavy cells as final model-capability estimates. The parse table is exported to \texttt{paper/tables/parse\_transparency.csv}.
 
+\subsection{Pilot Controls}
+
+Before launching a larger full run, we ran three focused DeepSeek pilots: a 50-task stratified tool-plan pilot, a 50-task token-matched pilot, and a 50-task 5-trial replicate pilot. The generated synthesis is in \texttt{reports/pilot\_findings.md}, with table snapshots in \texttt{paper/tables/pilot\_comparison.csv}, \texttt{paper/tables/pilot\_domain\_patterns.csv}, and \texttt{paper/tables/pilot\_parse\_caveats.csv}. These pilots show that token budget is a real confound for raw task success, while repeated attempts reveal a reliability signal: spec-first reaches non-zero pass@5 but remains inconsistent. We therefore treat the pilots as evidence for completion-semantics and reliability analysis, not as a final leaderboard.
+
 \subsection{Cost and Runtime}
 
 The parsed DeepSeek run used 3000 API calls, about 1.38M prompt tokens and 5.02M completion tokens, with an estimated API cost of \$3.56 under the configured price sheet. Summed provider latency was 124,141 seconds; with concurrent streaming execution, wall-clock time was roughly 33 minutes on the local run.

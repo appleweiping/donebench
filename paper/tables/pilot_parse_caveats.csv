@@ -1,0 +1,19 @@
+run_key,run,model,agent,agent_family,n,parse_rate_pct,fallback_rate_pct,mean_latency_s,mean_total_tokens
+standard_toolplan,Standard tool-plan pilot,deepseek_v4_flash,direct,direct,50,100.0,0.0,22.38,1690.9
+standard_toolplan,Standard tool-plan pilot,deepseek_v4_flash,plan_first,plan_first,50,98.0,2.0,19.73,1703.1
+standard_toolplan,Standard tool-plan pilot,deepseek_v4_flash,spec_first,spec_first,50,78.0,22.0,29.09,2329.3
+standard_toolplan,Standard tool-plan pilot,deepseek_v4_pro,direct,direct,50,90.0,10.0,59.63,2371.8
+standard_toolplan,Standard tool-plan pilot,deepseek_v4_pro,plan_first,plan_first,50,94.0,6.0,55.02,2280.7
+standard_toolplan,Standard tool-plan pilot,deepseek_v4_pro,spec_first,spec_first,50,56.0,44.0,67.52,2664.2
+token_matched,Token-matched pilot,deepseek_v4_flash,direct_token_matched,direct,50,100.0,0.0,22.98,1771.8
+token_matched,Token-matched pilot,deepseek_v4_flash,plan_first_token_matched,plan_first,50,100.0,0.0,21.95,1951.5
+token_matched,Token-matched pilot,deepseek_v4_flash,spec_first_token_matched,spec_first,50,90.0,10.0,29.31,2376.8
+token_matched,Token-matched pilot,deepseek_v4_pro,direct_token_matched,direct,50,96.0,4.0,50.58,2283.9
+token_matched,Token-matched pilot,deepseek_v4_pro,plan_first_token_matched,plan_first,50,96.0,4.0,44.57,2125.4
+token_matched,Token-matched pilot,deepseek_v4_pro,spec_first_token_matched,spec_first,50,86.0,14.0,61.18,2670.6
+replicates_5x,5-trial replicates pilot,deepseek_v4_flash,direct,direct,250,98.4,1.6,18.77,1640.5
+replicates_5x,5-trial replicates pilot,deepseek_v4_flash,plan_first,plan_first,250,96.0,4.0,20.92,1841.6
+replicates_5x,5-trial replicates pilot,deepseek_v4_flash,spec_first,spec_first,250,87.2,12.8,26.83,2247.4
+replicates_5x,5-trial replicates pilot,deepseek_v4_pro,direct,direct,250,87.2,12.8,59.69,2339.1
+replicates_5x,5-trial replicates pilot,deepseek_v4_pro,plan_first,plan_first,250,88.4,11.6,58.4,2357.8
+replicates_5x,5-trial replicates pilot,deepseek_v4_pro,spec_first,spec_first,250,61.6,38.4,68.57,2692.3

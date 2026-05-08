@@ -1,0 +1,2702 @@
+[
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "calendar_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "crm_workflow_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "email_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "file_doc_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "task_id": "sheet_db_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "calendar_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "email_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "file_doc_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "task_id": "sheet_db_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_025",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_027",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "calendar_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_026",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_028",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_029",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "email_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "file_doc_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "task_id": "sheet_db_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "calendar_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "crm_workflow_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "email_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "file_doc_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "task_id": "sheet_db_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "calendar_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "crm_workflow_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "email_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "file_doc_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "task_id": "sheet_db_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "calendar_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_026",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "crm_workflow_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_024",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_027",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_029",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "email_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "file_doc_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_021",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_022",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_023",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_024",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_025",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_026",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_027",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_028",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 0.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_029",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "task_id": "sheet_db_030",
+    "k": 1,
+    "task_success_pass_at_k": 0.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  }
+]

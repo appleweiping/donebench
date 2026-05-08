@@ -1,0 +1,301 @@
+task_id,domain,difficulty,model,agent,trial,execution_mode,spec_parse_status,action_parse_status,task_success,own_spec_pass,self_violation_rate,num_tool_calls,num_mutating_tool_calls,spec_prompt_chars,action_prompt_chars,spec_latency_s,action_latency_s,missing_precondition_steps,unknown_tool_steps,permission_denied_steps,side_effect_steps,confirmation_steps,unique_actions,action_sequence
+email_025,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1892,2869,18.144667200000185,14.576151799999934,0,0,0,0,0,1,email.inspect_state
+email_024,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1942,2949,12.297420599999896,24.452348599999823,0,0,0,0,0,1,email.inspect_state
+email_029,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1915,2917,13.873468699999648,22.886259700000664,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+file_doc_025,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1886,2826,13.761444699999629,23.394270799999504,0,0,0,0,0,1,file.inspect_state
+file_doc_024,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1931,2845,13.672665199999756,24.076728199999707,0,0,0,0,0,1,file.inspect_state
+file_doc_028,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1949,2864,17.96606350000002,24.882591800000228,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+calendar_028,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1994,2944,14.103818400000819,30.480453399999533,0,0,0,0,1,5,calendar.inspect_state calendar.check_constraints confirm calendar.apply_update send_invites
+sheet_db_027,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1935,2865,21.36718529999962,24.367136400000163,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+email_028,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1948,2887,17.577464199999667,28.554115699998874,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+crm_workflow_028,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1987,3036,24.331812000000355,22.342020899999625,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+crm_workflow_029,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1960,2841,11.350534100000004,35.872825499998726,0,0,0,0,0,0,
+file_doc_026,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1913,2929,22.285508000000846,25.07990549999886,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+calendar_024,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1988,2947,14.164627899999687,35.845852899999954,0,0,0,0,0,1,calendar.inspect_state
+sheet_db_030,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1946,2942,18.159869600000093,32.00901639999938,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+crm_workflow_027,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1957,2821,13.9121954000002,36.439443799999935,0,0,0,0,0,0,
+email_026,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1940,2960,18.39534239999921,32.13298380000015,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+calendar_029,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2014,2994,14.764324100000522,35.81552219999867,0,0,0,0,0,0,
+email_021,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1916,2948,15.228167500001291,36.246952900000906,0,0,0,0,0,1,email.inspect_state
+calendar_023,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1995,3013,16.853538199999093,36.45370289999846,0,0,0,0,0,0,
+crm_workflow_022,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1956,2879,25.986358300000575,27.623121900000115,0,0,0,0,0,1,crm.inspect_state
+sheet_db_024,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1925,2866,31.324229699999705,22.300967899998795,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+file_doc_027,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1902,2809,24.035694299998795,30.05946910000057,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+sheet_db_029,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1923,2931,17.80662090000078,36.6177645000007,0,0,0,0,0,0,
+crm_workflow_026,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1969,2870,25.30612579999979,29.542307099998652,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+calendar_030,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2009,3070,17.92077170000084,37.53817639999943,0,0,0,0,0,0,
+sheet_db_025,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1902,2843,25.964685300001292,30.06922360000135,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+email_023,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1917,2885,24.663689100001648,32.2181924000015,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+crm_workflow_023,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1961,2880,18.92057779999959,38.47634079999989,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+sheet_db_021,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1918,2870,30.80292240000017,26.86481950000052,0,0,0,0,0,1,sheet.inspect_state
+email_027,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1919,2823,20.449245300000257,37.74842410000019,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+file_doc_021,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1898,2847,20.1325925000001,38.40277529999912,0,0,0,0,0,0,
+calendar_026,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,2016,2965,22.37233329999981,36.45623929999965,0,0,0,0,1,5,calendar.inspect_state calendar.check_constraints confirm calendar.apply_update send_invites
+sheet_db_026,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1951,2932,23.08564280000064,35.84142790000078,0,0,0,0,0,0,
+calendar_027,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1987,3012,20.44717739999942,38.67296820000047,0,0,0,0,0,0,
+email_022,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1923,2932,22.653358800000206,36.82799580000028,0,0,0,0,0,1,email.inspect_state
+calendar_025,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1989,2986,24.195575899999312,35.89147430000048,0,0,0,0,0,0,
+file_doc_029,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1908,2852,22.352402800001073,38.94265559999985,0,0,0,0,0,0,
+sheet_db_028,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1939,2893,24.999528699998336,36.81656050000129,0,0,0,0,0,0,
+crm_workflow_021,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1955,2885,29.432465100000627,35.54713720000109,0,0,0,0,0,0,
+email_030,email,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1941,2882,26.243362700000944,39.04539039999872,0,0,0,0,0,0,
+file_doc_022,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1897,2845,27.28718470000058,38.04747970000062,0,0,0,0,0,0,
+sheet_db_022,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1936,2915,26.468681000000288,39.32641340000009,0,0,0,0,0,0,
+file_doc_030,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1903,2838,26.73892530000012,39.521735700000136,0,0,0,0,0,0,
+crm_workflow_024,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1971,2981,29.579023999998753,38.607390099999975,0,0,0,0,0,0,
+file_doc_023,file_doc,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1911,2819,35.07578749999993,33.419119500000306,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+crm_workflow_025,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1941,2844,30.083690499999648,39.71526000000085,0,0,0,0,0,0,
+calendar_022,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2002,2995,30.948806200000035,38.91172860000006,0,0,0,0,0,0,
+calendar_021,calendar,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2008,3019,31.911383900000146,38.70425530000102,0,0,0,0,0,0,
+sheet_db_023,sheet_db,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1939,2891,34.06986770000003,39.631850900001155,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+crm_workflow_030,crm_workflow,L2,deepseek_v4_flash,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1964,2845,35.39197160000003,39.71370900000147,0,0,0,0,0,0,
+crm_workflow_021,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1974,3116,28.556450799998856,12.552070799998546,0,0,0,0,0,1,crm.inspect_state
+crm_workflow_022,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1975,3130,21.140365200000815,21.088161100000434,0,0,0,0,0,1,crm.inspect_state
+calendar_022,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2021,3121,13.313494899999569,36.14060319999953,0,0,0,0,0,0,
+email_024,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1942,2967,29.17143870000109,51.81394220000038,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+file_doc_022,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1916,2971,16.06172080000033,34.377310699999725,0,0,0,0,0,2,file.inspect_state file.check_constraints
+email_023,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1917,2971,57.36208000000079,62.16486620000069,0,0,0,0,0,2,email.inspect_state email.check_constraints
+file_doc_021,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1917,3014,22.81507590000001,31.89274420000038,0,0,0,0,0,1,file.inspect_state
+sheet_db_021,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1937,3094,17.972926800001005,36.97136419999879,0,0,0,0,0,2,sheet.inspect_state sheet.check_constraints
+calendar_021,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2027,3256,20.275403199999346,39.01935890000095,0,0,0,0,0,0,
+email_023,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1936,3166,12.772341299998516,34.69084640000074,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+calendar_022,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2002,3057,46.628879199999574,74.97740370000065,0,0,0,0,0,0,
+sheet_db_022,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1955,3097,29.770333300000857,22.737275900000895,0,0,0,0,0,1,sheet.inspect_state
+file_doc_023,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1930,3003,13.403832299998612,34.604599500000404,0,0,0,0,0,2,file.inspect_state file.check_constraints
+sheet_db_022,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1936,3008,48.373663499998656,75.47443719999865,0,0,0,0,0,0,
+email_022,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1942,3096,16.35909509999874,39.3764558999992,0,0,0,0,0,0,
+email_021,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1935,3233,26.72650049999902,36.752085800000714,0,0,0,0,0,0,
+email_021,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1916,2994,54.43998869999996,76.15526789999967,0,0,0,0,0,0,
+email_022,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1923,2991,57.10261530000025,74.53091569999924,0,0,0,0,0,0,
+calendar_023,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2014,3214,22.457323300001008,39.38973530000112,0,0,0,0,0,0,
+calendar_021,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2008,3212,58.02386470000056,74.78721880000012,0,0,0,0,0,0,
+crm_workflow_022,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1956,2939,73.16564600000129,63.91839129999971,0,0,0,0,0,0,
+file_doc_023,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1911,2918,75.92595849999998,63.48976149999908,0,0,0,0,0,0,
+calendar_023,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1995,3199,65.68950020000011,74.33077800000137,0,0,0,0,0,0,
+crm_workflow_023,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1961,3132,71.02280830000018,74.14703290000034,0,0,0,0,0,0,
+crm_workflow_023,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1980,3096,38.065070699998614,36.63409759999922,0,0,0,0,0,0,
+calendar_024,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1988,3010,36.91436969999995,73.61601279999923,0,0,0,0,0,0,
+file_doc_024,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1931,2924,38.592817200000354,71.60775100000137,0,0,0,0,0,0,
+file_doc_025,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1886,2847,39.07508489999964,62.65276090000043,0,0,0,0,0,0,
+file_doc_022,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,4,1,1897,2927,77.35842920000141,71.77668019999874,0,0,0,0,1,4,file.inspect_state file.check_constraints confirm file.apply_update
+crm_workflow_021,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1955,2891,75.66065459999845,73.68387679999978,0,0,0,0,0,0,
+file_doc_026,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1913,2909,49.698351200000616,50.51808649999839,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+sheet_db_021,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1918,2967,77.58776249999937,73.34918959999959,0,0,0,0,0,0,
+file_doc_021,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1898,3086,76.47801059999983,76.47565509999913,0,0,0,0,0,0,
+email_029,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1915,2922,36.906164199999694,60.202543200000946,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+email_026,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1959,3168,14.32483719999982,20.17697389999921,0,0,0,0,0,1,email.inspect_state
+sheet_db_023,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1958,3000,20.123904399999446,36.274173199999495,0,0,0,0,0,0,
+calendar_024,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2007,3263,19.143391399999018,35.819835899999816,0,0,0,0,0,0,
+email_027,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1919,2919,36.85946630000035,73.81497500000114,0,0,0,0,0,0,
+sheet_db_023,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1939,3113,57.454889299999195,74.37183870000081,0,0,0,0,0,0,
+email_025,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1911,3014,21.49667969999973,24.663821500000267,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+file_doc_024,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1950,2956,17.269136299999445,30.601418199999898,0,0,0,0,0,1,file.inspect_state
+sheet_db_025,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1921,3047,23.542903800000204,21.711601099999825,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+email_024,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1961,3199,11.749634499999956,38.80312749999939,0,0,0,0,0,0,
+file_doc_028,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1949,2881,73.4773649000017,40.17738250000002,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+calendar_027,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1987,3039,44.397873800000525,74.3695861999986,0,0,0,0,0,0,
+calendar_030,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2009,3005,35.87526119999893,75.13052910000079,0,0,0,0,0,0,
+crm_workflow_025,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1960,3049,15.357568700001138,35.91249729999981,0,0,0,0,0,0,
+email_025,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1892,2994,62.365279999999984,63.60224130000097,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+file_doc_027,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1902,2881,44.86069090000092,73.70759879999969,0,0,0,0,0,0,
+crm_workflow_026,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1969,2897,48.65871960000004,74.36553570000069,0,0,0,0,0,0,
+crm_workflow_026,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1988,3205,14.074266499999794,35.889642000000094,0,0,0,0,0,0,
+file_doc_025,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1905,3025,15.755255800000668,36.43370209999921,0,0,0,0,0,0,
+calendar_026,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,2035,3248,17.369803599998704,35.310117799999716,0,0,0,0,1,5,calendar.inspect_state calendar.check_constraints confirm calendar.apply_update send_invites
+calendar_025,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2008,3242,16.139504800001305,39.36949040000036,0,0,0,0,0,0,
+crm_workflow_024,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1990,3170,24.517563299999892,36.05100279999897,0,0,0,0,0,0,
+crm_workflow_028,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1987,3074,48.93616680000014,72.99241520000032,0,0,0,0,0,0,
+sheet_db_024,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1944,3081,34.11251280000033,23.96238959999937,0,0,0,0,0,1,sheet.inspect_state
+email_030,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1941,3004,55.586447800000315,62.91654959999869,0,0,0,0,0,0,
+email_026,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1940,3029,62.840251499999795,64.60303340000064,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+sheet_db_024,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1925,3003,62.991468799998984,72.24525650000032,0,0,0,0,0,0,
+calendar_025,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1989,3021,61.23494500000015,73.30922680000003,0,0,0,0,0,0,
+email_028,email,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1948,2996,63.08700469999894,62.72215599999981,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+crm_workflow_030,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1964,2944,56.026761900000565,66.43021090000002,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+file_doc_029,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1927,2997,14.943046700000195,18.813077999999223,0,0,0,0,0,1,file.inspect_state
+crm_workflow_027,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1976,3015,16.18552339999951,35.829642000000604,0,0,0,0,0,0,
+calendar_029,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2014,3013,53.43222369999967,73.50170930000058,0,0,0,0,0,0,
+email_027,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1938,3240,14.451863300000696,38.01310259999991,0,0,0,0,0,0,
+file_doc_027,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1921,3047,24.219454300000507,27.16727449999962,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+crm_workflow_024,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1971,2907,74.26385520000076,73.17881130000023,0,0,0,0,0,0,
+calendar_027,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2006,3246,20.286765799999557,35.01697929999864,0,0,0,0,0,0,
+calendar_026,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2016,3038,64.54549059999954,74.61002469999949,0,0,0,0,0,0,
+calendar_028,calendar,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1994,3176,58.49546709999959,74.17142370000147,0,0,0,0,0,0,
+sheet_db_027,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1954,3057,19.326864200000273,31.939405500001158,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+file_doc_029,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1908,2998,56.349914499998704,73.88653599999998,0,0,0,0,0,0,
+sheet_db_029,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1942,2976,23.530043300001125,15.581629700000121,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+file_doc_026,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1932,3078,28.93189639999946,36.89433749999989,0,0,0,0,0,0,
+sheet_db_025,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,5,2,1902,2868,74.60540180000135,69.58874090000063,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+sheet_db_026,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1970,3133,23.82143840000026,39.160402800000156,0,0,0,0,0,0,
+email_028,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1967,3151,18.607040400000187,28.376887200000056,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+sheet_db_026,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1951,3030,67.61195880000014,74.55303110000023,0,0,0,0,0,0,
+crm_workflow_025,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1941,2877,73.77115160000176,73.97500749999926,0,0,0,0,0,0,
+calendar_028,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2013,3260,17.686927799999467,38.42561639999985,0,0,0,0,0,0,
+crm_workflow_028,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2006,3136,18.34306050000123,37.593028199999026,0,0,0,0,0,0,
+sheet_db_027,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1935,2923,69.09290470000087,73.23108630000024,0,0,0,0,0,0,
+file_doc_030,file_doc,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1903,2919,63.54887469999994,73.26798289999897,0,0,0,0,0,0,
+crm_workflow_030,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1983,3023,17.26962139999887,26.15290879999884,0,0,0,0,0,1,crm.inspect_state
+sheet_db_028,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1958,3201,13.312806500000079,37.01869650000117,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+crm_workflow_029,crm_workflow,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1979,3355,14.856446800000413,34.52461320000111,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+sheet_db_030,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1946,3130,69.74845479999931,68.62555959999918,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+crm_workflow_027,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1957,2893,74.94349420000071,74.85083320000012,0,0,0,0,0,0,
+file_doc_028,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1968,3074,18.78054919999886,37.88715500000035,0,0,0,0,0,0,
+sheet_db_028,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1939,2971,74.46739290000005,72.39381990000038,0,0,0,0,0,0,
+sheet_db_029,sheet_db,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1923,2950,73.84901089999948,71.20051520000015,0,0,0,0,0,0,
+calendar_030,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2028,3261,14.891804900000352,38.92083040000034,0,0,0,0,0,0,
+crm_workflow_029,crm_workflow,L2,deepseek_v4_pro,direct,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1960,2919,73.18737209999927,74.18920849999995,0,0,0,0,0,0,
+email_030,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1960,3059,18.227683799999795,32.66572189999897,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+calendar_029,calendar,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2033,3186,22.663293099998555,35.10762270000123,0,0,0,0,0,0,
+file_doc_030,file_doc,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1922,3128,17.90758790000109,30.309611900000164,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+sheet_db_030,sheet_db,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1965,3189,17.4618059000004,33.40589600000021,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+email_029,email,L2,deepseek_v4_flash,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1934,3131,26.34291040000062,36.73012840000047,0,0,0,0,0,0,
+email_021,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1935,3227,35.85210629999892,21.954669400000057,0,0,0,0,0,1,email.inspect_state
+email_021,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1944,4437,21.063706699998875,15.201905600000828,0,0,0,0,0,1,email.inspect_state
+calendar_025,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,2008,3424,40.85438939999949,31.731609700000263,0,0,0,0,0,1,calendar.inspect_state
+sheet_db_028,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1958,3444,54.6220699000005,5.8803095999992365,0,0,0,0,0,1,sheet.inspect_state
+email_022,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,1951,3813,35.358791999999085,12.245121500000096,0,0,0,0,0,1,email.inspect_state
+calendar_023,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,2023,3942,37.22137759999896,13.936991700000362,0,0,0,0,0,1,calendar.inspect_state
+sheet_db_022,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,1964,3841,35.73334860000068,18.643914099999165,0,0,0,0,0,1,sheet.inspect_state
+file_doc_021,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,0.3333333333333333,5,2,1926,4271,28.023907599999802,32.186215800000355,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+sheet_db_021,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,2,0,1946,3825,38.0905487,23.878766399999222,0,0,0,0,0,2,sheet.inspect_state sheet.check_constraints
+email_029,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1934,3383,46.79785009999978,31.635700000000725,0,0,0,0,0,1,email.inspect_state
+crm_workflow_025,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1960,3371,29.886544300001333,63.384786300001,0,0,0,0,0,0,
+file_doc_022,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,1925,3732,37.93238279999969,28.65870199999881,0,0,0,0,0,1,file.inspect_state
+email_023,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1945,4571,37.40076389999922,23.78761080000004,0,0,0,0,0,1,email.inspect_state
+calendar_021,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2027,3335,34.1303341999992,75.39466960000027,0,0,0,0,0,0,
+file_doc_028,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1968,3303,45.461142400001336,38.005885699998544,0,0,0,0,0,1,file.inspect_state
+calendar_021,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,2036,3947,38.44918119999966,37.34326659999897,0,0,0,0,0,1,calendar.inspect_state
+crm_workflow_022,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1984,4392,33.312381599998844,36.579433699998845,0,0,0,0,0,0,
+crm_workflow_021,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1983,4334,37.79030590000002,38.8968821999988,0,0,0,0,0,0,
+calendar_022,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,2030,3943,35.970006899999134,37.05414380000002,0,0,0,0,0,0,
+file_doc_023,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1939,4319,34.296622599998955,30.310068099999626,0,0,0,0,0,1,file.inspect_state
+sheet_db_026,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1970,3296,65.57976539999981,27.581116200000906,0,0,0,0,0,1,sheet.inspect_state
+crm_workflow_023,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1989,4584,37.73368010000013,34.370260300000155,0,0,0,0,0,1,crm.inspect_state
+crm_workflow_023,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1980,3724,69.57524290000038,37.81665759999851,0,0,0,0,0,1,crm.inspect_state
+sheet_db_023,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,1.0,0.0,5,2,1967,4115,24.813630900000135,33.76160069999969,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+crm_workflow_028,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,2006,3335,28.479063199998564,66.31248009999945,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+sheet_db_023,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1958,3213,73.37135880000096,37.91736359999959,0,0,0,0,0,2,sheet.inspect_state sheet.check_constraints
+sheet_db_029,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1942,3392,61.275017100000696,34.16200939999908,0,0,0,0,0,2,sheet.inspect_state sheet.check_constraints
+calendar_028,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,2013,3311,51.38145600000098,50.941720999999234,0,0,0,0,0,1,calendar.inspect_state
+email_027,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1938,3209,31.899601600000096,72.99492640000062,0,0,0,0,0,0,
+calendar_026,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2035,3468,33.71680420000121,75.36219689999962,0,0,0,0,0,0,
+file_doc_027,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1921,3227,29.29325980000067,75.4715742999997,0,0,0,0,0,0,
+crm_workflow_030,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1983,3228,20.35328699999991,74.37460600000122,0,0,0,0,0,0,
+crm_workflow_024,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1999,4811,29.701783999998952,12.754287000001568,0,0,0,0,0,1,crm.inspect_state
+crm_workflow_022,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1975,3149,52.415071600000374,75.28630179999891,0,0,0,0,0,0,
+email_030,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1960,3163,36.33329739999863,64.60784630000126,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+email_026,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1959,3253,40.578029099999185,74.33886189999976,0,0,0,0,0,0,
+email_025,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1911,3340,48.00872690000142,74.14788779999981,0,0,0,0,0,0,
+email_024,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1970,4590,29.24979699999858,21.080187300000034,0,0,0,0,0,1,email.inspect_state
+crm_workflow_026,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,5,2,1988,3104,73.3870480000005,46.11172390000138,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+file_doc_024,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1950,3279,54.51396359999853,70.98928990000059,0,0,0,0,0,0,
+email_022,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1942,3359,58.05655320000005,75.19221499999912,0,0,0,0,0,0,
+calendar_030,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,2028,3475,53.8656076999996,53.75157229999968,0,0,0,0,0,1,calendar.inspect_state
+calendar_024,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2016,4524,31.16652950000025,38.38566189999983,0,0,0,0,0,0,
+email_024,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1961,3583,55.84537880000062,74.27241829999912,0,0,0,0,0,0,
+file_doc_023,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1930,3474,59.30073640000046,75.03831490000084,0,0,0,0,0,0,
+crm_workflow_027,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1976,3044,49.30320960000063,73.93603749999966,0,0,0,0,0,0,
+email_023,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1936,3211,62.53285119999964,73.0450923999997,0,0,0,0,0,0,
+email_028,email,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1967,3371,47.53327510000054,72.35120600000118,0,0,0,0,0,0,
+calendar_029,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,2033,3340,47.86091409999972,69.10680339999999,0,0,0,0,0,1,calendar.inspect_state
+calendar_023,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,2014,3242,68.6965166000009,68.75506940000014,0,0,0,0,1,5,calendar.inspect_state calendar.check_constraints confirm calendar.apply_update send_invites
+crm_workflow_021,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1974,3090,72.22140360000049,74.93946770000002,0,0,0,0,0,0,
+file_doc_026,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,1.0,0.0,5,2,1941,4808,20.50509499999862,17.564681500000006,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+crm_workflow_029,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1979,3250,46.531062800000655,73.30530530000033,0,0,0,0,0,0,
+sheet_db_022,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1955,3425,67.51467330000014,74.3091987000007,0,0,0,0,0,0,
+email_025,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1920,4445,31.415076999999656,16.995979100000113,0,0,0,0,0,1,email.inspect_state
+sheet_db_021,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1937,3225,70.61833850000039,75.14197480000075,0,0,0,0,0,0,
+file_doc_026,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1932,3305,56.21680600000036,73.4683288999986,0,0,0,0,0,0,
+sheet_db_030,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1965,3231,42.47333509999953,74.85346209999989,0,0,0,0,0,0,
+file_doc_024,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,1959,3804,39.186060399999405,22.55096169999888,0,0,0,0,0,1,file.inspect_state
+calendar_022,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2021,3378,71.56257750000077,75.78971869999987,0,0,0,0,0,0,
+file_doc_021,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1917,3328,73.43511820000094,74.07001329999912,0,0,0,0,0,0,
+file_doc_025,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1905,3081,64.81846819999919,71.71605869999985,0,0,0,0,0,1,file.inspect_state
+file_doc_022,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1916,3307,73.77013980000083,71.9900792999997,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+email_026,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1968,4373,16.665447999999742,26.29150010000012,0,0,0,0,0,1,email.inspect_state
+sheet_db_027,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1954,3060,56.83878949999962,73.3575480999989,0,0,0,0,0,0,
+crm_workflow_028,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,1.0,1.0,0.0,5,2,2015,4334,16.875483100000565,20.500375699999495,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+crm_workflow_026,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,1.0,1.0,0.0,5,2,1997,4452,23.043719900000724,24.188913500000126,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+sheet_db_026,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1979,4349,12.859974099999818,32.53989510000065,0,0,0,0,0,1,sheet.inspect_state
+email_027,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1947,4466,34.55106700000033,9.038206999999602,0,0,0,0,0,1,email.inspect_state
+calendar_024,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2007,3275,71.02564429999984,75.36856669999906,0,0,0,0,0,0,
+sheet_db_024,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1953,4502,30.70527779999975,32.75962729999992,0,0,0,0,0,1,sheet.inspect_state
+file_doc_027,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,1.0,0.0,5,2,1930,4573,17.440554099999645,31.306235600000946,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+sheet_db_024,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1944,3092,74.98892530000012,74.95768839999982,0,0,0,0,0,0,
+email_029,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,1.0,1.0,0.0,5,2,1943,4573,15.064169799999945,22.662480699998923,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+calendar_027,calendar,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2006,3374,69.98429919999944,73.18573670000114,0,0,0,0,0,0,
+crm_workflow_024,crm_workflow,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1990,3202,71.18332259999988,81.67521320000014,0,0,0,0,0,0,
+file_doc_029,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1927,3204,60.593763700000636,74.6958682000004,0,0,0,0,0,0,
+calendar_025,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,1.0,1.0,0.0,5,2,2017,3930,35.36451080000006,33.062935100000686,0,0,0,0,1,5,calendar.inspect_state calendar.check_constraints confirm calendar.apply_update send_invites
+sheet_db_025,sheet_db,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1921,3175,74.86346520000006,74.52099549999912,0,0,0,0,0,0,
+email_028,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1976,4864,21.81111769999916,26.30741560000024,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+calendar_027,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,parsed,1.0,1.0,0.0,5,2,2015,3934,35.13376729999982,23.719056300000375,0,0,0,0,1,5,calendar.inspect_state calendar.check_constraints confirm calendar.apply_update send_invites
+calendar_026,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2044,4275,24.306592399998408,37.45016720000058,0,0,0,0,0,0,
+sheet_db_027,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1963,4191,22.165833699998984,34.58735530000013,0,0,0,0,0,1,sheet.inspect_state
+calendar_028,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2022,4446,17.76567679999971,38.26292959999955,0,0,0,0,0,0,
+email_030,email,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,1.0,1.0,0.0,5,2,1969,4309,23.908483100000012,14.987769299999854,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+crm_workflow_025,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1969,3810,38.09763290000046,37.726400999999896,0,0,0,0,0,0,
+file_doc_028,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1977,4018,37.29709840000032,19.259657000000516,0,0,0,0,0,1,file.inspect_state
+sheet_db_025,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1930,4476,37.012351299999864,31.807138300000588,0,0,0,0,0,1,sheet.inspect_state
+crm_workflow_027,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1985,4094,29.271080200000142,36.06307720000041,0,0,0,0,0,0,
+crm_workflow_030,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,1.0,1.0,0.0,5,2,1992,4520,18.042568400000164,29.718772599999284,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+file_doc_025,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1914,4087,34.40613479999956,35.43562170000041,0,0,0,0,0,0,
+file_doc_030,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,1.0,0.0,5,2,1931,4290,19.24126410000099,26.257413799999995,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+file_doc_030,file_doc,L2,deepseek_v4_pro,plan_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1922,3369,71.62678509999932,74.84488879999844,0,0,0,0,0,0,
+sheet_db_028,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1967,4633,35.79324919999999,25.364910799999052,0,0,0,0,0,1,sheet.inspect_state
+crm_workflow_029,crm_workflow,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1988,4597,19.201543900000615,38.686901099999886,0,0,0,0,0,0,
+sheet_db_029,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1951,4640,22.924001800000042,33.628641600000265,0,0,0,0,0,1,sheet.inspect_state
+file_doc_029,file_doc,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1936,4584,23.242803899998762,36.65803539999979,0,0,0,0,0,1,file.inspect_state
+calendar_030,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2037,4482,27.91832969999996,37.57772280000063,0,0,0,0,0,0,
+calendar_029,calendar,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2042,4604,34.31194920000053,39.666902499999196,0,0,0,0,0,0,
+sheet_db_030,sheet_db,L2,deepseek_v4_flash,spec_first,0,tool_plan_executor,parsed,parsed,0.0,1.0,0.0,5,2,1974,4902,35.4427609000013,30.22196740000072,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+calendar_028,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,2022,4601,33.384595499999705,10.739922599999773,0,0,0,0,0,1,calendar.inspect_state
+crm_workflow_027,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,1985,3828,64.87528170000041,6.482020299999931,0,0,0,0,0,1,crm.inspect_state
+calendar_025,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,2017,4385,60.634146400001555,18.51639250000153,0,0,0,0,0,1,calendar.inspect_state
+email_028,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1976,4902,51.13209330000063,16.822506099999373,0,0,0,0,0,1,email.inspect_state
+sheet_db_028,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1967,4109,57.420204100000774,15.048169000001508,0,0,0,0,0,1,sheet.inspect_state
+file_doc_024,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,1959,3804,75.87220789999992,12.697986399998626,0,0,0,0,0,1,file.inspect_state
+email_021,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,2,0,1944,3808,76.04563269999926,24.604761900000085,0,0,0,0,0,2,email.inspect_state email.check_constraints
+sheet_db_026,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,2,0,1979,3860,64.09986879999997,26.186372199999823,0,0,0,0,0,2,sheet.inspect_state sheet.check_constraints
+file_doc_025,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1914,4470,69.21324880000066,24.05935959999988,0,0,0,0,0,1,file.inspect_state
+calendar_021,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,2036,3947,40.88348810000025,72.36373550000098,0,0,0,0,0,0,
+crm_workflow_026,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,1.0,1.0,0.0,5,2,1997,3838,63.412171600000875,37.15451010000106,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+email_030,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1969,4338,47.37061270000049,35.424735200000214,0,0,0,0,0,1,email.inspect_state
+file_doc_030,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,2,0,1931,3744,75.0129405000007,10.726614899998822,0,0,0,0,0,2,file.inspect_state file.check_constraints
+email_024,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,1.0,1.0,0.0,5,2,1970,3870,74.12951059999978,83.69491019999987,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+calendar_022,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2030,4595,75.38055070000155,91.27423310000086,0,0,0,0,0,0,
+crm_workflow_023,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1989,3832,73.25857499999984,89.57766210000045,0,0,0,0,0,0,
+sheet_db_022,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,1.0,0.0,5,2,1964,3841,74.46545890000016,89.86023019999993,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+email_022,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1951,4001,71.31301370000074,94.92931040000076,0,0,0,0,0,0,
+calendar_024,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,0.3333333333333333,5,2,2016,3505,74.61850159999995,87.82392099999925,0,0,0,0,1,5,calendar.inspect_state calendar.check_constraints confirm calendar.apply_update send_invites
+file_doc_026,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1941,5107,65.67848549999871,91.39286429999993,0,0,0,0,0,0,
+calendar_029,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,2042,4541,74.55533519999881,71.62524610000037,0,0,0,0,0,2,calendar.inspect_state calendar.check_constraints
+calendar_023,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2023,5153,75.15547599999991,91.38105220000034,0,0,0,0,0,0,
+crm_workflow_022,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1984,3979,72.69061860000147,97.66978149999886,0,0,0,0,0,1,crm.inspect_state
+crm_workflow_030,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,1.0,1.0,0.0,5,2,1992,3835,74.97857020000083,66.16264140000021,0,0,0,0,1,5,crm.inspect_state crm.check_constraints confirm crm.apply_update send_notification
+email_029,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,1.0,1.0,0.0,5,2,1943,3805,74.76711419999992,73.94232969999939,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+crm_workflow_024,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1999,3700,75.88761340000019,90.14723609999965,0,0,0,0,0,0,
+sheet_db_025,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1930,4120,74.83018980000088,89.67966250000063,0,0,0,0,0,0,
+sheet_db_024,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1953,5369,76.38121180000053,90.06196500000078,0,0,0,0,0,0,
+email_025,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1920,3786,75.09736750000047,90.06124780000027,0,0,0,0,0,0,
+email_026,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1968,4296,72.60103119999985,91.1200211000014,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email
+sheet_db_029,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,1.0,0.0,5,2,1951,3828,64.51064430000042,82.83315240000047,0,0,0,0,1,5,sheet.inspect_state sheet.check_constraints confirm sheet.apply_update sheet.append_audit_log
+calendar_030,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2037,4855,72.62537509999856,74.33109169999989,0,0,0,0,0,0,
+file_doc_029,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,5,2,1936,4071,66.15083330000016,86.60715300000084,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+calendar_027,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2015,4848,73.40465509999922,90.86257209999894,0,0,0,0,0,0,
+sheet_db_027,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1963,3846,74.89590090000092,89.97001719999935,0,0,0,0,0,0,
+calendar_026,calendar,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2044,4903,52.20666370000072,119.0651242999993,0,0,0,0,0,0,
+sheet_db_021,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1946,4981,64.7837475999986,118.78708310000002,0,0,0,0,0,0,
+sheet_db_030,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1974,3857,75.2831327999993,75.18809510000028,0,0,0,0,0,0,
+crm_workflow_028,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,2015,4869,72.31675309999991,89.78579250000075,0,0,0,0,0,0,
+sheet_db_023,sheet_db,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,1,0,1967,3966,59.45584400000007,118.78209489999972,0,0,0,0,0,1,sheet.inspect_state
+crm_workflow_025,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1969,4182,56.81965859999946,121.3036217000008,0,0,0,0,0,0,
+file_doc_023,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1939,3752,64.37193230000048,118.94729430000007,0,0,0,0,0,0,
+file_doc_022,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,parsed,0.0,0.0,1.0,2,0,1925,4468,64.2710905999993,121.3027989000002,0,0,0,0,0,2,file.inspect_state file.check_constraints
+file_doc_027,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,1.0,0.0,5,2,1930,3743,75.47965999999906,97.77948819999983,0,0,0,0,1,5,file.inspect_state file.check_constraints confirm file.apply_update file.share
+file_doc_021,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1926,3735,73.3463881000007,118.40575400000125,0,0,0,0,0,0,
+crm_workflow_021,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,invalid_no_fallback,0.0,0.0,1.0,0,0,1983,3822,75.77188500000011,118.71792670000104,0,0,0,0,0,0,
+file_doc_028,file_doc,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,0.0,0.0,1.0,1,0,1977,3822,74.94522569999936,92.8062033999995,0,0,0,0,0,1,file.inspect_state
+crm_workflow_029,crm_workflow,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1988,4464,34.01992050000081,132.95712450000065,0,0,0,0,0,0,
+email_023,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,parsed,invalid_no_fallback,0.0,0.0,1.0,0,0,1945,4487,70.617699299999,118.28925290000006,0,0,0,0,0,0,
+email_027,email,L2,deepseek_v4_pro,spec_first,0,tool_plan_executor,fallback,parsed,1.0,1.0,0.0,5,2,1947,3815,75.68856990000131,109.47786150000138,0,0,0,0,1,5,email.inspect_state email.check_constraints confirm email.apply_update send_email

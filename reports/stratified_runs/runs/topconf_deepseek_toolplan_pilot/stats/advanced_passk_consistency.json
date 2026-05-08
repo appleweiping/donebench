@@ -1,0 +1,74 @@
+[
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "n_tasks": 50,
+    "min_k": 1,
+    "max_k": 1,
+    "mean_k": 1.0,
+    "task_success_pass_at_k_mean": 0.0,
+    "donespec_valid_pass_at_k_mean": 1.0,
+    "success_consistency_rate": 1.0,
+    "success_inconsistency_rate": 0.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "n_tasks": 50,
+    "min_k": 1,
+    "max_k": 1,
+    "mean_k": 1.0,
+    "task_success_pass_at_k_mean": 0.0,
+    "donespec_valid_pass_at_k_mean": 1.0,
+    "success_consistency_rate": 1.0,
+    "success_inconsistency_rate": 0.0
+  },
+  {
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "n_tasks": 50,
+    "min_k": 1,
+    "max_k": 1,
+    "mean_k": 1.0,
+    "task_success_pass_at_k_mean": 0.14,
+    "donespec_valid_pass_at_k_mean": 0.94,
+    "success_consistency_rate": 1.0,
+    "success_inconsistency_rate": 0.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "n_tasks": 50,
+    "min_k": 1,
+    "max_k": 1,
+    "mean_k": 1.0,
+    "task_success_pass_at_k_mean": 0.0,
+    "donespec_valid_pass_at_k_mean": 0.92,
+    "success_consistency_rate": 1.0,
+    "success_inconsistency_rate": 0.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "n_tasks": 50,
+    "min_k": 1,
+    "max_k": 1,
+    "mean_k": 1.0,
+    "task_success_pass_at_k_mean": 0.0,
+    "donespec_valid_pass_at_k_mean": 0.94,
+    "success_consistency_rate": 1.0,
+    "success_inconsistency_rate": 0.0
+  },
+  {
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "n_tasks": 50,
+    "min_k": 1,
+    "max_k": 1,
+    "mean_k": 1.0,
+    "task_success_pass_at_k_mean": 0.1,
+    "donespec_valid_pass_at_k_mean": 0.76,
+    "success_consistency_rate": 1.0,
+    "success_inconsistency_rate": 0.0
+  }
+]

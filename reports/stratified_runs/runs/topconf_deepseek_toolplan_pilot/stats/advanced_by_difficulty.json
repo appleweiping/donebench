@@ -1,0 +1,68 @@
+[
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "n": 50,
+    "cc_f1": 0.44422125260360545,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 0.6000000000000001,
+    "task_success": 0.0,
+    "self_violation_rate": 1.0
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "n": 50,
+    "cc_f1": 0.4660928679163973,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 0.6000000000000001,
+    "task_success": 0.0,
+    "self_violation_rate": 1.0
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "n": 50,
+    "cc_f1": 0.6743359378839253,
+    "donespec_valid": 0.94,
+    "near_miss_detection_rate": 0.5640000000000001,
+    "task_success": 0.14,
+    "self_violation_rate": 0.7466666666666666
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "n": 50,
+    "cc_f1": 0.5547315687408567,
+    "donespec_valid": 0.92,
+    "near_miss_detection_rate": 0.552,
+    "task_success": 0.0,
+    "self_violation_rate": 1.0
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "n": 50,
+    "cc_f1": 0.5486686607166483,
+    "donespec_valid": 0.94,
+    "near_miss_detection_rate": 0.5640000000000001,
+    "task_success": 0.0,
+    "self_violation_rate": 1.0
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "n": 50,
+    "cc_f1": 0.6847591754650577,
+    "donespec_valid": 0.76,
+    "near_miss_detection_rate": 0.45600000000000007,
+    "task_success": 0.1,
+    "self_violation_rate": 0.8266666666666665
+  }
+]

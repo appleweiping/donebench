@@ -4,6 +4,7 @@ from donebench.core.config import load_experiment, load_models
 from donebench.agents.llm_actions import build_action_prompt, construct_action_plan
 from donebench.agents.llm_adapters import CompletionResult
 from donebench.scripts.run_experiments import run_matrix
+from donebench.scripts.run_experiments import select_tasks
 from donebench.scripts.run_experiments import run_matrix_streaming
 from donebench.core.schema import Phase1Output
 from donebench.core.validation import load_task
@@ -83,3 +84,13 @@ def test_live_action_parse_failure_does_not_fallback_to_oracle_plan():
     plan, diagnostics = construct_action_plan(task, BrokenLLM(), "spec_construction", spec)
     assert plan == []
     assert diagnostics["action_parse_status"] == "invalid_no_fallback"
+
+
+def test_select_tasks_stratifies_domain_limit():
+    from donebench.core.validation import validate_tasks
+
+    tasks, errors = validate_tasks(Path("data/tasks"))
+    assert errors == []
+    selected = select_tasks([task for task in tasks if task.audit.split == "test"], limit=10)
+    counts = {domain: len([task for task in selected if task.domain == domain]) for domain in {task.domain for task in selected}}
+    assert set(counts.values()) == {2}

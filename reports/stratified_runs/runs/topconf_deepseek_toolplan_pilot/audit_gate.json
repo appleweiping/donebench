@@ -1,0 +1,11 @@
+{
+  "annotation_path": "annotation\\human_audit_queue.jsonl",
+  "ai_audit_path": "reports\\audit\\ai_audit_opinions.jsonl",
+  "num_human_audit_items": 100,
+  "num_double_annotated": 0,
+  "double_annotation_rate": 0.0,
+  "num_adjudicated": 0,
+  "adjudication_rate": 0.0,
+  "num_ai_high_risk": 0,
+  "paper_ready_human_audit": false
+}

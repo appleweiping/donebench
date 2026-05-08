@@ -1,0 +1,16 @@
+{
+  "rows": 300,
+  "tool_plan_rate": 1.0,
+  "mean_missing_precondition_steps": 0.0,
+  "mean_unknown_tool_steps": 0.0,
+  "outputs": [
+    "action_diagnostics_by_model_agent.csv",
+    "action_diagnostics_by_model_agent.json",
+    "action_diagnostics_by_status.csv",
+    "action_diagnostics_by_status.json",
+    "action_diagnostics_trials.csv",
+    "action_diagnostics_trials.json",
+    "action_failure_modes.csv",
+    "action_failure_modes.json"
+  ]
+}

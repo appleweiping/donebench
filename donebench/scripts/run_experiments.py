@@ -28,7 +28,7 @@ def run(
         raise RuntimeError("\n".join(errors[:20]))
     selected = [task for task in tasks if task.audit.split == split]
     if limit:
-        selected = selected[:limit]
+        selected = select_tasks(selected, limit)
     agent_cls = AGENTS[agent_name]
     llm = adapter_from_config(model_config) if model_config else None
     agent = agent_cls(model=model, llm=llm)
@@ -147,7 +147,7 @@ def run_matrix_streaming(
         raise RuntimeError("\n".join(errors[:20]))
     selected = [task for task in tasks if task.audit.split == split]
     if limit:
-        selected = selected[:limit]
+        selected = select_tasks(selected, limit)
     skipped: list[dict[str, Any]] = []
     output.parent.mkdir(parents=True, exist_ok=True)
     completed = completed_keys(output) if resume else set()
@@ -242,3 +242,25 @@ def write_manifest(path: Path, rows: list[dict[str, Any]], skipped: list[dict[st
         "config": config,
     }
     path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
+
+
+def select_tasks(tasks: list[Any], limit: int | None = None, strategy: str = "stratified_domain") -> list[Any]:
+    if not limit or len(tasks) <= limit:
+        return tasks
+    if strategy != "stratified_domain":
+        return tasks[:limit]
+    domains = sorted({task.domain for task in tasks})
+    by_domain = {domain: [task for task in tasks if task.domain == domain] for domain in domains}
+    selected: list[Any] = []
+    idx = 0
+    while len(selected) < limit:
+        made_progress = False
+        for domain in domains:
+            bucket = by_domain[domain]
+            if idx < len(bucket) and len(selected) < limit:
+                selected.append(bucket[idx])
+                made_progress = True
+        if not made_progress:
+            break
+        idx += 1
+    return selected

@@ -1,0 +1,6 @@
+metric,model_a,model_b,mean_diff_a_minus_b,ci_low,ci_high,n_pairs
+cc_f1,deepseek_v4_flash,deepseek_v4_pro,-0.0678364488395448,-0.11142722182215214,-0.02332719391175273,150
+donespec_valid,deepseek_v4_flash,deepseek_v4_pro,0.10666666666666667,0.05333333333333334,0.16,150
+near_miss_detection_rate,deepseek_v4_flash,deepseek_v4_pro,0.06399999999999999,0.031999999999999994,0.09599999999999999,150
+task_success,deepseek_v4_flash,deepseek_v4_pro,0.013333333333333334,-0.02,0.04666666666666667,150
+self_violation_rate,deepseek_v4_flash,deepseek_v4_pro,-0.02666666666666667,-0.07333333333333333,0.02,150

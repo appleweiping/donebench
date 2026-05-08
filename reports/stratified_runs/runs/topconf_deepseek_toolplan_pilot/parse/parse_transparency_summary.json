@@ -1,0 +1,20 @@
+{
+  "input": "results\\runs\\topconf_deepseek_toolplan_pilot_stratified\\trials.jsonl",
+  "rows": 300,
+  "status_counts": {
+    "parsed": 258,
+    "fallback": 42
+  },
+  "parse_rate": 0.86,
+  "fallback_rate": 0.14,
+  "outputs": [
+    "parse_transparency_by_domain.csv",
+    "parse_transparency_by_domain.json",
+    "parse_transparency_by_model_agent.csv",
+    "parse_transparency_by_model_agent.json",
+    "parse_transparency_by_status.csv",
+    "parse_transparency_by_status.json",
+    "parse_transparency_trials.csv",
+    "parse_transparency_trials.json"
+  ]
+}

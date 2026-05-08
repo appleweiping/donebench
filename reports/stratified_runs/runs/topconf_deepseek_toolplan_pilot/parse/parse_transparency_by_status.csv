@@ -1,0 +1,12 @@
+model,agent,parse_status,n
+deepseek_v4_flash,direct,parsed,50
+deepseek_v4_flash,plan_first,fallback,1
+deepseek_v4_flash,plan_first,parsed,49
+deepseek_v4_flash,spec_first,fallback,11
+deepseek_v4_flash,spec_first,parsed,39
+deepseek_v4_pro,direct,fallback,5
+deepseek_v4_pro,direct,parsed,45
+deepseek_v4_pro,plan_first,fallback,3
+deepseek_v4_pro,plan_first,parsed,47
+deepseek_v4_pro,spec_first,fallback,22
+deepseek_v4_pro,spec_first,parsed,28

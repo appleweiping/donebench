@@ -28,6 +28,7 @@ from donebench.scripts.readiness_report import write_readiness_report
 from donebench.scripts.run_experiments import run as run_experiment
 from donebench.scripts.run_experiments import run_matrix
 from donebench.scripts.run_experiments import run_matrix_streaming
+from donebench.scripts.run_experiments import select_tasks
 from donebench.scripts.run_experiments import append_jsonl
 from donebench.scripts.run_experiments import write_manifest
 from donebench.scripts.run_experiments import write_jsonl
@@ -152,7 +153,7 @@ def plan_matrix_cmd(
     actual_split = split or exp.default_split
     selected = [task for task in tasks if task.audit.split == actual_split]
     if limit:
-        selected = selected[:limit]
+        selected = select_tasks(selected, limit)
     enabled_models = [model for model in exp.models if model_configs.get(model) and model_configs[model].enabled]
     planned = len(selected) * len(exp.agents) * len(enabled_models) * exp.trials_per_model
     console.print(

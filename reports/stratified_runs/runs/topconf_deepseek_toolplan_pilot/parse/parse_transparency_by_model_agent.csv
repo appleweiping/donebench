@@ -1,0 +1,7 @@
+model,agent,n,parsed,fallback,parse_rate,fallback_rate,mean_attempts,mean_latency_s,mean_prompt_tokens,mean_completion_tokens,mean_total_tokens,mean_prompt_chars,mean_raw_output_chars
+deepseek_v4_flash,direct,50,50,0,1.0,0.0,1.0,22.37721600000008,452.6,1238.28,1690.88,1945.76,1533.98
+deepseek_v4_flash,plan_first,50,49,1,0.98,0.02,1.0,19.734306625999924,460.6,1242.5,1703.1,1964.76,1502.2
+deepseek_v4_flash,spec_first,50,39,11,0.78,0.22,1.0,29.08558848599976,453.6,1875.72,2329.32,1973.76,1832.06
+deepseek_v4_pro,direct,50,45,5,0.9,0.1,1.0,59.634872946000065,452.6,1919.18,2371.78,1945.76,2023.26
+deepseek_v4_pro,plan_first,50,47,3,0.94,0.06,1.0,55.02054779600014,460.6,1820.08,2280.68,1964.76,2026.68
+deepseek_v4_pro,spec_first,50,28,22,0.56,0.44,1.0,67.52221391800012,453.6,2210.56,2664.16,1973.76,1498.12

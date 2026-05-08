@@ -42,6 +42,10 @@ make repro-package
 make docker-smoke
 ```
 
+## Current Handoff
+
+Future automation agents should read `reports/agent_handoff.md` before making paper, audit, or experiment changes. It records the current full-run status, claim boundaries, milestones, GPT-5.5 targeted audit plan, human audit boundary, and git hygiene.
+
 ## Benchmark Format
 
 Each task includes a user goal, visible tool environment, initial state, policies, atomized gold criteria, executable DoneSpec, near-miss mutated final states, a passing reference trace, and audit metadata. Primary grading is deterministic through the DoneSpec DSL rather than LLM-as-judge.
@@ -149,6 +153,8 @@ donebench experiment-pipeline topconf_deepseek_token_matched --resume --max-work
 ```
 
 `--max-workers 0` uses the suite recommendation. Outputs are isolated under `results/runs/<suite>/trials.jsonl` and `reports/runs/<suite>/`, avoiding accidental aggregation across historical result files.
+
+As of 2026-05-09, `topconf_deepseek_toolplan_full` has completed once with 18,000 / 18,000 trials and 0 skipped rows. Its current report root is `reports/full_runs/runs/topconf_deepseek_toolplan_full/`, and `reports/full_run_readiness.json` reports `full_run_ready: true` when using `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`. Paper readiness remains blocked by human double annotation and AI-audit adjudication; see `reports/agent_handoff.md` and `reports/blockers.md`.
 
 ## Reproducibility Package
 

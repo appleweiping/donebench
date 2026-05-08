@@ -272,7 +272,7 @@
   },
   "parse_gate": {
     "parse_gate_checked": true,
-    "parse_table": "reports\\connectivity_check\\runs\\deepseek_family_connectivity\\parse\\parse_transparency_by_model_agent.csv",
+    "parse_table": "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\parse\\parse_transparency_by_model_agent.csv",
     "num_quarantined_cells": 0,
     "quarantined_cells": [],
     "parse_blockers": []

@@ -1,0 +1,7 @@
+model,agent,n,precondition_failure_rate,unknown_tool_rate,permission_failure_rate,side_effect_failure_rate,no_confirmation_rate
+deepseek_v4_flash,direct_token_matched,50,0.0,0.0,0.0,0.0,0.66
+deepseek_v4_flash,plan_first_token_matched,50,0.0,0.0,0.0,0.0,0.64
+deepseek_v4_flash,spec_first_token_matched,50,0.0,0.0,0.0,0.0,0.72
+deepseek_v4_pro,direct_token_matched,50,0.0,0.0,0.0,0.0,0.8
+deepseek_v4_pro,plan_first_token_matched,50,0.0,0.0,0.0,0.0,0.66
+deepseek_v4_pro,spec_first_token_matched,50,0.0,0.0,0.0,0.0,0.78

@@ -1,0 +1,20 @@
+{
+  "input": "results\\runs\\topconf_deepseek_token_matched_pilot\\trials.jsonl",
+  "rows": 300,
+  "status_counts": {
+    "parsed": 284,
+    "fallback": 16
+  },
+  "parse_rate": 0.9466666666666667,
+  "fallback_rate": 0.05333333333333334,
+  "outputs": [
+    "parse_transparency_by_domain.csv",
+    "parse_transparency_by_domain.json",
+    "parse_transparency_by_model_agent.csv",
+    "parse_transparency_by_model_agent.json",
+    "parse_transparency_by_status.csv",
+    "parse_transparency_by_status.json",
+    "parse_transparency_trials.csv",
+    "parse_transparency_trials.json"
+  ]
+}

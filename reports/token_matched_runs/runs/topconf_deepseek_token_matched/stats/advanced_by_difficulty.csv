@@ -1,0 +1,7 @@
+difficulty,model,agent,n,cc_f1,donespec_valid,near_miss_detection_rate,task_success,self_violation_rate
+L2,deepseek_v4_flash,direct_token_matched,50,0.4694893341952165,1.0,0.6000000000000001,0.18,0.6833333333333335
+L2,deepseek_v4_flash,plan_first_token_matched,50,0.45996563240680893,0.98,0.5880000000000001,0.16,0.68
+L2,deepseek_v4_flash,spec_first_token_matched,50,0.5938485599367952,0.92,0.92,0.18,0.74
+L2,deepseek_v4_pro,direct_token_matched,50,0.569515298427063,0.98,0.5880000000000001,0.08,0.8366666666666667
+L2,deepseek_v4_pro,plan_first_token_matched,50,0.5402197632089273,0.92,0.552,0.14,0.72
+L2,deepseek_v4_pro,spec_first_token_matched,50,0.6368050272740675,0.68,0.68,0.1,0.8366666666666666

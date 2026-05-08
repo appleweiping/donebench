@@ -1,0 +1,14 @@
+{
+  "num_trials": 1500,
+  "num_skipped": 0,
+  "skipped": [],
+  "config": {
+    "config": "configs\\experiments.yaml",
+    "models": "configs\\models.yaml",
+    "suite": "topconf_deepseek_toolplan_replicates_pilot",
+    "split": "test",
+    "limit": 50,
+    "resume": true,
+    "max_workers": 64
+  }
+}

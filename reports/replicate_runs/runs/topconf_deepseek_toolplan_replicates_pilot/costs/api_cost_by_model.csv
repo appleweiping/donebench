@@ -1,0 +1,3 @@
+model,provider_model,calls,input_tokens,output_tokens,latency_s,mean_latency_s,estimated_cost_usd
+deepseek_v4_flash,deepseek-v4-flash,750,341700,1090664,16629.877830100017,22.173170440133354,0.35322392
+deepseek_v4_pro,deepseek-v4-pro,750,341700,1505601,46666.82738700002,62.22243651600002,1.45851237

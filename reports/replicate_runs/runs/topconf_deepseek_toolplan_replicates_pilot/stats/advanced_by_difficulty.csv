@@ -1,0 +1,7 @@
+difficulty,model,agent,n,cc_f1,donespec_valid,near_miss_detection_rate,task_success,self_violation_rate
+L2,deepseek_v4_flash,direct,250,0.4538732959850606,1.0,0.6,0.0,1.0
+L2,deepseek_v4_flash,plan_first,250,0.5047457894358822,0.988,0.5928,0.0,1.0
+L2,deepseek_v4_flash,spec_first,250,0.6007153868834982,0.884,0.5304,0.12,0.7806666666666667
+L2,deepseek_v4_pro,direct,250,0.5955339336274321,0.968,0.5808,0.0,1.0
+L2,deepseek_v4_pro,plan_first,250,0.5784309741170421,0.928,0.5568,0.0,1.0
+L2,deepseek_v4_pro,spec_first,250,0.7013607741072138,0.756,0.45359999999999995,0.136,0.736

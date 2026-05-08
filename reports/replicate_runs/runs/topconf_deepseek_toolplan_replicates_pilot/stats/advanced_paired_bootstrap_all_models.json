@@ -1,0 +1,47 @@
+[
+  {
+    "metric": "cc_f1",
+    "model_a": "deepseek_v4_flash",
+    "model_b": "deepseek_v4_pro",
+    "mean_diff_a_minus_b": -0.10533040318241556,
+    "ci_low": -0.12342731108817795,
+    "ci_high": -0.08659376038449568,
+    "n_pairs": 750
+  },
+  {
+    "metric": "donespec_valid",
+    "model_a": "deepseek_v4_flash",
+    "model_b": "deepseek_v4_pro",
+    "mean_diff_a_minus_b": 0.07333333333333333,
+    "ci_low": 0.04796666666666667,
+    "ci_high": 0.1,
+    "n_pairs": 750
+  },
+  {
+    "metric": "near_miss_detection_rate",
+    "model_a": "deepseek_v4_flash",
+    "model_b": "deepseek_v4_pro",
+    "mean_diff_a_minus_b": 0.04399999999999999,
+    "ci_low": 0.028779999999999997,
+    "ci_high": 0.06,
+    "n_pairs": 750
+  },
+  {
+    "metric": "task_success",
+    "model_a": "deepseek_v4_flash",
+    "model_b": "deepseek_v4_pro",
+    "mean_diff_a_minus_b": -0.005333333333333333,
+    "ci_low": -0.02266666666666667,
+    "ci_high": 0.013366666666666638,
+    "n_pairs": 750
+  },
+  {
+    "metric": "self_violation_rate",
+    "model_a": "deepseek_v4_flash",
+    "model_b": "deepseek_v4_pro",
+    "mean_diff_a_minus_b": 0.01488888888888889,
+    "ci_low": -0.009561111111111112,
+    "ci_high": 0.04000555555555555,
+    "n_pairs": 750
+  }
+]

@@ -1,0 +1,7 @@
+model,agent,n_tasks,min_k,max_k,mean_k,task_success_pass_at_k_mean,donespec_valid_pass_at_k_mean,success_consistency_rate,success_inconsistency_rate
+deepseek_v4_flash,direct,50,5,5,5.0,0.0,1.0,1.0,0.0
+deepseek_v4_flash,plan_first,50,5,5,5.0,0.0,1.0,1.0,0.0
+deepseek_v4_flash,spec_first,50,5,5,5.0,0.34,1.0,0.66,0.33999999999999997
+deepseek_v4_pro,direct,50,5,5,5.0,0.0,1.0,1.0,0.0
+deepseek_v4_pro,plan_first,50,5,5,5.0,0.0,1.0,1.0,0.0
+deepseek_v4_pro,spec_first,50,5,5,5.0,0.44,1.0,0.56,0.43999999999999995

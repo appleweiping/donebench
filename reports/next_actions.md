@@ -3,6 +3,8 @@
 Read `reports/agent_handoff.md` before starting. It is the current source of truth for milestones, claim boundaries, and what Codex should not automate.
 
 1. Run GPT-5.5 targeted AI audit for the 46 disputed/high-risk/missing-trusted tasks listed in `reports/agent_handoff.md`, writing outputs to `reports/audit_gpt55_targeted/`.
+   - The prepared queue is `reports/audit_gpt55_targeted_queue.jsonl`.
+   - Current blocker: the shell used on 2026-05-09 did not have `OPENAI_API_KEY`; rerun only after setting a real key and keep `--require-live`.
 2. Merge the GPT-5.5 targeted audit with `reports/audit_deepseek_merged/ai_audit_opinions.jsonl` into `reports/audit_deepseek_gpt55_merged/`, preserving both evidence sources.
 3. Refresh `audit-gate` and `full-run-readiness` with the merged DeepSeek+GPT-5.5 audit. The expected remaining blocker should be human double annotation, unless GPT-5.5 leaves unresolved adjudication items.
 4. Prepare human audit packets for the balanced 50-task first batch: `*_021` through `*_030` in each of the five domains.

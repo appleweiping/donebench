@@ -1,0 +1,52 @@
+{
+  "model": "model_assisted_full_domain_audit",
+  "num_audited": 100,
+  "num_unique_tasks": 100,
+  "num_needs_adjudication": 100,
+  "num_high_risk": 100,
+  "num_fallback_audits": 0,
+  "by_risk": {
+    "high": 100
+  },
+  "by_source": {
+    "model": 100
+  },
+  "risk_labels": {
+    "missing_time_window_duration_criteria": 20,
+    "generic_artifact_criterion": 20,
+    "implausible_reference_trace": 100,
+    "near_miss_gap": 20,
+    "templated_calendar_spec": 20,
+    "source_preservation_unchecked": 9,
+    "missing_note_owner_criteria": 10,
+    "policy_gate_under_specified": 4,
+    "donespec_goal_gap": 20,
+    "near_miss_coverage_gap": 40,
+    "templated_crm_surface": 20,
+    "missing_resolution_owner_criteria": 5,
+    "workflow_order_unchecked": 5,
+    "duplicate_ticket_unchecked": 5,
+    "policy_before_transition_unchecked": 5,
+    "window_audience_underchecked": 5,
+    "source_preservation_underchecked": 5,
+    "observation_depth_underchecked": 5,
+    "attachment_or_recipient_exactness_underchecked": 20,
+    "content_or_source_preservation_gap": 20,
+    "templated_email_surface": 20,
+    "recipient_or_permission_exactness_underchecked": 20,
+    "source_metadata_preservation_gap": 20,
+    "folder_export_semantics_underchecked": 20,
+    "templated_file_doc_surface": 20,
+    "formula_preservation_gap": 20,
+    "exact_row_or_duplicate_semantics_underchecked": 20,
+    "audit_backup_policy_gap": 20,
+    "templated_sheet_db_surface": 20
+  },
+  "outputs": {
+    "opinions": "reports\\audit_full_domain_model_assisted\\ai_audit_opinions.jsonl",
+    "adjudication": "reports\\audit_full_domain_model_assisted\\ai_audit_adjudication.jsonl",
+    "high_risk": "reports\\audit_full_domain_model_assisted\\ai_audit_high_risk.jsonl",
+    "fallback": "reports\\audit_full_domain_model_assisted\\ai_audit_fallback_queue.jsonl",
+    "summary": "reports\\audit_full_domain_model_assisted\\ai_audit_summary.json"
+  }
+}

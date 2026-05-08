@@ -9,7 +9,8 @@
 ## Remaining Paper Blockers
 
 - `human_double_annotation_below_50`: `annotation/human_audit_queue.jsonl` still has 0 / 100 double-annotated rows. Paper-credible claims need at least 50 balanced double annotations plus adjudication of disagreements.
-- `ai_adjudication_queue_nonempty`: the DeepSeek merged audit leaves 37 tasks with `needs_adjudication = true`. Use GPT-5.5 as a targeted second-opinion auditor for these tasks plus high-risk and missing-trusted tasks before human adjudication.
+- `ai_high_risk_rate_above_threshold`: the curated DeepSeek+Codex/GPT-5.5 merged audit raises high-risk coverage to 23 / 100 tasks, above the 0.15 threshold. These are likely real task-quality risks, not an API failure.
+- `ai_adjudication_queue_nonempty`: the curated merged audit leaves 23 tasks with `needs_adjudication = true`, concentrated in calendar, CRM, and email.
 - Paper submission metadata is not available yet: target venue, page limit, author list, affiliations, and acknowledgements.
 - Paper-ready hosted-model claims still need provider/model identifiers, access dates, decoding settings, retry policy, trial counts, and cost/latency tables fixed in the paper text.
 - Token-matched prompting and pass^k reliability results exist as controls/pilots, but broad causal claims about spec-first should wait until the paper explicitly reports these controls beside the full run.

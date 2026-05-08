@@ -28,3 +28,6 @@
 - Remaining paper blockers are `human_double_annotation_below_50` and `ai_adjudication_queue_nonempty`.
 - Added `reports/agent_handoff.md` as the required first-read handoff for future Codex agents, including milestones, claim boundaries, GPT-5.5 targeted audit plan, human audit plan, and git hygiene.
 - Generated `reports/audit_gpt55_targeted_queue.jsonl` with the 46 targeted GPT-5.5 audit tasks. A live GPT-5.5 audit was attempted with `--require-live`, but the current shell had no `OPENAI_API_KEY`; do not fall back to mock/fallback audit for this queue.
+- Completed a Codex-session GPT-5.5 targeted second-opinion audit for the 46 queued tasks without external API usage, writing `reports/audit_gpt55_targeted/`.
+- Created `reports/audit_deepseek_gpt55_merged/` using a curated merge policy: retain DeepSeek merged records for non-targeted tasks and replace targeted task records with Codex/GPT-5.5 second-opinion records.
+- Refreshed `audit_gate.json` and `full_run_readiness.json` against the curated merge. Trusted model coverage is now 1.0, but GPT-5.5 identified 23 high-risk tasks, so the current blockers are `human_double_annotation_below_50`, `ai_high_risk_rate_above_threshold`, and `ai_adjudication_queue_nonempty`.

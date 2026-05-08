@@ -22,7 +22,7 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
   - Reports: `reports/full_runs/runs/topconf_deepseek_toolplan_full/`
   - Main table: `reports/full_runs/runs/topconf_deepseek_toolplan_full/paper_tables/main_results_with_execution.csv`
   - Cost summary: about 18,000 API calls and estimated 13.47 USD by the current DeepSeek cost table.
-- Full-run readiness was refreshed on 2026-05-09 using `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`; `reports/full_run_readiness.json` now reports `full_run_ready: true`.
+- Full-run readiness was first refreshed on 2026-05-09 using `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`, which cleared trusted coverage. A later Codex/GPT-5.5 targeted audit was merged into `reports/audit_deepseek_gpt55_merged/`; that merge improves trusted coverage to 1.0 but identifies 23 high-risk tasks, so current `reports/full_run_readiness.json` reports `full_run_ready: false`.
 
 ## Main Empirical Result So Far
 
@@ -45,22 +45,24 @@ Unsafe claim: spec-first solves execution, or the benchmark proves a general fro
 
 Current paper blockers are not the same as full-run blockers.
 
-- Full-run readiness: clear after switching to the DeepSeek merged model audit.
+- Trusted audit coverage: clear after adding the Codex/GPT-5.5 targeted second opinion.
 - Paper blockers:
   - `human_double_annotation_below_50`
+  - `ai_high_risk_rate_above_threshold`
   - `ai_adjudication_queue_nonempty`
 
 Definitions:
 
 - `human_double_annotation_below_50`: fewer than 50 of 100 human-audit queue tasks have valid `annotator_a` and `annotator_b` judgments.
-- `trusted_ai_audit_coverage_below_threshold`: trusted model audit coverage below 0.90. This is currently solved by `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`, which covers 93 / 100 tasks with `audit_source == "model"`.
-- `ai_adjudication_queue_nonempty`: at least one AI-audited task has `needs_adjudication: true`; currently 37 tasks.
+- `trusted_ai_audit_coverage_below_threshold`: trusted model audit coverage below 0.90. This is currently solved by `reports/audit_deepseek_gpt55_merged/ai_audit_opinions.jsonl`, which covers 100 / 100 tasks with at least one `audit_source == "model"` record.
+- `ai_high_risk_rate_above_threshold`: high-risk AI audit task rate above 0.15. The Codex/GPT-5.5 targeted second opinion currently marks 23 / 100 tasks high risk.
+- `ai_adjudication_queue_nonempty`: at least one AI-audited task has `needs_adjudication: true`; currently 23 tasks.
 
 Do not fake human audit. Codex may organize queues, summarize task evidence, run model audits, and prepare adjudication packets. Codex must not fill `annotator_a`, `annotator_b`, or adjudicator fields as if it were an independent human annotator.
 
 ## GPT-5.5 Targeted Audit Plan
 
-Use GPT-5.5 as a targeted second-opinion auditor, not as a replacement for human double annotation.
+GPT-5.5 targeted audit has been completed through Codex session agents, not external OpenAI API calls. It is a model second opinion, not a replacement for human double annotation.
 
 Suggested output directory:
 
@@ -84,12 +86,12 @@ file_doc_024, file_doc_029, file_doc_032, file_doc_033, file_doc_034, file_doc_0
 sheet_db_021, sheet_db_022, sheet_db_024, sheet_db_025, sheet_db_026, sheet_db_027, sheet_db_028, sheet_db_029, sheet_db_032, sheet_db_034, sheet_db_035, sheet_db_036, sheet_db_038, sheet_db_039
 ```
 
-After GPT-5.5 audit:
+Completed outputs:
 
-```powershell
-C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli merge-ai-audits reports/audit_deepseek_gpt55_merged reports/audit_deepseek_merged/ai_audit_opinions.jsonl reports/audit_gpt55_targeted/ai_audit_opinions.jsonl
-C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli audit-gate reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json --annotation annotation/human_audit_queue.jsonl --ai-audit reports/audit_deepseek_gpt55_merged/ai_audit_opinions.jsonl
-```
+- `reports/audit_gpt55_targeted/`
+- `reports/audit_deepseek_gpt55_merged/`
+
+Important result: the targeted audit did not clear the adjudication queue. It found 23 high-risk tasks, concentrated in calendar, CRM, and email. The next step is human adjudication and/or task repair/quarantine, not another attempt to make the gate pass by relabeling those records.
 
 ## Human Audit Plan
 
@@ -134,9 +136,9 @@ Completion boundary: full-run readiness is true. Paper boundary remains blocked 
 
 ### M3: AI-Assisted Audit
 
-Status: partially complete. DeepSeek merged audit clears trusted coverage for full-run readiness. GPT-5.5 targeted audit should address disputed/high-risk/missing-trusted tasks.
+Status: completed as an AI second opinion. DeepSeek plus Codex/GPT-5.5 merged audit clears trusted coverage but identifies 23 high-risk tasks.
 
-Completion boundary: merged model audit has no adjudication queue or has a documented adjudication packet for human review.
+Completion boundary: the 23 high-risk records are adjudicated by humans, repaired in the dataset, or explicitly quarantined from paper-ready claims.
 
 ### M4: Human Audit
 

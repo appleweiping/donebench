@@ -26,6 +26,14 @@ Token-matched ablation:
 donebench experiment-pipeline topconf_deepseek_token_matched --resume --max-workers 0
 ```
 
+Reliability / pass^k pilot:
+
+```powershell
+donebench experiment-pipeline topconf_deepseek_toolplan_replicates_pilot --limit 50 --resume --max-workers 0
+```
+
+This runs 50 stratified tasks x 3 agents x 2 DeepSeek models x 5 trials = 1500 trials. Use it before reliability, pass^k, or variance claims.
+
 `--max-workers 0` uses the suite recommendation. Outputs are isolated under `results/runs/<suite>/trials.jsonl` and `reports/runs/<suite>/`.
 
 ## Required Tables Before Paper Claims

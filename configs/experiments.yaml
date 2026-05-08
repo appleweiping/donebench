@@ -84,6 +84,12 @@ experiment_suites:
     models: [deepseek_v4_flash, deepseek_v4_pro]
     trials_per_model: 1
     recommended_max_workers: 64
+  topconf_deepseek_toolplan_replicates_pilot:
+    split: test
+    agents: [direct, plan_first, spec_first]
+    models: [deepseek_v4_flash, deepseek_v4_pro]
+    trials_per_model: 5
+    recommended_max_workers: 64
   topconf_deepseek_toolplan_full:
     split: test
     agents: [direct, plan_first, spec_first]

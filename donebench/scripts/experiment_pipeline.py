@@ -110,6 +110,8 @@ def write_paper_tables(report_dir: Path) -> dict[str, str]:
         parse_keep = ["model", "agent", "parse_rate", "fallback_rate"]
         if "repaired_rate" in parse.columns:
             parse_keep.append("repaired_rate")
+        if "quarantine_recommended" in parse.columns:
+            parse_keep.append("quarantine_recommended")
         table = table.merge(parse[parse_keep], on=["model", "agent"], how="left")
     if actions_path.exists():
         actions = pd.read_csv(actions_path)

@@ -11,6 +11,7 @@ from donebench.core.validation import audit_tasks, validate_tasks
 from donebench.scripts.aggregate_results import aggregate as aggregate_results
 from donebench.scripts.advanced_stats import write_advanced_stats
 from donebench.scripts.annotation_agreement import write_annotation_agreement
+from donebench.scripts.ai_audit import merge_ai_audits
 from donebench.scripts.ai_audit import run_ai_audit
 from donebench.scripts.audit_gate import write_audit_gate
 from donebench.scripts.cost_report import write_cost_report
@@ -18,6 +19,7 @@ from donebench.scripts.action_diagnostics import write_action_diagnostics
 from donebench.scripts.experiment_pipeline import run_experiment_pipeline
 from donebench.scripts.export_openreview_package import export_package
 from donebench.scripts.failure_mining import mine_failures
+from donebench.scripts.full_run_readiness import write_full_run_readiness
 from donebench.scripts.generate_seed_tasks import generate
 from donebench.scripts.human_audit_queue import write_human_audit_queue
 from donebench.scripts.make_figures import make_figures as make_figures_impl
@@ -296,6 +298,8 @@ def ai_audit_cmd(
     model: str = typer.Option("mock", "--model"),
     limit: int | None = typer.Option(None, "--limit"),
     require_live: bool = typer.Option(False, "--require-live", help="Fail instead of falling back when the configured model cannot be used."),
+    max_workers: int = typer.Option(1, "--max-workers", min=1),
+    resume: bool = typer.Option(True, "--resume/--no-resume"),
 ) -> None:
     summary = run_ai_audit(
         input_path,
@@ -305,7 +309,18 @@ def ai_audit_cmd(
         model_id=model,
         limit=limit,
         require_live=require_live,
+        max_workers=max_workers,
+        resume=resume,
     )
+    console.print(summary)
+
+
+@app.command("merge-ai-audits")
+def merge_ai_audits_cmd(
+    output_dir: Path = typer.Argument(Path("reports/audit")),
+    inputs: list[Path] = typer.Argument(...),
+) -> None:
+    summary = merge_ai_audits(inputs, output_dir)
     console.print(summary)
 
 
@@ -325,6 +340,30 @@ def audit_gate_cmd(
     ai_audit_path: Path = typer.Option(Path("reports/audit/ai_audit_opinions.jsonl"), "--ai-audit"),
 ) -> None:
     summary = write_audit_gate(output, annotation_path=annotation_path, ai_audit_path=ai_audit_path)
+    console.print(summary)
+
+
+@app.command("full-run-readiness")
+def full_run_readiness_cmd(
+    output: Path = typer.Argument(Path("reports/full_run_readiness.json")),
+    suite: str = typer.Option("topconf_deepseek_toolplan_full", "--suite"),
+    config: Path = typer.Option(Path("configs/experiments.yaml"), "--config"),
+    models: Path = typer.Option(Path("configs/models.yaml"), "--models"),
+    annotation_path: Path = typer.Option(Path("annotation/human_audit_queue.jsonl"), "--annotation"),
+    ai_audit_path: Path = typer.Option(Path("reports/audit_deepseek_merged/ai_audit_opinions.jsonl"), "--ai-audit"),
+    parse_table: Path | None = typer.Option(None, "--parse-table"),
+    limit: int | None = typer.Option(None, "--limit"),
+) -> None:
+    summary = write_full_run_readiness(
+        output=output,
+        suite=suite,
+        config_path=config,
+        models_path=models,
+        annotation_path=annotation_path,
+        ai_audit_path=ai_audit_path,
+        parse_table=parse_table,
+        limit=limit,
+    )
     console.print(summary)
 
 

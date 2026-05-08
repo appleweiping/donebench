@@ -8,6 +8,7 @@ from donebench.scripts.action_diagnostics import write_action_diagnostics
 from donebench.scripts.audit_gate import write_audit_gate
 from donebench.scripts.experiment_pipeline import run_experiment_pipeline
 from donebench.scripts.failure_mining import mine_failures
+from donebench.scripts.full_run_readiness import write_full_run_readiness
 from donebench.scripts.invalid_donespec_taxonomy import classify_invalid_donespec
 from donebench.scripts.invalid_donespec_taxonomy import failure_detection_by_family
 from donebench.scripts.invalid_donespec_taxonomy import load_task_metadata
@@ -220,6 +221,8 @@ def test_audit_gate_outputs(tmp_path):
     assert summary["double_annotation_rate"] == 1.0
     assert summary["paper_ready_ai_assisted_audit"] is True
     assert summary["paper_ready_audit_gate"] is True
+    assert summary["full_run_ready_audit_gate"] is True
+    assert summary["full_run_blockers"] == []
 
 
 def test_audit_gate_blocks_untrusted_ai_audit(tmp_path):
@@ -246,7 +249,40 @@ def test_audit_gate_blocks_untrusted_ai_audit(tmp_path):
     summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=ai_audit)
     assert summary["num_ai_fallback_audits"] == 1
     assert summary["paper_ready_ai_assisted_audit"] is False
+    assert summary["full_run_ready_audit_gate"] is False
     assert "trusted_ai_audit_coverage_below_threshold" in summary["blockers"]
+
+
+def test_audit_gate_allows_full_run_when_human_pending_but_ai_trusted(tmp_path):
+    queue = tmp_path / "queue.jsonl"
+    queue.write_text(json.dumps({"task_id": "t1", "human_annotation": {}}) + "\n", encoding="utf-8")
+    ai_audit = tmp_path / "ai.jsonl"
+    ai_audit.write_text(
+        json.dumps({"task_id": "t1", "audit_source": "model", "overall_risk": "low", "needs_adjudication": False})
+        + "\n",
+        encoding="utf-8",
+    )
+    summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=ai_audit)
+    assert summary["full_run_ready_audit_gate"] is True
+    assert summary["paper_ready_audit_gate"] is False
+    assert summary["full_run_blockers"] == []
+    assert summary["paper_blockers"] == ["human_double_annotation_below_1"]
+
+
+def test_audit_gate_keeps_adjudication_for_paper_not_full_run(tmp_path):
+    queue = tmp_path / "queue.jsonl"
+    queue.write_text(json.dumps({"task_id": "t1", "human_annotation": {}}) + "\n", encoding="utf-8")
+    ai_audit = tmp_path / "ai.jsonl"
+    ai_audit.write_text(
+        json.dumps({"task_id": "t1", "audit_source": "model", "overall_risk": "medium", "needs_adjudication": True})
+        + "\n",
+        encoding="utf-8",
+    )
+    summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=ai_audit)
+    assert summary["full_run_ready_audit_gate"] is True
+    assert summary["paper_ready_ai_assisted_audit"] is False
+    assert summary["full_run_blockers"] == []
+    assert "ai_adjudication_queue_nonempty" in summary["paper_blockers"]
 
 
 def test_pilot_findings_outputs(tmp_path):
@@ -263,3 +299,23 @@ def test_pilot_findings_outputs(tmp_path):
     assert "Reviewer-Safe Claims" in text
     assert "Full-Run Decision" in text
     assert {"task_success_pct", "pass_at_k_pct", "consistency_pct", "parse_rate_pct"}.issubset(table.columns)
+
+
+def test_full_run_readiness_passes_with_trusted_ai(tmp_path):
+    queue = tmp_path / "queue.jsonl"
+    queue.write_text(json.dumps({"task_id": "calendar_021", "human_annotation": {}}) + "\n", encoding="utf-8")
+    ai = tmp_path / "ai.jsonl"
+    ai.write_text(
+        json.dumps({"task_id": "calendar_021", "audit_source": "model", "overall_risk": "low", "needs_adjudication": False})
+        + "\n",
+        encoding="utf-8",
+    )
+    summary = write_full_run_readiness(
+        output=tmp_path / "ready.json",
+        suite="topconf_deepseek_toolplan_pilot",
+        annotation_path=queue,
+        ai_audit_path=ai,
+        limit=1,
+    )
+    assert summary["full_run_ready"] is True
+    assert summary["planned_trials"] == 6

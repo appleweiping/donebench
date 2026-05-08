@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any
 
@@ -30,12 +31,40 @@ def run_ai_audit(
     model_id: str = "mock",
     limit: int | None = None,
     require_live: bool = False,
+    max_workers: int = 1,
+    resume: bool = True,
 ) -> dict[str, Any]:
     tasks = load_audit_inputs(input_path, task_root, limit=limit)
     model_cfg = load_audit_model(models_path, model_id)
     auditor = AIAuditor(model_id=model_id, model_config=model_cfg, require_live=require_live)
-    records = [auditor.audit(task) for task in tasks]
+    existing = load_existing_audits(output_dir / "ai_audit_opinions.jsonl", model_id=model_id) if resume else {}
+    pending = [task for task in tasks if task.task_id not in existing]
+    output_dir.mkdir(parents=True, exist_ok=True)
+    opinions_path = output_dir / "ai_audit_opinions.jsonl"
+    records = list(existing.values())
+    if existing:
+        write_jsonl(records, opinions_path)
+    if max_workers <= 1:
+        for task in pending:
+            record = auditor.audit(task)
+            records.append(record)
+            append_jsonl(record, opinions_path)
+    else:
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = {pool.submit(auditor.audit, task): task.task_id for task in pending}
+            for future in as_completed(futures):
+                record = future.result()
+                records.append(record)
+                append_jsonl(record, opinions_path)
+    records = sorted(records, key=lambda record: (str(record.get("task_id")), str(record.get("model"))))
     return write_audit_outputs(records, output_dir, model_id=model_id)
+
+
+def merge_ai_audits(input_paths: list[Path], output_dir: Path) -> dict[str, Any]:
+    records: list[dict[str, Any]] = []
+    for path in input_paths:
+        records.extend(_load_jsonl(path))
+    return write_audit_outputs(records, output_dir, model_id="merged")
 
 
 def load_audit_inputs(input_path: Path, task_root: Path, limit: int | None = None) -> list[Task]:
@@ -53,6 +82,18 @@ def load_audit_inputs(input_path: Path, task_root: Path, limit: int | None = Non
     if limit:
         selected = selected[:limit]
     return selected
+
+
+def _load_jsonl(path: Path) -> list[dict[str, Any]]:
+    if not path.exists():
+        return []
+    rows: list[dict[str, Any]] = []
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            rows.append(json.loads(line))
+    return rows
 
 
 def tasks_from_queue(queue_path: Path, task_root: Path) -> list[Task]:
@@ -113,6 +154,7 @@ class AIAuditor:
             return self._with_metadata(task, heuristic, source="mock_fallback", error=None)
 
         prompt = build_audit_prompt(task)
+        meta: dict[str, Any] = {}
         try:
             if hasattr(self.llm, "complete_with_metadata"):
                 result = self.llm.complete_with_metadata(prompt)
@@ -129,14 +171,20 @@ class AIAuditor:
             else:
                 raw = self.llm.complete(prompt)
                 meta = {"prompt_chars": len(prompt), "raw_output_chars": len(raw)}
+        except AdapterUnavailable as exc:
+            if self.require_live:
+                raise RuntimeError(f"AI audit model {self.model_id} failed: {exc}") from exc
+            return self._with_metadata(task, heuristic, source="fallback", error=str(exc)[:500])
+
+        try:
             parsed = normalize_model_audit(extract_json(raw), heuristic)
             record = self._with_metadata(task, parsed, source="model", error=None)
             record["model_metadata"].update(meta)
             return record
-        except (AdapterUnavailable, ValueError, json.JSONDecodeError, TypeError) as exc:
-            if self.require_live:
-                raise RuntimeError(f"AI audit model {self.model_id} failed: {exc}") from exc
-            return self._with_metadata(task, heuristic, source="fallback", error=str(exc)[:500])
+        except (ValueError, json.JSONDecodeError, TypeError) as exc:
+            record = self._with_metadata(task, heuristic, source="parse_fallback", error=str(exc)[:500])
+            record["model_metadata"].update(meta)
+            return record
 
     def _with_metadata(self, task: Task, audit: dict[str, Any], source: str, error: str | None) -> dict[str, Any]:
         record = {
@@ -176,14 +224,24 @@ def build_audit_prompt(task: Task) -> str:
         "reference_trace": task.reference_solution.get("trace", []),
         "audit_metadata": task.audit.model_dump(),
     }
+    template = {
+        "risk_labels": ["string"],
+        "check_opinions": {
+            check: {"verdict": "pass|warn|fail", "confidence": 0.0, "rationale": "string"}
+            for check in DEFAULT_CHECKS
+        },
+        "overall_risk": "low|medium|high",
+        "needs_adjudication": False,
+        "adjudication_reasons": ["string"],
+        "suggestions": ["string"],
+    }
     return (
-        "You are auditing DoneBench task quality. Return only JSON with keys: "
-        "risk_labels (array of strings), check_opinions (object mapping check id to "
-        "{verdict, confidence, rationale}), overall_risk (low|medium|high), "
-        "needs_adjudication (boolean), adjudication_reasons (array), suggestions (array). "
-        "Use verdict values pass, warn, or fail. Flag unclear criteria, DoneSpec mismatches, "
-        "invalid near misses, implausible reference traces, and excessive templating.\n"
-        f"Task:\n{json.dumps(payload, indent=2)}"
+        "You are auditing DoneBench task quality. Return one compact JSON object only; "
+        "no markdown, no prose, no code fences. Use verdict values pass, warn, or fail. "
+        "Flag unclear criteria, DoneSpec mismatches, invalid near misses, implausible reference traces, "
+        "and excessive templating. Keep rationales short.\n"
+        f"JSON template:{json.dumps(template, separators=(',', ':'))}\n"
+        f"Task:{json.dumps(payload, separators=(',', ':'))}"
     )
 
 
@@ -365,6 +423,7 @@ def write_audit_outputs(records: list[dict[str, Any]], output_dir: Path, model_i
     summary = {
         "model": model_id,
         "num_audited": len(records),
+        "num_unique_tasks": len({record.get("task_id") for record in records}),
         "num_needs_adjudication": len(adjudication),
         "num_high_risk": len(high_risk),
         "num_fallback_audits": len(fallback),
@@ -383,7 +442,33 @@ def write_audit_outputs(records: list[dict[str, Any]], output_dir: Path, model_i
     return summary
 
 
+def load_existing_audits(path: Path, model_id: str) -> dict[str, dict[str, Any]]:
+    if not path.exists():
+        return {}
+    rows: dict[str, dict[str, Any]] = {}
+    with path.open("r", encoding="utf-8") as f:
+        for line in f:
+            if not line.strip():
+                continue
+            try:
+                record = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if record.get("model") != model_id:
+                continue
+            task_id = record.get("task_id")
+            if task_id:
+                rows[str(task_id)] = record
+    return rows
+
+
 def write_jsonl(rows: list[dict[str, Any]], path: Path) -> None:
     with path.open("w", encoding="utf-8") as f:
         for row in rows:
             f.write(json.dumps(row) + "\n")
+
+
+def append_jsonl(row: dict[str, Any], path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as f:
+        f.write(json.dumps(row) + "\n")

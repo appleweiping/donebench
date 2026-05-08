@@ -2,6 +2,7 @@ import json
 from pathlib import Path
 
 from donebench.scripts.annotation_agreement import write_annotation_agreement
+from donebench.scripts.ai_audit import merge_ai_audits
 from donebench.scripts.ai_audit import run_ai_audit
 from donebench.scripts.cost_report import write_cost_report
 from donebench.scripts.export_openreview_package import export_package
@@ -65,6 +66,18 @@ def test_ai_audit_mock_outputs(tmp_path):
     first = (tmp_path / "audit" / "ai_audit_opinions.jsonl").read_text(encoding="utf-8").splitlines()[0]
     assert '"risk_labels"' in first
     assert '"check_opinions"' in first
+
+
+def test_merge_ai_audits_keeps_multiple_models(tmp_path):
+    a = tmp_path / "a.jsonl"
+    b = tmp_path / "b.jsonl"
+    a.write_text(json.dumps({"task_id": "t1", "model": "m1", "audit_source": "model", "overall_risk": "low", "needs_adjudication": False, "risk_labels": []}) + "\n", encoding="utf-8")
+    b.write_text(json.dumps({"task_id": "t1", "model": "m2", "audit_source": "model", "overall_risk": "low", "needs_adjudication": False, "risk_labels": []}) + "\n", encoding="utf-8")
+    summary = merge_ai_audits([a, b], tmp_path / "merged")
+    rows = (tmp_path / "merged" / "ai_audit_opinions.jsonl").read_text(encoding="utf-8").splitlines()
+    assert summary["num_audited"] == 2
+    assert summary["num_unique_tasks"] == 1
+    assert len(rows) == 2
 
 
 def test_annotation_agreement_outputs(tmp_path):

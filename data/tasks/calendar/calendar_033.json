@@ -248,7 +248,32 @@
   },
   "initial_state": {
     "objects": {
-      "calendar_event": []
+      "calendar_event": [
+        {
+          "id": "cal_033",
+          "title": "Keystone billing cleanup Approved focus block approval 33",
+          "participants": [
+            "noah@example.com",
+            "ava@example.com"
+          ],
+          "duration_minutes": 45,
+          "time_range": "the first open slot next week",
+          "status": "draft",
+          "folder": "billing cleanup folder",
+          "attachments": [
+            "billing exception log"
+          ],
+          "owner": "case-owner@example.com",
+          "no_formula_damage": true,
+          "exported": false,
+          "pattern_id": "calendar_focus_block",
+          "scenario_id": "keystone_billing",
+          "risk_tier": "standard",
+          "approval_channel": "inline_confirmation",
+          "output_format": "calendar_invite",
+          "due_window": "the first open slot next week"
+        }
+      ]
     },
     "conflicts": [],
     "permissions": {
@@ -279,8 +304,12 @@
       "The final status is sent.",
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
+      "The final participant or recipient set exactly matches the approved audience.",
+      "The final target title matches the requested work item.",
       "The reviewed artifact is exported or made available in its final form.",
-      "The outbound or sharing action is permitted in the tool environment."
+      "The outbound or sharing action is permitted in the tool environment.",
+      "The final event is scheduled in the requested time window.",
+      "The final event duration matches the requested duration."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
@@ -298,7 +327,9 @@
       "policy_confirmation_missing",
       "conflict_injection",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_time_window",
+      "wrong_duration"
     ]
   },
   "criterion_atoms": [
@@ -378,6 +409,39 @@
       "evidence_source": "send_invites",
       "requires_tool": [
         "send_invites"
+      ]
+    },
+    {
+      "id": "calendar_033_success_010",
+      "kind": "success",
+      "text": "The final participant or recipient set exactly matches the approved audience.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.participants",
+      "operator": "equals",
+      "value": [
+        "noah@example.com",
+        "ava@example.com"
+      ],
+      "evidence_source": "calendar.check_constraints",
+      "requires_tool": [
+        "calendar.check_constraints"
+      ]
+    },
+    {
+      "id": "calendar_033_success_011",
+      "kind": "success",
+      "text": "The final target title matches the requested work item.",
+      "modality": "content",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.title",
+      "operator": "equals",
+      "value": "Keystone billing cleanup Approved focus block approval 33",
+      "evidence_source": "calendar.inspect_state",
+      "requires_tool": [
+        "calendar.inspect_state"
       ]
     },
     {
@@ -469,6 +533,36 @@
       "requires_tool": [
         "calendar.check_constraints"
       ]
+    },
+    {
+      "id": "calendar_033_success_012",
+      "kind": "success",
+      "text": "The final event is scheduled in the requested time window.",
+      "modality": "temporal",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.time_range",
+      "operator": "equals",
+      "value": "the first open slot next week",
+      "evidence_source": "calendar.check_constraints",
+      "requires_tool": [
+        "calendar.check_constraints"
+      ]
+    },
+    {
+      "id": "calendar_033_success_013",
+      "kind": "success",
+      "text": "The final event duration matches the requested duration.",
+      "modality": "temporal",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.duration_minutes",
+      "operator": "equals",
+      "value": 45,
+      "evidence_source": "calendar.check_constraints",
+      "requires_tool": [
+        "calendar.check_constraints"
+      ]
     }
   ],
   "gold_donespec": {
@@ -495,6 +589,15 @@
         }
       },
       {
+        "equals": {
+          "field": "objects.calendar_event.0.participants",
+          "value": [
+            "noah@example.com",
+            "ava@example.com"
+          ]
+        }
+      },
+      {
         "within": {
           "field": "objects.calendar_event.0.status",
           "range": {
@@ -502,14 +605,6 @@
               "sent"
             ]
           }
-        }
-      },
-      {
-        "no_conflict": {
-          "participants": [
-            "noah@example.com",
-            "ava@example.com"
-          ]
         }
       },
       {
@@ -524,8 +619,34 @@
             "permission_ok": {
               "action": "send_invites"
             }
+          },
+          {
+            "equals": {
+              "field": "objects.calendar_event.0.time_range",
+              "value": "the first open slot next week"
+            }
+          },
+          {
+            "equals": {
+              "field": "objects.calendar_event.0.duration_minutes",
+              "value": 45
+            }
           }
         ]
+      },
+      {
+        "equals": {
+          "field": "objects.calendar_event.0.title",
+          "value": "Keystone billing cleanup Approved focus block approval 33"
+        }
+      },
+      {
+        "no_conflict": {
+          "participants": [
+            "noah@example.com",
+            "ava@example.com"
+          ]
+        }
       },
       {
         "confirmed_by_user": {
@@ -630,7 +751,7 @@
       "mutation_taxon": "policy_confirmation_missing",
       "failure_mode": "unsafe_completion",
       "violated_criteria": [
-        "calendar_033_failure_001"
+        "calendar_033_success_010"
       ],
       "final_state": {
         "objects": {
@@ -840,7 +961,7 @@
       "mutation_taxon": "unrelated_side_effect",
       "failure_mode": "collateral_change",
       "violated_criteria": [
-        "calendar_033_failure_002"
+        "calendar_033_success_011"
       ],
       "final_state": {
         "objects": {
@@ -906,6 +1027,148 @@
           }
         ]
       }
+    },
+    {
+      "mutation_id": "wrong_time_window",
+      "mutation_class": "task-specific semantic violation",
+      "mutation_taxon": "wrong_time_window",
+      "failure_mode": "wrong_time_window",
+      "violated_criteria": [
+        "calendar_033_success_012"
+      ],
+      "final_state": {
+        "objects": {
+          "calendar_event": [
+            {
+              "id": "cal_033",
+              "title": "Keystone billing cleanup Approved focus block approval 33",
+              "participants": [
+                "noah@example.com",
+                "ava@example.com"
+              ],
+              "duration_minutes": 45,
+              "time_range": "outside_requested_window",
+              "status": "sent",
+              "folder": "billing cleanup folder",
+              "attachments": [
+                "billing exception log"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "calendar_focus_block",
+              "scenario_id": "keystone_billing",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "calendar_invite",
+              "due_window": "outside_requested_window"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_invites": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "calendar_confirmation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "invite",
+            "to": [
+              "noah@example.com",
+              "ava@example.com"
+            ],
+            "object_id": "cal_033"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_033",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "cal_033_distractor_1",
+            "domain": "calendar"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "wrong_duration",
+      "mutation_class": "task-specific semantic violation",
+      "mutation_taxon": "wrong_duration",
+      "failure_mode": "wrong_duration",
+      "violated_criteria": [
+        "calendar_033_success_013"
+      ],
+      "final_state": {
+        "objects": {
+          "calendar_event": [
+            {
+              "id": "cal_033",
+              "title": "Keystone billing cleanup Approved focus block approval 33",
+              "participants": [
+                "noah@example.com",
+                "ava@example.com"
+              ],
+              "duration_minutes": 15,
+              "time_range": "the first open slot next week",
+              "status": "sent",
+              "folder": "billing cleanup folder",
+              "attachments": [
+                "billing exception log"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "calendar_focus_block",
+              "scenario_id": "keystone_billing",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "calendar_invite",
+              "due_window": "the first open slot next week"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_invites": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "calendar_confirmation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "invite",
+            "to": [
+              "noah@example.com",
+              "ava@example.com"
+            ],
+            "object_id": "cal_033"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_033",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "cal_033_distractor_1",
+            "domain": "calendar"
+          }
+        ]
+      }
     }
   ],
   "reference_solution": {
@@ -916,7 +1179,31 @@
           "id": "cal_033"
         },
         "observation": {
-          "found": true
+          "found": true,
+          "record": {
+            "id": "cal_033",
+            "title": "Keystone billing cleanup Approved focus block approval 33",
+            "participants": [
+              "noah@example.com",
+              "ava@example.com"
+            ],
+            "duration_minutes": 45,
+            "time_range": "the first open slot next week",
+            "status": "draft",
+            "folder": "billing cleanup folder",
+            "attachments": [
+              "billing exception log"
+            ],
+            "owner": "case-owner@example.com",
+            "no_formula_damage": true,
+            "exported": false,
+            "pattern_id": "calendar_focus_block",
+            "scenario_id": "keystone_billing",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation",
+            "output_format": "calendar_invite",
+            "due_window": "the first open slot next week"
+          }
         },
         "mutating": false
       },
@@ -955,7 +1242,28 @@
         "args": {
           "id": "cal_033",
           "patch": {
-            "status": "sent"
+            "id": "cal_033",
+            "title": "Keystone billing cleanup Approved focus block approval 33",
+            "participants": [
+              "noah@example.com",
+              "ava@example.com"
+            ],
+            "duration_minutes": 45,
+            "time_range": "the first open slot next week",
+            "status": "sent",
+            "folder": "billing cleanup folder",
+            "attachments": [
+              "billing exception log"
+            ],
+            "owner": "case-owner@example.com",
+            "no_formula_damage": true,
+            "exported": true,
+            "pattern_id": "calendar_focus_block",
+            "scenario_id": "keystone_billing",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation",
+            "output_format": "calendar_invite",
+            "due_window": "the first open slot next week"
           }
         },
         "observation": {
@@ -971,7 +1279,8 @@
             "noah@example.com",
             "ava@example.com"
           ],
-          "object_id": "cal_033"
+          "object_id": "cal_033",
+          "message_type": "invite"
         },
         "observation": {
           "sent": true,
@@ -1058,30 +1367,50 @@
     },
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   },
   "audit": {
     "split": "test",
-    "min_required_criteria": 11,
+    "min_required_criteria": 15,
     "tools_required": 3,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
-    "mutation_count": 5,
+    "mutation_count": 7,
     "generator_version": "topconf-4",
     "task_pattern": "calendar_focus_block",
     "scenario_id": "keystone_billing",
     "difficulty_profile": "single target plus one distractor",
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   }
 }

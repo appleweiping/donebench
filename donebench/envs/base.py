@@ -74,7 +74,7 @@ class BaseEnv:
             observation.update(self._confirm(args))
         elif action.endswith(".apply_update"):
             observation.update(self._apply_update(args, action))
-        elif action.startswith("send_") or action == "file.share":
+        elif action.startswith("send_") or action in {"file.share", "sheet.append_audit_log"}:
             observation.update(self._send_or_share(args, action))
         if args.get("modify_unrelated") is True:
             self.state.setdefault("modified_objects", []).append("unrelated_record")
@@ -257,6 +257,8 @@ class BaseEnv:
             return "email"
         if action == "file.share":
             return "share"
+        if action == "sheet.append_audit_log":
+            return "notification"
         return "notification"
 
     def call(self, action: str, args: dict[str, Any] | None = None, mutating: bool = False, event: str | None = None) -> dict[str, Any]:

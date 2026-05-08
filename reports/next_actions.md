@@ -2,21 +2,37 @@
 
 Read `reports/agent_handoff.md` before starting. It is the current source of truth for milestones, claim boundaries, and what Codex should not automate.
 
-1. Read `reports/full_domain_model_assisted_audit_findings.md`.
-   - The current blocker is systematic task-generation/reference-trace quality, not lack of another model audit.
-   - The full-domain model-assisted audit marks 100 / 100 human-audit queue tasks high risk.
-2. Fix or regenerate the task artifacts for the 100 human-audit queue tasks first.
-   - Ensure initial target objects exist when `inspect_state` is expected to find them, or change traces to create/populate the objects explicitly.
-   - Ensure `reference_solution.trace` causes the fields present in `reference_solution.final_state`.
-   - Add task-specific criteria and DoneSpec predicates for time/duration, note/owner, exact recipients/attachments, metadata/source preservation, formula preservation, backup/audit log, and duplicate avoidance where relevant.
-   - Add near misses for the task-specific missing semantics, not only generic participant/confirmation/conflict/status/side-effect failures.
-3. Rerun task validation and model-assisted audit on the repaired 100-task queue.
-   - Refresh `reports/audit_full_domain_model_assisted/`.
-   - Rerun `audit-gate` and `full-run-readiness`.
-4. Only after the repaired tasks no longer show systematic generation artifacts, prepare human audit packets for a balanced 50-task first batch.
-5. Complete 50 true double annotations in `annotation/human_audit_queue.jsonl`; do not use Codex as either human annotator.
-6. Run `donebench annotation-agreement annotation/human_audit_queue.jsonl reports/audit`, adjudicate disagreements, and rerun agreement/gate reports.
-7. Update `paper/sections/results.tex` and `paper/sections/experiments.tex` so the full DeepSeek tool-plan run is the official execution result and historical parsed rows are clearly labeled as historical/spec-grounding analysis only.
-8. Update paper tables from `reports/full_runs/runs/topconf_deepseek_toolplan_full/paper_tables/main_results_with_execution.csv` and report parsed-only/fallback/all-row caveats where relevant.
-9. Add provider/model identifiers, access dates, decoding parameters, retry policy, trial counts, and cost/latency summaries to the paper artifact and `reports/model_access_cost_latency_retry.md`.
-10. Compile the LaTeX paper in a TeX-enabled environment, check table/figure placement, freeze the submission commit, and archive raw traces plus generated report artifacts.
+## Immediate State
+
+The 100 human-audit queue task artifacts have been repaired/regenerated. Validation, task audit, strict reference replay, repaired structured audit, audit gate, and full-run readiness have been rerun.
+
+Current readiness:
+
+- `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`: 100 / 100 audited, 0 high risk, 0 needing adjudication.
+- `reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json`: `full_run_ready_audit_gate = true`, `full_run_blockers = []`.
+- `reports/full_run_readiness.json`: `full_run_ready = true`, `blockers = []`.
+- Remaining paper gate blocker: `human_double_annotation_below_50`.
+
+## Next Work
+
+1. Preserve the repaired generator and 100 regenerated queue task files in git.
+   - Do not replace them with the old pre-repair artifacts.
+   - If regenerating tasks again, rerun validation, strict reference replay, structured audit, audit gate, and full-run readiness.
+2. Prepare a balanced first paper audit batch.
+   - Recommended batch remains `021..030` from each domain, 50 tasks total.
+   - Codex may prepare review packets, evidence tables, and agent second opinions.
+   - Do not write Codex/model decisions into `annotator_a`, `annotator_b`, or adjudicator fields as if they were true human labels.
+3. Complete 50 true double annotations in `annotation/human_audit_queue.jsonl`, then adjudicate disagreements.
+4. Run:
+
+```powershell
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli annotation-agreement annotation/human_audit_queue.jsonl reports/audit
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli audit-gate reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json --annotation annotation/human_audit_queue.jsonl --ai-audit reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli full-run-readiness reports/full_run_readiness.json --suite topconf_deepseek_toolplan_full --annotation annotation/human_audit_queue.jsonl --ai-audit reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl --parse-table reports/full_runs/runs/topconf_deepseek_toolplan_full/parse/parse_transparency_by_model_agent.csv
+```
+
+5. Update `paper/sections/results.tex` and `paper/sections/experiments.tex` so the full DeepSeek tool-plan run is the official execution result and historical parsed rows are clearly labeled as historical/spec-grounding analysis only.
+6. Update paper tables from `reports/full_runs/runs/topconf_deepseek_toolplan_full/paper_tables/main_results_with_execution.csv` and report parsed-only/fallback/all-row caveats where relevant.
+7. Add provider/model identifiers, access dates, decoding parameters, retry policy, trial counts, and cost/latency summaries to the paper artifact and `reports/model_access_cost_latency_retry.md`.
+8. Optional quality improvement after the gate is stable: reduce remaining task templating by adding more domain-native DoneSpec predicates and near misses beyond the shared skeleton.
+9. Compile the LaTeX paper in a TeX-enabled environment, check table/figure placement, freeze the submission commit, and archive raw traces plus generated report artifacts.

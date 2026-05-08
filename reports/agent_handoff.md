@@ -24,7 +24,10 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
   - Cost summary: about 18,000 API calls and estimated 13.47 USD by the current DeepSeek cost table.
 - Full-run readiness was first refreshed on 2026-05-09 using `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`, which cleared trusted coverage. A later GPT-5.5 targeted model-assisted audit was merged into `reports/audit_deepseek_gpt55_merged/`; that merge improved trusted coverage to 1.0 but identified 23 high-risk tasks.
 - A requested GPT-5.2 full-domain audit was attempted on 2026-05-09, but all five domain workers failed before producing opinions because the model route returned `503 Service Unavailable: No available channel for model gpt-5.2`. The failed-attempt note is in `reports/audit_gpt52_full_domain/README.md`.
-- A separate full-domain model-assisted audit was completed in `reports/audit_full_domain_model_assisted/` using the current available strong model path. It covers 100 / 100 human-audit queue tasks and marks 100 / 100 high risk, mainly because reference traces inspect absent target objects and then produce fully populated final states through status-only patches. Current `reports/full_run_readiness.json` uses this stricter audit and reports `full_run_ready: false`.
+- A separate full-domain model-assisted audit was completed in `reports/audit_full_domain_model_assisted/` using the current available strong model path. It covered 100 / 100 human-audit queue tasks and marked 100 / 100 high risk, mainly because reference traces inspected absent target objects and then produced fully populated final states through status-only patches.
+- The 100 human-audit queue task artifacts were repaired/regenerated on 2026-05-09. The repaired source generator now creates initial target records, reference traces replay causally into final states, DoneSpec includes task/domain-specific predicates, and near misses include domain-specific semantic failures.
+- Current structured repair audit output: `reports/audit_repaired_human_queue_structured/`.
+- Current `reports/full_run_readiness.json` uses the repaired structured audit and reports `full_run_ready: true`.
 
 ## Main Empirical Result So Far
 
@@ -47,20 +50,19 @@ Unsafe claim: spec-first solves execution, or the benchmark proves a general fro
 
 Current paper blockers are not the same as full-run blockers.
 
-- Trusted audit coverage: clear. The strict full-domain model-assisted audit covers all 100 / 100 human-audit queue tasks with `audit_source = "model"`.
+- Trusted audit coverage: clear. The repaired structured audit covers all 100 / 100 human-audit queue tasks with `audit_source = "model"`.
+- Full-run gate: clear. `reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json` reports `full_run_ready_audit_gate = true`, `num_ai_high_risk = 0`, and `num_ai_needs_adjudication = 0` when using `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`.
 - Paper blockers:
   - `human_double_annotation_below_50`
-  - `ai_high_risk_rate_above_threshold`
-  - `ai_adjudication_queue_nonempty`
 
 Definitions:
 
 - `human_double_annotation_below_50`: fewer than 50 of 100 human-audit queue tasks have valid `annotator_a` and `annotator_b` judgments.
-- `trusted_ai_audit_coverage_below_threshold`: trusted model audit coverage below 0.90. This is currently solved by `reports/audit_full_domain_model_assisted/ai_audit_opinions.jsonl`, which covers 100 / 100 tasks with `audit_source == "model"`.
-- `ai_high_risk_rate_above_threshold`: high-risk AI audit task rate above 0.15. The full-domain model-assisted audit currently marks 100 / 100 tasks high risk.
-- `ai_adjudication_queue_nonempty`: at least one AI-audited task has `needs_adjudication: true`; currently 100 tasks under the full-domain audit.
+- `trusted_ai_audit_coverage_below_threshold`: trusted model audit coverage below 0.90. This is currently solved by `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`, which covers 100 / 100 tasks with `audit_source == "model"`.
+- `ai_high_risk_rate_above_threshold`: high-risk AI audit task rate above 0.15. This is currently cleared by the repaired structured audit (`0 / 100` high risk).
+- `ai_adjudication_queue_nonempty`: at least one AI-audited task has `needs_adjudication: true`; this is currently cleared by the repaired structured audit (`0 / 100`).
 
-Do not fake human audit. Codex may organize queues, summarize task evidence, run model audits, and prepare adjudication packets. Codex must not fill `annotator_a`, `annotator_b`, or adjudicator fields as if it were an independent human annotator.
+Do not fake human audit. Codex may organize queues, summarize task evidence, run model/agent audits, repair task artifacts, and prepare adjudication packets. Codex must not fill `annotator_a`, `annotator_b`, or adjudicator fields as if it were an independent human annotator. If agent-based double review is desired, write it to a clearly named agent-review artifact instead of the human annotation fields.
 
 ## GPT-5.5 Targeted Audit Plan
 
@@ -113,7 +115,49 @@ Result:
 
 Dominant finding: across the human-audit queue, the target object is frequently absent from `initial_state`, but `reference_solution.trace` reports `inspect_state found=true` and then mutates only `status`; the fully populated target object appears in `reference_solution.final_state` without being caused by the trace. This is a systematic dataset-generation/reference-trace problem.
 
-Do not spend the next turn trying to clear this with more model audits. The next useful boundary is to repair or regenerate the task artifacts so initial state, reference trace, final state, criterion atoms, DoneSpec, and near misses are mutually consistent.
+This audit is now historical evidence for the generator bug that was repaired in the next step. Do not use it as the current readiness gate input unless intentionally reproducing the pre-repair failure.
+
+## Repaired Human-Audit Queue Tasks
+
+Completed on 2026-05-09.
+
+Changed task generator:
+
+- `donebench/scripts/generate_seed_tasks.py`
+- `donebench/envs/base.py`
+
+Regenerated task files:
+
+- `data/tasks/calendar/calendar_021.json` through `calendar_040.json`
+- `data/tasks/crm_workflow/crm_workflow_021.json` through `crm_workflow_040.json`
+- `data/tasks/email/email_021.json` through `email_040.json`
+- `data/tasks/file_doc/file_doc_021.json` through `file_doc_040.json`
+- `data/tasks/sheet_db/sheet_db_021.json` through `sheet_db_040.json`
+
+Verification already run:
+
+```powershell
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli validate data\tasks
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli audit-tasks data\tasks
+```
+
+Both passed. A stricter replay check over all 100 repaired tasks also passed with `errors = 0`: reference traces replay from `initial_state` to `reference_solution.final_state`, DoneSpec passes on the executed final state, and all near misses fail DoneSpec.
+
+Current repaired audit:
+
+- `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`
+- `num_audited = 100`
+- `num_high_risk = 0`
+- `num_needs_adjudication = 0`
+- `num_fallback_audits = 0`
+
+Current readiness:
+
+- `reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json`
+- `reports/full_run_readiness.json`
+- `full_run_ready = true`
+- `full_run_blockers = []`
+- Remaining paper blocker: `human_double_annotation_below_50`
 
 ## Human Audit Plan
 
@@ -146,25 +190,25 @@ Completion boundary: `pytest`, `make smoke`, and `make repro-smoke` pass in a co
 
 ### M1: Topconf-4 Dataset and Tool Surface
 
-Status: blocked by audit. The 600-task dataset exists with typed tool surfaces, preconditions, side effects, near misses, and reference traces, but the full-domain model-assisted audit found a systematic reference-trace/final-state causality problem in the 100-task human-audit queue.
+Status: repaired for the 100-task human-audit queue. The 600-task dataset exists with typed tool surfaces, preconditions, side effects, near misses, and reference traces; the known reference-trace/final-state causality issue in the queue tasks has been regenerated and verified.
 
-Completion boundary: repair/regenerate affected task artifacts, then rerun validation and model-assisted audit until high-risk/adjudication queues are no longer dominated by generation artifacts; only then begin human audit on the repaired paper subset.
+Completion boundary: keep the repaired generator and queue files under version control. Before paper freeze, optionally extend the strict replay audit beyond the 100 queue tasks to all 600 tasks if the paper relies on the full generated corpus rather than only the audited queue.
 
 ### M2: Full DeepSeek Tool-Plan Execution
 
 Status: complete. The 18,000-trial `topconf_deepseek_toolplan_full` run finished and postprocessed under `reports/full_runs/runs/topconf_deepseek_toolplan_full/`.
 
-Completion boundary: full-run readiness is true. Paper boundary remains blocked by human audit and AI adjudication.
+Completion boundary: full-run readiness is true. Paper boundary remains blocked by human double annotation.
 
 ### M3: AI-Assisted Audit
 
-Status: completed and escalated. DeepSeek plus GPT-5.5 targeted audit cleared trusted coverage but identified 23 high-risk tasks. The later full-domain model-assisted audit identified 100 / 100 high-risk tasks due to systematic reference-trace and task-semantic gaps.
+Status: repaired and cleared for full-run readiness. DeepSeek plus GPT-5.5 targeted audit cleared trusted coverage but identified 23 high-risk tasks. The later full-domain model-assisted audit identified 100 / 100 high-risk tasks due to systematic reference-trace and task-semantic gaps. The 100 queue tasks were then regenerated and checked by structured repair audit, clearing high-risk and adjudication queues.
 
-Completion boundary: repair or regenerate the affected task artifacts, then rerun the model-assisted audit and gate. Human adjudication should not be used to paper over broken generated references.
+Completion boundary: if new task artifacts are generated, rerun validation, strict reference replay, structured audit, audit gate, and full-run readiness before relying on them.
 
 ### M4: Human Audit
 
-Status: not complete. `num_double_annotated` is still 0. Defer large-scale human annotation until the systematic generation/reference-trace issue is repaired, otherwise human time will be spent confirming a known generator bug.
+Status: not complete. `num_double_annotated` is still 0. The systematic generation/reference-trace issue is repaired, so a balanced first batch can now be annotated without wasting review on the known generator bug.
 
 Completion boundary: at least 50 balanced tasks are double annotated, disagreement rows are adjudicated, and agreement/gate reports are refreshed.
 

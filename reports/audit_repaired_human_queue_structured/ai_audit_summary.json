@@ -1,0 +1,22 @@
+{
+  "model": "structured_repair_auditor",
+  "num_audited": 100,
+  "num_unique_tasks": 100,
+  "num_needs_adjudication": 0,
+  "num_high_risk": 0,
+  "num_fallback_audits": 0,
+  "by_risk": {
+    "low": 100
+  },
+  "by_source": {
+    "model": 100
+  },
+  "risk_labels": {},
+  "outputs": {
+    "opinions": "reports\\audit_repaired_human_queue_structured\\ai_audit_opinions.jsonl",
+    "adjudication": "reports\\audit_repaired_human_queue_structured\\ai_audit_adjudication.jsonl",
+    "high_risk": "reports\\audit_repaired_human_queue_structured\\ai_audit_high_risk.jsonl",
+    "fallback": "reports\\audit_repaired_human_queue_structured\\ai_audit_fallback_queue.jsonl",
+    "summary": "reports\\audit_repaired_human_queue_structured\\ai_audit_summary.json"
+  }
+}

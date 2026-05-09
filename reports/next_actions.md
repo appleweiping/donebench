@@ -1,6 +1,6 @@
 # Next Actions
 
-Read `reports/agent_handoff.md` before starting. It is the current source of truth for milestones, claim boundaries, and what Codex should not automate.
+Read `AGENTS.md` and `reports/agent_handoff.md` before starting. They are the current source of truth for operating protocol, milestones, claim boundaries, and what Codex should not automate.
 
 ## Immediate State
 

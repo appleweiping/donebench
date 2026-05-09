@@ -4,6 +4,18 @@ Date: 2026-05-09
 
 This file is the first place a future Codex agent should read. It records what is complete, what remains blocked, what must not be overstated, and where the next useful work ends.
 
+For the project-level agent operating protocol, read `AGENTS.md` first. It defines the default startup reading order, multi-agent requirement for complex tasks, reviewer-grade gates, experiment/project end boundaries, and final-response expectations.
+
+## Operating Protocol
+
+Complex tasks must use multi-agent collaboration. A task is complex if it affects paper claims, experiments, model configuration, task generation/repair, benchmark metrics, audit/readiness, release artifacts, or more than one subsystem. Use at least three perspectives: primary implementer/analyst, skeptical top-conference reviewer, and artifact/repro checker. Audit-heavy tasks should add a domain/task-sampling reviewer.
+
+Every paper-facing claim must map to a concrete artifact path in `paper/tables/`, `reports/full_runs/`, `reports/ablations/`, a manifest, an audit gate, or readiness output. Claims without artifact backing must be written as pending or configured.
+
+Each task handoff or final response must state: evidence paths, commands/tests run, blockers or unverified items, next-step plan, and claims that must not be made yet.
+
+Project and experiment stopping rules live in `AGENTS.md`. In short: do not keep adding experiments once the paper claims are artifact-backed, readiness gates are clear, provider metadata is complete, cross-family work is either completed or scoped pending, reviewer-style audit has no blocking issues, and the PDF compiles in a TeX-enabled environment.
+
 ## Project North Star
 
 DoneBench is a benchmark for **Specification Grounding**: whether a tool-using agent can infer, formalize, stress-test, and then obey task-completion criteria before executing stateful workflow tasks.

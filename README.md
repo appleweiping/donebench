@@ -44,7 +44,7 @@ make docker-smoke
 
 ## Current Handoff
 
-Future automation agents should read `reports/agent_handoff.md` before making paper, audit, or experiment changes. It records the current full-run status, claim boundaries, milestones, GPT-5.5 targeted audit plan, human audit boundary, and git hygiene.
+Future automation agents should start with `AGENTS.md`, then read `reports/agent_handoff.md` before making paper, audit, or experiment changes. `AGENTS.md` defines the multi-agent operating protocol, default reading order, reviewer-grade gates, and experiment/project end boundaries. `reports/agent_handoff.md` records the current full-run status, claim boundaries, milestones, audit boundary, and git hygiene.
 
 ## Benchmark Format
 

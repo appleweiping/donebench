@@ -19,19 +19,23 @@ Current readiness:
 
 ## Next Work
 
-1. Preserve the repaired generator, regenerated 600-task corpus, validation scripts, ablation artifacts, and refreshed paper tables in git.
+1. Develop the method/analysis contribution only along the diagnostic-protocol path in `reports/method_extension_plan.md`.
+   - Priority contribution: Specification-to-Execution Diagnostic Protocol.
+   - Immediate artifacts: four-quadrant tables, self-violation taxonomy, and diagnostic report tables under `reports/full_runs/runs/topconf_deepseek_toolplan_full/diagnostics/`.
+   - Do not rebrand `spec_first` as a performance-improving algorithm unless new evidence supports that.
+2. Preserve the repaired generator, regenerated 600-task corpus, validation scripts, ablation artifacts, and refreshed paper tables in git.
    - Do not replace them with the old pre-repair artifacts.
    - If regenerating tasks again, rerun validation, strict validation, oracle reference replay, structured audit, audit gate, full-run readiness, and `refresh-paper-tables`.
-2. Cross-family slices are configured but not paper-ready.
+3. Cross-family slices are configured but not paper-ready.
    - The configured slice now targets DeepSeek, Qwen, GLM, and Kimi.
    - Required keys: `DEEPSEEK_API_KEY`, `DASHSCOPE_API_KEY`, `ZAI_API_KEY`, and `MOONSHOT_API_KEY`.
    - Do not report cross-family claims until at least three provider families produce rows.
-3. Prepare optional human calibration only if the paper wants stronger semantic-validity evidence.
+4. Prepare optional human calibration only if the paper wants stronger semantic-validity evidence.
    - Recommended batch remains `021..030` from each domain, 50 tasks total.
    - Codex may prepare review packets, evidence tables, and agent second opinions.
    - Do not write Codex/model decisions into `annotator_a`, `annotator_b`, or adjudicator fields as if they were true human labels.
-4. If optional human calibration is done, complete 50 true double annotations in `annotation/human_audit_queue.jsonl`, then adjudicate disagreements.
-5. Rerun readiness after any audit or task artifact change:
+5. If optional human calibration is done, complete 50 true double annotations in `annotation/human_audit_queue.jsonl`, then adjudicate disagreements.
+6. Rerun readiness after any audit or task artifact change:
 
 ```powershell
 C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli annotation-agreement annotation/human_audit_queue.jsonl reports/audit
@@ -39,6 +43,5 @@ C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.c
 C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli full-run-readiness reports/full_run_readiness.json --suite topconf_deepseek_toolplan_full --annotation annotation/human_audit_queue.jsonl --ai-audit reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl --parse-table reports/full_runs/runs/topconf_deepseek_toolplan_full/parse/parse_transparency_by_model_agent.csv
 ```
 
-6. Provider/model metadata still needs polish: add access dates, decoding parameters, retry policy, trial counts, and cost/latency summaries to the paper artifact and `reports/model_access_cost_latency_retry.md`.
 7. Compile the LaTeX paper in a TeX-enabled environment, check table/figure placement, freeze the submission commit, and archive raw traces plus generated report artifacts.
 8. Optional quality improvement after the gate is stable: reduce remaining task templating by adding more domain-native DoneSpec predicates and near misses beyond the shared skeleton.

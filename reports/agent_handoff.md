@@ -76,6 +76,23 @@ Safe claim: explicit specification improves measured completion-criteria quality
 
 Unsafe claim: spec-first solves execution, or the benchmark proves a general frontier-model capability ranking.
 
+## Method Extension Direction
+
+The next non-benchmark contribution should be the **Specification-to-Execution Diagnostic Protocol**, documented in `reports/method_extension_plan.md`.
+
+Safe extension:
+
+- Formalize DoneBench's native decomposition: completion-criteria inference, executable verifier generation, near-miss robustness, and own-spec self-violation.
+- Add diagnostic tables and self-violation taxonomy from existing traces.
+- Frame the contribution as benchmark + diagnostic protocol.
+
+Unsafe extension:
+
+- Do not brand `spec_first` as a new algorithm that robustly improves task success.
+- Do not claim a universal formal theory of task completion.
+- Do not add unrelated planner or prompting modules just to look more algorithmic.
+- Do not make cross-family claims until DeepSeek/Qwen/GLM/Kimi or at least three provider families have complete rows.
+
 ## Audit Gate State
 
 The paper gate now follows the convention used by many agent benchmarks: executable validation plus trusted model/structured audit is the required quality gate, while human annotation is optional calibration rather than a required blocker.

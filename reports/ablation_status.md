@@ -111,7 +111,7 @@ C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.c
 C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli experiment-pipeline cross_family_token_matched_slice --output results\runs\cross_family_token_matched_slice\trials.jsonl --report-root reports\ablations --limit 100 --max-workers 0 --resume
 ```
 
-Current local environment has DeepSeek credentials but not OpenAI, Anthropic, or Gemini credentials. The runner will skip missing credentials; do not report cross-family conclusions until at least three provider families produce rows.
+The configured slice now uses DeepSeek, Qwen, GLM, and Kimi to avoid depending on expensive GPT/Claude/Gemini keys. Required environment variables are `DEEPSEEK_API_KEY`, `DASHSCOPE_API_KEY`, `ZAI_API_KEY`, and `MOONSHOT_API_KEY`. The runner will skip missing credentials; do not report cross-family conclusions until at least three provider families produce rows.
 
 ## Paper Synchronization
 

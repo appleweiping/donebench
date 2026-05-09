@@ -86,6 +86,36 @@ models:
     extra:
       temperature: 0
       max_tokens: 2400
+  qwen_3_6_plus:
+    provider: openai_compatible
+    model: qwen3.6-plus
+    env: DASHSCOPE_API_KEY
+    base_url: https://dashscope.aliyuncs.com/compatible-mode/v1
+    enabled: true
+    notes: "Qwen 3.6 Plus through Alibaba Cloud Model Studio/DashScope OpenAI-compatible API. Set DASHSCOPE_API_KEY."
+    extra:
+      temperature: 0
+      max_tokens: 2400
+  glm_5_1:
+    provider: openai_compatible
+    model: glm-5.1
+    env: ZAI_API_KEY
+    base_url: https://api.z.ai/api/paas/v4/
+    enabled: true
+    notes: "GLM-5.1 through the Z.AI OpenAI-compatible API. Set ZAI_API_KEY."
+    extra:
+      temperature: 0
+      max_tokens: 2400
+  kimi_k2_6:
+    provider: openai_compatible
+    model: kimi-k2.6
+    env: MOONSHOT_API_KEY
+    base_url: https://api.moonshot.ai/v1
+    enabled: true
+    notes: "Kimi K2.6 through the Moonshot/Kimi OpenAI-compatible API. Set MOONSHOT_API_KEY."
+    extra:
+      temperature: 0
+      max_tokens: 2400
   claude_compatible:
     provider: anthropic
     model: claude-opus-4-7

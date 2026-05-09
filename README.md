@@ -62,7 +62,7 @@ The checked-in top-conference-scale generated dataset contains 600 tasks:
 - 120 CRM/workflow
 - 120 file/document operation
 
-The default split is 100 dev and 500 test tasks. Each task includes typed tool specifications, preconditions, side-effect metadata, a state schema, a reference trace, and five near-miss final states.
+The default split is 100 dev and 500 test tasks. Each task includes typed tool specifications, preconditions, side-effect metadata, a state schema, a reference trace, and six near-miss final states after the full-corpus repair.
 
 ## Reproducing Smoke Results
 
@@ -94,6 +94,9 @@ API-backed paper runs require the optional LLM dependencies and one or more prov
 python -m pip install -e ".[dev,llm]"
 $env:OPENAI_API_KEY="sk-..."
 $env:DEEPSEEK_API_KEY="sk-..."
+$env:DASHSCOPE_API_KEY="..."
+$env:ZAI_API_KEY="..."
+$env:MOONSHOT_API_KEY="..."
 $env:ANTHROPIC_API_KEY="..."
 $env:GEMINI_API_KEY="..."
 $env:OPENROUTER_API_KEY="..."
@@ -121,7 +124,18 @@ donebench aggregate results/
 donebench make-figures results/ paper/figures/
 ```
 
-The focused suite currently compares `deepseek-v4-flash`, `gpt-5.5`, `gemini-3-pro-preview`, and `claude-opus-4-7`.
+The frontier comparison suites retain GPT, Gemini, and Claude entries for users with those credentials. The cheaper configured cross-family slices compare `deepseek-v4-flash`, `qwen3.6-plus`, `glm-5.1`, and `kimi-k2.6`.
+
+For the China-provider cross-family slice:
+
+```powershell
+$env:DEEPSEEK_API_KEY="..."
+$env:DASHSCOPE_API_KEY="..."
+$env:ZAI_API_KEY="..."
+$env:MOONSHOT_API_KEY="..."
+donebench experiment-pipeline cross_family_slice --output results/runs/cross_family_slice/trials.jsonl --report-root reports/ablations --limit 100 --max-workers 0 --resume
+donebench experiment-pipeline cross_family_token_matched_slice --output results/runs/cross_family_token_matched_slice/trials.jsonl --report-root reports/ablations --limit 100 --max-workers 0 --resume
+```
 
 For a DeepSeek-only family run using the same `DEEPSEEK_API_KEY`:
 
@@ -154,7 +168,7 @@ donebench experiment-pipeline topconf_deepseek_token_matched --resume --max-work
 
 `--max-workers 0` uses the suite recommendation. Outputs are isolated under `results/runs/<suite>/trials.jsonl` and `reports/runs/<suite>/`, avoiding accidental aggregation across historical result files.
 
-As of 2026-05-09, `topconf_deepseek_toolplan_full` has completed once with 18,000 / 18,000 trials and 0 skipped rows. Its current report root is `reports/full_runs/runs/topconf_deepseek_toolplan_full/`, and `reports/full_run_readiness.json` reports `full_run_ready: true` when using `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`. Paper readiness remains blocked by human double annotation and AI-audit adjudication; see `reports/agent_handoff.md` and `reports/blockers.md`.
+As of 2026-05-09, `topconf_deepseek_toolplan_full` has completed once with 18,000 / 18,000 trials and 0 skipped rows. Its current report root is `reports/full_runs/runs/topconf_deepseek_toolplan_full/`, and `reports/full_run_readiness.json` reports `full_run_ready: true` when using `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`. The required paper audit gate is clear; optional human calibration remains incomplete. See `reports/agent_handoff.md` and `reports/blockers.md`.
 
 ## Reproducibility Package
 
@@ -183,6 +197,8 @@ donebench cost-report results/<run>.jsonl reports/costs
 ```
 
 The report writes `api_call_costs.csv`, `api_cost_by_model.csv`, and `api_cost_summary.json`. DeepSeek prices are encoded in `donebench/scripts/cost_report.py`; update that table before claiming dollar totals for other providers.
+
+Raw hosted-model traces can become large. New `results/runs/*/trials.jsonl` files are ignored by default after the checked-in paper runs; store future large traces in Git LFS or release artifacts, and commit manifests plus aggregate tables unless the raw trace is explicitly needed for the submission artifact.
 
 Provider calls default to three attempts with linear backoff (`extra.attempts`, `extra.retry_backoff_s` in `configs/models.yaml`). Long API suites should be run with `--resume`; if rate limits occur, rerun the same output path with a lower `--max-workers` value so completed rows are not recomputed.
 

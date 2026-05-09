@@ -1,18 +1,75 @@
 # Model Access, Cost, Latency, and Retry Notes
 
+Date: 2026-05-09
+Submission commit: `0a71f3c` plus the current paper-readiness update.
+
 ## Access
 
-- Live model credentials are read only from environment variables listed in `configs/models.yaml`.
-- Supported external keys include `OPENAI_API_KEY`, `DEEPSEEK_API_KEY`, `ANTHROPIC_API_KEY`, `GEMINI_API_KEY`, and `OPENROUTER_API_KEY`.
-- Local endpoints use `OLLAMA_BASE_URL` or `VLLM_BASE_URL` and are disabled by default until explicitly enabled in `configs/models.yaml`.
-- Missing credentials are skipped when `skip_missing_credentials: true`; skips are written to the run `.manifest.json`.
+Live model credentials are read only from environment variables listed in `configs/models.yaml`; credentials must never be committed.
+
+Current checked-in paper results use these live DeepSeek model IDs:
+
+| Model id in config | Provider model | Env var | Base URL | Access date | Decoding |
+| --- | --- | --- | --- | --- | --- |
+| `deepseek_v4_flash` | `deepseek-v4-flash` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
+| `deepseek_v4_pro` | `deepseek-v4-pro` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
+| `deepseek_chat` | `deepseek-chat` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
+| `deepseek_reasoner` | `deepseek-reasoner` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
+
+Configured but not yet paper-claim-ready cross-family models:
+
+| Model id in config | Provider model | Env var | Base URL | Access date | Decoding |
+| --- | --- | --- | --- | --- | --- |
+| `qwen_3_6_plus` | `qwen3.6-plus` | `DASHSCOPE_API_KEY` | `https://dashscope.aliyuncs.com/compatible-mode/v1` | pending | `temperature=0`, `max_tokens=2400` |
+| `glm_5_1` | `glm-5.1` | `ZAI_API_KEY` | `https://api.z.ai/api/paas/v4/` | pending | `temperature=0`, `max_tokens=2400` |
+| `kimi_k2_6` | `kimi-k2.6` | `MOONSHOT_API_KEY` | `https://api.moonshot.ai/v1` | pending | `temperature=0`, `max_tokens=2400` |
+
+OpenAI, Anthropic, Gemini, OpenRouter, Ollama, and vLLM entries remain in `configs/models.yaml` for future replication and local experiments, but the configured cross-family slice now uses DeepSeek/Qwen/GLM/Kimi.
+
+Official provider documentation used for the China-provider slice:
+
+- Qwen/DashScope OpenAI-compatible mode: `https://help.aliyun.com/zh/model-studio/compatibility-of-openai-with-dashscope`
+- Z.AI GLM-5.1 API guide: `https://docs.z.ai/guides/llm/glm-5.1`
+- Kimi API overview and model parameters: `https://platform.kimi.ai/docs/api/overview`, `https://platform.kimi.ai/docs/api/models-overview`
+
+Missing credentials are skipped when `skip_missing_credentials: true`; skips are written to the run `.manifest.json`.
+
+## Trial Counts
+
+Checked-in result traces:
+
+| Suite | Raw trace | Trials | Skipped |
+| --- | --- | ---: | ---: |
+| `topconf_deepseek_toolplan_full` | `results/runs/topconf_deepseek_toolplan_full/trials.jsonl` | 18,000 | 0 |
+| `topconf_deepseek_token_matched` | `results/runs/topconf_deepseek_token_matched/trials.jsonl` | 3,000 | 0 |
+| `topconf_oracle_spec_reference` | `results/runs/topconf_oracle_spec_reference/trials.jsonl` | 500 | 0 |
+
+Pending cross-family commands:
+
+```powershell
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli experiment-pipeline cross_family_slice --output results\runs\cross_family_slice\trials.jsonl --report-root reports\ablations --limit 100 --max-workers 0 --resume
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli experiment-pipeline cross_family_token_matched_slice --output results\runs\cross_family_token_matched_slice\trials.jsonl --report-root reports\ablations --limit 100 --max-workers 0 --resume
+```
+
+Each planned cross-family slice is 100 tasks x 3 agents x 4 models x 1 trial = 1,200 planned trials before credential skipping.
 
 ## Cost and Latency
 
-- Run `donebench cost-report results/<run>.jsonl reports/costs` to produce per-call and by-model CSVs.
-- `reports/costs/api_call_costs.csv` includes input tokens, output tokens, latency seconds, attempts, estimation flags, and estimated cost.
-- `reports/costs/api_cost_by_model.csv` aggregates calls, tokens, total latency, mean latency, and estimated USD cost.
-- Prices are estimates for configured DeepSeek models in `donebench/scripts/cost_report.py`; update that table for other providers before claiming dollar totals.
+Current full DeepSeek tool-plan run:
+
+- API calls: 18,000
+- Input tokens: 8.30M
+- Output tokens: 23.08M
+- Estimated cost: 13.47 USD under `donebench/scripts/cost_report.py`
+- Summed provider latency: 490,355 seconds
+- Cost artifacts: `paper/tables/cost_summary_full_toolplan.json`, `paper/tables/cost_by_model_full_toolplan.csv`, `reports/full_runs/runs/topconf_deepseek_toolplan_full/costs/`
+
+DeepSeek token-matched ablation:
+
+- API calls: 3,000
+- Cost artifact: `paper/tables/token_matched_cost_summary.json`
+
+Cost reports for Qwen/GLM/Kimi should not claim dollar totals until `donebench/scripts/cost_report.py` is updated with the current provider price sheet.
 
 ## Retry and Resume
 

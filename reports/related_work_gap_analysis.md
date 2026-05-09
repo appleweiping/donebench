@@ -6,7 +6,7 @@ Date: 2026-05-07
 
 DoneBench has a defensible gap if the paper is framed as a benchmark for **completion semantics as an agent output**. The closest prior work evaluates whether agents finish tasks, follow policies, generate application-evaluation criteria, generate software specifications/tests, or verify pre-existing plans. None of the surveyed artifacts make the agent infer, formalize, stress-test, and then obey its own task-completion criteria across stateful workflow environments.
 
-The weak point is not the conceptual gap. The weak point is artifact maturity: the current dataset is 600 synthetic/generated tasks across 5 domains, with 15 task patterns, 26 scenarios, 3,000 near-miss states, and typed semi-real workflow tool surfaces. Top-conference claims still need completed human audit and live-model results, but the scale and engineering surface are now closer to modern benchmark artifacts.
+The weak point is not the conceptual gap. The weak point is artifact maturity: the current dataset is 600 synthetic/generated tasks across 5 domains, with 15 task patterns, 26 scenarios, 3,600 near-miss states after the full-corpus repair, and typed semi-real workflow tool surfaces. Top-conference claims should foreground executable validation, model-assisted audit, and the completed 18,000-trial tool-plan run, while presenting human calibration as an optional strengthening layer rather than a completed evidence source.
 
 ## Benchmark Artifact Map
 
@@ -26,19 +26,19 @@ The weak point is not the conceptual gap. The weak point is artifact maturity: t
 
 ## What DoneBench Still Lacks
 
-1. **Human audit with inter-annotator evidence.** Current audit hooks and AI audit summaries help, but Reviewer 2 can still say the gold atoms are generator artifacts. Need a paper subset with human-written or human-adjudicated criteria, agreement, and correction rate.
+1. **Human audit with inter-annotator evidence.** Current audit hooks and model-assisted audit summaries help, but Reviewer 2 can still say the gold atoms are generator artifacts. A paper subset with human-written or human-adjudicated criteria, agreement, and correction rate would strengthen the artifact, but it is not the current required gate.
 
 2. **Non-templated task provenance.** The topconf-4 dataset is balanced and scalable, and the quality audit currently reports zero high-similarity goal pairs. It remains generated, so a hand-authored "hard heterogeneity" subset would still strengthen the final paper.
 
 3. **Real or semi-real workflow surfaces.** topconf-4 now includes semi-real typed tool specs, preconditions, side-effect metadata, state schemas, and trace precondition checks for every task. WorkArena and OSWorld remain stronger on GUI/SaaS realism, so DoneBench should still claim controlled semantic realism rather than UI realism.
 
-4. **Token-matched and information-matched ablations.** Spec-first can be dismissed as longer prompting unless Direct, Plan-first, Spec-first, repair, and Oracle-spec are controlled for token budget and exposed information.
+4. **Information-matched ablations beyond token matching.** The token-matched DeepSeek ablation is now complete and should be reported. A stricter information-matched ablation could further separate specification grounding from prompt-budget and context exposure.
 
 5. **Hidden/test separation and contamination story.** Because criterion atoms and DoneSpec are structured, agents can overfit to the DSL. Keep hidden near-miss states and test task metadata out of prompts; document exactly what is exposed.
 
 6. **Verifier-generation calibration.** DoneBench should report cases where predicted specs accept gold finals but fail near misses, and where they overreject valid states. That is the clearest evidence that the benchmark tests semantic precision rather than syntax.
 
-7. **Near-miss taxonomy validation.** The current five mutation classes are useful: conflict injection, participant omission, policy confirmation missing, terminal-state incomplete, and unrelated side effect. The report should show distribution and examples, and a human audit should confirm they are genuinely near misses, not obvious failures.
+7. **Near-miss taxonomy validation.** The repaired corpus has 15 mutation taxa and a near-miss family breakdown. The report should show distribution and examples, and optional human calibration could confirm they are genuinely near misses, not obvious failures.
 
 8. **Model-result reproducibility metadata.** Hosted results need exact provider, model id, access date, decoding settings, trial count, raw JSONL traces, aggregate CSVs, and commit. Otherwise Reviewer 2 can call the tables irreproducible or cherry-picked.
 
@@ -58,7 +58,7 @@ The weak point is not the conceptual gap. The weak point is artifact maturity: t
 
 ## Places That Can Sound Toy or Stitched Together
 
-1. **"600 tasks" can still sound generated.** Always pair the number with the structure: 5 domains, 15 patterns, 26 scenarios, 4 difficulty levels, 3,000 near-miss states, typed tool specs, state schemas, preconditions, side-effect metadata, reference traces, policies, and deterministic graders. Then admit the audit/heterogeneity limitation.
+1. **"600 tasks" can still sound generated.** Always pair the number with the structure: 5 domains, 15 patterns, 26 scenarios, 4 difficulty levels, 3,600 near-miss states, typed tool specs, state schemas, preconditions, side-effect metadata, reference traces, policies, and deterministic graders. Then admit the audit/heterogeneity limitation.
 
 2. **State dictionaries can sound less realistic than WebArena/OSWorld.** Do not fight realism benchmarks on their axis. Say DoneBench trades UI fidelity for controlled completion-semantics measurement and can be layered onto richer environments later.
 

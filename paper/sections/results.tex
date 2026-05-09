@@ -1,8 +1,10 @@
 \section{Results}
-The current full tool-plan run covers the held-out topconf-4 test split with 500 tasks, 3 agent protocols, 4 DeepSeek-family models, and 3 trials per model-agent-task cell, for 18,000 API trials. Each model-agent cell has \(n=1500\) trials. The run predates the later full-corpus reference-artifact repair, so we treat it as the main completed model run for analyzing the specification-to-execution gap while separately reporting repaired-corpus strict validation and oracle-reference results. Artifacts are under \texttt{reports/full\_runs/runs/topconf\_deepseek\_toolplan\_full/}; refreshed paper tables are under \texttt{paper/tables/}.
+The current full tool-plan run covers the held-out topconf-4 test split with 500 tasks, 3 agent protocols, 4 DeepSeek-family models, and 3 trials per model-agent-task cell, for 18,000 API trials. Each model-agent cell has \(n=1500\) trials. The run predates the later full-corpus reference-artifact repair, so we treat it as the main completed pre-repair model run for analyzing the specification-to-execution gap while separately reporting repaired-corpus strict validation, token-matched ablation, and oracle-reference results. Artifacts are under \texttt{reports/full\_runs/runs/topconf\_deepseek\_toolplan\_full/}; refreshed paper tables are under \texttt{paper/tables/}.
 
-\begin{table}[h]
+\begin{table}[tbp]
 \centering
+\small
+\resizebox{\linewidth}{!}{%
 \begin{tabular}{lllrrrr}
 \toprule
 Model & Agent & Parse & CC-F1 & DoneSpec valid & Near-miss detect & Task success \\
@@ -21,13 +23,15 @@ DeepSeek V4 Pro & Plan-first & 93.8 & 56.6 & 91.3 & 54.8 & 0.0 \\
 DeepSeek V4 Pro & Spec-first & 71.9 & 65.0 & 66.2 & 39.7 & 4.5 \\
 \bottomrule
 \end{tabular}
+}
 \caption{Full DeepSeek tool-plan results. Values are percentages; bootstrap confidence intervals are in \texttt{paper/tables/main\_results\_full\_toolplan.csv}.}
 \end{table}
 
-The central pattern is a specification-to-execution gap. Spec-first improves criterion completion F1 for every model family member, but nonzero task success remains limited and low. Direct and plan-first produce no successful task completions despite high syntactic DoneSpec validity. Spec-first reaches 6.0\% success for V4 Flash, 5.2\% for Reasoner, 4.5\% for V4 Pro, and 0.0\% for Chat. DeepSeek V4 Pro obtains higher spec-first CC-F1 than V4 Flash (65.0 vs. 56.7), but lower spec-first task success (4.5 vs. 6.0) and lower near-miss detection (39.7 vs. 50.5). We therefore avoid leaderboard claims: a model can articulate more gold-like criteria while producing brittle or poorly operationalized verifiers.
+The central pattern in this pre-repair full run is a specification-to-execution gap. Spec-first improves criterion completion F1 for every model family member, but nonzero task success remains limited and low. Direct and plan-first produce no successful task completions despite high syntactic DoneSpec validity. Spec-first reaches 6.0\% success for V4 Flash, 5.2\% for Reasoner, 4.5\% for V4 Pro, and 0.0\% for Chat. DeepSeek V4 Pro obtains higher spec-first CC-F1 than V4 Flash (65.0 vs. 56.7), but lower spec-first task success (4.5 vs. 6.0) and lower near-miss detection (39.7 vs. 50.5). We therefore avoid leaderboard claims: a model can articulate more gold-like criteria while producing brittle or poorly operationalized verifiers.
 
-\begin{table}[h]
+\begin{table}[tbp]
 \centering
+\small
 \begin{tabular}{lrrrr}
 \toprule
 Domain & Flash success & Pro success & Flash CC-F1 & Pro CC-F1 \\
@@ -44,9 +48,9 @@ File/document & 0.0 & 0.3 & 56.7 & 68.0 \\
 
 \subsection{Reliability and Controls}
 
-The 3-trial full run allows pass@3 reliability analysis. For spec-first, pass@3 is higher than pass@1 but still low: 14.4\% for V4 Flash, 11.8\% for Reasoner, 11.6\% for V4 Pro, and 0.0\% for Chat. Success consistency is 86.0--88.6\% for the nonzero spec-first cells, which mostly reflects repeated failure rather than stable success. A repaired-corpus oracle-reference run solves 500 / 500 test tasks with CC-F1 99.0\%, near-miss detection 100.0\%, task success 100.0\%, and self-violation 0.0\%, confirming that the repaired gold references and graders are executable.
+The 3-trial full run allows pass@3 reliability analysis. For spec-first, pass@3 is higher than pass@1 but still low: 14.4\% for V4 Flash, 11.8\% for Reasoner, 11.6\% for V4 Pro, and 0.0\% for Chat. Success consistency is 86.0--88.6\% for the nonzero spec-first cells, which mostly reflects repeated failure rather than stable success. A repaired-corpus oracle-reference run solves 500 / 500 test tasks with CC-F1 99.0\%, near-miss detection 100.0\%, task success 100.0\%, and self-violation 0.0\%, confirming that the repaired gold references and graders are executable. Oracle artifacts are in \texttt{paper/tables/oracle\_reference\_results.csv} and \texttt{reports/ablations/runs/topconf\_oracle\_spec\_reference/}.
 
-The token-matched DeepSeek ablation runs one trial per task with Direct, Plan-first, and Spec-first prompts padded to the same 3,200-character specification budget. Under this control, task success is no longer a spec-first advantage: V4 Flash reaches 37.0\% with Direct, 24.4\% with Plan-first, and 23.8\% with Spec-first; V4 Pro reaches 14.2\%, 18.0\%, and 13.6\%, respectively. Spec-first still has the highest CC-F1 in both models (61.9 for Flash and 65.3 for Pro), but the execution channel is sensitive to prompt/action budget and output reliability. The token-matched parse gate remains acceptable overall (95.9\% parsed), though Pro spec-first is the weakest cell at 88.6\% parse and 11.4\% fallback. Cross-family slices are configured in \texttt{configs/experiments.yaml}; they require GPT, Claude, and Gemini credentials before they can support cross-provider claims.
+The token-matched DeepSeek ablation runs one trial per task with Direct, Plan-first, and Spec-first prompts padded to the same 3,200-character specification budget. Under this control, task success is no longer a spec-first advantage: V4 Flash reaches 37.0\% with Direct, 24.4\% with Plan-first, and 23.8\% with Spec-first; V4 Pro reaches 14.2\%, 18.0\%, and 13.6\%, respectively. Spec-first still has the highest CC-F1 in both models (61.9 for Flash and 65.3 for Pro), but the execution channel is sensitive to prompt/action budget and output reliability. The token-matched parse gate remains acceptable overall (95.9\% parsed), though Pro spec-first is the weakest cell at 88.6\% parse and 11.4\% fallback. Token-matched artifacts are in \texttt{paper/tables/token\_matched\_results.csv}, \texttt{paper/tables/token\_matched\_parse\_transparency.csv}, and \texttt{reports/ablations/runs/topconf\_deepseek\_token\_matched/}. Cross-family slices are configured in \texttt{configs/experiments.yaml} for DeepSeek, Qwen, GLM, and Kimi; they require the corresponding keys before they can support cross-provider claims.
 
 \subsection{Parse Transparency}
 

@@ -7,9 +7,10 @@ Experiments measure criterion inference, spec-first execution, own-spec violatio
 
 The artifact separates deterministic smoke tests from API-backed paper runs. Smoke tests are intended for every checkout and continuous integration. The current completed live-model paper run uses the \texttt{topconf\_deepseek\_toolplan\_full} suite on the topconf-4 test split.
 
-\begin{table}[h]
+\begin{table}[tbp]
 \centering
-\begin{tabular}{llll}
+\small
+\begin{tabularx}{\linewidth}{lX X X}
 \toprule
 Suite & Split & Agents & Models \\
 \midrule
@@ -17,19 +18,20 @@ Smoke & dev & Heuristic, Spec-first & Mock \\
 DeepSeek tool-plan full & test & Direct, Plan-first, Spec-first & Chat, Reasoner, V4 Flash, V4 Pro \\
 Oracle reference upper bound & test & Oracle-spec & Mock/reference replay \\
 Token-matched DeepSeek & test & Token-matched Direct, Plan-first, Spec-first & V4 Flash, V4 Pro \\
-Cross-family slice & test & Direct, Plan-first, Spec-first & DeepSeek, GPT, Claude, Gemini \\
+China-provider cross-family slice & test & Direct, Plan-first, Spec-first & DeepSeek, Qwen, GLM, Kimi (configured; pending keys) \\
 \bottomrule
-\end{tabular}
-\caption{Experiment suites mirrored by \texttt{configs/experiments.yaml}.}
+\end{tabularx}
+\caption{Experiment suites summarized from \texttt{configs/experiments.yaml}; pending suites are configured but not used for claims.}
 \end{table}
 
 \subsection{Baselines and Ablations}
 
 Direct runs execute with only implicit completion checks. Plan-first elicits action order and dependencies before acting. Spec-first explicitly elicits completion criteria and a DoneSpec before acting. All three protocols feed a structured tool-call plan into the same environment executor. Oracle-spec replays the repaired gold reference trace with the gold verifier and is treated as a reference upper bound for corpus validity, not as a live model capability estimate. Paper claims should use live-model rows and report token-matched controls before attributing raw task-success differences to specification grounding.
 
-\begin{table}[h]
+\begin{table}[tbp]
 \centering
-\begin{tabular}{lll}
+\small
+\begin{tabularx}{\linewidth}{lX X}
 \toprule
 Ablation & Purpose & Paper status \\
 \midrule
@@ -39,10 +41,10 @@ Spec-first vs. Oracle reference & Confirm repaired corpus upper bound & Reported
 Near-miss mutation families & Stress-test verifier robustness & Full breakdown reported \\
 Token-matched prompting & Control for prompt length & Full DeepSeek run reported \\
 Repeated-attempt pass@k & Estimate reliability rather than one-shot success & Pass@3 reported from full run \\
-Free-form criterion normalization & Test DSL sensitivity & Future paper run \\
+China-provider cross-family model slice & Check that DoneBench effects are not DeepSeek-family artifacts & Configured; pending Qwen/GLM/Kimi keys \\
 \bottomrule
-\end{tabular}
-\caption{Ablation checklist for paper-ready experiments.}
+\end{tabularx}
+\caption{Completed and configured ablations relevant to the current paper claims.}
 \end{table}
 
 \subsection{API Run Protocol}

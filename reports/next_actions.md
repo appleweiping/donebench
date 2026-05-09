@@ -23,7 +23,8 @@ Current readiness:
    - Do not replace them with the old pre-repair artifacts.
    - If regenerating tasks again, rerun validation, strict validation, oracle reference replay, structured audit, audit gate, full-run readiness, and `refresh-paper-tables`.
 2. Cross-family slices are configured but not paper-ready.
-   - The local smoke only produced DeepSeek rows because GPT, Claude, and Gemini credentials were missing.
+   - The configured slice now targets DeepSeek, Qwen, GLM, and Kimi.
+   - Required keys: `DEEPSEEK_API_KEY`, `DASHSCOPE_API_KEY`, `ZAI_API_KEY`, and `MOONSHOT_API_KEY`.
    - Do not report cross-family claims until at least three provider families produce rows.
 3. Prepare optional human calibration only if the paper wants stronger semantic-validity evidence.
    - Recommended batch remains `021..030` from each domain, 50 tasks total.

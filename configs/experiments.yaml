@@ -105,13 +105,13 @@ experiment_suites:
   cross_family_slice:
     split: test
     agents: [direct, plan_first, spec_first]
-    models: [deepseek_v4_flash, gpt_5_5, gemini_3_pro_preview, claude_opus_4_7]
+    models: [deepseek_v4_flash, qwen_3_6_plus, glm_5_1, kimi_k2_6]
     trials_per_model: 1
     recommended_max_workers: 32
   cross_family_token_matched_slice:
     split: test
     agents: [direct_token_matched, plan_first_token_matched, spec_first_token_matched]
-    models: [deepseek_v4_flash, gpt_5_5, gemini_3_pro_preview, claude_opus_4_7]
+    models: [deepseek_v4_flash, qwen_3_6_plus, glm_5_1, kimi_k2_6]
     trials_per_model: 1
     recommended_max_workers: 32
   topconf_deepseek_token_matched:

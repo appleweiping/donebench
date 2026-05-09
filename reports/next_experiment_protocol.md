@@ -1,5 +1,7 @@
 # Next Experiment Protocol
 
+Status: historical protocol snapshot. It predates the repaired structured audit gate, full-corpus strict validation, token-matched completion, and China-provider cross-family configuration. Use `reports/agent_handoff.md`, `reports/next_actions.md`, and `reports/ablation_status.md` as the current source of truth.
+
 ## Main Claim Boundary
 
 Use `tool_plan_executor` rows for execution claims. Historical parsed DeepSeek topconf-4 rows remain useful for specification-grounding analysis, but the next official execution run should be regenerated with the no-gold-leak runtime.
@@ -46,7 +48,7 @@ This runs 50 stratified tasks x 3 agents x 2 DeepSeek models x 5 trials = 1500 t
 - `reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json`
 - `reports/full_run_readiness.json`
 
-The full-run gate now uses `reports/audit_deepseek_merged/ai_audit_opinions.jsonl` and is ready for full-run analysis: trusted model audit coverage is 0.93 and there are no full-run blockers. The paper gate is still not ready because human double annotation has not started and 37 AI-audit tasks still need adjudication.
+Historical note: this gate statement is superseded. The current gate uses `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`; `reports/full_run_readiness.json` reports `full_run_ready = true` and `paper_ready_audit_gate = true`. Optional human calibration remains incomplete but is not a required paper gate.
 
 Do not rerun the 18,000-trial suite unless the benchmark code, prompts, model config, or task data changes in a way that invalidates the current run. Use `--resume` and the same output path if a rerun is necessary.
 

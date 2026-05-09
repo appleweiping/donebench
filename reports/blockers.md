@@ -19,7 +19,7 @@
 - No current audit-gate blocker remains.
 - Paper submission metadata is not available yet: target venue, page limit, author list, affiliations, and acknowledgements.
 - Paper-ready hosted-model claims still need provider/model identifiers, access dates, decoding settings, retry policy, trial counts, and cost/latency tables fixed in the paper text.
-- Cross-family model slices are configured but not claim-ready because GPT, Claude, and Gemini credentials were absent locally. A tiny DeepSeek-only smoke exists and must not be reported as a cross-family result.
+- Cross-family model slices are configured but not claim-ready. The current slice targets DeepSeek, Qwen, GLM, and Kimi; do not report cross-family claims until at least three provider families produce rows. Any old DeepSeek-only smoke must not be reported as a cross-family result.
 - A TeX-enabled environment is needed to compile the final PDF and check table/figure placement.
 - Residual quality caution, not a current gate blocker: the repaired queue remains structurally templated. It is executable and internally consistent, but future realism work should add more domain-native conditions beyond the current shared completion skeleton.
 - Optional calibration caution, not a gate blocker: `annotation/human_audit_queue.jsonl` still has 0 / 100 double-annotated rows. A 50-task balanced double annotation would strengthen semantic-validity claims, but many related agent benchmarks rely primarily on executable/functional grading rather than mandatory double annotation.

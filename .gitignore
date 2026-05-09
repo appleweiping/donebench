@@ -13,6 +13,9 @@ results/*.csv
 results/*.json
 results/*.png
 results/*.pdf
+# New large raw hosted-model traces should be stored as release artifacts or
+# Git LFS objects. Existing tracked traces remain tracked.
+results/runs/*/trials.jsonl
 paper/*.aux
 paper/*.bbl
 paper/*.blg

@@ -1,5 +1,7 @@
 # Top-Conference Experiment Plan
 
+Status: historical. This file predates the 2026-05-09 full-corpus repair, the 18,000-trial tool-plan full run, token-matched ablation, and paper-table refresh. Use `reports/agent_handoff.md` and `reports/ablation_status.md` as the current source of truth.
+
 ## Dataset Scale
 
 DoneBench `topconf-4` contains 600 stateful tasks:
@@ -9,7 +11,7 @@ DoneBench `topconf-4` contains 600 stateful tasks:
 - Difficulty distribution: L1 90, L2 180, L3 210, L4 120.
 - 15 domain-specific task patterns, 40 tasks per pattern.
 - 26 deterministic scenario variants plus risk tiers, approval channels, output formats, typed tool specs, state schemas, preconditions, and side-effect metadata.
-- 5 near-miss mutation taxa per task, 3000 near-miss states total.
+- Historical note: this originally used 5 near-miss mutation taxa per task, 3000 near-miss states total. The repaired current corpus has 6 near-miss states per task, 3600 near-miss states total, and 15 mutation taxa across domains.
 
 This puts the task count in the range of modern agent benchmarks while keeping DoneBench's own axis: specification grounding before execution.
 
@@ -22,7 +24,7 @@ This puts the task count in the range of modern agent benchmarks while keeping D
 | `topconf_deepseek_full` | test | 500 | 3 | 4 | 3 | 18000 |
 | `topconf_deepseek_stress` | test | 500 | 3 | 4 | 5 | 30000 |
 
-Recommended paper main result: `topconf_deepseek_core`.
+Historical recommendation only. The current paper main result is `topconf_deepseek_toolplan_full`.
 Recommended stochastic/API-stability check: `topconf_deepseek_replicates --limit 50`.
 Recommended appendix/model-family result: `topconf_deepseek_full`.
 

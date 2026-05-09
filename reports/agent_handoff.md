@@ -13,7 +13,7 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
 ## Current Ground Truth
 
 - Dataset: topconf-4, 600 generated tasks across 5 domains, with 100 dev and 500 test tasks.
-- Per-task structure: user goal, visible tool surface, typed tools, preconditions, side-effect metadata, policies, criterion atoms, gold DoneSpec, five near-miss final states, reference trace, and audit metadata.
+- Per-task structure: user goal, visible tool surface, typed tools, preconditions, side-effect metadata, policies, criterion atoms, gold DoneSpec, six near-miss final states in the repaired corpus, reference trace, and audit metadata.
 - Official execution path: use only rows with `diagnostics.execution_mode = "tool_plan_executor"` for paper execution claims.
 - Historical parsed DeepSeek topconf-4 rows remain useful for specification-grounding analysis, but not as the official execution result table.
 - Full DeepSeek tool-plan run completed on 2026-05-08:
@@ -231,7 +231,7 @@ Completion boundary: if pursued, at least 50 balanced tasks are double annotated
 
 ### M5: Paper Claim Freeze
 
-Status: mostly aligned. `paper/sections/results.tex` now reports the 18,000-trial DeepSeek tool-plan full run, repaired-corpus strict validation, oracle reference replay, token-matched DeepSeek ablation, and near-miss family breakdown. Cross-family slices are configured but not claim-ready without GPT/Claude/Gemini credentials.
+Status: mostly aligned. `paper/sections/results.tex` now reports the 18,000-trial DeepSeek tool-plan full run, repaired-corpus strict validation, oracle reference replay, token-matched DeepSeek ablation, and near-miss family breakdown. Cross-family slices are configured for DeepSeek, Qwen, GLM, and Kimi but are not claim-ready until those provider keys produce rows.
 
 Completion boundary: no section relies on historical parsed rows as official execution claims, and every empirical claim maps to a tracked artifact path.
 

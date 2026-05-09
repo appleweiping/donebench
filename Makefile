@@ -1,6 +1,6 @@
 IMAGE ?= donebench-repro
 RESULTS ?= results/smoke.jsonl
-COST_INPUT ?= results/topconf_deepseek_core_trial0.jsonl
+COST_INPUT ?= results/runs/topconf_deepseek_toolplan_full/trials.jsonl
 
 .PHONY: test validate audit quality readiness smoke figures paper repro-smoke repro-package repro-manifest openreview-package cost-report topconf-pilot topconf-full topconf-token-matched topconf-postprocess docker-build docker-smoke
 
@@ -65,4 +65,4 @@ figures:
 	donebench make-figures results/ paper/figures/
 
 paper:
-	cd paper && pdflatex -interaction=nonstopmode main.tex || true
+	cd paper && pdflatex -interaction=nonstopmode main.tex

@@ -251,25 +251,21 @@
       "crm_ticket": [
         {
           "id": "crm_023",
-          "title": "Harbor onboarding Refund request closure approval 23",
-          "participants": [
-            "harper@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "next Wednesday afternoon",
+          "title": "Draft placeholder crm_workflow_023",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "customer onboarding folder",
-          "attachments": [
-            "onboarding packet"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "crm_route_refund",
           "scenario_id": "harbor_onboarding",
           "risk_tier": "external",
           "approval_channel": "security_review",
-          "output_format": "crm_resolution",
+          "output_format": "draft",
           "due_window": "next Wednesday afternoon"
         }
       ]
@@ -1160,25 +1156,21 @@
           "found": true,
           "record": {
             "id": "crm_023",
-            "title": "Harbor onboarding Refund request closure approval 23",
-            "participants": [
-              "harper@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "next Wednesday afternoon",
+            "title": "Draft placeholder crm_workflow_023",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "customer onboarding folder",
-            "attachments": [
-              "onboarding packet"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "crm_route_refund",
             "scenario_id": "harbor_onboarding",
             "risk_tier": "external",
             "approval_channel": "security_review",
-            "output_format": "crm_resolution",
+            "output_format": "draft",
             "due_window": "next Wednesday afternoon"
           }
         },

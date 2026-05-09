@@ -1,0 +1,14 @@
+[
+  {
+    "invalid_taxon": "invalid_empty_or_missing",
+    "description": "DoneSpec is absent or effectively empty.",
+    "count": 4,
+    "rate": 0.00022222222222222223
+  },
+  {
+    "invalid_taxon": "invalid_execution_exception",
+    "description": "DoneSpec raises during evaluation or cannot be executed.",
+    "count": 2404,
+    "rate": 0.13355555555555557
+  }
+]

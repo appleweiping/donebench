@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_021",
-          "title": "Granite compliance check Approved focus block handoff 21",
-          "participants": [
-            "noah@example.com",
-            "ava@example.com"
-          ],
-          "duration_minutes": 25,
-          "time_range": "next Tuesday morning",
+          "title": "Draft placeholder calendar_021",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "compliance review folder",
-          "attachments": [
-            "control evidence list"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_focus_block",
           "scenario_id": "granite_compliance",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "next Tuesday morning"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_021",
-            "title": "Granite compliance check Approved focus block handoff 21",
-            "participants": [
-              "noah@example.com",
-              "ava@example.com"
-            ],
-            "duration_minutes": 25,
-            "time_range": "next Tuesday morning",
+            "title": "Draft placeholder calendar_021",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "compliance review folder",
-            "attachments": [
-              "control evidence list"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_focus_block",
             "scenario_id": "granite_compliance",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "next Tuesday morning"
           }
         },

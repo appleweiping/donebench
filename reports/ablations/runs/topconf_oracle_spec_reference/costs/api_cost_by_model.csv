@@ -1,0 +1,2 @@
+model,provider_model,calls,input_tokens,output_tokens,latency_s,mean_latency_s,estimated_cost_usd
+mock,mock,500,227644,600000,0.0,0.0,0.0

@@ -251,25 +251,21 @@
       "email_message": [
         {
           "id": "ema_027",
-          "title": "Iris QBR prep Reviewed digest forward summary 27",
-          "participants": [
-            "morgan@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "next Thursday midday",
+          "title": "Draft placeholder email_027",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "account review folder",
-          "attachments": [
-            "QBR snapshot"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "email_forward_digest",
           "scenario_id": "iris_qbr",
           "risk_tier": "external",
           "approval_channel": "policy_queue",
-          "output_format": "email_thread",
+          "output_format": "draft",
           "due_window": "next Thursday midday"
         }
       ]
@@ -1167,25 +1163,21 @@
           "found": true,
           "record": {
             "id": "ema_027",
-            "title": "Iris QBR prep Reviewed digest forward summary 27",
-            "participants": [
-              "morgan@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "next Thursday midday",
+            "title": "Draft placeholder email_027",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "account review folder",
-            "attachments": [
-              "QBR snapshot"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "email_forward_digest",
             "scenario_id": "iris_qbr",
             "risk_tier": "external",
             "approval_channel": "policy_queue",
-            "output_format": "email_thread",
+            "output_format": "draft",
             "due_window": "next Thursday midday"
           }
         },

@@ -1,0 +1,200 @@
+[
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "direct_token_matched",
+    "n": 170,
+    "cc_f1": 0.4699649150113977,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 0.7142857142857144,
+    "task_success": 0.40588235294117647,
+    "self_violation_rate": 0.11260504201680673
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first_token_matched",
+    "n": 170,
+    "cc_f1": 0.501023957962387,
+    "donespec_valid": 0.9882352941176471,
+    "near_miss_detection_rate": 0.7058823529411765,
+    "task_success": 0.2823529411764706,
+    "self_violation_rate": 0.16325863678804856
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first_token_matched",
+    "n": 170,
+    "cc_f1": 0.620174642739591,
+    "donespec_valid": 0.8411764705882353,
+    "near_miss_detection_rate": 0.8411764705882353,
+    "task_success": 0.3058823529411765,
+    "self_violation_rate": 0.2843891402714932
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "direct_token_matched",
+    "n": 170,
+    "cc_f1": 0.5837266723774753,
+    "donespec_valid": 0.9529411764705882,
+    "near_miss_detection_rate": 0.680672268907563,
+    "task_success": 0.20588235294117646,
+    "self_violation_rate": 0.22205882352941175
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first_token_matched",
+    "n": 170,
+    "cc_f1": 0.5986990845920909,
+    "donespec_valid": 0.9294117647058824,
+    "near_miss_detection_rate": 0.6638655462184874,
+    "task_success": 0.21176470588235294,
+    "self_violation_rate": 0.23529411764705882
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first_token_matched",
+    "n": 170,
+    "cc_f1": 0.6572617282680985,
+    "donespec_valid": 0.5176470588235295,
+    "near_miss_detection_rate": 0.5176470588235295,
+    "task_success": 0.17058823529411765,
+    "self_violation_rate": 0.5654977375565611
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_flash",
+    "agent": "direct_token_matched",
+    "n": 210,
+    "cc_f1": 0.47419565071288855,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 0.7142857142857142,
+    "task_success": 0.4142857142857143,
+    "self_violation_rate": 0.09233766233766232
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first_token_matched",
+    "n": 210,
+    "cc_f1": 0.5146915827559809,
+    "donespec_valid": 0.9809523809523809,
+    "near_miss_detection_rate": 0.7006802721088434,
+    "task_success": 0.2761904761904762,
+    "self_violation_rate": 0.1433333333333333
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first_token_matched",
+    "n": 210,
+    "cc_f1": 0.605549682261528,
+    "donespec_valid": 0.819047619047619,
+    "near_miss_detection_rate": 0.819047619047619,
+    "task_success": 0.2523809523809524,
+    "self_violation_rate": 0.28682539682539687
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_pro",
+    "agent": "direct_token_matched",
+    "n": 210,
+    "cc_f1": 0.5836080943788414,
+    "donespec_valid": 0.9857142857142858,
+    "near_miss_detection_rate": 0.7040816326530611,
+    "task_success": 0.12857142857142856,
+    "self_violation_rate": 0.18015873015873013
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first_token_matched",
+    "n": 210,
+    "cc_f1": 0.5892117284238432,
+    "donespec_valid": 0.919047619047619,
+    "near_miss_detection_rate": 0.6564625850340134,
+    "task_success": 0.21428571428571427,
+    "self_violation_rate": 0.20857142857142855
+  },
+  {
+    "difficulty": "L3",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first_token_matched",
+    "n": 210,
+    "cc_f1": 0.6271893815773574,
+    "donespec_valid": 0.49047619047619045,
+    "near_miss_detection_rate": 0.49047619047619045,
+    "task_success": 0.13333333333333333,
+    "self_violation_rate": 0.5820634920634922
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_flash",
+    "agent": "direct_token_matched",
+    "n": 120,
+    "cc_f1": 0.49717298083080647,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 0.5714285714285713,
+    "task_success": 0.24166666666666667,
+    "self_violation_rate": 0.17375000000000002
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first_token_matched",
+    "n": 120,
+    "cc_f1": 0.5395334699315926,
+    "donespec_valid": 0.9916666666666667,
+    "near_miss_detection_rate": 0.5666666666666665,
+    "task_success": 0.13333333333333333,
+    "self_violation_rate": 0.20916666666666667
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first_token_matched",
+    "n": 120,
+    "cc_f1": 0.639504359315627,
+    "donespec_valid": 0.8,
+    "near_miss_detection_rate": 0.8,
+    "task_success": 0.11666666666666667,
+    "self_violation_rate": 0.3594791666666667
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_pro",
+    "agent": "direct_token_matched",
+    "n": 120,
+    "cc_f1": 0.6026452248154371,
+    "donespec_valid": 0.9916666666666667,
+    "near_miss_detection_rate": 0.5666666666666665,
+    "task_success": 0.075,
+    "self_violation_rate": 0.2236111111111111
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first_token_matched",
+    "n": 120,
+    "cc_f1": 0.6180527183862597,
+    "donespec_valid": 0.9333333333333333,
+    "near_miss_detection_rate": 0.5333333333333331,
+    "task_success": 0.075,
+    "self_violation_rate": 0.275
+  },
+  {
+    "difficulty": "L4",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first_token_matched",
+    "n": 120,
+    "cc_f1": 0.6914290255676531,
+    "donespec_valid": 0.6083333333333333,
+    "near_miss_detection_rate": 0.6083333333333333,
+    "task_success": 0.09166666666666666,
+    "self_violation_rate": 0.521875
+  }
+]

@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_029",
-          "title": "Juniper vendor review Signed contract archive closure 29",
-          "participants": [
-            "lee@example.com"
-          ],
-          "duration_minutes": 50,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder file_doc_029",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_archive_contract",
           "scenario_id": "juniper_vendor",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_029",
-            "title": "Juniper vendor review Signed contract archive closure 29",
-            "participants": [
-              "lee@example.com"
-            ],
-            "duration_minutes": 50,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder file_doc_029",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_archive_contract",
             "scenario_id": "juniper_vendor",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

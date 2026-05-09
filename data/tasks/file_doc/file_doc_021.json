@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_021",
-          "title": "Granite compliance check Review packet handoff 21",
-          "participants": [
-            "noah@example.com"
-          ],
-          "duration_minutes": 25,
-          "time_range": "next Tuesday morning",
+          "title": "Draft placeholder file_doc_021",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "compliance review folder",
-          "attachments": [
-            "control evidence list"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_share_packet",
           "scenario_id": "granite_compliance",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "next Tuesday morning"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_021",
-            "title": "Granite compliance check Review packet handoff 21",
-            "participants": [
-              "noah@example.com"
-            ],
-            "duration_minutes": 25,
-            "time_range": "next Tuesday morning",
+            "title": "Draft placeholder file_doc_021",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "compliance review folder",
-            "attachments": [
-              "control evidence list"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_share_packet",
             "scenario_id": "granite_compliance",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "next Tuesday morning"
           }
         },

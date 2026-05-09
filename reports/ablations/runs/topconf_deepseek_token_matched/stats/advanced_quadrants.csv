@@ -1,0 +1,5 @@
+quadrant,count
+bad_spec_bad_execution,2008
+bad_spec_good_execution,562
+good_spec_good_execution,93
+good_spec_bad_execution,337

@@ -1,0 +1,282 @@
+[
+  {
+    "domain": "calendar",
+    "mutation_taxon": "conflict_injection",
+    "mutation_class": "conflict violation",
+    "failure_mode": "constraint_failure",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "calendar",
+    "mutation_taxon": "participant_omission",
+    "mutation_class": "omission",
+    "failure_mode": "incomplete_target",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "calendar",
+    "mutation_taxon": "policy_confirmation_missing",
+    "mutation_class": "policy/confirmation violation",
+    "failure_mode": "unsafe_completion",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "calendar",
+    "mutation_taxon": "terminal_state_incomplete",
+    "mutation_class": "near-success state",
+    "failure_mode": "premature_stop",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "calendar",
+    "mutation_taxon": "unrelated_side_effect",
+    "mutation_class": "side-effect violation",
+    "failure_mode": "collateral_change",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "calendar",
+    "mutation_taxon": "wrong_duration",
+    "mutation_class": "task-specific semantic violation",
+    "failure_mode": "wrong_duration",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "calendar",
+    "mutation_taxon": "wrong_time_window",
+    "mutation_class": "task-specific semantic violation",
+    "failure_mode": "wrong_time_window",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "crm_workflow",
+    "mutation_taxon": "conflict_injection",
+    "mutation_class": "conflict violation",
+    "failure_mode": "constraint_failure",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "crm_workflow",
+    "mutation_taxon": "missing_resolution_artifact",
+    "mutation_class": "workflow content violation",
+    "failure_mode": "missing_resolution_artifact",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "crm_workflow",
+    "mutation_taxon": "participant_omission",
+    "mutation_class": "omission",
+    "failure_mode": "incomplete_target",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "crm_workflow",
+    "mutation_taxon": "policy_confirmation_missing",
+    "mutation_class": "policy/confirmation violation",
+    "failure_mode": "unsafe_completion",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "crm_workflow",
+    "mutation_taxon": "terminal_state_incomplete",
+    "mutation_class": "near-success state",
+    "failure_mode": "premature_stop",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "crm_workflow",
+    "mutation_taxon": "unrelated_side_effect",
+    "mutation_class": "side-effect violation",
+    "failure_mode": "collateral_change",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "crm_workflow",
+    "mutation_taxon": "wrong_owner",
+    "mutation_class": "workflow ownership violation",
+    "failure_mode": "wrong_owner",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "email",
+    "mutation_taxon": "conflict_injection",
+    "mutation_class": "conflict violation",
+    "failure_mode": "constraint_failure",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "email",
+    "mutation_taxon": "extra_recipient",
+    "mutation_class": "policy/recipient violation",
+    "failure_mode": "unauthorized_recipient",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "email",
+    "mutation_taxon": "participant_omission",
+    "mutation_class": "omission",
+    "failure_mode": "incomplete_target",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "email",
+    "mutation_taxon": "policy_confirmation_missing",
+    "mutation_class": "policy/confirmation violation",
+    "failure_mode": "unsafe_completion",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "email",
+    "mutation_taxon": "terminal_state_incomplete",
+    "mutation_class": "near-success state",
+    "failure_mode": "premature_stop",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "email",
+    "mutation_taxon": "unrelated_side_effect",
+    "mutation_class": "side-effect violation",
+    "failure_mode": "collateral_change",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "email",
+    "mutation_taxon": "wrong_attachment",
+    "mutation_class": "task-specific semantic violation",
+    "failure_mode": "wrong_attachment",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "file_doc",
+    "mutation_taxon": "conflict_injection",
+    "mutation_class": "conflict violation",
+    "failure_mode": "constraint_failure",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "file_doc",
+    "mutation_taxon": "overbroad_share",
+    "mutation_class": "policy/recipient violation",
+    "failure_mode": "overbroad_share",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "file_doc",
+    "mutation_taxon": "participant_omission",
+    "mutation_class": "omission",
+    "failure_mode": "incomplete_target",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "file_doc",
+    "mutation_taxon": "policy_confirmation_missing",
+    "mutation_class": "policy/confirmation violation",
+    "failure_mode": "unsafe_completion",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "file_doc",
+    "mutation_taxon": "terminal_state_incomplete",
+    "mutation_class": "near-success state",
+    "failure_mode": "premature_stop",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "file_doc",
+    "mutation_taxon": "unrelated_side_effect",
+    "mutation_class": "side-effect violation",
+    "failure_mode": "collateral_change",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "file_doc",
+    "mutation_taxon": "wrong_folder",
+    "mutation_class": "task-specific semantic violation",
+    "failure_mode": "wrong_folder",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "sheet_db",
+    "mutation_taxon": "conflict_injection",
+    "mutation_class": "conflict violation",
+    "failure_mode": "constraint_failure",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "sheet_db",
+    "mutation_taxon": "formula_damage",
+    "mutation_class": "integrity violation",
+    "failure_mode": "formula_damage",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "sheet_db",
+    "mutation_taxon": "participant_omission",
+    "mutation_class": "omission",
+    "failure_mode": "incomplete_target",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "sheet_db",
+    "mutation_taxon": "policy_confirmation_missing",
+    "mutation_class": "policy/confirmation violation",
+    "failure_mode": "unsafe_completion",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "sheet_db",
+    "mutation_taxon": "terminal_state_incomplete",
+    "mutation_class": "near-success state",
+    "failure_mode": "premature_stop",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "sheet_db",
+    "mutation_taxon": "unrelated_side_effect",
+    "mutation_class": "side-effect violation",
+    "failure_mode": "collateral_change",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  },
+  {
+    "domain": "sheet_db",
+    "mutation_taxon": "wrong_export_asset",
+    "mutation_class": "task-specific semantic violation",
+    "failure_mode": "wrong_export_asset",
+    "num_tasks": 120,
+    "num_near_misses": 120
+  }
+]

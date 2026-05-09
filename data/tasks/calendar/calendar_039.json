@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_039",
-          "title": "Meridian hiring loop Approved focus block closure 39",
-          "participants": [
-            "morgan@example.com",
-            "riley@example.com"
-          ],
-          "duration_minutes": 50,
-          "time_range": "the protected hiring block next week",
+          "title": "Draft placeholder calendar_039",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "hiring review folder",
-          "attachments": [
-            "interview panel brief"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_focus_block",
           "scenario_id": "meridian_hiring",
           "risk_tier": "external",
           "approval_channel": "security_review",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "the protected hiring block next week"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_039",
-            "title": "Meridian hiring loop Approved focus block closure 39",
-            "participants": [
-              "morgan@example.com",
-              "riley@example.com"
-            ],
-            "duration_minutes": 50,
-            "time_range": "the protected hiring block next week",
+            "title": "Draft placeholder calendar_039",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "hiring review folder",
-            "attachments": [
-              "interview panel brief"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_focus_block",
             "scenario_id": "meridian_hiring",
             "risk_tier": "external",
             "approval_channel": "security_review",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "the protected hiring block next week"
           }
         },

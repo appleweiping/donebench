@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_030",
-          "title": "Juniper vendor review Approved focus block revision 30",
-          "participants": [
-            "fatima@example.com",
-            "owen@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder calendar_030",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_focus_block",
           "scenario_id": "juniper_vendor",
           "risk_tier": "restricted",
           "approval_channel": "manager_approval",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_030",
-            "title": "Juniper vendor review Approved focus block revision 30",
-            "participants": [
-              "fatima@example.com",
-              "owen@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder calendar_030",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_focus_block",
             "scenario_id": "juniper_vendor",
             "risk_tier": "restricted",
             "approval_channel": "manager_approval",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

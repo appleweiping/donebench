@@ -1,0 +1,13 @@
+model,agent,parse_status,n
+deepseek_v4_flash,direct_token_matched,fallback,2
+deepseek_v4_flash,direct_token_matched,parsed,498
+deepseek_v4_flash,plan_first_token_matched,fallback,12
+deepseek_v4_flash,plan_first_token_matched,parsed,488
+deepseek_v4_flash,spec_first_token_matched,fallback,23
+deepseek_v4_flash,spec_first_token_matched,parsed,477
+deepseek_v4_pro,direct_token_matched,fallback,13
+deepseek_v4_pro,direct_token_matched,parsed,487
+deepseek_v4_pro,plan_first_token_matched,fallback,14
+deepseek_v4_pro,plan_first_token_matched,parsed,486
+deepseek_v4_pro,spec_first_token_matched,fallback,57
+deepseek_v4_pro,spec_first_token_matched,parsed,443

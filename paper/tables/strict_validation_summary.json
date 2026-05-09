@@ -1,0 +1,46 @@
+{
+  "num_tasks": 600,
+  "num_strict_pass": 600,
+  "num_errors": 0,
+  "strict_pass_rate": 1.0,
+  "by_domain": {
+    "calendar": 120,
+    "crm_workflow": 120,
+    "email": 120,
+    "file_doc": 120,
+    "sheet_db": 120
+  },
+  "by_split": {
+    "dev": 100,
+    "test": 500
+  },
+  "domain_specific_coverage_by_domain": {
+    "calendar": 120,
+    "crm_workflow": 120,
+    "email": 120,
+    "file_doc": 120,
+    "sheet_db": 120
+  },
+  "mutation_taxon_counts": {
+    "conflict_injection": 600,
+    "extra_recipient": 120,
+    "formula_damage": 120,
+    "missing_resolution_artifact": 120,
+    "overbroad_share": 120,
+    "participant_omission": 600,
+    "policy_confirmation_missing": 600,
+    "terminal_state_incomplete": 600,
+    "unrelated_side_effect": 600,
+    "wrong_attachment": 120,
+    "wrong_duration": 120,
+    "wrong_export_asset": 120,
+    "wrong_folder": 120,
+    "wrong_owner": 120,
+    "wrong_time_window": 120
+  },
+  "outputs": {
+    "tasks": "reports\\strict_validation\\strict_validation_tasks.csv",
+    "errors": "reports\\strict_validation\\strict_validation_errors.json",
+    "summary": "reports\\strict_validation\\strict_validation_summary.json"
+  }
+}

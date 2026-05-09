@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_027",
-          "title": "Iris QBR prep Review packet summary 27",
-          "participants": [
-            "morgan@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "next Thursday midday",
+          "title": "Draft placeholder file_doc_027",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "account review folder",
-          "attachments": [
-            "QBR snapshot"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_share_packet",
           "scenario_id": "iris_qbr",
           "risk_tier": "external",
           "approval_channel": "policy_queue",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "next Thursday midday"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_027",
-            "title": "Iris QBR prep Review packet summary 27",
-            "participants": [
-              "morgan@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "next Thursday midday",
+            "title": "Draft placeholder file_doc_027",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "account review folder",
-            "attachments": [
-              "QBR snapshot"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_share_packet",
             "scenario_id": "iris_qbr",
             "risk_tier": "external",
             "approval_channel": "policy_queue",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "next Thursday midday"
           }
         },

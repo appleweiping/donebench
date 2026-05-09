@@ -4,9 +4,12 @@
 
 - `topconf_deepseek_toolplan_full` completed with 18,000 / 18,000 trials and 0 skipped rows.
 - `trusted_ai_audit_coverage_below_threshold` is cleared when the gate uses `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`: trusted model coverage is 100 / 100 tasks, or 1.0.
-- `ai_high_risk_rate_above_threshold` is cleared after repairing/regenerating the 100 human-audit queue tasks: the repaired structured audit reports 0 / 100 high-risk tasks.
+- `ai_high_risk_rate_above_threshold` is cleared after repairing/regenerating the corpus and auditing the 100 human-audit queue tasks: the repaired structured audit reports 0 / 100 high-risk tasks.
 - `ai_adjudication_queue_nonempty` is cleared after the repaired structured audit: 0 / 100 tasks require AI adjudication.
-- `reference_trace_final_state_causality` is cleared for the 100 human-audit queue tasks. A strict replay check confirmed every reference trace executes from `initial_state` to the declared `reference_solution.final_state`, the executed final state passes DoneSpec, and every near miss fails DoneSpec.
+- `reference_trace_final_state_causality` is cleared for the full 600-task corpus. Strict validation confirmed every reference trace executes from `initial_state` to the declared `reference_solution.final_state`, the executed final state passes DoneSpec, and every near miss fails DoneSpec.
+- `oracle_spec_reference` is complete on the repaired test split: 500 / 500 task success with 100% near-miss detection and 0% self-violation.
+- `token_matched_ablation` is complete for DeepSeek V4 Flash and V4 Pro: 3,000 / 3,000 trials, with no robust spec-first task-success advantage under matched prompt budget.
+- `near_miss_family_breakdown` is complete for the 18,000-trial full run: 126,000 expanded trial-by-near-miss rows across 15 mutation taxa and 10 fine failure families.
 - Parse transparency for the full run has no quarantined model-agent cells in `reports/full_runs/runs/topconf_deepseek_toolplan_full/parse/parse_transparency_by_model_agent.csv`.
 - `reports/full_run_readiness.json` now reports `full_run_ready = true` and no full-run blockers.
 - `paper_ready_audit_gate` is now true. The required paper audit gate is trusted model/structured audit coverage plus no high-risk/adjudication queue, not mandatory human double annotation.
@@ -16,7 +19,7 @@
 - No current audit-gate blocker remains.
 - Paper submission metadata is not available yet: target venue, page limit, author list, affiliations, and acknowledgements.
 - Paper-ready hosted-model claims still need provider/model identifiers, access dates, decoding settings, retry policy, trial counts, and cost/latency tables fixed in the paper text.
-- Token-matched prompting and pass^k reliability results exist as controls/pilots, but broad causal claims about spec-first should wait until the paper explicitly reports these controls beside the full run.
+- Cross-family model slices are configured but not claim-ready because GPT, Claude, and Gemini credentials were absent locally. A tiny DeepSeek-only smoke exists and must not be reported as a cross-family result.
 - A TeX-enabled environment is needed to compile the final PDF and check table/figure placement.
 - Residual quality caution, not a current gate blocker: the repaired queue remains structurally templated. It is executable and internally consistent, but future realism work should add more domain-native conditions beyond the current shared completion skeleton.
 - Optional calibration caution, not a gate blocker: `annotation/human_audit_queue.jsonl` still has 0 / 100 double-annotated rows. A 50-task balanced double annotation would strengthen semantic-validity claims, but many related agent benchmarks rely primarily on executable/functional grading rather than mandatory double annotation.

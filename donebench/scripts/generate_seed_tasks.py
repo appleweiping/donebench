@@ -940,6 +940,14 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
     initial_object = clone_json(final_object)
     initial_object["status"] = "draft"
     initial_object["exported"] = False
+    initial_object["participants"] = []
+    initial_object["title"] = f"Draft placeholder {task_id}"
+    initial_object["attachments"] = []
+    initial_object["folder"] = "incoming"
+    initial_object["owner"] = "unassigned@example.com"
+    initial_object["time_range"] = "unscheduled"
+    initial_object["duration_minutes"] = 0
+    initial_object["output_format"] = "draft"
     initial_state = {
         "objects": {obj: [initial_object]},
         "conflicts": [],

@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_022",
-          "title": "Harbor onboarding Revised document checkpoint 22",
-          "participants": [
-            "mia@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "next Wednesday afternoon",
+          "title": "Draft placeholder file_doc_022",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "customer onboarding folder",
-          "attachments": [
-            "onboarding packet"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_revise_document",
           "scenario_id": "harbor_onboarding",
           "risk_tier": "restricted",
           "approval_channel": "manager_approval",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "next Wednesday afternoon"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_022",
-            "title": "Harbor onboarding Revised document checkpoint 22",
-            "participants": [
-              "mia@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "next Wednesday afternoon",
+            "title": "Draft placeholder file_doc_022",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "customer onboarding folder",
-            "attachments": [
-              "onboarding packet"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_revise_document",
             "scenario_id": "harbor_onboarding",
             "risk_tier": "restricted",
             "approval_channel": "manager_approval",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "next Wednesday afternoon"
           }
         },

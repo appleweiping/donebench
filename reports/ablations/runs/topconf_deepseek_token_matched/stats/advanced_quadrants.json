@@ -1,0 +1,18 @@
+[
+  {
+    "quadrant": "bad_spec_bad_execution",
+    "count": 2008
+  },
+  {
+    "quadrant": "bad_spec_good_execution",
+    "count": 562
+  },
+  {
+    "quadrant": "good_spec_good_execution",
+    "count": 93
+  },
+  {
+    "quadrant": "good_spec_bad_execution",
+    "count": 337
+  }
+]

@@ -1,0 +1,7 @@
+model,agent,n_tasks,min_k,max_k,mean_k,task_success_pass_at_k_mean,donespec_valid_pass_at_k_mean,success_consistency_rate,success_inconsistency_rate
+deepseek_v4_flash,direct_token_matched,500,1,1,1.0,0.37,1.0,1.0,0.0
+deepseek_v4_flash,plan_first_token_matched,500,1,1,1.0,0.244,0.986,1.0,0.0
+deepseek_v4_flash,spec_first_token_matched,500,1,1,1.0,0.238,0.822,1.0,0.0
+deepseek_v4_pro,direct_token_matched,500,1,1,1.0,0.142,0.976,1.0,0.0
+deepseek_v4_pro,plan_first_token_matched,500,1,1,1.0,0.18,0.926,1.0,0.0
+deepseek_v4_pro,spec_first_token_matched,500,1,1,1.0,0.136,0.528,1.0,0.0

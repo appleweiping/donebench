@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_026",
-          "title": "Iris QBR prep Signed contract archive case note 26",
-          "participants": [
-            "priya@example.com"
-          ],
-          "duration_minutes": 25,
-          "time_range": "next Thursday midday",
+          "title": "Draft placeholder file_doc_026",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "account review folder",
-          "attachments": [
-            "QBR snapshot"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_archive_contract",
           "scenario_id": "iris_qbr",
           "risk_tier": "restricted",
           "approval_channel": "inline_confirmation",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "next Thursday midday"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_026",
-            "title": "Iris QBR prep Signed contract archive case note 26",
-            "participants": [
-              "priya@example.com"
-            ],
-            "duration_minutes": 25,
-            "time_range": "next Thursday midday",
+            "title": "Draft placeholder file_doc_026",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "account review folder",
-            "attachments": [
-              "QBR snapshot"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_archive_contract",
             "scenario_id": "iris_qbr",
             "risk_tier": "restricted",
             "approval_channel": "inline_confirmation",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "next Thursday midday"
           }
         },

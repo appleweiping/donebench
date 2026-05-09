@@ -266,16 +266,31 @@
   },
   "by_mutation_taxon": {
     "conflict_injection": 600,
+    "extra_recipient": 120,
+    "formula_damage": 120,
+    "missing_resolution_artifact": 120,
+    "overbroad_share": 120,
     "participant_omission": 600,
     "policy_confirmation_missing": 600,
     "terminal_state_incomplete": 600,
-    "unrelated_side_effect": 600
+    "unrelated_side_effect": 600,
+    "wrong_attachment": 120,
+    "wrong_duration": 120,
+    "wrong_export_asset": 120,
+    "wrong_folder": 120,
+    "wrong_owner": 120,
+    "wrong_time_window": 120
   },
   "by_mutation_class": {
     "conflict violation": 600,
+    "integrity violation": 120,
     "near-success state": 600,
     "omission": 600,
     "policy/confirmation violation": 600,
-    "side-effect violation": 600
+    "policy/recipient violation": 240,
+    "side-effect violation": 600,
+    "task-specific semantic violation": 600,
+    "workflow content violation": 120,
+    "workflow ownership violation": 120
   }
 }

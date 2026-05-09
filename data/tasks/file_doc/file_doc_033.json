@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_033",
-          "title": "Keystone billing cleanup Review packet approval 33",
-          "participants": [
-            "noah@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "the first open slot next week",
+          "title": "Draft placeholder file_doc_033",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "billing cleanup folder",
-          "attachments": [
-            "billing exception log"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_share_packet",
           "scenario_id": "keystone_billing",
           "risk_tier": "standard",
           "approval_channel": "inline_confirmation",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "the first open slot next week"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_033",
-            "title": "Keystone billing cleanup Review packet approval 33",
-            "participants": [
-              "noah@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "the first open slot next week",
+            "title": "Draft placeholder file_doc_033",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "billing cleanup folder",
-            "attachments": [
-              "billing exception log"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_share_packet",
             "scenario_id": "keystone_billing",
             "risk_tier": "standard",
             "approval_channel": "inline_confirmation",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "the first open slot next week"
           }
         },

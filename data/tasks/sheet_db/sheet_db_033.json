@@ -251,25 +251,21 @@
       "sheet_row": [
         {
           "id": "she_033",
-          "title": "Keystone billing cleanup Forecast row append approval 33",
-          "participants": [
-            "noah@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "the first open slot next week",
+          "title": "Draft placeholder sheet_db_033",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "billing cleanup folder",
-          "attachments": [
-            "billing exception log"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_append_forecast",
           "scenario_id": "keystone_billing",
           "risk_tier": "standard",
           "approval_channel": "inline_confirmation",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "the first open slot next week"
         }
       ]
@@ -1164,25 +1160,21 @@
           "found": true,
           "record": {
             "id": "she_033",
-            "title": "Keystone billing cleanup Forecast row append approval 33",
-            "participants": [
-              "noah@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "the first open slot next week",
+            "title": "Draft placeholder sheet_db_033",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "billing cleanup folder",
-            "attachments": [
-              "billing exception log"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_append_forecast",
             "scenario_id": "keystone_billing",
             "risk_tier": "standard",
             "approval_channel": "inline_confirmation",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "the first open slot next week"
           }
         },

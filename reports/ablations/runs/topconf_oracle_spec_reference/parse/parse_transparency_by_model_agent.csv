@@ -1,0 +1,2 @@
+model,agent,n,parsed,fallback,parse_rate,fallback_rate,mean_attempts,mean_latency_s,mean_prompt_tokens,mean_completion_tokens,mean_total_tokens,mean_prompt_chars,mean_raw_output_chars,repaired_rate,quarantine_recommended
+mock,oracle_spec,500,0,0,0.0,0.0,,,,,,,,0.0,False

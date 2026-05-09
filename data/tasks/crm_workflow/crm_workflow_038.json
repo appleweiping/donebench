@@ -251,25 +251,21 @@
       "crm_ticket": [
         {
           "id": "crm_038",
-          "title": "Meridian hiring loop Refund request closure status update 38",
-          "participants": [
-            "priya@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "the protected hiring block next week",
+          "title": "Draft placeholder crm_workflow_038",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "hiring review folder",
-          "attachments": [
-            "interview panel brief"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "crm_route_refund",
           "scenario_id": "meridian_hiring",
           "risk_tier": "restricted",
           "approval_channel": "manager_approval",
-          "output_format": "crm_resolution",
+          "output_format": "draft",
           "due_window": "the protected hiring block next week"
         }
       ]
@@ -1160,25 +1156,21 @@
           "found": true,
           "record": {
             "id": "crm_038",
-            "title": "Meridian hiring loop Refund request closure status update 38",
-            "participants": [
-              "priya@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "the protected hiring block next week",
+            "title": "Draft placeholder crm_workflow_038",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "hiring review folder",
-            "attachments": [
-              "interview panel brief"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "crm_route_refund",
             "scenario_id": "meridian_hiring",
             "risk_tier": "restricted",
             "approval_channel": "manager_approval",
-            "output_format": "crm_resolution",
+            "output_format": "draft",
             "due_window": "the protected hiring block next week"
           }
         },

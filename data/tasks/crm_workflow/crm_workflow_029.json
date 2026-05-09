@@ -251,25 +251,21 @@
       "crm_ticket": [
         {
           "id": "crm_029",
-          "title": "Juniper vendor review Refund request closure closure 29",
-          "participants": [
-            "lee@example.com"
-          ],
-          "duration_minutes": 50,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder crm_workflow_029",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "crm_route_refund",
           "scenario_id": "juniper_vendor",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "crm_resolution",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1160,25 +1156,21 @@
           "found": true,
           "record": {
             "id": "crm_029",
-            "title": "Juniper vendor review Refund request closure closure 29",
-            "participants": [
-              "lee@example.com"
-            ],
-            "duration_minutes": 50,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder crm_workflow_029",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "crm_route_refund",
             "scenario_id": "juniper_vendor",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "crm_resolution",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

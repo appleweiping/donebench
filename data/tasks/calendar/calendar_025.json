@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_025",
-          "title": "Iris QBR prep Stakeholder sync packet 25",
-          "participants": [
-            "alice@example.com",
-            "bob@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "next Thursday midday",
+          "title": "Draft placeholder calendar_025",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "account review folder",
-          "attachments": [
-            "QBR snapshot"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_schedule_sync",
           "scenario_id": "iris_qbr",
           "risk_tier": "standard",
           "approval_channel": "inline_confirmation",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "next Thursday midday"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_025",
-            "title": "Iris QBR prep Stakeholder sync packet 25",
-            "participants": [
-              "alice@example.com",
-              "bob@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "next Thursday midday",
+            "title": "Draft placeholder calendar_025",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "account review folder",
-            "attachments": [
-              "QBR snapshot"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_schedule_sync",
             "scenario_id": "iris_qbr",
             "risk_tier": "standard",
             "approval_channel": "inline_confirmation",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "next Thursday midday"
           }
         },

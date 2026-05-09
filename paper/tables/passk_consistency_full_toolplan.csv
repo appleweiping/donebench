@@ -1,0 +1,13 @@
+model,agent,n_tasks,min_k,max_k,mean_k,task_success_pass_at_k_mean,donespec_valid_pass_at_k_mean,success_consistency_rate,success_inconsistency_rate
+deepseek_chat,direct,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_chat,plan_first,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_chat,spec_first,500,3,3,3.0,0.0,0.374,1.0,0.0
+deepseek_reasoner,direct,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_reasoner,plan_first,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_reasoner,spec_first,500,3,3,3.0,0.118,0.996,0.886,0.11399999999999999
+deepseek_v4_flash,direct,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_v4_flash,plan_first,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_v4_flash,spec_first,500,3,3,3.0,0.144,0.996,0.86,0.14
+deepseek_v4_pro,direct,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_v4_pro,plan_first,500,3,3,3.0,0.0,1.0,1.0,0.0
+deepseek_v4_pro,spec_first,500,3,3,3.0,0.116,0.95,0.886,0.11399999999999999

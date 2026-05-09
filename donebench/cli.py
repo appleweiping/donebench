@@ -23,6 +23,8 @@ from donebench.scripts.full_run_readiness import write_full_run_readiness
 from donebench.scripts.generate_seed_tasks import generate
 from donebench.scripts.human_audit_queue import write_human_audit_queue
 from donebench.scripts.make_figures import make_figures as make_figures_impl
+from donebench.scripts.near_miss_breakdown import write_near_miss_breakdown
+from donebench.scripts.paper_refresh import refresh_paper_tables
 from donebench.scripts.parse_transparency import write_parse_transparency
 from donebench.scripts.pilot_findings import write_pilot_findings
 from donebench.scripts.quality_audit import quality_audit
@@ -35,6 +37,7 @@ from donebench.scripts.run_experiments import select_tasks
 from donebench.scripts.run_experiments import append_jsonl
 from donebench.scripts.run_experiments import write_manifest
 from donebench.scripts.run_experiments import write_jsonl
+from donebench.scripts.strict_validation import write_strict_validation
 
 app = typer.Typer(no_args_is_help=True)
 console = Console()
@@ -189,9 +192,25 @@ def advanced_stats_cmd(
     console.print(summary)
 
 
+@app.command("near-miss-breakdown")
+def near_miss_breakdown_cmd(
+    input_path: Path = typer.Argument(...),
+    output_dir: Path = typer.Argument(Path("reports/near_miss_breakdown")),
+    task_root: Path = typer.Option(Path("data/tasks"), "--task-root"),
+) -> None:
+    summary = write_near_miss_breakdown(input_path, output_dir, task_root=task_root)
+    console.print(summary)
+
+
 @app.command("quality-audit")
 def quality_audit_cmd(root: Path = typer.Argument(Path("data/tasks")), output_dir: Path = typer.Argument(Path("reports/quality"))) -> None:
     summary = quality_audit(root, output_dir)
+    console.print(summary)
+
+
+@app.command("strict-validation")
+def strict_validation_cmd(root: Path = typer.Argument(Path("data/tasks")), output_dir: Path = typer.Argument(Path("reports/strict_validation"))) -> None:
+    summary = write_strict_validation(root, output_dir)
     console.print(summary)
 
 
@@ -274,6 +293,18 @@ def pilot_findings_cmd(
     comparison_csv: Path = typer.Option(Path("paper/tables/pilot_comparison.csv"), "--comparison-csv"),
 ) -> None:
     summary = write_pilot_findings(output=output, comparison_csv=comparison_csv)
+    console.print(summary)
+
+
+@app.command("refresh-paper-tables")
+def refresh_paper_tables_cmd(
+    full_run_dir: Path = typer.Option(Path("reports/full_runs/runs/topconf_deepseek_toolplan_full"), "--full-run-dir"),
+    oracle_dir: Path = typer.Option(Path("reports/ablations/runs/topconf_oracle_spec_reference"), "--oracle-dir"),
+    strict_dir: Path = typer.Option(Path("reports/strict_validation"), "--strict-dir"),
+    near_miss_dir: Path = typer.Option(Path("reports/full_runs/runs/topconf_deepseek_toolplan_full/near_miss"), "--near-miss-dir"),
+    output_dir: Path = typer.Option(Path("paper/tables"), "--output-dir"),
+) -> None:
+    summary = refresh_paper_tables(full_run_dir, oracle_dir, strict_dir, near_miss_dir, output_dir)
     console.print(summary)
 
 

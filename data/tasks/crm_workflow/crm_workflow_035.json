@@ -251,25 +251,21 @@
       "crm_ticket": [
         {
           "id": "crm_035",
-          "title": "Lumen pilot handoff Refund request closure packet 35",
-          "participants": [
-            "harper@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "the earliest conflict-free slot next week",
+          "title": "Draft placeholder crm_workflow_035",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "pilot handoff folder",
-          "attachments": [
-            "pilot handoff note"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "crm_route_refund",
           "scenario_id": "lumen_pilot",
           "risk_tier": "external",
           "approval_channel": "policy_queue",
-          "output_format": "crm_resolution",
+          "output_format": "draft",
           "due_window": "the earliest conflict-free slot next week"
         }
       ]
@@ -1160,25 +1156,21 @@
           "found": true,
           "record": {
             "id": "crm_035",
-            "title": "Lumen pilot handoff Refund request closure packet 35",
-            "participants": [
-              "harper@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "the earliest conflict-free slot next week",
+            "title": "Draft placeholder crm_workflow_035",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "pilot handoff folder",
-            "attachments": [
-              "pilot handoff note"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "crm_route_refund",
             "scenario_id": "lumen_pilot",
             "risk_tier": "external",
             "approval_channel": "policy_queue",
-            "output_format": "crm_resolution",
+            "output_format": "draft",
             "due_window": "the earliest conflict-free slot next week"
           }
         },

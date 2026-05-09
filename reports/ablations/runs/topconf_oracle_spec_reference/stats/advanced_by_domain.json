@@ -1,0 +1,57 @@
+[
+  {
+    "domain": "calendar",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 100,
+    "cc_f1": 1.0,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  },
+  {
+    "domain": "crm_workflow",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 100,
+    "cc_f1": 0.9866666666666666,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  },
+  {
+    "domain": "email",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 100,
+    "cc_f1": 1.0,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  },
+  {
+    "domain": "file_doc",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 100,
+    "cc_f1": 1.0,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  },
+  {
+    "domain": "sheet_db",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 100,
+    "cc_f1": 0.9619607843137256,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  }
+]

@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_022",
-          "title": "Harbor onboarding Stakeholder sync checkpoint 22",
-          "participants": [
-            "mia@example.com",
-            "ethan@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "next Wednesday afternoon",
+          "title": "Draft placeholder calendar_022",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "customer onboarding folder",
-          "attachments": [
-            "onboarding packet"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_schedule_sync",
           "scenario_id": "harbor_onboarding",
           "risk_tier": "restricted",
           "approval_channel": "manager_approval",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "next Wednesday afternoon"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_022",
-            "title": "Harbor onboarding Stakeholder sync checkpoint 22",
-            "participants": [
-              "mia@example.com",
-              "ethan@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "next Wednesday afternoon",
+            "title": "Draft placeholder calendar_022",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "customer onboarding folder",
-            "attachments": [
-              "onboarding packet"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_schedule_sync",
             "scenario_id": "harbor_onboarding",
             "risk_tier": "restricted",
             "approval_channel": "manager_approval",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "next Wednesday afternoon"
           }
         },

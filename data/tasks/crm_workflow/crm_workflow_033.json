@@ -251,25 +251,21 @@
       "crm_ticket": [
         {
           "id": "crm_033",
-          "title": "Keystone billing cleanup Reopened SLA case approval 33",
-          "participants": [
-            "noah@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "the first open slot next week",
+          "title": "Draft placeholder crm_workflow_033",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "billing cleanup folder",
-          "attachments": [
-            "billing exception log"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "crm_reopen_sla",
           "scenario_id": "keystone_billing",
           "risk_tier": "standard",
           "approval_channel": "inline_confirmation",
-          "output_format": "crm_resolution",
+          "output_format": "draft",
           "due_window": "the first open slot next week"
         }
       ]
@@ -1160,25 +1156,21 @@
           "found": true,
           "record": {
             "id": "crm_033",
-            "title": "Keystone billing cleanup Reopened SLA case approval 33",
-            "participants": [
-              "noah@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "the first open slot next week",
+            "title": "Draft placeholder crm_workflow_033",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "billing cleanup folder",
-            "attachments": [
-              "billing exception log"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "crm_reopen_sla",
             "scenario_id": "keystone_billing",
             "risk_tier": "standard",
             "approval_channel": "inline_confirmation",
-            "output_format": "crm_resolution",
+            "output_format": "draft",
             "due_window": "the first open slot next week"
           }
         },

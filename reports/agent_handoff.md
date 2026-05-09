@@ -25,9 +25,27 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
 - Full-run readiness was first refreshed on 2026-05-09 using `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`, which cleared trusted coverage. A later GPT-5.5 targeted model-assisted audit was merged into `reports/audit_deepseek_gpt55_merged/`; that merge improved trusted coverage to 1.0 but identified 23 high-risk tasks.
 - A requested GPT-5.2 full-domain audit was attempted on 2026-05-09, but all five domain workers failed before producing opinions because the model route returned `503 Service Unavailable: No available channel for model gpt-5.2`. The failed-attempt note is in `reports/audit_gpt52_full_domain/README.md`.
 - A separate full-domain model-assisted audit was completed in `reports/audit_full_domain_model_assisted/` using the current available strong model path. It covered 100 / 100 human-audit queue tasks and marked 100 / 100 high risk, mainly because reference traces inspected absent target objects and then produced fully populated final states through status-only patches.
-- The 100 human-audit queue task artifacts were repaired/regenerated on 2026-05-09. The repaired source generator now creates initial target records, reference traces replay causally into final states, DoneSpec includes task/domain-specific predicates, and near misses include domain-specific semantic failures.
+- The full 600-task corpus was repaired/regenerated on 2026-05-09. The repaired source generator now creates initial target records, reference traces replay causally into final states, DoneSpec includes task/domain-specific predicates, and near misses include domain-specific semantic failures.
+- Full-corpus strict validation now passes:
+  - Report: `reports/strict_validation/`
+  - `600 / 600` strict pass
+  - Reference trace replay reaches `reference_solution.final_state`
+  - Gold DoneSpec accepts the executed reference final state
+  - All near misses are rejected
+  - Every domain has domain-specific coverage
 - Current structured repair audit output: `reports/audit_repaired_human_queue_structured/`.
 - Current `reports/full_run_readiness.json` uses the repaired structured audit and reports `full_run_ready: true`.
+- Oracle reference replay on the repaired test split is complete:
+  - Results: `results/runs/topconf_oracle_spec_reference/trials.jsonl`
+  - Reports: `reports/ablations/runs/topconf_oracle_spec_reference/`
+  - `500 / 500` task success, near-miss detection `100%`, self-violation `0%`
+- DeepSeek token-matched ablation is complete:
+  - Results: `results/runs/topconf_deepseek_token_matched/trials.jsonl`
+  - Reports: `reports/ablations/runs/topconf_deepseek_token_matched/`
+  - `3,000 / 3,000` trials completed
+- Near-miss family breakdown is complete:
+  - Report: `reports/full_runs/runs/topconf_deepseek_toolplan_full/near_miss/`
+  - `18,000` trial rows expanded to `126,000` trial-by-near-miss rows across `15` mutation taxa and `10` fine failure families.
 
 ## Main Empirical Result So Far
 
@@ -117,31 +135,28 @@ Dominant finding: across the human-audit queue, the target object is frequently 
 
 This audit is now historical evidence for the generator bug that was repaired in the next step. Do not use it as the current readiness gate input unless intentionally reproducing the pre-repair failure.
 
-## Repaired Human-Audit Queue Tasks
+## Repaired Corpus and Queue Tasks
 
 Completed on 2026-05-09.
 
 Changed task generator:
 
 - `donebench/scripts/generate_seed_tasks.py`
-- `donebench/envs/base.py`
+- `donebench/agents/oracle_spec_agent.py` for oracle reference replay from the stored reference trace
 
 Regenerated task files:
 
-- `data/tasks/calendar/calendar_021.json` through `calendar_040.json`
-- `data/tasks/crm_workflow/crm_workflow_021.json` through `crm_workflow_040.json`
-- `data/tasks/email/email_021.json` through `email_040.json`
-- `data/tasks/file_doc/file_doc_021.json` through `file_doc_040.json`
-- `data/tasks/sheet_db/sheet_db_021.json` through `sheet_db_040.json`
+- All `600` files under `data/tasks/{calendar,crm_workflow,email,file_doc,sheet_db}/`.
 
 Verification already run:
 
 ```powershell
 C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli validate data\tasks
 C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli audit-tasks data\tasks
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli strict-validation data\tasks reports\strict_validation
 ```
 
-Both passed. A stricter replay check over all 100 repaired tasks also passed with `errors = 0`: reference traces replay from `initial_state` to `reference_solution.final_state`, DoneSpec passes on the executed final state, and all near misses fail DoneSpec.
+All passed. The strict replay check over all `600` repaired tasks reports `num_errors = 0`: reference traces replay from `initial_state` to `reference_solution.final_state`, DoneSpec passes on the executed final state, all near misses fail DoneSpec, and every domain has domain-specific coverage.
 
 Current repaired audit:
 
@@ -192,9 +207,9 @@ Completion boundary: `pytest`, `make smoke`, and `make repro-smoke` pass in a co
 
 ### M1: Topconf-4 Dataset and Tool Surface
 
-Status: repaired for the 100-task human-audit queue. The 600-task dataset exists with typed tool surfaces, preconditions, side effects, near misses, and reference traces; the known reference-trace/final-state causality issue in the queue tasks has been regenerated and verified.
+Status: complete for the repaired 600-task corpus. The dataset exists with typed tool surfaces, preconditions, side effects, near misses, and reference traces; the known reference-trace/final-state causality issue has been regenerated and verified across the full corpus.
 
-Completion boundary: keep the repaired generator and queue files under version control. Before paper freeze, optionally extend the strict replay audit beyond the 100 queue tasks to all 600 tasks if the paper relies on the full generated corpus rather than only the audited queue.
+Completion boundary: keep the repaired generator, all regenerated task files, and `reports/strict_validation/` under version control. If tasks are regenerated again, rerun validation, audit, strict validation, oracle reference replay, paper-table refresh, and readiness.
 
 ### M2: Full DeepSeek Tool-Plan Execution
 
@@ -216,7 +231,7 @@ Completion boundary: if pursued, at least 50 balanced tasks are double annotated
 
 ### M5: Paper Claim Freeze
 
-Status: pending. Paper sections must be aligned to the tool-plan full run, audit status, provider identifiers, access dates, decoding parameters, trial counts, and cost/latency summaries.
+Status: mostly aligned. `paper/sections/results.tex` now reports the 18,000-trial DeepSeek tool-plan full run, repaired-corpus strict validation, oracle reference replay, token-matched DeepSeek ablation, and near-miss family breakdown. Cross-family slices are configured but not claim-ready without GPT/Claude/Gemini credentials.
 
 Completion boundary: no section relies on historical parsed rows as official execution claims, and every empirical claim maps to a tracked artifact path.
 

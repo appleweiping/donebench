@@ -69,8 +69,9 @@ def test_tool_plan_executor_does_not_leak_reference_target_on_inspect():
     task = load_task(Path("data/tasks/email/email_001.json"))
     env = make_env(task.domain, task.initial_state)
     final_state, trace = env.execute_tool_plan(task, [ToolCall(action="email.inspect_state", args={"id": "ema_001"})])
-    assert trace[0]["observation"]["found"] is False
-    assert trace[0]["observation"]["record"] is None
+    assert trace[0]["observation"]["found"] is True
+    assert trace[0]["observation"]["record"]["status"] == "draft"
+    assert trace[0]["observation"]["record"]["title"].startswith("Draft placeholder")
     assert final_state == task.initial_state
 
 
@@ -87,7 +88,8 @@ def test_tool_plan_executor_partial_patch_does_not_autofill_gold_fields():
     final_state, trace = env.execute_tool_plan(task, calls)
     score = score_phase2(task, task.gold_donespec, final_state, trace)
     assert score["task_success"] is False
-    assert final_state["objects"]["email_message"][0] == {"status": "sent", "id": "ema_001"}
+    assert final_state["objects"]["email_message"][0]["status"] == "sent"
+    assert final_state["objects"]["email_message"][0]["title"].startswith("Draft placeholder")
 
 
 def test_tool_plan_executor_enforces_confirmation_preconditions():

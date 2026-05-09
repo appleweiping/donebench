@@ -251,25 +251,21 @@
       "email_message": [
         {
           "id": "ema_022",
-          "title": "Harbor onboarding Weekly summary checkpoint 22",
-          "participants": [
-            "mia@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "next Wednesday afternoon",
+          "title": "Draft placeholder email_022",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "customer onboarding folder",
-          "attachments": [
-            "onboarding packet"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "email_weekly_summary",
           "scenario_id": "harbor_onboarding",
           "risk_tier": "restricted",
           "approval_channel": "manager_approval",
-          "output_format": "email_thread",
+          "output_format": "draft",
           "due_window": "next Wednesday afternoon"
         }
       ]
@@ -1167,25 +1163,21 @@
           "found": true,
           "record": {
             "id": "ema_022",
-            "title": "Harbor onboarding Weekly summary checkpoint 22",
-            "participants": [
-              "mia@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "next Wednesday afternoon",
+            "title": "Draft placeholder email_022",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "customer onboarding folder",
-            "attachments": [
-              "onboarding packet"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "email_weekly_summary",
             "scenario_id": "harbor_onboarding",
             "risk_tier": "restricted",
             "approval_channel": "manager_approval",
-            "output_format": "email_thread",
+            "output_format": "draft",
             "due_window": "next Wednesday afternoon"
           }
         },

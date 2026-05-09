@@ -5,7 +5,7 @@ Experiments measure criterion inference, spec-first execution, own-spec violatio
 
 \subsection{Planned Evaluation Matrix}
 
-The artifact separates deterministic smoke tests from API-backed paper runs. Smoke tests are intended for every checkout and continuous integration. The current live-model paper run uses the \texttt{topconf\_deepseek\_core} suite on the topconf-4 test split.
+The artifact separates deterministic smoke tests from API-backed paper runs. Smoke tests are intended for every checkout and continuous integration. The current completed live-model paper run uses the \texttt{topconf\_deepseek\_toolplan\_full} suite on the topconf-4 test split.
 
 \begin{table}[h]
 \centering
@@ -14,8 +14,10 @@ The artifact separates deterministic smoke tests from API-backed paper runs. Smo
 Suite & Split & Agents & Models \\
 \midrule
 Smoke & dev & Heuristic, Spec-first & Mock \\
-Topconf DeepSeek core & test & Direct, Plan-first, Spec-first & DeepSeek Flash, DeepSeek Pro \\
-Planned cross-family API & test & Direct, Plan-first, Spec-first, Oracle-spec & GPT, Claude, Gemini, OpenRouter-compatible \\
+DeepSeek tool-plan full & test & Direct, Plan-first, Spec-first & Chat, Reasoner, V4 Flash, V4 Pro \\
+Oracle reference upper bound & test & Oracle-spec & Mock/reference replay \\
+Token-matched DeepSeek & test & Token-matched Direct, Plan-first, Spec-first & V4 Flash, V4 Pro \\
+Cross-family slice & test & Direct, Plan-first, Spec-first & DeepSeek, GPT, Claude, Gemini \\
 \bottomrule
 \end{tabular}
 \caption{Experiment suites mirrored by \texttt{configs/experiments.yaml}.}
@@ -23,7 +25,7 @@ Planned cross-family API & test & Direct, Plan-first, Spec-first, Oracle-spec & 
 
 \subsection{Baselines and Ablations}
 
-Direct runs execute with only implicit completion checks. Plan-first elicits action order and dependencies before acting. Spec-first explicitly elicits completion criteria and a DoneSpec before acting. All three protocols feed a structured tool-call plan into the same environment executor. Oracle-spec receives the gold verifier and estimates the execution gap after specification ambiguity is removed. Mock and oracle-backed paths are treated as harness sanity checks; paper claims should use live-model rows and report token-matched controls before attributing raw task-success differences to specification grounding.
+Direct runs execute with only implicit completion checks. Plan-first elicits action order and dependencies before acting. Spec-first explicitly elicits completion criteria and a DoneSpec before acting. All three protocols feed a structured tool-call plan into the same environment executor. Oracle-spec replays the repaired gold reference trace with the gold verifier and is treated as a reference upper bound for corpus validity, not as a live model capability estimate. Paper claims should use live-model rows and report token-matched controls before attributing raw task-success differences to specification grounding.
 
 \begin{table}[h]
 \centering
@@ -31,12 +33,12 @@ Direct runs execute with only implicit completion checks. Plan-first elicits act
 \toprule
 Ablation & Purpose & Paper status \\
 \midrule
-Direct vs. Plan-first & Separate planning from completion semantics & DeepSeek core reported \\
-Plan-first vs. Spec-first & Test the value of explicit done criteria & DeepSeek core reported \\
-Spec-first vs. Oracle-spec & Estimate residual execution failure & Harness only; live run pending \\
-Near-miss mutation families & Stress-test verifier robustness & Reported in failure taxonomy \\
-Token-matched prompting & Control for prompt length & DeepSeek pilot reported \\
-Repeated-attempt pass@k & Estimate reliability rather than one-shot success & DeepSeek 5-trial pilot reported \\
+Direct vs. Plan-first & Separate planning from completion semantics & DeepSeek full reported \\
+Plan-first vs. Spec-first & Test the value of explicit done criteria & DeepSeek full reported \\
+Spec-first vs. Oracle reference & Confirm repaired corpus upper bound & Reported as reference replay \\
+Near-miss mutation families & Stress-test verifier robustness & Full breakdown reported \\
+Token-matched prompting & Control for prompt length & Full DeepSeek run reported \\
+Repeated-attempt pass@k & Estimate reliability rather than one-shot success & Pass@3 reported from full run \\
 Free-form criterion normalization & Test DSL sensitivity & Future paper run \\
 \bottomrule
 \end{tabular}

@@ -1,0 +1,13 @@
+model,agent,n,precondition_failure_rate,unknown_tool_rate,permission_failure_rate,side_effect_failure_rate,no_confirmation_rate
+deepseek_chat,direct,1500,0.0,0.0,0.0,0.0,0.6453333333333333
+deepseek_chat,plan_first,1500,0.0,0.0,0.0,0.0,0.9906666666666667
+deepseek_chat,spec_first,1500,0.018,0.0,0.0,0.0,0.9813333333333333
+deepseek_reasoner,direct,1500,0.0,0.0,0.0,0.0,0.6746666666666666
+deepseek_reasoner,plan_first,1500,0.0,0.0,0.0,0.0,0.7993333333333333
+deepseek_reasoner,spec_first,1500,0.0,0.0,0.0,0.0,0.7573333333333333
+deepseek_v4_flash,direct,1500,0.0,0.0,0.0,0.0,0.6453333333333333
+deepseek_v4_flash,plan_first,1500,0.0,0.0,0.0,0.0,0.8013333333333333
+deepseek_v4_flash,spec_first,1500,0.0,0.0,0.0,0.0,0.7413333333333333
+deepseek_v4_pro,direct,1500,0.0006666666666666666,0.0,0.0,0.0,0.7986666666666666
+deepseek_v4_pro,plan_first,1500,0.0,0.0,0.0,0.0,0.88
+deepseek_v4_pro,spec_first,1500,0.0006666666666666666,0.0,0.0,0.0,0.794

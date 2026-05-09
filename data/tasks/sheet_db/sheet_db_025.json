@@ -251,25 +251,21 @@
       "sheet_row": [
         {
           "id": "she_025",
-          "title": "Iris QBR prep Account row review packet 25",
-          "participants": [
-            "alice@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "next Thursday midday",
+          "title": "Draft placeholder sheet_db_025",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "account review folder",
-          "attachments": [
-            "QBR snapshot"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_update_account",
           "scenario_id": "iris_qbr",
           "risk_tier": "standard",
           "approval_channel": "inline_confirmation",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "next Thursday midday"
         }
       ]
@@ -1164,25 +1160,21 @@
           "found": true,
           "record": {
             "id": "she_025",
-            "title": "Iris QBR prep Account row review packet 25",
-            "participants": [
-              "alice@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "next Thursday midday",
+            "title": "Draft placeholder sheet_db_025",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "account review folder",
-            "attachments": [
-              "QBR snapshot"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_update_account",
             "scenario_id": "iris_qbr",
             "risk_tier": "standard",
             "approval_channel": "inline_confirmation",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "next Thursday midday"
           }
         },

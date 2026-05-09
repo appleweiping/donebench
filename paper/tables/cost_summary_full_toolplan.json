@@ -1,0 +1,7 @@
+{
+  "calls": 18000.0,
+  "input_tokens": 8297769.0,
+  "output_tokens": 23084851.0,
+  "estimated_cost_usd": 13.469087665000002,
+  "latency_s": 490355.4030302004
+}

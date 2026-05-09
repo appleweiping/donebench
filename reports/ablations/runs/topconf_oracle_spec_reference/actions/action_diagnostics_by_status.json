@@ -1,0 +1,10 @@
+[
+  {
+    "model":"mock",
+    "agent":"oracle_spec",
+    "execution_mode":"tool_plan_executor",
+    "spec_parse_status":"missing",
+    "action_parse_status":"oracle_reference_trace",
+    "n":500
+  }
+]

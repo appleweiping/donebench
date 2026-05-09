@@ -1,0 +1,18 @@
+{
+  "source": "results\\runs\\topconf_deepseek_toolplan_full\\trials.jsonl",
+  "tables": {
+    "high_spec_low_verifier": 13,
+    "valid_spec_self_violation": 25,
+    "bad_spec_good_execution": 25,
+    "good_spec_bad_execution": 25,
+    "invalid_donespec": 25,
+    "invalid_donespec_taxonomy": 2,
+    "policy_confirmation_side_effect_taxonomy": 24,
+    "policy_confirmation": 25,
+    "side_effect": 25
+  },
+  "formats": [
+    "csv",
+    "json"
+  ]
+}

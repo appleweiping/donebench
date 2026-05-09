@@ -251,25 +251,21 @@
       "email_message": [
         {
           "id": "ema_037",
-          "title": "Meridian hiring loop Weekly summary summary 37",
-          "participants": [
-            "alice@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "the protected hiring block next week",
+          "title": "Draft placeholder email_037",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "hiring review folder",
-          "attachments": [
-            "interview panel brief"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "email_weekly_summary",
           "scenario_id": "meridian_hiring",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "email_thread",
+          "output_format": "draft",
           "due_window": "the protected hiring block next week"
         }
       ]
@@ -1167,25 +1163,21 @@
           "found": true,
           "record": {
             "id": "ema_037",
-            "title": "Meridian hiring loop Weekly summary summary 37",
-            "participants": [
-              "alice@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "the protected hiring block next week",
+            "title": "Draft placeholder email_037",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "hiring review folder",
-            "attachments": [
-              "interview panel brief"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "email_weekly_summary",
             "scenario_id": "meridian_hiring",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "email_thread",
+            "output_format": "draft",
             "due_window": "the protected hiring block next week"
           }
         },

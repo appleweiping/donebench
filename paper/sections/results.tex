@@ -1,5 +1,5 @@
 \section{Results}
-We report the first parsed topconf-4 live-model run on the held-out test split. The run covers 500 tasks, 3 agent protocols, and 2 DeepSeek-family models, for 3000 API trials over 3000 near-miss verification instances per model-agent aggregate. Raw JSONL traces are excluded from the repository by default; paper-ready aggregates are exported under \texttt{reports/stats\_topconf4\_parsed/}, \texttt{reports/failures\_topconf4\_parsed/}, \texttt{reports/costs\_topconf4\_parsed/}, and \texttt{reports/parse\_topconf4\_parsed/}.
+The current full tool-plan run covers the held-out topconf-4 test split with 500 tasks, 3 agent protocols, 4 DeepSeek-family models, and 3 trials per model-agent-task cell, for 18,000 API trials. Each model-agent cell has \(n=1500\) trials. The run predates the later full-corpus reference-artifact repair, so we treat it as the main completed model run for analyzing the specification-to-execution gap while separately reporting repaired-corpus strict validation and oracle-reference results. Artifacts are under \texttt{reports/full\_runs/runs/topconf\_deepseek\_toolplan\_full/}; refreshed paper tables are under \texttt{paper/tables/}.
 
 \begin{table}[h]
 \centering
@@ -7,20 +7,24 @@ We report the first parsed topconf-4 live-model run on the held-out test split. 
 \toprule
 Model & Agent & Parse & CC-F1 & DoneSpec valid & Near-miss detect & Task success \\
 \midrule
-DeepSeek Flash & Direct & 99.2 & 43.7 & 99.8 & 59.9 & 0.0 \\
-DeepSeek Flash & Plan-first & 97.4 & 47.6 & 99.8 & 59.9 & 0.0 \\
-DeepSeek Flash & Spec-first & 94.4 & 56.7 & 84.4 & 50.6 & 25.4 \\
-DeepSeek Pro & Direct & 88.8 & 60.0 & 95.4 & 57.2 & 0.0 \\
-DeepSeek Pro & Plan-first & 95.0 & 55.3 & 93.6 & 56.2 & 0.0 \\
-DeepSeek Pro & Spec-first & 63.6 & 68.0 & 73.8 & 44.3 & 8.4 \\
+DeepSeek Chat & Direct & 100.0 & 37.1 & 100.0 & 60.0 & 0.0 \\
+DeepSeek Chat & Plan-first & 100.0 & 43.9 & 99.9 & 59.9 & 0.0 \\
+DeepSeek Chat & Spec-first & 100.0 & 52.6 & 19.9 & 12.0 & 0.0 \\
+DeepSeek Reasoner & Direct & 95.7 & 45.7 & 100.0 & 60.0 & 0.0 \\
+DeepSeek Reasoner & Plan-first & 98.5 & 47.3 & 99.3 & 59.6 & 0.0 \\
+DeepSeek Reasoner & Spec-first & 94.9 & 56.4 & 82.9 & 49.7 & 5.2 \\
+DeepSeek V4 Flash & Direct & 98.9 & 44.5 & 99.9 & 60.0 & 0.0 \\
+DeepSeek V4 Flash & Plan-first & 98.2 & 47.9 & 99.6 & 59.8 & 0.0 \\
+DeepSeek V4 Flash & Spec-first & 94.9 & 56.7 & 84.2 & 50.5 & 6.0 \\
+DeepSeek V4 Pro & Direct & 91.9 & 57.1 & 96.3 & 57.8 & 0.0 \\
+DeepSeek V4 Pro & Plan-first & 93.8 & 56.6 & 91.3 & 54.8 & 0.0 \\
+DeepSeek V4 Pro & Spec-first & 71.9 & 65.0 & 66.2 & 39.7 & 4.5 \\
 \bottomrule
 \end{tabular}
-\caption{Main topconf-4 parsed results. Values are percentages; bootstrap confidence intervals are in \texttt{paper/tables/main\_results.csv}.}
+\caption{Full DeepSeek tool-plan results. Values are percentages; bootstrap confidence intervals are in \texttt{paper/tables/main\_results\_full\_toolplan.csv}.}
 \end{table}
 
-The central pattern is that explicit specification construction changes the execution channel: spec-first is the only protocol that achieves non-zero task success in this run, even though direct and plan-first often produce syntactically valid DoneSpecs. This supports the DoneBench framing that completion-semantics construction, near-miss rejection, and execution under one's own criteria are separable capabilities rather than one undifferentiated ``agent success'' number.
-
-DeepSeek Pro obtains higher criterion-completion F1 than Flash, especially under spec-first (68.0 vs. 56.7), but lower spec-first task success (8.4 vs. 25.4) and lower near-miss detection (44.3 vs. 50.6). We treat this as an important failure mode rather than a leaderboard claim: a model can articulate more gold-like criteria while producing brittle, overstrict, or poorly operationalized specs that hurt execution.
+The central pattern is a specification-to-execution gap. Spec-first improves criterion completion F1 for every model family member, but nonzero task success remains limited and low. Direct and plan-first produce no successful task completions despite high syntactic DoneSpec validity. Spec-first reaches 6.0\% success for V4 Flash, 5.2\% for Reasoner, 4.5\% for V4 Pro, and 0.0\% for Chat. DeepSeek V4 Pro obtains higher spec-first CC-F1 than V4 Flash (65.0 vs. 56.7), but lower spec-first task success (4.5 vs. 6.0) and lower near-miss detection (39.7 vs. 50.5). We therefore avoid leaderboard claims: a model can articulate more gold-like criteria while producing brittle or poorly operationalized verifiers.
 
 \begin{table}[h]
 \centering
@@ -28,24 +32,30 @@ DeepSeek Pro obtains higher criterion-completion F1 than Flash, especially under
 \toprule
 Domain & Flash success & Pro success & Flash CC-F1 & Pro CC-F1 \\
 \midrule
-Calendar & 13.0 & 11.0 & 49.2 & 61.5 \\
-Email & 14.0 & 5.0 & 57.7 & 68.2 \\
-Sheet/database & 57.0 & 15.0 & 57.7 & 67.4 \\
-CRM/workflow & 7.0 & 2.0 & 60.8 & 68.9 \\
-File/document & 36.0 & 9.0 & 57.9 & 74.2 \\
+Calendar & 3.0 & 2.3 & 49.2 & 59.5 \\
+Email & 13.0 & 10.0 & 58.3 & 64.3 \\
+Sheet/database & 0.0 & 0.0 & 60.1 & 67.1 \\
+CRM/workflow & 14.0 & 9.7 & 59.4 & 66.2 \\
+File/document & 0.0 & 0.3 & 56.7 & 68.0 \\
 \bottomrule
 \end{tabular}
-\caption{Spec-first domain-stratified results. Values are percentages; full domain tables are in \texttt{paper/tables/domain\_results\_spec\_first.csv}.}
+\caption{Spec-first domain-stratified V4 results from the full tool-plan run. Values are percentages; full domain tables are in \texttt{paper/tables/domain\_results\_full\_toolplan.csv}.}
 \end{table}
+
+\subsection{Reliability and Controls}
+
+The 3-trial full run allows pass@3 reliability analysis. For spec-first, pass@3 is higher than pass@1 but still low: 14.4\% for V4 Flash, 11.8\% for Reasoner, 11.6\% for V4 Pro, and 0.0\% for Chat. Success consistency is 86.0--88.6\% for the nonzero spec-first cells, which mostly reflects repeated failure rather than stable success. A repaired-corpus oracle-reference run solves 500 / 500 test tasks with CC-F1 99.0\%, near-miss detection 100.0\%, task success 100.0\%, and self-violation 0.0\%, confirming that the repaired gold references and graders are executable.
+
+The token-matched DeepSeek ablation runs one trial per task with Direct, Plan-first, and Spec-first prompts padded to the same 3,200-character specification budget. Under this control, task success is no longer a spec-first advantage: V4 Flash reaches 37.0\% with Direct, 24.4\% with Plan-first, and 23.8\% with Spec-first; V4 Pro reaches 14.2\%, 18.0\%, and 13.6\%, respectively. Spec-first still has the highest CC-F1 in both models (61.9 for Flash and 65.3 for Pro), but the execution channel is sensitive to prompt/action budget and output reliability. The token-matched parse gate remains acceptable overall (95.9\% parsed), though Pro spec-first is the weakest cell at 88.6\% parse and 11.4\% fallback. Cross-family slices are configured in \texttt{configs/experiments.yaml}; they require GPT, Claude, and Gemini credentials before they can support cross-provider claims.
 
 \subsection{Parse Transparency}
 
-The official parsed run uses the compressed prompt and JSON repair path. Overall, 2692 of 3000 calls parsed cleanly (89.7\%); the remaining 308 rows used the deterministic fallback parser. Parse rate varies substantially by model and protocol, with DeepSeek Pro spec-first the main weak cell at 63.6\%. We therefore report parse transparency alongside model scores and avoid treating fallback-heavy cells as final model-capability estimates. The parse table is exported to \texttt{paper/tables/parse\_transparency.csv}.
+The full tool-plan run parsed 17,080 of 18,000 calls cleanly (94.9\%); 920 rows used deterministic repair or fallback paths. The weakest cell is DeepSeek V4 Pro spec-first, with 71.9\% parse and 28.1\% fallback. We report parse transparency beside model scores and avoid treating fallback-heavy cells as clean capability estimates. The parse table is exported to \texttt{paper/tables/parse\_transparency\_full\_toolplan.csv}.
 
-\subsection{Pilot Controls}
+\subsection{Task and Near-Miss Validation}
 
-Before launching a larger full run, we ran three focused DeepSeek pilots: a 50-task stratified tool-plan pilot, a 50-task token-matched pilot, and a 50-task 5-trial replicate pilot. The generated synthesis is in \texttt{reports/pilot\_findings.md}, with table snapshots in \texttt{paper/tables/pilot\_comparison.csv}, \texttt{paper/tables/pilot\_domain\_patterns.csv}, and \texttt{paper/tables/pilot\_parse\_caveats.csv}. These pilots show that token budget is a real confound for raw task success, while repeated attempts reveal a reliability signal: spec-first reaches non-zero pass@5 but remains inconsistent. We therefore treat the pilots as evidence for completion-semantics and reliability analysis, not as a final leaderboard.
+After the full run, a stricter audit found reference-artifact issues outside the first repaired queue, so we regenerated the full 600-task corpus with the repaired generator. Strict validation now reports 600 / 600 tasks passing reference replay, DoneSpec acceptance on the executed reference final state, near-miss rejection, and domain-specific coverage. The full corpus contains 3,600 near-miss states across 15 mutation taxa. The near-miss breakdown tables are in \texttt{paper/tables/near\_miss\_by\_taxon\_full\_toolplan.csv} and \texttt{paper/tables/near\_miss\_by\_family\_full\_toolplan.csv}.
 
 \subsection{Cost and Runtime}
 
-The parsed DeepSeek run used 3000 API calls, about 1.38M prompt tokens and 5.02M completion tokens, with an estimated API cost of \$3.56 under the configured price sheet. Summed provider latency was 124,141 seconds; with concurrent streaming execution, wall-clock time was roughly 33 minutes on the local run.
+The full DeepSeek tool-plan run used 18,000 API calls, 8.30M input tokens, and 23.08M output tokens, with an estimated API cost of \$13.47 under the configured price sheet. Summed provider latency was 490,355 seconds; wall-clock runtime depends on concurrency and retry behavior, so we report the resumable command and raw diagnostics rather than a single portable wall-clock number.

@@ -1,0 +1,12 @@
+{
+  "num_trial_rows": 18000,
+  "num_expanded_rows": 126000,
+  "num_mutation_taxa": 15,
+  "num_fine_failure_families": 10,
+  "outputs": {
+    "by_taxon": "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\near_miss\\near_miss_by_taxon.csv",
+    "by_family": "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\near_miss\\near_miss_by_family.csv",
+    "coverage": "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\near_miss\\near_miss_coverage.csv",
+    "summary": "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\near_miss\\near_miss_breakdown_summary.json"
+  }
+}

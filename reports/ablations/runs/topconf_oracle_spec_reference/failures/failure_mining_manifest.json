@@ -1,0 +1,18 @@
+{
+  "source": "results\\runs\\topconf_oracle_spec_reference\\trials.jsonl",
+  "tables": {
+    "high_spec_low_verifier": 0,
+    "valid_spec_self_violation": 0,
+    "bad_spec_good_execution": 0,
+    "good_spec_bad_execution": 0,
+    "invalid_donespec": 0,
+    "invalid_donespec_taxonomy": 0,
+    "policy_confirmation_side_effect_taxonomy": 4,
+    "policy_confirmation": 25,
+    "side_effect": 25
+  },
+  "formats": [
+    "csv",
+    "json"
+  ]
+}

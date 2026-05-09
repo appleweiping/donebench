@@ -1,0 +1,4502 @@
+[
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_021",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_022",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_023",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_024",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_025",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_026",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_027",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_028",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_029",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_031",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_032",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_033",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_034",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_035",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_036",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_037",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_038",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_039",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_040",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_041",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_042",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_043",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_044",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_045",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_046",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_047",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_048",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_049",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_050",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_051",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_052",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_053",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_054",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_055",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_056",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_057",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_058",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_059",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_060",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_061",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_062",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_063",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_064",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_065",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_066",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_067",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_068",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_069",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_070",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_071",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_072",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_073",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_074",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_075",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_076",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_077",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_078",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_079",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_080",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_081",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_082",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_083",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_084",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_085",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_086",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_087",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_088",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_089",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_090",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_091",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_092",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_093",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_094",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_095",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_096",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_097",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_098",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_099",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_100",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_101",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_102",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_103",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_104",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_105",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_106",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_107",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_108",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_109",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_110",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_111",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_112",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_113",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_114",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_115",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_116",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_117",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_118",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_119",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "calendar_120",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_021",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_022",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_023",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_024",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_025",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_026",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_027",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_028",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_029",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_031",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_032",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_033",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_034",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_035",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_036",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_037",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_038",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_039",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_040",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_041",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_042",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_043",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_044",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_045",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_046",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_047",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_048",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_049",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_050",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_051",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_052",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_053",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_054",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_055",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_056",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_057",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_058",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_059",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_060",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_061",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_062",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_063",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_064",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_065",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_066",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_067",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_068",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_069",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_070",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_071",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_072",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_073",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_074",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_075",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_076",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_077",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_078",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_079",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_080",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_081",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_082",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_083",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_084",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_085",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_086",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_087",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_088",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_089",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_090",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_091",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_092",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_093",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_094",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_095",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_096",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_097",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_098",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_099",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_100",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_101",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_102",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_103",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_104",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_105",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_106",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_107",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_108",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_109",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_110",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_111",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_112",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_113",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_114",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_115",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_116",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_117",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_118",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_119",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "crm_workflow_120",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_021",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_022",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_023",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_024",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_025",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_026",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_027",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_028",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_029",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_031",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_032",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_033",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_034",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_035",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_036",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_037",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_038",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_039",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_040",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_041",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_042",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_043",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_044",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_045",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_046",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_047",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_048",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_049",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_050",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_051",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_052",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_053",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_054",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_055",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_056",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_057",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_058",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_059",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_060",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_061",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_062",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_063",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_064",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_065",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_066",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_067",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_068",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_069",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_070",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_071",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_072",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_073",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_074",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_075",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_076",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_077",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_078",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_079",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_080",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_081",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_082",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_083",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_084",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_085",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_086",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_087",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_088",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_089",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_090",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_091",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_092",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_093",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_094",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_095",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_096",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_097",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_098",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_099",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_100",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_101",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_102",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_103",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_104",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_105",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_106",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_107",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_108",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_109",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_110",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_111",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_112",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_113",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_114",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_115",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_116",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_117",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_118",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_119",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "email_120",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_021",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_022",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_023",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_024",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_025",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_026",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_027",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_028",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_029",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_031",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_032",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_033",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_034",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_035",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_036",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_037",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_038",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_039",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_040",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_041",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_042",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_043",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_044",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_045",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_046",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_047",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_048",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_049",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_050",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_051",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_052",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_053",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_054",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_055",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_056",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_057",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_058",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_059",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_060",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_061",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_062",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_063",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_064",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_065",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_066",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_067",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_068",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_069",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_070",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_071",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_072",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_073",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_074",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_075",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_076",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_077",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_078",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_079",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_080",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_081",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_082",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_083",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_084",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_085",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_086",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_087",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_088",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_089",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_090",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_091",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_092",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_093",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_094",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_095",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_096",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_097",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_098",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_099",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_100",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_101",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_102",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_103",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_104",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_105",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_106",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_107",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_108",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_109",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_110",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_111",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_112",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_113",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_114",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_115",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_116",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_117",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_118",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_119",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "file_doc_120",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_021",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_022",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_023",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_024",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_025",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_026",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_027",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_028",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_029",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_030",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_031",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_032",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_033",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_034",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_035",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_036",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_037",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_038",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_039",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_040",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_041",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_042",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_043",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_044",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_045",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_046",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_047",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_048",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_049",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_050",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_051",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_052",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_053",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_054",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_055",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_056",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_057",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_058",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_059",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_060",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_061",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_062",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_063",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_064",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_065",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_066",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_067",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_068",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_069",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_070",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_071",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_072",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_073",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_074",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_075",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_076",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_077",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_078",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_079",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_080",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_081",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_082",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_083",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_084",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_085",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_086",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_087",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_088",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_089",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_090",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_091",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_092",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_093",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_094",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_095",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_096",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_097",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_098",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_099",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_100",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_101",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_102",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_103",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_104",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_105",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_106",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_107",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_108",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_109",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_110",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_111",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_112",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_113",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_114",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_115",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_116",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_117",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_118",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_119",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  },
+  {
+    "model": "mock",
+    "agent": "oracle_spec",
+    "task_id": "sheet_db_120",
+    "k": 1,
+    "task_success_pass_at_k": 1.0,
+    "donespec_valid_pass_at_k": 1.0,
+    "all_trials_consistent_success": 1.0
+  }
+]

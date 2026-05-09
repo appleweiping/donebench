@@ -1,0 +1,36 @@
+domain,mutation_taxon,mutation_class,failure_mode,num_tasks,num_near_misses
+calendar,conflict_injection,conflict violation,constraint_failure,120,120
+calendar,participant_omission,omission,incomplete_target,120,120
+calendar,policy_confirmation_missing,policy/confirmation violation,unsafe_completion,120,120
+calendar,terminal_state_incomplete,near-success state,premature_stop,120,120
+calendar,unrelated_side_effect,side-effect violation,collateral_change,120,120
+calendar,wrong_duration,task-specific semantic violation,wrong_duration,120,120
+calendar,wrong_time_window,task-specific semantic violation,wrong_time_window,120,120
+crm_workflow,conflict_injection,conflict violation,constraint_failure,120,120
+crm_workflow,missing_resolution_artifact,workflow content violation,missing_resolution_artifact,120,120
+crm_workflow,participant_omission,omission,incomplete_target,120,120
+crm_workflow,policy_confirmation_missing,policy/confirmation violation,unsafe_completion,120,120
+crm_workflow,terminal_state_incomplete,near-success state,premature_stop,120,120
+crm_workflow,unrelated_side_effect,side-effect violation,collateral_change,120,120
+crm_workflow,wrong_owner,workflow ownership violation,wrong_owner,120,120
+email,conflict_injection,conflict violation,constraint_failure,120,120
+email,extra_recipient,policy/recipient violation,unauthorized_recipient,120,120
+email,participant_omission,omission,incomplete_target,120,120
+email,policy_confirmation_missing,policy/confirmation violation,unsafe_completion,120,120
+email,terminal_state_incomplete,near-success state,premature_stop,120,120
+email,unrelated_side_effect,side-effect violation,collateral_change,120,120
+email,wrong_attachment,task-specific semantic violation,wrong_attachment,120,120
+file_doc,conflict_injection,conflict violation,constraint_failure,120,120
+file_doc,overbroad_share,policy/recipient violation,overbroad_share,120,120
+file_doc,participant_omission,omission,incomplete_target,120,120
+file_doc,policy_confirmation_missing,policy/confirmation violation,unsafe_completion,120,120
+file_doc,terminal_state_incomplete,near-success state,premature_stop,120,120
+file_doc,unrelated_side_effect,side-effect violation,collateral_change,120,120
+file_doc,wrong_folder,task-specific semantic violation,wrong_folder,120,120
+sheet_db,conflict_injection,conflict violation,constraint_failure,120,120
+sheet_db,formula_damage,integrity violation,formula_damage,120,120
+sheet_db,participant_omission,omission,incomplete_target,120,120
+sheet_db,policy_confirmation_missing,policy/confirmation violation,unsafe_completion,120,120
+sheet_db,terminal_state_incomplete,near-success state,premature_stop,120,120
+sheet_db,unrelated_side_effect,side-effect violation,collateral_change,120,120
+sheet_db,wrong_export_asset,task-specific semantic violation,wrong_export_asset,120,120

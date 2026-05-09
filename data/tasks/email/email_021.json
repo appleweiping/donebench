@@ -251,25 +251,21 @@
       "email_message": [
         {
           "id": "ema_021",
-          "title": "Granite compliance check Reviewed digest forward handoff 21",
-          "participants": [
-            "noah@example.com"
-          ],
-          "duration_minutes": 25,
-          "time_range": "next Tuesday morning",
+          "title": "Draft placeholder email_021",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "compliance review folder",
-          "attachments": [
-            "control evidence list"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "email_forward_digest",
           "scenario_id": "granite_compliance",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "email_thread",
+          "output_format": "draft",
           "due_window": "next Tuesday morning"
         }
       ]
@@ -1167,25 +1163,21 @@
           "found": true,
           "record": {
             "id": "ema_021",
-            "title": "Granite compliance check Reviewed digest forward handoff 21",
-            "participants": [
-              "noah@example.com"
-            ],
-            "duration_minutes": 25,
-            "time_range": "next Tuesday morning",
+            "title": "Draft placeholder email_021",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "compliance review folder",
-            "attachments": [
-              "control evidence list"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "email_forward_digest",
             "scenario_id": "granite_compliance",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "email_thread",
+            "output_format": "draft",
             "due_window": "next Tuesday morning"
           }
         },

@@ -283,7 +283,27 @@
   },
   "initial_state": {
     "objects": {
-      "sheet_row": []
+      "sheet_row": [
+        {
+          "id": "she_095",
+          "title": "Draft placeholder sheet_db_095",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
+          "status": "draft",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
+          "no_formula_damage": true,
+          "exported": false,
+          "pattern_id": "sheet_dedupe_contact",
+          "scenario_id": "fjord_launch",
+          "risk_tier": "external",
+          "approval_channel": "security_review",
+          "output_format": "draft",
+          "due_window": "next Monday afternoon"
+        }
+      ]
     },
     "conflicts": [],
     "permissions": {
@@ -318,14 +338,18 @@
       "The final status is reviewed.",
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
+      "The final participant or recipient set exactly matches the approved audience.",
+      "The final target title matches the requested work item.",
       "The reviewed artifact is exported or made available in its final form.",
       "The outbound or sharing action is permitted in the tool environment.",
-      "The final artifact stays inside the requested time or review window."
+      "The final artifact stays inside the requested time or review window.",
+      "The audit/export artifact matches the requested sheet asset."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
       "Changing an unrelated record is an unacceptable side effect.",
-      "Formula, metadata, or source integrity must not be damaged."
+      "Formula, metadata, or source integrity must not be damaged.",
+      "Formula columns must remain intact after the sheet update."
     ],
     "required_observations": [
       "The agent must inspect the current target state before mutating it.",
@@ -339,7 +363,9 @@
       "policy_confirmation_missing",
       "conflict_injection",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "formula_damage",
+      "wrong_export_asset"
     ]
   },
   "criterion_atoms": [
@@ -418,6 +444,38 @@
       "evidence_source": "sheet.append_audit_log",
       "requires_tool": [
         "sheet.append_audit_log"
+      ]
+    },
+    {
+      "id": "sheet_db_095_success_010",
+      "kind": "success",
+      "text": "The final participant or recipient set exactly matches the approved audience.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.participants",
+      "operator": "equals",
+      "value": [
+        "harper@example.com"
+      ],
+      "evidence_source": "sheet.check_constraints",
+      "requires_tool": [
+        "sheet.check_constraints"
+      ]
+    },
+    {
+      "id": "sheet_db_095_success_011",
+      "kind": "success",
+      "text": "The final target title matches the requested work item.",
+      "modality": "content",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.title",
+      "operator": "equals",
+      "value": "Fjord partner launch Duplicate contact review packet 95",
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
       ]
     },
     {
@@ -539,6 +597,38 @@
       "requires_tool": [
         "sheet.check_constraints"
       ]
+    },
+    {
+      "id": "sheet_db_095_failure_012",
+      "kind": "failure",
+      "text": "Formula columns must remain intact after the sheet update.",
+      "modality": "integrity",
+      "polarity": "negative",
+      "criticality": "hard",
+      "observable": "sheet_row.no_formula_damage",
+      "operator": "equals",
+      "value": true,
+      "evidence_source": "sheet.check_constraints",
+      "requires_tool": [
+        "sheet.check_constraints"
+      ]
+    },
+    {
+      "id": "sheet_db_095_success_013",
+      "kind": "success",
+      "text": "The audit/export artifact matches the requested sheet asset.",
+      "modality": "artifact",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "sheet_row.attachments",
+      "operator": "equals",
+      "value": [
+        "partner launch brief"
+      ],
+      "evidence_source": "sheet.inspect_state",
+      "requires_tool": [
+        "sheet.inspect_state"
+      ]
     }
   ],
   "gold_donespec": {
@@ -564,13 +654,11 @@
         }
       },
       {
-        "within": {
-          "field": "objects.sheet_row.0.status",
-          "range": {
-            "values": [
-              "reviewed"
-            ]
-          }
+        "equals": {
+          "field": "objects.sheet_row.0.participants",
+          "value": [
+            "harper@example.com"
+          ]
         }
       },
       {
@@ -599,11 +687,39 @@
                   "field": "objects.sheet_row.0.due_window",
                   "value": "next Monday afternoon"
                 }
+              },
+              {
+                "equals": {
+                  "field": "objects.sheet_row.0.no_formula_damage",
+                  "value": true
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.sheet_row.0.attachments",
+                  "value": [
+                    "partner launch brief"
+                  ]
+                }
               }
             ]
           },
           {
             "all": [
+              {
+                "equals": {
+                  "field": "objects.sheet_row.0.attachments",
+                  "value": [
+                    "partner launch brief"
+                  ]
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.sheet_row.0.no_formula_damage",
+                  "value": true
+                }
+              },
               {
                 "equals": {
                   "field": "objects.sheet_row.0.due_window",
@@ -630,6 +746,22 @@
             ]
           }
         ]
+      },
+      {
+        "within": {
+          "field": "objects.sheet_row.0.status",
+          "range": {
+            "values": [
+              "reviewed"
+            ]
+          }
+        }
+      },
+      {
+        "equals": {
+          "field": "objects.sheet_row.0.title",
+          "value": "Fjord partner launch Duplicate contact review packet 95"
+        }
       },
       {
         "no_conflict": {
@@ -741,7 +873,7 @@
       "mutation_taxon": "policy_confirmation_missing",
       "failure_mode": "unsafe_completion",
       "violated_criteria": [
-        "sheet_db_095_failure_001"
+        "sheet_db_095_success_010"
       ],
       "final_state": {
         "objects": {
@@ -957,7 +1089,7 @@
       "mutation_taxon": "unrelated_side_effect",
       "failure_mode": "collateral_change",
       "violated_criteria": [
-        "sheet_db_095_failure_002"
+        "sheet_db_095_success_011"
       ],
       "final_state": {
         "objects": {
@@ -1025,6 +1157,152 @@
           }
         ]
       }
+    },
+    {
+      "mutation_id": "formula_damage",
+      "mutation_class": "integrity violation",
+      "mutation_taxon": "formula_damage",
+      "failure_mode": "formula_damage",
+      "violated_criteria": [
+        "sheet_db_095_failure_012"
+      ],
+      "final_state": {
+        "objects": {
+          "sheet_row": [
+            {
+              "id": "she_095",
+              "title": "Fjord partner launch Duplicate contact review packet 95",
+              "participants": [
+                "harper@example.com"
+              ],
+              "duration_minutes": 60,
+              "time_range": "next Monday afternoon",
+              "status": "reviewed",
+              "folder": "alliance packet folder",
+              "attachments": [
+                "partner launch brief"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": false,
+              "exported": true,
+              "pattern_id": "sheet_dedupe_contact",
+              "scenario_id": "fjord_launch",
+              "risk_tier": "external",
+              "approval_channel": "security_review",
+              "output_format": "csv_export",
+              "due_window": "next Monday afternoon"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "sheet.append_audit_log": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "sheet_backup_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "harper@example.com"
+            ],
+            "object_id": "she_095"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "she_095",
+            "risk_tier": "external",
+            "approval_channel": "security_review"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "she_095_distractor_1",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_095_distractor_2",
+            "domain": "sheet_db"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "wrong_export_asset",
+      "mutation_class": "task-specific semantic violation",
+      "mutation_taxon": "wrong_export_asset",
+      "failure_mode": "wrong_export_asset",
+      "violated_criteria": [
+        "sheet_db_095_success_013"
+      ],
+      "final_state": {
+        "objects": {
+          "sheet_row": [
+            {
+              "id": "she_095",
+              "title": "Fjord partner launch Duplicate contact review packet 95",
+              "participants": [
+                "harper@example.com"
+              ],
+              "duration_minutes": 60,
+              "time_range": "next Monday afternoon",
+              "status": "reviewed",
+              "folder": "alliance packet folder",
+              "attachments": [
+                "wrong_export.csv"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "sheet_dedupe_contact",
+              "scenario_id": "fjord_launch",
+              "risk_tier": "external",
+              "approval_channel": "security_review",
+              "output_format": "csv_export",
+              "due_window": "next Monday afternoon"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "sheet.append_audit_log": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "sheet_backup_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "harper@example.com"
+            ],
+            "object_id": "she_095"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "she_095",
+            "risk_tier": "external",
+            "approval_channel": "security_review"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "she_095_distractor_1",
+            "domain": "sheet_db"
+          },
+          {
+            "id": "she_095_distractor_2",
+            "domain": "sheet_db"
+          }
+        ]
+      }
     }
   ],
   "reference_solution": {
@@ -1035,7 +1313,26 @@
           "id": "she_095"
         },
         "observation": {
-          "found": true
+          "found": true,
+          "record": {
+            "id": "she_095",
+            "title": "Draft placeholder sheet_db_095",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
+            "status": "draft",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
+            "no_formula_damage": true,
+            "exported": false,
+            "pattern_id": "sheet_dedupe_contact",
+            "scenario_id": "fjord_launch",
+            "risk_tier": "external",
+            "approval_channel": "security_review",
+            "output_format": "draft",
+            "due_window": "next Monday afternoon"
+          }
         },
         "mutating": false
       },
@@ -1085,7 +1382,27 @@
         "args": {
           "id": "she_095",
           "patch": {
-            "status": "reviewed"
+            "id": "she_095",
+            "title": "Fjord partner launch Duplicate contact review packet 95",
+            "participants": [
+              "harper@example.com"
+            ],
+            "duration_minutes": 60,
+            "time_range": "next Monday afternoon",
+            "status": "reviewed",
+            "folder": "alliance packet folder",
+            "attachments": [
+              "partner launch brief"
+            ],
+            "owner": "case-owner@example.com",
+            "no_formula_damage": true,
+            "exported": true,
+            "pattern_id": "sheet_dedupe_contact",
+            "scenario_id": "fjord_launch",
+            "risk_tier": "external",
+            "approval_channel": "security_review",
+            "output_format": "csv_export",
+            "due_window": "next Monday afternoon"
           }
         },
         "observation": {
@@ -1100,7 +1417,8 @@
           "to": [
             "harper@example.com"
           ],
-          "object_id": "she_095"
+          "object_id": "she_095",
+          "message_type": "notification"
         },
         "observation": {
           "sent": true,
@@ -1189,30 +1507,50 @@
     },
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   },
   "audit": {
     "split": "test",
-    "min_required_criteria": 13,
+    "min_required_criteria": 17,
     "tools_required": 4,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
-    "mutation_count": 5,
+    "mutation_count": 7,
     "generator_version": "topconf-4",
     "task_pattern": "sheet_dedupe_contact",
     "scenario_id": "fjord_launch",
     "difficulty_profile": "cross-check required before mutation",
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   }
 }

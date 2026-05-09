@@ -1,0 +1,2 @@
+model,agent,n,precondition_failure_rate,unknown_tool_rate,permission_failure_rate,side_effect_failure_rate,no_confirmation_rate
+mock,oracle_spec,500,0.0,0.0,0.0,0.0,0.0

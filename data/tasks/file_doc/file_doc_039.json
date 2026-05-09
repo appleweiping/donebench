@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_039",
-          "title": "Meridian hiring loop Review packet closure 39",
-          "participants": [
-            "morgan@example.com"
-          ],
-          "duration_minutes": 50,
-          "time_range": "the protected hiring block next week",
+          "title": "Draft placeholder file_doc_039",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "hiring review folder",
-          "attachments": [
-            "interview panel brief"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_share_packet",
           "scenario_id": "meridian_hiring",
           "risk_tier": "external",
           "approval_channel": "security_review",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "the protected hiring block next week"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_039",
-            "title": "Meridian hiring loop Review packet closure 39",
-            "participants": [
-              "morgan@example.com"
-            ],
-            "duration_minutes": 50,
-            "time_range": "the protected hiring block next week",
+            "title": "Draft placeholder file_doc_039",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "hiring review folder",
-            "attachments": [
-              "interview panel brief"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_share_packet",
             "scenario_id": "meridian_hiring",
             "risk_tier": "external",
             "approval_channel": "security_review",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "the protected hiring block next week"
           }
         },

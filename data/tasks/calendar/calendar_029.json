@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_029",
-          "title": "Juniper vendor review Product review reschedule closure 29",
-          "participants": [
-            "lee@example.com",
-            "casey@example.com"
-          ],
-          "duration_minutes": 50,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder calendar_029",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_reschedule_review",
           "scenario_id": "juniper_vendor",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_029",
-            "title": "Juniper vendor review Product review reschedule closure 29",
-            "participants": [
-              "lee@example.com",
-              "casey@example.com"
-            ],
-            "duration_minutes": 50,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder calendar_029",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_reschedule_review",
             "scenario_id": "juniper_vendor",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

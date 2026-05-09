@@ -251,26 +251,21 @@
       "sheet_row": [
         {
           "id": "she_032",
-          "title": "Keystone billing cleanup Duplicate contact review checkpoint 32",
-          "participants": [
-            "sofia@example.com",
-            "liam@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "the first open slot next week",
+          "title": "Draft placeholder sheet_db_032",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "billing cleanup folder",
-          "attachments": [
-            "billing exception log"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_dedupe_contact",
           "scenario_id": "keystone_billing",
           "risk_tier": "executive_review",
           "approval_channel": "security_review",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "the first open slot next week"
         }
       ]
@@ -1186,26 +1181,21 @@
           "found": true,
           "record": {
             "id": "she_032",
-            "title": "Keystone billing cleanup Duplicate contact review checkpoint 32",
-            "participants": [
-              "sofia@example.com",
-              "liam@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "the first open slot next week",
+            "title": "Draft placeholder sheet_db_032",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "billing cleanup folder",
-            "attachments": [
-              "billing exception log"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_dedupe_contact",
             "scenario_id": "keystone_billing",
             "risk_tier": "executive_review",
             "approval_channel": "security_review",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "the first open slot next week"
           }
         },

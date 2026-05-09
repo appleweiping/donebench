@@ -1,0 +1,6 @@
+domain,model,agent,n,cc_f1,donespec_valid,near_miss_detection_rate,task_success,self_violation_rate
+calendar,mock,oracle_spec,100,1.0,1.0,1.0,1.0,0.0
+crm_workflow,mock,oracle_spec,100,0.9866666666666666,1.0,1.0,1.0,0.0
+email,mock,oracle_spec,100,1.0,1.0,1.0,1.0,0.0
+file_doc,mock,oracle_spec,100,1.0,1.0,1.0,1.0,0.0
+sheet_db,mock,oracle_spec,100,0.9619607843137256,1.0,1.0,1.0,0.0

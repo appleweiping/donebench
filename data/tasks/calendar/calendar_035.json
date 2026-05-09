@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_035",
-          "title": "Lumen pilot handoff Product review reschedule packet 35",
-          "participants": [
-            "harper@example.com",
-            "logan@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "the earliest conflict-free slot next week",
+          "title": "Draft placeholder calendar_035",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "pilot handoff folder",
-          "attachments": [
-            "pilot handoff note"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_reschedule_review",
           "scenario_id": "lumen_pilot",
           "risk_tier": "external",
           "approval_channel": "policy_queue",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "the earliest conflict-free slot next week"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_035",
-            "title": "Lumen pilot handoff Product review reschedule packet 35",
-            "participants": [
-              "harper@example.com",
-              "logan@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "the earliest conflict-free slot next week",
+            "title": "Draft placeholder calendar_035",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "pilot handoff folder",
-            "attachments": [
-              "pilot handoff note"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_reschedule_review",
             "scenario_id": "lumen_pilot",
             "risk_tier": "external",
             "approval_channel": "policy_queue",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "the earliest conflict-free slot next week"
           }
         },

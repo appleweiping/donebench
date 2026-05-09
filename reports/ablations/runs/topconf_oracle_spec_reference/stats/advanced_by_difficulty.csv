@@ -1,0 +1,4 @@
+difficulty,model,agent,n,cc_f1,donespec_valid,near_miss_detection_rate,task_success,self_violation_rate
+L2,mock,oracle_spec,170,1.0,1.0,1.0,1.0,0.0
+L3,mock,oracle_spec,210,0.9882352941176471,1.0,1.0,1.0,0.0
+L4,mock,oracle_spec,120,0.9777777777777779,1.0,1.0,1.0,0.0

@@ -251,25 +251,21 @@
       "sheet_row": [
         {
           "id": "she_030",
-          "title": "Juniper vendor review Forecast row append revision 30",
-          "participants": [
-            "fatima@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder sheet_db_030",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_append_forecast",
           "scenario_id": "juniper_vendor",
           "risk_tier": "restricted",
           "approval_channel": "manager_approval",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1164,25 +1160,21 @@
           "found": true,
           "record": {
             "id": "she_030",
-            "title": "Juniper vendor review Forecast row append revision 30",
-            "participants": [
-              "fatima@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder sheet_db_030",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_append_forecast",
             "scenario_id": "juniper_vendor",
             "risk_tier": "restricted",
             "approval_channel": "manager_approval",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

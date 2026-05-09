@@ -1,0 +1,2 @@
+model,agent,n,tool_plan_rate,task_success,own_spec_pass,mean_self_violation_rate,mean_tool_calls,mean_mutating_tool_calls,mean_missing_precondition_steps,mean_unknown_tool_steps,mean_permission_denied_steps,mean_side_effect_steps,mean_confirmation_steps,mean_spec_prompt_chars,mean_action_prompt_chars
+mock,oracle_spec,500,1.0,1.0,1.0,0.0,5.9,2.24,0.0,0.0,0.0,0.0,1.0,0.0,0.0

@@ -251,25 +251,21 @@
       "sheet_row": [
         {
           "id": "she_021",
-          "title": "Granite compliance check Forecast row append handoff 21",
-          "participants": [
-            "noah@example.com"
-          ],
-          "duration_minutes": 25,
-          "time_range": "next Tuesday morning",
+          "title": "Draft placeholder sheet_db_021",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "compliance review folder",
-          "attachments": [
-            "control evidence list"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_append_forecast",
           "scenario_id": "granite_compliance",
           "risk_tier": "standard",
           "approval_channel": "manager_approval",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "next Tuesday morning"
         }
       ]
@@ -1164,25 +1160,21 @@
           "found": true,
           "record": {
             "id": "she_021",
-            "title": "Granite compliance check Forecast row append handoff 21",
-            "participants": [
-              "noah@example.com"
-            ],
-            "duration_minutes": 25,
-            "time_range": "next Tuesday morning",
+            "title": "Draft placeholder sheet_db_021",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "compliance review folder",
-            "attachments": [
-              "control evidence list"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_append_forecast",
             "scenario_id": "granite_compliance",
             "risk_tier": "standard",
             "approval_channel": "manager_approval",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "next Tuesday morning"
           }
         },

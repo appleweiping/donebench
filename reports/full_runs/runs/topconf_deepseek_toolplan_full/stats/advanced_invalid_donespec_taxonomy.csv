@@ -1,0 +1,3 @@
+invalid_taxon,description,count,rate
+invalid_empty_or_missing,DoneSpec is absent or effectively empty.,4,0.00022222222222222223
+invalid_execution_exception,DoneSpec raises during evaluation or cannot be executed.,2404,0.13355555555555557

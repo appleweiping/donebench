@@ -251,26 +251,21 @@
       "sheet_row": [
         {
           "id": "she_024",
-          "title": "Harbor onboarding Forecast row append briefing 24",
-          "participants": [
-            "zoe@example.com",
-            "amir@example.com"
-          ],
-          "duration_minutes": 50,
-          "time_range": "next Wednesday afternoon",
+          "title": "Draft placeholder sheet_db_024",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "customer onboarding folder",
-          "attachments": [
-            "onboarding packet"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_append_forecast",
           "scenario_id": "harbor_onboarding",
           "risk_tier": "executive_review",
           "approval_channel": "security_review",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "next Wednesday afternoon"
         }
       ]
@@ -1186,26 +1181,21 @@
           "found": true,
           "record": {
             "id": "she_024",
-            "title": "Harbor onboarding Forecast row append briefing 24",
-            "participants": [
-              "zoe@example.com",
-              "amir@example.com"
-            ],
-            "duration_minutes": 50,
-            "time_range": "next Wednesday afternoon",
+            "title": "Draft placeholder sheet_db_024",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "customer onboarding folder",
-            "attachments": [
-              "onboarding packet"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_append_forecast",
             "scenario_id": "harbor_onboarding",
             "risk_tier": "executive_review",
             "approval_channel": "security_review",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "next Wednesday afternoon"
           }
         },

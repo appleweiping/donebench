@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_032",
-          "title": "Keystone billing cleanup Product review reschedule checkpoint 32",
-          "participants": [
-            "sofia@example.com",
-            "liam@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "the first open slot next week",
+          "title": "Draft placeholder calendar_032",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "billing cleanup folder",
-          "attachments": [
-            "billing exception log"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_reschedule_review",
           "scenario_id": "keystone_billing",
           "risk_tier": "executive_review",
           "approval_channel": "security_review",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "the first open slot next week"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_032",
-            "title": "Keystone billing cleanup Product review reschedule checkpoint 32",
-            "participants": [
-              "sofia@example.com",
-              "liam@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "the first open slot next week",
+            "title": "Draft placeholder calendar_032",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "billing cleanup folder",
-            "attachments": [
-              "billing exception log"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_reschedule_review",
             "scenario_id": "keystone_billing",
             "risk_tier": "executive_review",
             "approval_channel": "security_review",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "the first open slot next week"
           }
         },

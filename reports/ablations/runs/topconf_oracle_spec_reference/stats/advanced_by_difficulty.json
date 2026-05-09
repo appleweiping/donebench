@@ -1,0 +1,35 @@
+[
+  {
+    "difficulty": "L2",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 170,
+    "cc_f1": 1.0,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  },
+  {
+    "difficulty": "L3",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 210,
+    "cc_f1": 0.9882352941176471,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  },
+  {
+    "difficulty": "L4",
+    "model": "mock",
+    "agent": "oracle_spec",
+    "n": 120,
+    "cc_f1": 0.9777777777777779,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 1.0,
+    "task_success": 1.0,
+    "self_violation_rate": 0.0
+  }
+]

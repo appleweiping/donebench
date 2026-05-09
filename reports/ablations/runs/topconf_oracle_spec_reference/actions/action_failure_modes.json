@@ -1,0 +1,12 @@
+[
+  {
+    "model":"mock",
+    "agent":"oracle_spec",
+    "n":500,
+    "precondition_failure_rate":0.0,
+    "unknown_tool_rate":0.0,
+    "permission_failure_rate":0.0,
+    "side_effect_failure_rate":0.0,
+    "no_confirmation_rate":0.0
+  }
+]

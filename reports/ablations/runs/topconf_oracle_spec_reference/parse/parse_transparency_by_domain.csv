@@ -1,0 +1,6 @@
+domain,model,agent,n,parse_rate,fallback_rate
+calendar,mock,oracle_spec,100,0.0,0.0
+crm_workflow,mock,oracle_spec,100,0.0,0.0
+email,mock,oracle_spec,100,0.0,0.0
+file_doc,mock,oracle_spec,100,0.0,0.0
+sheet_db,mock,oracle_spec,100,0.0,0.0

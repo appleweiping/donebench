@@ -1,0 +1,24 @@
+{
+  "input": "results\\runs\\topconf_oracle_spec_reference\\trials.jsonl",
+  "rows": 500,
+  "status_counts": {
+    "missing": 500
+  },
+  "parse_rate": 0.0,
+  "fallback_rate": 0.0,
+  "max_paper_ready_fallback_rate": 0.3,
+  "num_quarantined_model_agent_cells": 0,
+  "paper_ready_parse_gate": true,
+  "outputs": [
+    "parse_transparency_by_domain.csv",
+    "parse_transparency_by_domain.json",
+    "parse_transparency_by_model_agent.csv",
+    "parse_transparency_by_model_agent.json",
+    "parse_transparency_by_repair.csv",
+    "parse_transparency_by_repair.json",
+    "parse_transparency_by_status.csv",
+    "parse_transparency_by_status.json",
+    "parse_transparency_trials.csv",
+    "parse_transparency_trials.json"
+  ]
+}

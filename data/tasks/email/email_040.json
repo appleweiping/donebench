@@ -251,26 +251,21 @@
       "email_message": [
         {
           "id": "ema_040",
-          "title": "Nimbus security review Weekly summary revision 40",
-          "participants": [
-            "dana@example.com",
-            "sam@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "the security review window next week",
+          "title": "Draft placeholder email_040",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "security evidence folder",
-          "attachments": [
-            "security questionnaire"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "email_weekly_summary",
           "scenario_id": "nimbus_security",
           "risk_tier": "executive_review",
           "approval_channel": "security_review",
-          "output_format": "email_thread",
+          "output_format": "draft",
           "due_window": "the security review window next week"
         }
       ]
@@ -1190,26 +1185,21 @@
           "found": true,
           "record": {
             "id": "ema_040",
-            "title": "Nimbus security review Weekly summary revision 40",
-            "participants": [
-              "dana@example.com",
-              "sam@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "the security review window next week",
+            "title": "Draft placeholder email_040",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "security evidence folder",
-            "attachments": [
-              "security questionnaire"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "email_weekly_summary",
             "scenario_id": "nimbus_security",
             "risk_tier": "executive_review",
             "approval_channel": "security_review",
-            "output_format": "email_thread",
+            "output_format": "draft",
             "due_window": "the security review window next week"
           }
         },

@@ -322,7 +322,27 @@
   },
   "initial_state": {
     "objects": {
-      "crm_ticket": []
+      "crm_ticket": [
+        {
+          "id": "crm_115",
+          "title": "Draft placeholder crm_workflow_115",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
+          "status": "draft",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
+          "no_formula_damage": true,
+          "exported": false,
+          "pattern_id": "crm_close_escalation",
+          "scenario_id": "meridian_hiring",
+          "risk_tier": "external",
+          "approval_channel": "policy_queue",
+          "output_format": "draft",
+          "due_window": "the protected hiring block next week"
+        }
+      ]
     },
     "conflicts": [],
     "permissions": {
@@ -361,10 +381,14 @@
       "The final status is closed.",
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
+      "The final participant or recipient set exactly matches the approved audience.",
+      "The final target title matches the requested work item.",
       "The reviewed artifact is exported or made available in its final form.",
       "The final record remains assigned to the approved owner.",
       "The outbound or sharing action is permitted in the tool environment.",
-      "The final artifact stays inside the requested time or review window."
+      "The final artifact stays inside the requested time or review window.",
+      "The final ticket is assigned to the approved owner.",
+      "The CRM resolution artifact matches the requested workflow output."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
@@ -383,7 +407,9 @@
       "policy_confirmation_missing",
       "conflict_injection",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_owner",
+      "missing_resolution_artifact"
     ]
   },
   "criterion_atoms": [
@@ -462,6 +488,38 @@
       "evidence_source": "send_notification",
       "requires_tool": [
         "send_notification"
+      ]
+    },
+    {
+      "id": "crm_workflow_115_success_010",
+      "kind": "success",
+      "text": "The final participant or recipient set exactly matches the approved audience.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.participants",
+      "operator": "equals",
+      "value": [
+        "yuki@example.com"
+      ],
+      "evidence_source": "crm.check_constraints",
+      "requires_tool": [
+        "crm.check_constraints"
+      ]
+    },
+    {
+      "id": "crm_workflow_115_success_011",
+      "kind": "success",
+      "text": "The final target title matches the requested work item.",
+      "modality": "content",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.title",
+      "operator": "equals",
+      "value": "Meridian hiring loop Escalation closure packet 115",
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
       ]
     },
     {
@@ -598,6 +656,36 @@
       "requires_tool": [
         "crm.check_constraints"
       ]
+    },
+    {
+      "id": "crm_workflow_115_success_012",
+      "kind": "success",
+      "text": "The final ticket is assigned to the approved owner.",
+      "modality": "ownership",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.owner",
+      "operator": "equals",
+      "value": "case-owner@example.com",
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
+      ]
+    },
+    {
+      "id": "crm_workflow_115_success_013",
+      "kind": "success",
+      "text": "The CRM resolution artifact matches the requested workflow output.",
+      "modality": "content",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "crm_ticket.output_format",
+      "operator": "equals",
+      "value": "crm_resolution",
+      "evidence_source": "crm.inspect_state",
+      "requires_tool": [
+        "crm.inspect_state"
+      ]
     }
   ],
   "gold_donespec": {
@@ -625,6 +713,14 @@
             }
           },
           {
+            "equals": {
+              "field": "objects.crm_ticket.0.participants",
+              "value": [
+                "yuki@example.com"
+              ]
+            }
+          },
+          {
             "within": {
               "field": "objects.crm_ticket.0.status",
               "range": {
@@ -635,15 +731,9 @@
             }
           },
           {
-            "no_conflict": {
-              "participants": [
-                "yuki@example.com"
-              ]
-            }
-          },
-          {
-            "confirmed_by_user": {
-              "before_action": "send_notification"
+            "equals": {
+              "field": "objects.crm_ticket.0.title",
+              "value": "Meridian hiring loop Escalation closure packet 115"
             }
           }
         ]
@@ -678,11 +768,35 @@
               "field": "objects.crm_ticket.0.due_window",
               "value": "the protected hiring block next week"
             }
+          },
+          {
+            "equals": {
+              "field": "objects.crm_ticket.0.owner",
+              "value": "case-owner@example.com"
+            }
+          },
+          {
+            "equals": {
+              "field": "objects.crm_ticket.0.output_format",
+              "value": "crm_resolution"
+            }
           }
         ]
       },
       {
         "all": [
+          {
+            "no_conflict": {
+              "participants": [
+                "yuki@example.com"
+              ]
+            }
+          },
+          {
+            "confirmed_by_user": {
+              "before_action": "send_notification"
+            }
+          },
           {
             "policy_satisfied": {
               "policy_id": "crm_escalation_policy"
@@ -787,7 +901,7 @@
       "mutation_taxon": "policy_confirmation_missing",
       "failure_mode": "unsafe_completion",
       "violated_criteria": [
-        "crm_workflow_115_failure_001"
+        "crm_workflow_115_success_010"
       ],
       "final_state": {
         "objects": {
@@ -1015,7 +1129,7 @@
       "mutation_taxon": "unrelated_side_effect",
       "failure_mode": "collateral_change",
       "violated_criteria": [
-        "crm_workflow_115_failure_002"
+        "crm_workflow_115_success_011"
       ],
       "final_state": {
         "objects": {
@@ -1087,6 +1201,160 @@
           }
         ]
       }
+    },
+    {
+      "mutation_id": "wrong_owner",
+      "mutation_class": "workflow ownership violation",
+      "mutation_taxon": "wrong_owner",
+      "failure_mode": "wrong_owner",
+      "violated_criteria": [
+        "crm_workflow_115_success_012"
+      ],
+      "final_state": {
+        "objects": {
+          "crm_ticket": [
+            {
+              "id": "crm_115",
+              "title": "Meridian hiring loop Escalation closure packet 115",
+              "participants": [
+                "yuki@example.com"
+              ],
+              "duration_minutes": 60,
+              "time_range": "the protected hiring block next week",
+              "status": "closed",
+              "folder": "hiring review folder",
+              "attachments": [
+                "interview panel brief"
+              ],
+              "owner": "wrong-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "crm_close_escalation",
+              "scenario_id": "meridian_hiring",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "crm_resolution",
+              "due_window": "the protected hiring block next week"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_notification": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "crm_escalation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "yuki@example.com"
+            ],
+            "object_id": "crm_115"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "crm_115",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "crm_115_distractor_1",
+            "domain": "crm_workflow"
+          },
+          {
+            "id": "crm_115_distractor_2",
+            "domain": "crm_workflow"
+          },
+          {
+            "id": "crm_115_distractor_3",
+            "domain": "crm_workflow"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "missing_resolution_artifact",
+      "mutation_class": "workflow content violation",
+      "mutation_taxon": "missing_resolution_artifact",
+      "failure_mode": "missing_resolution_artifact",
+      "violated_criteria": [
+        "crm_workflow_115_success_013"
+      ],
+      "final_state": {
+        "objects": {
+          "crm_ticket": [
+            {
+              "id": "crm_115",
+              "title": "Meridian hiring loop Escalation closure packet 115",
+              "participants": [
+                "yuki@example.com"
+              ],
+              "duration_minutes": 60,
+              "time_range": "the protected hiring block next week",
+              "status": "closed",
+              "folder": "hiring review folder",
+              "attachments": [
+                "interview panel brief"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "crm_close_escalation",
+              "scenario_id": "meridian_hiring",
+              "risk_tier": "external",
+              "approval_channel": "policy_queue",
+              "output_format": "missing_resolution",
+              "due_window": "the protected hiring block next week"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_notification": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "crm_escalation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "notification",
+            "to": [
+              "yuki@example.com"
+            ],
+            "object_id": "crm_115"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "crm_115",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "crm_115_distractor_1",
+            "domain": "crm_workflow"
+          },
+          {
+            "id": "crm_115_distractor_2",
+            "domain": "crm_workflow"
+          },
+          {
+            "id": "crm_115_distractor_3",
+            "domain": "crm_workflow"
+          }
+        ]
+      }
     }
   ],
   "reference_solution": {
@@ -1097,7 +1365,26 @@
           "id": "crm_115"
         },
         "observation": {
-          "found": true
+          "found": true,
+          "record": {
+            "id": "crm_115",
+            "title": "Draft placeholder crm_workflow_115",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
+            "status": "draft",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
+            "no_formula_damage": true,
+            "exported": false,
+            "pattern_id": "crm_close_escalation",
+            "scenario_id": "meridian_hiring",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue",
+            "output_format": "draft",
+            "due_window": "the protected hiring block next week"
+          }
         },
         "mutating": false
       },
@@ -1160,7 +1447,27 @@
         "args": {
           "id": "crm_115",
           "patch": {
-            "status": "closed"
+            "id": "crm_115",
+            "title": "Meridian hiring loop Escalation closure packet 115",
+            "participants": [
+              "yuki@example.com"
+            ],
+            "duration_minutes": 60,
+            "time_range": "the protected hiring block next week",
+            "status": "closed",
+            "folder": "hiring review folder",
+            "attachments": [
+              "interview panel brief"
+            ],
+            "owner": "case-owner@example.com",
+            "no_formula_damage": true,
+            "exported": true,
+            "pattern_id": "crm_close_escalation",
+            "scenario_id": "meridian_hiring",
+            "risk_tier": "external",
+            "approval_channel": "policy_queue",
+            "output_format": "crm_resolution",
+            "due_window": "the protected hiring block next week"
           }
         },
         "observation": {
@@ -1175,7 +1482,8 @@
           "to": [
             "yuki@example.com"
           ],
-          "object_id": "crm_115"
+          "object_id": "crm_115",
+          "message_type": "notification"
         },
         "observation": {
           "sent": true,
@@ -1268,30 +1576,50 @@
     },
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   },
   "audit": {
     "split": "test",
-    "min_required_criteria": 14,
+    "min_required_criteria": 18,
     "tools_required": 5,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
-    "mutation_count": 5,
+    "mutation_count": 7,
     "generator_version": "topconf-4",
     "task_pattern": "crm_close_escalation",
     "scenario_id": "meridian_hiring",
     "difficulty_profile": "multi-step completion with stricter side-effect guard",
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   }
 }

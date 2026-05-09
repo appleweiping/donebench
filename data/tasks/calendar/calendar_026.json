@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_026",
-          "title": "Iris QBR prep Product review reschedule case note 26",
-          "participants": [
-            "priya@example.com",
-            "nolan@example.com"
-          ],
-          "duration_minutes": 25,
-          "time_range": "next Thursday midday",
+          "title": "Draft placeholder calendar_026",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "account review folder",
-          "attachments": [
-            "QBR snapshot"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_reschedule_review",
           "scenario_id": "iris_qbr",
           "risk_tier": "restricted",
           "approval_channel": "inline_confirmation",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "next Thursday midday"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_026",
-            "title": "Iris QBR prep Product review reschedule case note 26",
-            "participants": [
-              "priya@example.com",
-              "nolan@example.com"
-            ],
-            "duration_minutes": 25,
-            "time_range": "next Thursday midday",
+            "title": "Draft placeholder calendar_026",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "account review folder",
-            "attachments": [
-              "QBR snapshot"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_reschedule_review",
             "scenario_id": "iris_qbr",
             "risk_tier": "restricted",
             "approval_channel": "inline_confirmation",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "next Thursday midday"
           }
         },

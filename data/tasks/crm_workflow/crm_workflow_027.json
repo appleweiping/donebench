@@ -251,25 +251,21 @@
       "crm_ticket": [
         {
           "id": "crm_027",
-          "title": "Iris QBR prep Reopened SLA case summary 27",
-          "participants": [
-            "morgan@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "next Thursday midday",
+          "title": "Draft placeholder crm_workflow_027",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "account review folder",
-          "attachments": [
-            "QBR snapshot"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "crm_reopen_sla",
           "scenario_id": "iris_qbr",
           "risk_tier": "external",
           "approval_channel": "policy_queue",
-          "output_format": "crm_resolution",
+          "output_format": "draft",
           "due_window": "next Thursday midday"
         }
       ]
@@ -1160,25 +1156,21 @@
           "found": true,
           "record": {
             "id": "crm_027",
-            "title": "Iris QBR prep Reopened SLA case summary 27",
-            "participants": [
-              "morgan@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "next Thursday midday",
+            "title": "Draft placeholder crm_workflow_027",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "account review folder",
-            "attachments": [
-              "QBR snapshot"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "crm_reopen_sla",
             "scenario_id": "iris_qbr",
             "risk_tier": "external",
             "approval_channel": "policy_queue",
-            "output_format": "crm_resolution",
+            "output_format": "draft",
             "due_window": "next Thursday midday"
           }
         },

@@ -3,6 +3,8 @@ Completion Criterion F1 measures atom-level agreement between predicted and gold
 
 Near-miss detection and verifier robustness evaluate whether the agent's own DoneSpec rejects superficially successful but invalid states. Spec-execution alignment measures whether the final state and trace violate the agent's own hard criteria.
 
+For repeated trials, we report pass@\(k\) as the fraction of tasks solved in at least one of \(k\) attempts, plus a consistency rate indicating whether all attempts for a task agree on success or failure. This follows the reliability framing used in tool-agent benchmarks while keeping DoneBench's separate focus on pre-execution completion semantics.
+
 \begin{figure}[h]
 \centering
 \fbox{\parbox{0.86\linewidth}{Good spec/good execution; good spec/bad execution; bad spec/good execution; bad spec/bad execution.}}

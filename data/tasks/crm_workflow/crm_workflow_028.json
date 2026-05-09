@@ -251,26 +251,21 @@
       "crm_ticket": [
         {
           "id": "crm_028",
-          "title": "Juniper vendor review Escalation closure status update 28",
-          "participants": [
-            "dana@example.com",
-            "sam@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder crm_workflow_028",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "crm_close_escalation",
           "scenario_id": "juniper_vendor",
           "risk_tier": "executive_review",
           "approval_channel": "policy_queue",
-          "output_format": "crm_resolution",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "crm_028",
-            "title": "Juniper vendor review Escalation closure status update 28",
-            "participants": [
-              "dana@example.com",
-              "sam@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder crm_workflow_028",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "crm_close_escalation",
             "scenario_id": "juniper_vendor",
             "risk_tier": "executive_review",
             "approval_channel": "policy_queue",
-            "output_format": "crm_resolution",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_023",
-          "title": "Harbor onboarding Product review reschedule approval 23",
-          "participants": [
-            "harper@example.com",
-            "logan@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "next Wednesday afternoon",
+          "title": "Draft placeholder calendar_023",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "customer onboarding folder",
-          "attachments": [
-            "onboarding packet"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_reschedule_review",
           "scenario_id": "harbor_onboarding",
           "risk_tier": "external",
           "approval_channel": "security_review",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "next Wednesday afternoon"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_023",
-            "title": "Harbor onboarding Product review reschedule approval 23",
-            "participants": [
-              "harper@example.com",
-              "logan@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "next Wednesday afternoon",
+            "title": "Draft placeholder calendar_023",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "customer onboarding folder",
-            "attachments": [
-              "onboarding packet"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_reschedule_review",
             "scenario_id": "harbor_onboarding",
             "risk_tier": "external",
             "approval_channel": "security_review",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "next Wednesday afternoon"
           }
         },

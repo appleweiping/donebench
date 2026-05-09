@@ -12,11 +12,14 @@ from donebench.scripts.full_run_readiness import write_full_run_readiness
 from donebench.scripts.invalid_donespec_taxonomy import classify_invalid_donespec
 from donebench.scripts.invalid_donespec_taxonomy import failure_detection_by_family
 from donebench.scripts.invalid_donespec_taxonomy import load_task_metadata
+from donebench.scripts.near_miss_breakdown import write_near_miss_breakdown
 from donebench.scripts.parse_transparency import write_parse_transparency
 from donebench.scripts.pilot_findings import write_pilot_findings
+from donebench.scripts.paper_refresh import refresh_paper_tables
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.generate_seed_tasks import DOMAINS, TASKS_PER_DOMAIN
 from donebench.scripts.readiness_report import write_readiness_report
+from donebench.scripts.strict_validation import write_strict_validation
 
 
 def test_quality_audit_outputs(tmp_path):
@@ -42,6 +45,15 @@ def test_readiness_report_outputs(tmp_path):
     assert report["readiness_scores"]["engineering_framework"] >= 8.0
     assert report["readiness_scores"]["data_scale_diversity"] >= 8.0
     assert report["readiness_scores"]["environment_realism"] >= 8.0
+
+
+def test_strict_validation_outputs(tmp_path):
+    summary = write_strict_validation(Path("data/tasks"), tmp_path / "strict")
+    assert summary["num_tasks"] == len(DOMAINS) * TASKS_PER_DOMAIN
+    assert summary["num_errors"] == 0
+    assert summary["strict_pass_rate"] == 1.0
+    assert (tmp_path / "strict" / "strict_validation_tasks.csv").exists()
+    assert (tmp_path / "strict" / "strict_validation_summary.json").exists()
 
 
 def test_advanced_stats_and_failure_mining(tmp_path):
@@ -184,6 +196,42 @@ def test_action_diagnostics_outputs(tmp_path):
     assert failures.loc[0, "precondition_failure_rate"] == 1.0
 
 
+def test_near_miss_breakdown_outputs(tmp_path):
+    input_path = tmp_path / "results.jsonl"
+    row = {
+        "task_id": "calendar_001",
+        "domain": "calendar",
+        "difficulty": "L1",
+        "agent": "oracle_spec",
+        "model": "mock",
+        "trial": 0,
+        "phase1": {
+            "cc_f1": 1.0,
+            "cc_precision": 1.0,
+            "cc_recall": 1.0,
+            "donespec_valid": True,
+            "success_f1": 1.0,
+            "failure_f1": 1.0,
+            "required_observation_recall": 1.0,
+            "overconstraint_rate": 0.0,
+            "underspecification_rate": 0.0,
+        },
+        "phase1b": {
+            "near_miss_detection_rate": 1.0,
+            "near_miss_false_accept_rate": 0.0,
+            "valid_accept_rate": 1.0,
+            "verifier_robustness_balanced_accuracy": 1.0,
+        },
+        "phase2": {"task_success": True, "self_violation_rate": 0.0, "own_spec_pass": True},
+        "quadrant": "good_spec_good_execution",
+    }
+    input_path.write_text(json.dumps(row) + "\n", encoding="utf-8")
+    summary = write_near_miss_breakdown(input_path, tmp_path / "near")
+    assert summary["num_trial_rows"] == 1
+    assert summary["num_expanded_rows"] >= 5
+    assert (tmp_path / "near" / "near_miss_by_taxon.csv").exists()
+
+
 def test_experiment_pipeline_smoke(tmp_path):
     output = tmp_path / "smoke.jsonl"
     summary = run_experiment_pipeline("smoke", output=output, report_root=tmp_path / "reports", limit=1, max_workers=2)
@@ -193,6 +241,26 @@ def test_experiment_pipeline_smoke(tmp_path):
     assert (report_dir / "stats" / "advanced_summary_ci.csv").exists()
     assert (report_dir / "actions" / "action_diagnostics_summary.json").exists()
     assert (report_dir / "paper_tables" / "main_results_with_execution.csv").exists()
+
+
+def test_refresh_paper_tables_outputs(tmp_path):
+    run = tmp_path / "run"
+    oracle = tmp_path / "oracle"
+    strict = tmp_path / "strict"
+    near = tmp_path / "near"
+    (run / "paper_tables").mkdir(parents=True)
+    (run / "paper_tables" / "main_results_with_execution.csv").write_text("model,agent\nm,a\n", encoding="utf-8")
+    (oracle / "paper_tables").mkdir(parents=True)
+    (oracle / "paper_tables" / "main_results_with_execution.csv").write_text("model,agent\nmock,oracle_spec\n", encoding="utf-8")
+    strict.mkdir(parents=True)
+    (strict / "strict_validation_summary.json").write_text("{}", encoding="utf-8")
+    near.mkdir(parents=True)
+    (near / "near_miss_by_taxon.csv").write_text("mutation_taxon\nx\n", encoding="utf-8")
+    (near / "near_miss_by_family.csv").write_text("fine_failure_family\nx\n", encoding="utf-8")
+    (near / "near_miss_coverage.csv").write_text("domain\ncalendar\n", encoding="utf-8")
+    summary = refresh_paper_tables(run, oracle, strict, near, tmp_path / "paper")
+    assert "main_results_full_toolplan" in summary["copied"]
+    assert (tmp_path / "paper" / "ablation_checklist.csv").exists()
 
 
 def test_audit_gate_outputs(tmp_path):

@@ -251,26 +251,21 @@
       "calendar_event": [
         {
           "id": "cal_034",
-          "title": "Lumen pilot handoff Stakeholder sync briefing 34",
-          "participants": [
-            "mia@example.com",
-            "ethan@example.com"
-          ],
-          "duration_minutes": 50,
-          "time_range": "the earliest conflict-free slot next week",
+          "title": "Draft placeholder calendar_034",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "pilot handoff folder",
-          "attachments": [
-            "pilot handoff note"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "calendar_schedule_sync",
           "scenario_id": "lumen_pilot",
           "risk_tier": "restricted",
           "approval_channel": "inline_confirmation",
-          "output_format": "calendar_invite",
+          "output_format": "draft",
           "due_window": "the earliest conflict-free slot next week"
         }
       ]
@@ -1182,26 +1177,21 @@
           "found": true,
           "record": {
             "id": "cal_034",
-            "title": "Lumen pilot handoff Stakeholder sync briefing 34",
-            "participants": [
-              "mia@example.com",
-              "ethan@example.com"
-            ],
-            "duration_minutes": 50,
-            "time_range": "the earliest conflict-free slot next week",
+            "title": "Draft placeholder calendar_034",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "pilot handoff folder",
-            "attachments": [
-              "pilot handoff note"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "calendar_schedule_sync",
             "scenario_id": "lumen_pilot",
             "risk_tier": "restricted",
             "approval_channel": "inline_confirmation",
-            "output_format": "calendar_invite",
+            "output_format": "draft",
             "due_window": "the earliest conflict-free slot next week"
           }
         },

@@ -1,0 +1,2 @@
+model,agent,n,cc_f1_mean,cc_f1_ci_low,cc_f1_ci_high,donespec_valid_mean,donespec_valid_ci_low,donespec_valid_ci_high,near_miss_detection_rate_mean,near_miss_detection_rate_ci_low,near_miss_detection_rate_ci_high,task_success_mean,task_success_ci_low,task_success_ci_high,self_violation_rate_mean,self_violation_rate_ci_low,self_violation_rate_ci_high
+mock,oracle_spec,500,0.9897254901960785,0.9877906862745099,0.9915689542483659,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.0,0.0,0.0

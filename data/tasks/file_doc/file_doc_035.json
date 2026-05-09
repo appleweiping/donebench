@@ -251,25 +251,21 @@
       "file": [
         {
           "id": "fil_035",
-          "title": "Lumen pilot handoff Signed contract archive packet 35",
-          "participants": [
-            "harper@example.com"
-          ],
-          "duration_minutes": 60,
-          "time_range": "the earliest conflict-free slot next week",
+          "title": "Draft placeholder file_doc_035",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "pilot handoff folder",
-          "attachments": [
-            "pilot handoff note"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "file_archive_contract",
           "scenario_id": "lumen_pilot",
           "risk_tier": "external",
           "approval_channel": "policy_queue",
-          "output_format": "pdf_package",
+          "output_format": "draft",
           "due_window": "the earliest conflict-free slot next week"
         }
       ]
@@ -1165,25 +1161,21 @@
           "found": true,
           "record": {
             "id": "fil_035",
-            "title": "Lumen pilot handoff Signed contract archive packet 35",
-            "participants": [
-              "harper@example.com"
-            ],
-            "duration_minutes": 60,
-            "time_range": "the earliest conflict-free slot next week",
+            "title": "Draft placeholder file_doc_035",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "pilot handoff folder",
-            "attachments": [
-              "pilot handoff note"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "file_archive_contract",
             "scenario_id": "lumen_pilot",
             "risk_tier": "external",
             "approval_channel": "policy_queue",
-            "output_format": "pdf_package",
+            "output_format": "draft",
             "due_window": "the earliest conflict-free slot next week"
           }
         },

@@ -251,25 +251,21 @@
       "sheet_row": [
         {
           "id": "she_022",
-          "title": "Harbor onboarding Account row review checkpoint 22",
-          "participants": [
-            "mia@example.com"
-          ],
-          "duration_minutes": 30,
-          "time_range": "next Wednesday afternoon",
+          "title": "Draft placeholder sheet_db_022",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "customer onboarding folder",
-          "attachments": [
-            "onboarding packet"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_update_account",
           "scenario_id": "harbor_onboarding",
           "risk_tier": "restricted",
           "approval_channel": "manager_approval",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "next Wednesday afternoon"
         }
       ]
@@ -1164,25 +1160,21 @@
           "found": true,
           "record": {
             "id": "she_022",
-            "title": "Harbor onboarding Account row review checkpoint 22",
-            "participants": [
-              "mia@example.com"
-            ],
-            "duration_minutes": 30,
-            "time_range": "next Wednesday afternoon",
+            "title": "Draft placeholder sheet_db_022",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "customer onboarding folder",
-            "attachments": [
-              "onboarding packet"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_update_account",
             "scenario_id": "harbor_onboarding",
             "risk_tier": "restricted",
             "approval_channel": "manager_approval",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "next Wednesday afternoon"
           }
         },

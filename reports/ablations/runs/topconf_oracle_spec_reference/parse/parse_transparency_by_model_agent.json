@@ -1,0 +1,20 @@
+[
+  {
+    "model":"mock",
+    "agent":"oracle_spec",
+    "n":500,
+    "parsed":0,
+    "fallback":0,
+    "parse_rate":0.0,
+    "fallback_rate":0.0,
+    "mean_attempts":null,
+    "mean_latency_s":null,
+    "mean_prompt_tokens":null,
+    "mean_completion_tokens":null,
+    "mean_total_tokens":null,
+    "mean_prompt_chars":null,
+    "mean_raw_output_chars":null,
+    "repaired_rate":0.0,
+    "quarantine_recommended":false
+  }
+]

@@ -251,26 +251,21 @@
       "sheet_row": [
         {
           "id": "she_028",
-          "title": "Juniper vendor review Account row review status update 28",
-          "participants": [
-            "dana@example.com",
-            "sam@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder sheet_db_028",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_update_account",
           "scenario_id": "juniper_vendor",
           "risk_tier": "executive_review",
           "approval_channel": "policy_queue",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1186,26 +1181,21 @@
           "found": true,
           "record": {
             "id": "she_028",
-            "title": "Juniper vendor review Account row review status update 28",
-            "participants": [
-              "dana@example.com",
-              "sam@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder sheet_db_028",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_update_account",
             "scenario_id": "juniper_vendor",
             "risk_tier": "executive_review",
             "approval_channel": "policy_queue",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

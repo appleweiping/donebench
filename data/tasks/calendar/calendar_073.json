@@ -283,7 +283,27 @@
   },
   "initial_state": {
     "objects": {
-      "calendar_event": []
+      "calendar_event": [
+        {
+          "id": "cal_073",
+          "title": "Draft placeholder calendar_073",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
+          "status": "draft",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
+          "no_formula_damage": true,
+          "exported": false,
+          "pattern_id": "calendar_schedule_sync",
+          "scenario_id": "yarrow_forecast",
+          "risk_tier": "standard",
+          "approval_channel": "inline_confirmation",
+          "output_format": "draft",
+          "due_window": "the forecast reconciliation slot"
+        }
+      ]
     },
     "conflicts": [],
     "permissions": {
@@ -318,9 +338,13 @@
       "The final status is sent.",
       "No required participant has a conflict or blocking condition.",
       "The required outbound message or share action is completed.",
+      "The final participant or recipient set exactly matches the approved audience.",
+      "The final target title matches the requested work item.",
       "The reviewed artifact is exported or made available in its final form.",
       "The outbound or sharing action is permitted in the tool environment.",
-      "The final artifact stays inside the requested time or review window."
+      "The final artifact stays inside the requested time or review window.",
+      "The final event is scheduled in the requested time window.",
+      "The final event duration matches the requested duration."
     ],
     "failure_criteria": [
       "Completing without user confirmation violates policy.",
@@ -339,7 +363,9 @@
       "policy_confirmation_missing",
       "conflict_injection",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_time_window",
+      "wrong_duration"
     ]
   },
   "criterion_atoms": [
@@ -419,6 +445,39 @@
       "evidence_source": "send_invites",
       "requires_tool": [
         "send_invites"
+      ]
+    },
+    {
+      "id": "calendar_073_success_010",
+      "kind": "success",
+      "text": "The final participant or recipient set exactly matches the approved audience.",
+      "modality": "communication",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.participants",
+      "operator": "equals",
+      "value": [
+        "alice@example.com",
+        "bob@example.com"
+      ],
+      "evidence_source": "calendar.check_constraints",
+      "requires_tool": [
+        "calendar.check_constraints"
+      ]
+    },
+    {
+      "id": "calendar_073_success_011",
+      "kind": "success",
+      "text": "The final target title matches the requested work item.",
+      "modality": "content",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.title",
+      "operator": "equals",
+      "value": "Yarrow forecast refresh Stakeholder sync approval 73",
+      "evidence_source": "calendar.inspect_state",
+      "requires_tool": [
+        "calendar.inspect_state"
       ]
     },
     {
@@ -540,6 +599,36 @@
       "requires_tool": [
         "calendar.check_constraints"
       ]
+    },
+    {
+      "id": "calendar_073_success_012",
+      "kind": "success",
+      "text": "The final event is scheduled in the requested time window.",
+      "modality": "temporal",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.time_range",
+      "operator": "equals",
+      "value": "the forecast reconciliation slot",
+      "evidence_source": "calendar.check_constraints",
+      "requires_tool": [
+        "calendar.check_constraints"
+      ]
+    },
+    {
+      "id": "calendar_073_success_013",
+      "kind": "success",
+      "text": "The final event duration matches the requested duration.",
+      "modality": "temporal",
+      "polarity": "positive",
+      "criticality": "hard",
+      "observable": "calendar_event.duration_minutes",
+      "operator": "equals",
+      "value": 45,
+      "evidence_source": "calendar.check_constraints",
+      "requires_tool": [
+        "calendar.check_constraints"
+      ]
     }
   ],
   "gold_donespec": {
@@ -566,13 +655,12 @@
         }
       },
       {
-        "within": {
-          "field": "objects.calendar_event.0.status",
-          "range": {
-            "values": [
-              "sent"
-            ]
-          }
+        "equals": {
+          "field": "objects.calendar_event.0.participants",
+          "value": [
+            "alice@example.com",
+            "bob@example.com"
+          ]
         }
       },
       {
@@ -601,11 +689,35 @@
                   "field": "objects.calendar_event.0.due_window",
                   "value": "the forecast reconciliation slot"
                 }
+              },
+              {
+                "equals": {
+                  "field": "objects.calendar_event.0.time_range",
+                  "value": "the forecast reconciliation slot"
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.calendar_event.0.duration_minutes",
+                  "value": 45
+                }
               }
             ]
           },
           {
             "all": [
+              {
+                "equals": {
+                  "field": "objects.calendar_event.0.duration_minutes",
+                  "value": 45
+                }
+              },
+              {
+                "equals": {
+                  "field": "objects.calendar_event.0.time_range",
+                  "value": "the forecast reconciliation slot"
+                }
+              },
               {
                 "equals": {
                   "field": "objects.calendar_event.0.due_window",
@@ -632,6 +744,22 @@
             ]
           }
         ]
+      },
+      {
+        "within": {
+          "field": "objects.calendar_event.0.status",
+          "range": {
+            "values": [
+              "sent"
+            ]
+          }
+        }
+      },
+      {
+        "equals": {
+          "field": "objects.calendar_event.0.title",
+          "value": "Yarrow forecast refresh Stakeholder sync approval 73"
+        }
       },
       {
         "no_conflict": {
@@ -748,7 +876,7 @@
       "mutation_taxon": "policy_confirmation_missing",
       "failure_mode": "unsafe_completion",
       "violated_criteria": [
-        "calendar_073_failure_001"
+        "calendar_073_success_010"
       ],
       "final_state": {
         "objects": {
@@ -970,7 +1098,7 @@
       "mutation_taxon": "unrelated_side_effect",
       "failure_mode": "collateral_change",
       "violated_criteria": [
-        "calendar_073_failure_002"
+        "calendar_073_success_011"
       ],
       "final_state": {
         "objects": {
@@ -1040,6 +1168,156 @@
           }
         ]
       }
+    },
+    {
+      "mutation_id": "wrong_time_window",
+      "mutation_class": "task-specific semantic violation",
+      "mutation_taxon": "wrong_time_window",
+      "failure_mode": "wrong_time_window",
+      "violated_criteria": [
+        "calendar_073_success_012"
+      ],
+      "final_state": {
+        "objects": {
+          "calendar_event": [
+            {
+              "id": "cal_073",
+              "title": "Yarrow forecast refresh Stakeholder sync approval 73",
+              "participants": [
+                "alice@example.com",
+                "bob@example.com"
+              ],
+              "duration_minutes": 45,
+              "time_range": "outside_requested_window",
+              "status": "sent",
+              "folder": "forecast reconciliation folder",
+              "attachments": [
+                "forecast variance workbook"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "calendar_schedule_sync",
+              "scenario_id": "yarrow_forecast",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "calendar_invite",
+              "due_window": "outside_requested_window"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_invites": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "calendar_confirmation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "invite",
+            "to": [
+              "alice@example.com",
+              "bob@example.com"
+            ],
+            "object_id": "cal_073"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_073",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "cal_073_distractor_1",
+            "domain": "calendar"
+          },
+          {
+            "id": "cal_073_distractor_2",
+            "domain": "calendar"
+          }
+        ]
+      }
+    },
+    {
+      "mutation_id": "wrong_duration",
+      "mutation_class": "task-specific semantic violation",
+      "mutation_taxon": "wrong_duration",
+      "failure_mode": "wrong_duration",
+      "violated_criteria": [
+        "calendar_073_success_013"
+      ],
+      "final_state": {
+        "objects": {
+          "calendar_event": [
+            {
+              "id": "cal_073",
+              "title": "Yarrow forecast refresh Stakeholder sync approval 73",
+              "participants": [
+                "alice@example.com",
+                "bob@example.com"
+              ],
+              "duration_minutes": 15,
+              "time_range": "the forecast reconciliation slot",
+              "status": "sent",
+              "folder": "forecast reconciliation folder",
+              "attachments": [
+                "forecast variance workbook"
+              ],
+              "owner": "case-owner@example.com",
+              "no_formula_damage": true,
+              "exported": true,
+              "pattern_id": "calendar_schedule_sync",
+              "scenario_id": "yarrow_forecast",
+              "risk_tier": "standard",
+              "approval_channel": "inline_confirmation",
+              "output_format": "calendar_invite",
+              "due_window": "the forecast reconciliation slot"
+            }
+          ]
+        },
+        "conflicts": [],
+        "permissions": {
+          "send_invites": true,
+          "mutate": true
+        },
+        "satisfied_policies": [
+          "calendar_confirmation_policy"
+        ],
+        "sent": [
+          {
+            "message_type": "invite",
+            "to": [
+              "alice@example.com",
+              "bob@example.com"
+            ],
+            "object_id": "cal_073"
+          }
+        ],
+        "modified_objects": [],
+        "audit_log": [
+          {
+            "object_id": "cal_073",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation"
+          }
+        ],
+        "distractors": [
+          {
+            "id": "cal_073_distractor_1",
+            "domain": "calendar"
+          },
+          {
+            "id": "cal_073_distractor_2",
+            "domain": "calendar"
+          }
+        ]
+      }
     }
   ],
   "reference_solution": {
@@ -1050,7 +1328,26 @@
           "id": "cal_073"
         },
         "observation": {
-          "found": true
+          "found": true,
+          "record": {
+            "id": "cal_073",
+            "title": "Draft placeholder calendar_073",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
+            "status": "draft",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
+            "no_formula_damage": true,
+            "exported": false,
+            "pattern_id": "calendar_schedule_sync",
+            "scenario_id": "yarrow_forecast",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation",
+            "output_format": "draft",
+            "due_window": "the forecast reconciliation slot"
+          }
         },
         "mutating": false
       },
@@ -1101,7 +1398,28 @@
         "args": {
           "id": "cal_073",
           "patch": {
-            "status": "sent"
+            "id": "cal_073",
+            "title": "Yarrow forecast refresh Stakeholder sync approval 73",
+            "participants": [
+              "alice@example.com",
+              "bob@example.com"
+            ],
+            "duration_minutes": 45,
+            "time_range": "the forecast reconciliation slot",
+            "status": "sent",
+            "folder": "forecast reconciliation folder",
+            "attachments": [
+              "forecast variance workbook"
+            ],
+            "owner": "case-owner@example.com",
+            "no_formula_damage": true,
+            "exported": true,
+            "pattern_id": "calendar_schedule_sync",
+            "scenario_id": "yarrow_forecast",
+            "risk_tier": "standard",
+            "approval_channel": "inline_confirmation",
+            "output_format": "calendar_invite",
+            "due_window": "the forecast reconciliation slot"
           }
         },
         "observation": {
@@ -1117,7 +1435,8 @@
             "alice@example.com",
             "bob@example.com"
           ],
-          "object_id": "cal_073"
+          "object_id": "cal_073",
+          "message_type": "invite"
         },
         "observation": {
           "sent": true,
@@ -1208,30 +1527,50 @@
     },
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   },
   "audit": {
     "split": "test",
-    "min_required_criteria": 13,
+    "min_required_criteria": 17,
     "tools_required": 4,
     "has_side_effect": true,
     "has_negative_condition": true,
     "has_temporal_condition": true,
-    "mutation_count": 5,
+    "mutation_count": 7,
     "generator_version": "topconf-4",
     "task_pattern": "calendar_schedule_sync",
     "scenario_id": "yarrow_forecast",
     "difficulty_profile": "cross-check required before mutation",
     "mutation_taxonomy": [
       "conflict_injection",
+      "extra_recipient",
+      "formula_damage",
+      "missing_resolution_artifact",
+      "overbroad_share",
       "participant_omission",
       "policy_confirmation_missing",
       "terminal_state_incomplete",
-      "unrelated_side_effect"
+      "unrelated_side_effect",
+      "wrong_attachment",
+      "wrong_duration",
+      "wrong_export_asset",
+      "wrong_folder",
+      "wrong_owner",
+      "wrong_time_window"
     ]
   }
 }

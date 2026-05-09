@@ -1,0 +1,20 @@
+{
+  "copied": {
+    "main_results_full_toolplan": "paper\\tables\\main_results_full_toolplan.csv",
+    "domain_results_full_toolplan": "paper\\tables\\domain_results_full_toolplan.csv",
+    "passk_consistency_full_toolplan": "paper\\tables\\passk_consistency_full_toolplan.csv",
+    "parse_transparency_full_toolplan": "paper\\tables\\parse_transparency_full_toolplan.csv",
+    "cost_by_model_full_toolplan": "paper\\tables\\cost_by_model_full_toolplan.csv",
+    "cost_summary_full_toolplan": "paper\\tables\\cost_summary_full_toolplan.json",
+    "oracle_reference_results": "paper\\tables\\oracle_reference_results.csv",
+    "strict_validation_summary": "paper\\tables\\strict_validation_summary.json",
+    "near_miss_by_taxon_full_toolplan": "paper\\tables\\near_miss_by_taxon_full_toolplan.csv",
+    "near_miss_by_family_full_toolplan": "paper\\tables\\near_miss_by_family_full_toolplan.csv",
+    "near_miss_coverage": "paper\\tables\\near_miss_coverage.csv",
+    "token_matched_results": "paper\\tables\\token_matched_results.csv",
+    "token_matched_parse_transparency": "paper\\tables\\token_matched_parse_transparency.csv",
+    "token_matched_cost_summary": "paper\\tables\\token_matched_cost_summary.json",
+    "ablation_checklist": "paper\\tables\\ablation_checklist.csv"
+  },
+  "outputs": "paper\\tables"
+}

@@ -251,26 +251,21 @@
       "sheet_row": [
         {
           "id": "she_036",
-          "title": "Lumen pilot handoff Forecast row append case note 36",
-          "participants": [
-            "zoe@example.com",
-            "amir@example.com"
-          ],
-          "duration_minutes": 25,
-          "time_range": "the earliest conflict-free slot next week",
+          "title": "Draft placeholder sheet_db_036",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "pilot handoff folder",
-          "attachments": [
-            "pilot handoff note"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "sheet_append_forecast",
           "scenario_id": "lumen_pilot",
           "risk_tier": "executive_review",
           "approval_channel": "policy_queue",
-          "output_format": "csv_export",
+          "output_format": "draft",
           "due_window": "the earliest conflict-free slot next week"
         }
       ]
@@ -1186,26 +1181,21 @@
           "found": true,
           "record": {
             "id": "she_036",
-            "title": "Lumen pilot handoff Forecast row append case note 36",
-            "participants": [
-              "zoe@example.com",
-              "amir@example.com"
-            ],
-            "duration_minutes": 25,
-            "time_range": "the earliest conflict-free slot next week",
+            "title": "Draft placeholder sheet_db_036",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "pilot handoff folder",
-            "attachments": [
-              "pilot handoff note"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "sheet_append_forecast",
             "scenario_id": "lumen_pilot",
             "risk_tier": "executive_review",
             "approval_channel": "policy_queue",
-            "output_format": "csv_export",
+            "output_format": "draft",
             "due_window": "the earliest conflict-free slot next week"
           }
         },

@@ -1,7 +1,7 @@
-ablation,comparison,purpose,status
-planning_control,direct_vs_plan_first,separate planning quality from completion-semantics construction,placeholder
-specification_effect,plan_first_vs_spec_first,test whether explicit done criteria improve execution,placeholder
-execution_gap,spec_first_vs_oracle_spec,estimate failures after specification ambiguity is removed,placeholder
-near_miss_family_breakdown,mutation_type_by_agent,identify which invalid final states fool verifiers,placeholder
-token_matched_prompting,plan_first_vs_spec_first_equal_budget,control for extra prompt tokens,future
-criterion_format_sensitivity,dsl_vs_free_form,test whether gains depend on DoneSpec output format,future
+ablation,purpose,status,artifact
+Direct vs Plan-first vs Spec-first,Separate planning from explicit completion-semantics elicitation,reported_full_toolplan_pre_repair,paper/tables/main_results_full_toolplan.csv
+Oracle reference upper bound,Verify gold DoneSpec and reference trace can solve the repaired corpus,reported_repaired_corpus,paper/tables/oracle_reference_results.csv
+Full-corpus strict validation,"Validate reference replay, DoneSpec acceptance, near-miss rejection, and domain-specific coverage",reported_repaired_corpus,paper/tables/strict_validation_summary.json
+Near-miss family breakdown,Report verifier robustness by mutation taxon and failure family,reported_full_toolplan_pre_repair,paper/tables/near_miss_by_family_full_toolplan.csv
+Token-matched prompting,Control for prompt-budget differences between protocols,reported_repaired_corpus,paper/tables/token_matched_results.csv
+Cross-family model slice,Check that DoneBench effects are not DeepSeek-family artifacts,configured_pending_credentials,configs/experiments.yaml:cross_family_slice

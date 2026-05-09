@@ -251,26 +251,21 @@
       "email_message": [
         {
           "id": "ema_028",
-          "title": "Juniper vendor review Weekly summary status update 28",
-          "participants": [
-            "dana@example.com",
-            "sam@example.com"
-          ],
-          "duration_minutes": 45,
-          "time_range": "next Friday morning",
+          "title": "Draft placeholder email_028",
+          "participants": [],
+          "duration_minutes": 0,
+          "time_range": "unscheduled",
           "status": "draft",
-          "folder": "vendor review folder",
-          "attachments": [
-            "vendor scorecard"
-          ],
-          "owner": "case-owner@example.com",
+          "folder": "incoming",
+          "attachments": [],
+          "owner": "unassigned@example.com",
           "no_formula_damage": true,
           "exported": false,
           "pattern_id": "email_weekly_summary",
           "scenario_id": "juniper_vendor",
           "risk_tier": "executive_review",
           "approval_channel": "policy_queue",
-          "output_format": "email_thread",
+          "output_format": "draft",
           "due_window": "next Friday morning"
         }
       ]
@@ -1190,26 +1185,21 @@
           "found": true,
           "record": {
             "id": "ema_028",
-            "title": "Juniper vendor review Weekly summary status update 28",
-            "participants": [
-              "dana@example.com",
-              "sam@example.com"
-            ],
-            "duration_minutes": 45,
-            "time_range": "next Friday morning",
+            "title": "Draft placeholder email_028",
+            "participants": [],
+            "duration_minutes": 0,
+            "time_range": "unscheduled",
             "status": "draft",
-            "folder": "vendor review folder",
-            "attachments": [
-              "vendor scorecard"
-            ],
-            "owner": "case-owner@example.com",
+            "folder": "incoming",
+            "attachments": [],
+            "owner": "unassigned@example.com",
             "no_formula_damage": true,
             "exported": false,
             "pattern_id": "email_weekly_summary",
             "scenario_id": "juniper_vendor",
             "risk_tier": "executive_review",
             "approval_channel": "policy_queue",
-            "output_format": "email_thread",
+            "output_format": "draft",
             "due_window": "next Friday morning"
           }
         },

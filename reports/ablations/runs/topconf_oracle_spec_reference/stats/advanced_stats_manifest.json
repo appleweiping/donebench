@@ -1,0 +1,18 @@
+{
+  "tables": {
+    "advanced_summary_ci": 1,
+    "advanced_by_domain": 5,
+    "advanced_by_difficulty": 3,
+    "advanced_pass_at_k": 500,
+    "advanced_passk_consistency": 1,
+    "advanced_paired_model_diff": 0,
+    "advanced_paired_bootstrap_all_models": 0,
+    "advanced_quadrants": 1,
+    "advanced_invalid_donespec_taxonomy": 0,
+    "advanced_failure_taxonomy": 4
+  },
+  "formats": [
+    "csv",
+    "json"
+  ]
+}

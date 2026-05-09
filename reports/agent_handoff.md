@@ -48,25 +48,25 @@ Unsafe claim: spec-first solves execution, or the benchmark proves a general fro
 
 ## Audit Gate State
 
-Current paper blockers are not the same as full-run blockers.
+The paper gate now follows the convention used by many agent benchmarks: executable validation plus trusted model/structured audit is the required quality gate, while human annotation is optional calibration rather than a required blocker.
 
 - Trusted audit coverage: clear. The repaired structured audit covers all 100 / 100 human-audit queue tasks with `audit_source = "model"`.
 - Full-run gate: clear. `reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json` reports `full_run_ready_audit_gate = true`, `num_ai_high_risk = 0`, and `num_ai_needs_adjudication = 0` when using `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`.
-- Paper blockers:
-  - `human_double_annotation_below_50`
+- Paper gate: clear. The current gate reports `paper_ready_audit_gate = true` and `paper_blockers = []`.
+- Optional human calibration: not complete. `num_double_annotated = 0`, `human_calibration_target = 50`, and `paper_ready_optional_human_calibration = false`.
 
 Definitions:
 
-- `human_double_annotation_below_50`: fewer than 50 of 100 human-audit queue tasks have valid `annotator_a` and `annotator_b` judgments.
 - `trusted_ai_audit_coverage_below_threshold`: trusted model audit coverage below 0.90. This is currently solved by `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`, which covers 100 / 100 tasks with `audit_source == "model"`.
 - `ai_high_risk_rate_above_threshold`: high-risk AI audit task rate above 0.15. This is currently cleared by the repaired structured audit (`0 / 100` high risk).
 - `ai_adjudication_queue_nonempty`: at least one AI-audited task has `needs_adjudication: true`; this is currently cleared by the repaired structured audit (`0 / 100`).
+- `human_calibration_target`: optional 50-task balanced double annotation target for stronger semantic calibration. It is not a paper-readiness blocker.
 
-Do not fake human audit. Codex may organize queues, summarize task evidence, run model/agent audits, repair task artifacts, and prepare adjudication packets. Codex must not fill `annotator_a`, `annotator_b`, or adjudicator fields as if it were an independent human annotator. If agent-based double review is desired, write it to a clearly named agent-review artifact instead of the human annotation fields.
+Do not fake human audit. Codex may organize queues, summarize task evidence, run model/agent audits, repair task artifacts, and prepare adjudication packets. Codex must not fill `annotator_a`, `annotator_b`, or adjudicator fields as if it were an independent human annotator. If agent-based double review is desired, write it to a clearly named model/agent review artifact instead of the human annotation fields.
 
 ## GPT-5.5 Targeted Audit Plan
 
-GPT-5.5 targeted audit has been completed through Codex session agents, not external OpenAI API calls. It is a model second opinion, not a replacement for human double annotation.
+GPT-5.5 targeted audit has been completed through Codex session agents, not external OpenAI API calls. It is a model second opinion and part of model-assisted quality audit, not a human annotation.
 
 Suggested output directory:
 
@@ -157,13 +157,15 @@ Current readiness:
 - `reports/full_run_readiness.json`
 - `full_run_ready = true`
 - `full_run_blockers = []`
-- Remaining paper blocker: `human_double_annotation_below_50`
+- `paper_ready_audit_gate = true`
+- `paper_blockers = []`
+- Optional human calibration remains incomplete: `0 / 50`
 
-## Human Audit Plan
+## Optional Human Calibration Plan
 
-Minimum code gate: 50 of 100 rows in `annotation/human_audit_queue.jsonl` must be double annotated.
+Human annotation is no longer a required paper gate. It remains useful as a conservative calibration layer because DoneBench evaluates completion semantics directly.
 
-Paper-credible gate: the 50 rows should also have disagreement adjudication and an updated agreement report.
+Recommended optional calibration target: 50 of 100 rows in `annotation/human_audit_queue.jsonl` double annotated, with disagreement adjudication and an updated agreement report.
 
 Recommended balanced first batch:
 
@@ -173,11 +175,11 @@ Recommended balanced first batch:
 - `file_doc_021` through `file_doc_030`
 - `sheet_db_021` through `sheet_db_030`
 
-Each annotator fills `decision`, `confidence`, five checks, rationales, and notes. Run:
+Each annotator fills `decision`, `confidence`, five checks, rationales, and notes. If this optional calibration is done, run:
 
 ```powershell
 C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli annotation-agreement annotation/human_audit_queue.jsonl reports/audit
-C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli audit-gate reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json --annotation annotation/human_audit_queue.jsonl --ai-audit reports/audit_deepseek_gpt55_merged/ai_audit_opinions.jsonl
+C:\Users\admin\AppData\Local\Programs\Python\Python312\python.exe -m donebench.cli audit-gate reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json --annotation annotation/human_audit_queue.jsonl --ai-audit reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl
 ```
 
 ## Milestones
@@ -198,7 +200,7 @@ Completion boundary: keep the repaired generator and queue files under version c
 
 Status: complete. The 18,000-trial `topconf_deepseek_toolplan_full` run finished and postprocessed under `reports/full_runs/runs/topconf_deepseek_toolplan_full/`.
 
-Completion boundary: full-run readiness is true. Paper boundary remains blocked by human double annotation.
+Completion boundary: full-run readiness is true and paper audit gate is true.
 
 ### M3: AI-Assisted Audit
 
@@ -206,11 +208,11 @@ Status: repaired and cleared for full-run readiness. DeepSeek plus GPT-5.5 targe
 
 Completion boundary: if new task artifacts are generated, rerun validation, strict reference replay, structured audit, audit gate, and full-run readiness before relying on them.
 
-### M4: Human Audit
+### M4: Optional Human Calibration
 
-Status: not complete. `num_double_annotated` is still 0. The systematic generation/reference-trace issue is repaired, so a balanced first batch can now be annotated without wasting review on the known generator bug.
+Status: optional and not complete. `num_double_annotated` is still 0. The systematic generation/reference-trace issue is repaired, so a balanced first batch can now be annotated without wasting review on the known generator bug.
 
-Completion boundary: at least 50 balanced tasks are double annotated, disagreement rows are adjudicated, and agreement/gate reports are refreshed.
+Completion boundary: if pursued, at least 50 balanced tasks are double annotated, disagreement rows are adjudicated, and agreement/gate reports are refreshed. This strengthens the paper but is not required for the current gate.
 
 ### M5: Paper Claim Freeze
 

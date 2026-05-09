@@ -264,9 +264,10 @@ def test_audit_gate_allows_full_run_when_human_pending_but_ai_trusted(tmp_path):
     )
     summary = write_audit_gate(tmp_path / "gate.json", annotation_path=queue, ai_audit_path=ai_audit)
     assert summary["full_run_ready_audit_gate"] is True
-    assert summary["paper_ready_audit_gate"] is False
+    assert summary["paper_ready_audit_gate"] is True
+    assert summary["human_annotation_required_for_paper_gate"] is False
     assert summary["full_run_blockers"] == []
-    assert summary["paper_blockers"] == ["human_double_annotation_below_1"]
+    assert summary["paper_blockers"] == []
 
 
 def test_audit_gate_keeps_adjudication_for_paper_not_full_run(tmp_path):

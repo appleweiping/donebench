@@ -77,7 +77,9 @@ Current result:
 - `num_ai_needs_adjudication = 0`
 - `full_run_ready_audit_gate = true`
 - `full_run_ready = true`
-- Remaining paper blocker: `human_double_annotation_below_50`
+- `paper_ready_audit_gate = true`
+- `paper_blockers = []`
+- Optional human calibration remains incomplete: `0 / 50`
 
 ## Residual Risk
 

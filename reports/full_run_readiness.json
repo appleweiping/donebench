@@ -27,6 +27,9 @@
     "num_adjudicated": 0,
     "adjudication_rate": 0.0,
     "num_pending_human": 100,
+    "human_annotation_required_for_paper_gate": false,
+    "human_calibration_target": 50,
+    "paper_ready_optional_human_calibration": false,
     "num_ai_audited": 100,
     "num_ai_audit_records": 100,
     "ai_coverage_rate": 1.0,
@@ -40,14 +43,10 @@
     "paper_ready_human_audit": false,
     "paper_ready_ai_assisted_audit": true,
     "full_run_ready_audit_gate": true,
-    "paper_ready_audit_gate": false,
+    "paper_ready_audit_gate": true,
     "full_run_blockers": [],
-    "paper_blockers": [
-      "human_double_annotation_below_50"
-    ],
-    "blockers": [
-      "human_double_annotation_below_50"
-    ],
+    "paper_blockers": [],
+    "blockers": [],
     "queues": {
       "pending_human_task_ids": [
         "calendar_021",

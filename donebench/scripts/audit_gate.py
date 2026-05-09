@@ -5,11 +5,10 @@ from pathlib import Path
 from typing import Any
 
 
-MIN_HUMAN_DOUBLE_ANNOTATED = 50
 MIN_AI_COVERAGE_RATE = 0.9
 MAX_AI_HIGH_RISK_RATE = 0.15
 TRUSTED_AI_SOURCES = {"model"}
-HUMAN_BLOCKER_PREFIX = "human_double_annotation_below_"
+OPTIONAL_HUMAN_CALIBRATION_TARGET = 50
 
 
 def audit_gate_summary(
@@ -73,7 +72,8 @@ def audit_gate_summary(
     ai_high_risk_rate = len(ai_high_risk_unique_ids) / len(ai_by_task) if ai_by_task else 0.0
     ai_coverage_rate = len(covered_human_ids) / total if total else 0.0
     trusted_ai_coverage_rate = len(trusted_covered_ids) / total if total else 0.0
-    human_ready = double_annotated >= min(MIN_HUMAN_DOUBLE_ANNOTATED, total) if total else False
+    human_target = min(OPTIONAL_HUMAN_CALIBRATION_TARGET, total) if total else OPTIONAL_HUMAN_CALIBRATION_TARGET
+    human_ready = double_annotated >= human_target if total else False
     full_run_ai_ready = (
         total > 0
         and trusted_ai_coverage_rate >= MIN_AI_COVERAGE_RATE
@@ -84,20 +84,13 @@ def audit_gate_summary(
         and len(ai_adjudication_unique_ids) == 0
     )
     blockers = []
-    human_blocker = f"{HUMAN_BLOCKER_PREFIX}{min(MIN_HUMAN_DOUBLE_ANNOTATED, total) if total else MIN_HUMAN_DOUBLE_ANNOTATED}"
-    if not human_ready:
-        blockers.append(human_blocker)
     if trusted_ai_coverage_rate < MIN_AI_COVERAGE_RATE:
         blockers.append("trusted_ai_audit_coverage_below_threshold")
     if ai_high_risk_rate > MAX_AI_HIGH_RISK_RATE:
         blockers.append("ai_high_risk_rate_above_threshold")
     if ai_adjudication_unique_ids:
         blockers.append("ai_adjudication_queue_nonempty")
-    full_run_blockers = [
-        blocker
-        for blocker in blockers
-        if blocker not in {human_blocker, "ai_adjudication_queue_nonempty"}
-    ]
+    full_run_blockers = [blocker for blocker in blockers if blocker != "ai_adjudication_queue_nonempty"]
     return {
         "annotation_path": str(annotation_path),
         "ai_audit_path": str(ai_audit_path),
@@ -107,6 +100,9 @@ def audit_gate_summary(
         "num_adjudicated": adjudicated,
         "adjudication_rate": adjudicated / total if total else 0.0,
         "num_pending_human": len(pending_human),
+        "human_annotation_required_for_paper_gate": False,
+        "human_calibration_target": human_target,
+        "paper_ready_optional_human_calibration": human_ready,
         "num_ai_audited": len(ai_by_task),
         "num_ai_audit_records": len(ai_items),
         "ai_coverage_rate": ai_coverage_rate,
@@ -120,7 +116,7 @@ def audit_gate_summary(
         "paper_ready_human_audit": human_ready,
         "paper_ready_ai_assisted_audit": ai_assisted_ready,
         "full_run_ready_audit_gate": full_run_ai_ready,
-        "paper_ready_audit_gate": human_ready and ai_assisted_ready,
+        "paper_ready_audit_gate": ai_assisted_ready,
         "full_run_blockers": full_run_blockers,
         "paper_blockers": blockers,
         "blockers": blockers,

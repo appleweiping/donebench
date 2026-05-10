@@ -75,6 +75,7 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
   - `reports/leaderboard_contamination_policy.md`
   - `reports/release_manifest.json`
   - `reports/release_manifest.md`
+- Git preservation: M6.2 repaired-corpus, repaired diagnostic slice, diagnostic reports, claim/release policies, calibration packet, and refreshed paper artifacts were committed and pushed to `origin/main` as `8a9c8be4dcd7442f4d1f62a4dec0253392515d5d`.
 - Optional calibration packet is prepared at `reports/calibration_packets/`. This is not completed human annotation and does not modify human annotator fields.
 - A domain/task-sampling reviewer flagged that the calibration packet is domain-balanced but not difficulty-balanced; the packet README and summary state this explicitly.
 

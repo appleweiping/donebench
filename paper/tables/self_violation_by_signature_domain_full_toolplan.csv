@@ -1,0 +1,17 @@
+domain,self_violation_signature,n,mean_cc_f1,mean_task_success,mean_self_violation_rate,mean_own_spec_pass
+calendar,no_confirmation,3307,0.4341192909563192,0.0,1.0,0.0
+calendar,state_only,271,0.42370160505361937,0.0,0.8619091548058339,0.0
+calendar,no_confirmation+missing_precondition,1,0.5263157894736842,0.0,1.0,0.0
+crm_workflow,no_confirmation,2769,0.5429773539574636,0.0,1.0,0.0
+crm_workflow,state_only,715,0.49414226948883705,0.0,0.8997224997224997,0.0
+crm_workflow,no_confirmation+missing_precondition,4,0.5326388888888889,0.0,1.0,0.0
+email,no_confirmation,2525,0.5412722775821608,0.0,1.0,0.0
+email,state_only,967,0.5084697626916429,0.0,0.9055169810081909,0.0
+email,no_confirmation+missing_precondition,4,0.6186274509803922,0.0,1.0,0.0
+email,missing_precondition,1,0.2666666666666667,0.0,1.0,0.0
+file_doc,no_confirmation,2645,0.5268290379747023,0.0,1.0,0.0
+file_doc,state_only,839,0.4855276462872745,0.0,0.9046271071002895,0.0
+sheet_db,no_confirmation,2991,0.5161348419788432,0.0,1.0,0.0
+sheet_db,state_only,509,0.5060776428181776,0.0,0.8700299373187389,0.0
+sheet_db,no_confirmation+missing_precondition,18,0.5241428735236785,0.0,1.0,0.0
+sheet_db,missing_precondition,1,0.7272727272727273,0.0,1.0,0.0

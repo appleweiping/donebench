@@ -27,6 +27,10 @@ The current paper claims should use these refreshed table artifacts:
 - `paper/tables/near_miss_by_taxon_full_toolplan.csv`
 - `paper/tables/near_miss_by_family_full_toolplan.csv`
 - `paper/tables/near_miss_coverage.csv`
+- `paper/tables/four_quadrants_full_toolplan.csv`
+- `paper/tables/self_violation_by_signature_full_toolplan.csv`
+- `paper/tables/self_violation_by_signature_domain_full_toolplan.csv`
+- `paper/tables/near_miss_success_full_toolplan.csv`
 - `paper/tables/token_matched_results.csv`
 - `paper/tables/token_matched_parse_transparency.csv`
 - `paper/tables/token_matched_cost_summary.json`

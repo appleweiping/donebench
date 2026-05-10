@@ -16,6 +16,7 @@ from donebench.scripts.ai_audit import run_ai_audit
 from donebench.scripts.audit_gate import write_audit_gate
 from donebench.scripts.cost_report import write_cost_report
 from donebench.scripts.action_diagnostics import write_action_diagnostics
+from donebench.scripts.diagnostic_tables import write_diagnostic_tables
 from donebench.scripts.experiment_pipeline import run_experiment_pipeline
 from donebench.scripts.export_openreview_package import export_package
 from donebench.scripts.failure_mining import mine_failures
@@ -256,6 +257,16 @@ def action_diagnostics_cmd(
     output_dir: Path = typer.Argument(Path("reports/action_diagnostics")),
 ) -> None:
     summary = write_action_diagnostics(input_path, output_dir)
+    console.print(summary)
+
+
+@app.command("diagnostic-tables")
+def diagnostic_tables_cmd(
+    input_path: Path = typer.Argument(Path("results/runs/topconf_deepseek_toolplan_full/trials.jsonl")),
+    report_dir: Path = typer.Option(Path("reports/full_runs/runs/topconf_deepseek_toolplan_full"), "--report-dir"),
+    output_dir: Path | None = typer.Option(None, "--output-dir"),
+) -> None:
+    summary = write_diagnostic_tables(report_dir, input_path, output_dir)
     console.print(summary)
 
 

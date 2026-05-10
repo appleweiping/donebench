@@ -1,0 +1,146 @@
+[
+  {
+    "domain": "calendar",
+    "self_violation_signature": "no_confirmation",
+    "n": 3307,
+    "mean_cc_f1": 0.4341192909563192,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "calendar",
+    "self_violation_signature": "state_only",
+    "n": 271,
+    "mean_cc_f1": 0.42370160505361937,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.8619091548058339,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "calendar",
+    "self_violation_signature": "no_confirmation+missing_precondition",
+    "n": 1,
+    "mean_cc_f1": 0.5263157894736842,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "crm_workflow",
+    "self_violation_signature": "no_confirmation",
+    "n": 2769,
+    "mean_cc_f1": 0.5429773539574636,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "crm_workflow",
+    "self_violation_signature": "state_only",
+    "n": 715,
+    "mean_cc_f1": 0.49414226948883705,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.8997224997224997,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "crm_workflow",
+    "self_violation_signature": "no_confirmation+missing_precondition",
+    "n": 4,
+    "mean_cc_f1": 0.5326388888888889,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "email",
+    "self_violation_signature": "no_confirmation",
+    "n": 2525,
+    "mean_cc_f1": 0.5412722775821608,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "email",
+    "self_violation_signature": "state_only",
+    "n": 967,
+    "mean_cc_f1": 0.5084697626916429,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.9055169810081909,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "email",
+    "self_violation_signature": "no_confirmation+missing_precondition",
+    "n": 4,
+    "mean_cc_f1": 0.6186274509803922,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "email",
+    "self_violation_signature": "missing_precondition",
+    "n": 1,
+    "mean_cc_f1": 0.2666666666666667,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "file_doc",
+    "self_violation_signature": "no_confirmation",
+    "n": 2645,
+    "mean_cc_f1": 0.5268290379747023,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "file_doc",
+    "self_violation_signature": "state_only",
+    "n": 839,
+    "mean_cc_f1": 0.4855276462872745,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.9046271071002895,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "sheet_db",
+    "self_violation_signature": "no_confirmation",
+    "n": 2991,
+    "mean_cc_f1": 0.5161348419788432,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "sheet_db",
+    "self_violation_signature": "state_only",
+    "n": 509,
+    "mean_cc_f1": 0.5060776428181776,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.8700299373187389,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "sheet_db",
+    "self_violation_signature": "no_confirmation+missing_precondition",
+    "n": 18,
+    "mean_cc_f1": 0.5241428735236785,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "sheet_db",
+    "self_violation_signature": "missing_precondition",
+    "n": 1,
+    "mean_cc_f1": 0.7272727272727273,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0
+  }
+]

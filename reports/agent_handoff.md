@@ -58,6 +58,11 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
 - Near-miss family breakdown is complete:
   - Report: `reports/full_runs/runs/topconf_deepseek_toolplan_full/near_miss/`
   - `18,000` trial rows expanded to `126,000` trial-by-near-miss rows across `15` mutation taxa and `10` fine failure families.
+- M6.1 diagnostic tables are complete:
+  - Report: `reports/full_runs/runs/topconf_deepseek_toolplan_full/diagnostics/`
+  - Paper tables: `paper/tables/four_quadrants_full_toolplan.csv`, `paper/tables/self_violation_by_signature_full_toolplan.csv`, `paper/tables/self_violation_by_signature_domain_full_toolplan.csv`, and `paper/tables/near_miss_success_full_toolplan.csv`
+  - Outputs: four-quadrant counts by model/agent/domain, observable self-violation trace signatures, domain-stratified self-violation signatures, representative self-violation examples, and near-miss family x task-success diagnostics.
+  - Caveat: these tables reorganize existing DeepSeek full-run artifacts. They are not a new model run, not cross-family evidence, and not a human-validated taxonomy.
 
 ## Main Empirical Result So Far
 

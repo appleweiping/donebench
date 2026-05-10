@@ -29,6 +29,11 @@ def refresh_paper_tables(
     _copy(near_miss_dir / "near_miss_by_taxon.csv", output_dir / "near_miss_by_taxon_full_toolplan.csv", copied)
     _copy(near_miss_dir / "near_miss_by_family.csv", output_dir / "near_miss_by_family_full_toolplan.csv", copied)
     _copy(near_miss_dir / "near_miss_coverage.csv", output_dir / "near_miss_coverage.csv", copied)
+    diagnostics_dir = full_run_dir / "diagnostics"
+    _copy(diagnostics_dir / "four_quadrants_by_model_agent_domain.csv", output_dir / "four_quadrants_full_toolplan.csv", copied)
+    _copy(diagnostics_dir / "self_violation_by_signature.csv", output_dir / "self_violation_by_signature_full_toolplan.csv", copied)
+    _copy(diagnostics_dir / "self_violation_by_signature_domain.csv", output_dir / "self_violation_by_signature_domain_full_toolplan.csv", copied)
+    _copy(diagnostics_dir / "near_miss_success_by_family.csv", output_dir / "near_miss_success_full_toolplan.csv", copied)
     token_dir = full_run_dir.parent / "topconf_deepseek_token_matched"
     if not token_dir.exists():
         token_dir = Path("reports/ablations/runs/topconf_deepseek_token_matched")

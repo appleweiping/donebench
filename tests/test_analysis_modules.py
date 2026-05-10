@@ -6,6 +6,7 @@ import pandas as pd
 from donebench.scripts.advanced_stats import write_advanced_stats
 from donebench.scripts.action_diagnostics import write_action_diagnostics
 from donebench.scripts.audit_gate import write_audit_gate
+from donebench.scripts.diagnostic_tables import write_diagnostic_tables
 from donebench.scripts.experiment_pipeline import run_experiment_pipeline
 from donebench.scripts.failure_mining import mine_failures
 from donebench.scripts.full_run_readiness import write_full_run_readiness
@@ -232,6 +233,66 @@ def test_near_miss_breakdown_outputs(tmp_path):
     assert (tmp_path / "near" / "near_miss_by_taxon.csv").exists()
 
 
+def test_diagnostic_tables_outputs(tmp_path):
+    input_path = tmp_path / "results.jsonl"
+    report_dir = tmp_path / "reports"
+    row = {
+        "task_id": "calendar_001",
+        "domain": "calendar",
+        "difficulty": "L1",
+        "agent": "spec_first",
+        "model": "mock",
+        "trial": 0,
+        "phase1": {
+            "cc_f1": 0.9,
+            "cc_precision": 1.0,
+            "cc_recall": 0.82,
+            "donespec_valid": True,
+            "success_f1": 1.0,
+            "failure_f1": 0.8,
+            "required_observation_recall": 1.0,
+            "overconstraint_rate": 0.0,
+            "underspecification_rate": 0.1,
+        },
+        "phase1b": {
+            "near_miss_detection_rate": 0.5,
+            "near_miss_false_accept_rate": 0.5,
+            "valid_accept_rate": 1.0,
+            "verifier_robustness_balanced_accuracy": 0.75,
+        },
+        "phase2": {
+            "task_success": False,
+            "gold_grader_pass": False,
+            "own_spec_pass": False,
+            "spec_action_consistency": 0.0,
+            "self_violation_rate": 1.0,
+            "num_tool_calls": 1,
+            "num_mutating_tool_calls": 0,
+        },
+        "quadrant": "good_spec_bad_execution",
+        "diagnostics": {"execution_mode": "tool_plan_executor", "llm_parse_status": "parsed", "action_parse_status": "parsed"},
+        "execution_trace": [{"action": "calendar.inspect_state", "observation": {"ok": True}, "mutating": False}],
+    }
+    input_path.write_text(json.dumps(row) + "\n", encoding="utf-8")
+    write_action_diagnostics(input_path, report_dir / "actions")
+    (report_dir / "near_miss").mkdir(parents=True)
+    (report_dir / "near_miss" / "near_miss_by_family.csv").write_text(
+        "model,agent,fine_failure_family,n_trials,n_tasks,mean_near_miss_detection_rate,mean_false_accept_rate,mean_donespec_valid,mean_task_success,mean_cc_f1\n"
+        "mock,spec_first,policy_confirmation,1,1,0.5,0.5,1.0,0.0,0.9\n",
+        encoding="utf-8",
+    )
+    summary = write_diagnostic_tables(report_dir, input_path)
+    assert summary["tables"]["four_quadrants_by_model_agent_domain"] == 1
+    assert summary["tables"]["self_violation_by_signature"] == 1
+    quadrants = pd.read_csv(report_dir / "diagnostics" / "four_quadrants_by_model_agent_domain.csv")
+    self_violations = pd.read_csv(report_dir / "diagnostics" / "self_violation_by_signature.csv")
+    near_miss = pd.read_csv(report_dir / "diagnostics" / "near_miss_success_by_family.csv")
+    assert quadrants.loc[0, "good_spec_bad_execution_count"] == 1
+    assert self_violations.loc[0, "self_violation_signature"] == "no_confirmation"
+    assert near_miss.loc[0, "alignment_gap"] == -0.5
+    assert (report_dir / "diagnostics" / "diagnostics_manifest.json").exists()
+
+
 def test_experiment_pipeline_smoke(tmp_path):
     output = tmp_path / "smoke.jsonl"
     summary = run_experiment_pipeline("smoke", output=output, report_root=tmp_path / "reports", limit=1, max_workers=2)
@@ -240,6 +301,7 @@ def test_experiment_pipeline_smoke(tmp_path):
     report_dir = tmp_path / "reports" / "runs" / "smoke"
     assert (report_dir / "stats" / "advanced_summary_ci.csv").exists()
     assert (report_dir / "actions" / "action_diagnostics_summary.json").exists()
+    assert (report_dir / "diagnostics" / "diagnostics_manifest.json").exists()
     assert (report_dir / "paper_tables" / "main_results_with_execution.csv").exists()
 
 
@@ -258,8 +320,16 @@ def test_refresh_paper_tables_outputs(tmp_path):
     (near / "near_miss_by_taxon.csv").write_text("mutation_taxon\nx\n", encoding="utf-8")
     (near / "near_miss_by_family.csv").write_text("fine_failure_family\nx\n", encoding="utf-8")
     (near / "near_miss_coverage.csv").write_text("domain\ncalendar\n", encoding="utf-8")
+    (run / "diagnostics").mkdir(parents=True)
+    (run / "diagnostics" / "four_quadrants_by_model_agent_domain.csv").write_text("model,agent,domain\nm,a,calendar\n", encoding="utf-8")
+    (run / "diagnostics" / "self_violation_by_signature.csv").write_text("self_violation_signature,n\nno_confirmation,1\n", encoding="utf-8")
+    (run / "diagnostics" / "self_violation_by_signature_domain.csv").write_text("domain,self_violation_signature,n\ncalendar,no_confirmation,1\n", encoding="utf-8")
+    (run / "diagnostics" / "near_miss_success_by_family.csv").write_text("model,agent,fine_failure_family\nm,a,policy_confirmation\n", encoding="utf-8")
     summary = refresh_paper_tables(run, oracle, strict, near, tmp_path / "paper")
     assert "main_results_full_toolplan" in summary["copied"]
+    assert "four_quadrants_full_toolplan" in summary["copied"]
+    assert "self_violation_by_signature_full_toolplan" in summary["copied"]
+    assert "near_miss_success_full_toolplan" in summary["copied"]
     assert (tmp_path / "paper" / "ablation_checklist.csv").exists()
 
 

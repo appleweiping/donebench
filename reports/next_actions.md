@@ -12,6 +12,7 @@ Current readiness:
 - `reports/ablations/runs/topconf_oracle_spec_reference/`: 500 / 500 oracle reference task success on the repaired test split.
 - `reports/ablations/runs/topconf_deepseek_token_matched/`: 3,000 / 3,000 token-matched DeepSeek trials complete.
 - `reports/full_runs/runs/topconf_deepseek_toolplan_full/near_miss/`: near-miss family breakdown complete.
+- `reports/full_runs/runs/topconf_deepseek_toolplan_full/diagnostics/`: M6.1 diagnostic tables complete and copied to `paper/tables/`.
 - `reports/audit_repaired_human_queue_structured/ai_audit_opinions.jsonl`: 100 / 100 audited, 0 high risk, 0 needing adjudication.
 - `reports/full_runs/runs/topconf_deepseek_toolplan_full/audit_gate.json`: `full_run_ready_audit_gate = true`, `full_run_blockers = []`.
 - `reports/full_run_readiness.json`: `full_run_ready = true`, `blockers = []`, `paper_ready_audit_gate = true`.
@@ -19,10 +20,10 @@ Current readiness:
 
 ## Next Work
 
-1. Develop the method/analysis contribution only along the diagnostic-protocol path in `reports/method_extension_plan.md`.
-   - Priority contribution: Specification-to-Execution Diagnostic Protocol.
-   - Immediate artifacts: four-quadrant tables, self-violation taxonomy, and diagnostic report tables under `reports/full_runs/runs/topconf_deepseek_toolplan_full/diagnostics/`.
-   - Do not rebrand `spec_first` as a performance-improving algorithm unless new evidence supports that.
+1. Draft the M6.2 paper framing for the Specification-to-Execution Diagnostic Protocol.
+   - Use the completed M6.1 tables under `reports/full_runs/runs/topconf_deepseek_toolplan_full/diagnostics/` and `paper/tables/`.
+   - Add a concise paper subsection and one diagnostic table/figure without claiming that the protocol improves agents.
+   - Keep the caveat that these diagnostics reorganize the pre-repair DeepSeek full run, while strict validation and oracle reference are repaired-corpus evidence.
 2. Preserve the repaired generator, regenerated 600-task corpus, validation scripts, ablation artifacts, and refreshed paper tables in git.
    - Do not replace them with the old pre-repair artifacts.
    - If regenerating tasks again, rerun validation, strict validation, oracle reference replay, structured audit, audit gate, full-run readiness, and `refresh-paper-tables`.

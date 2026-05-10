@@ -1,0 +1,62 @@
+[
+  {
+    "self_violation_signature": "no_confirmation",
+    "n": 14237,
+    "n_tasks": 500,
+    "mean_cc_f1": 0.5087498354286386,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0,
+    "mean_confirmation_steps": 0.0,
+    "mean_missing_precondition_steps": 0.0,
+    "mean_unknown_tool_steps": 0.0,
+    "mean_permission_denied_steps": 0.0,
+    "mean_side_effect_steps": 0.0,
+    "share": 0.8104400296009563
+  },
+  {
+    "self_violation_signature": "state_only",
+    "n": 3301,
+    "n_tasks": 467,
+    "mean_cc_f1": 0.49220731099858944,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.8949837230661224,
+    "mean_own_spec_pass": 0.0,
+    "mean_confirmation_steps": 1.0009088155104513,
+    "mean_missing_precondition_steps": 0.0,
+    "mean_unknown_tool_steps": 0.0,
+    "mean_permission_denied_steps": 0.0,
+    "mean_side_effect_steps": 0.0,
+    "share": 0.18790914783400695
+  },
+  {
+    "self_violation_signature": "no_confirmation+missing_precondition",
+    "n": 27,
+    "n_tasks": 19,
+    "mean_cc_f1": 0.5394797360139637,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0,
+    "mean_confirmation_steps": 0.0,
+    "mean_missing_precondition_steps": 1.0,
+    "mean_unknown_tool_steps": 0.0,
+    "mean_permission_denied_steps": 0.0,
+    "mean_side_effect_steps": 0.0,
+    "share": 0.0015369727329652188
+  },
+  {
+    "self_violation_signature": "missing_precondition",
+    "n": 2,
+    "n_tasks": 2,
+    "mean_cc_f1": 0.496969696969697,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 1.0,
+    "mean_own_spec_pass": 0.0,
+    "mean_confirmation_steps": 1.0,
+    "mean_missing_precondition_steps": 1.0,
+    "mean_unknown_tool_steps": 0.0,
+    "mean_permission_denied_steps": 0.0,
+    "mean_side_effect_steps": 0.0,
+    "share": 0.0001138498320714977
+  }
+]

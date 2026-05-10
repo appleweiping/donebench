@@ -13,6 +13,7 @@ from donebench.scripts.action_diagnostics import write_action_diagnostics
 from donebench.scripts.advanced_stats import write_advanced_stats
 from donebench.scripts.audit_gate import write_audit_gate
 from donebench.scripts.cost_report import write_cost_report
+from donebench.scripts.diagnostic_tables import write_diagnostic_tables
 from donebench.scripts.failure_mining import mine_failures
 from donebench.scripts.parse_transparency import write_parse_transparency
 from donebench.scripts.repro_manifest import write_repro_manifest
@@ -90,6 +91,7 @@ def run_postprocess(input_path: Path, report_dir: Path, task_root: Path = Path("
     outputs["parse_transparency"] = write_parse_transparency(input_path, report_dir / "parse")
     outputs["action_diagnostics"] = write_action_diagnostics(input_path, report_dir / "actions")
     outputs["costs"] = write_cost_report(input_path, report_dir / "costs", task_root=task_root)
+    outputs["diagnostics"] = write_diagnostic_tables(report_dir, input_path, report_dir / "diagnostics")
     outputs["paper_tables"] = write_paper_tables(report_dir)
     outputs["repro_manifest"] = write_repro_manifest(report_dir / "repro_manifest.json", input_path)
     outputs["audit_gate"] = write_audit_gate(report_dir / "audit_gate.json")

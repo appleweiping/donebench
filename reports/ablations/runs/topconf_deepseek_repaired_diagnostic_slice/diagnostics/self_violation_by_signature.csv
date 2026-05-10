@@ -1,0 +1,3 @@
+self_violation_signature,n,n_tasks,mean_cc_f1,mean_task_success,mean_self_violation_rate,mean_own_spec_pass,mean_confirmation_steps,mean_missing_precondition_steps,mean_unknown_tool_steps,mean_permission_denied_steps,mean_side_effect_steps,share
+no_confirmation,449,100,0.592053026851007,0.0,0.5423162583518931,0.0,0.0,0.0,0.0,0.0,0.0,0.7741379310344828
+state_only,131,66,0.606262040541854,0.0,0.2863655640373197,0.0,1.0,0.0,0.0,0.0,0.0,0.22586206896551725

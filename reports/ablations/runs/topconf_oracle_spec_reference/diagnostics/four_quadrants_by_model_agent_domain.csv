@@ -1,0 +1,6 @@
+model,agent,domain,n,mean_cc_f1,mean_task_success,mean_near_miss_detection_rate,mean_self_violation_rate,bad_spec_bad_execution_count,good_spec_bad_execution_count,bad_spec_good_execution_count,good_spec_good_execution_count,bad_spec_bad_execution_rate,good_spec_bad_execution_rate,bad_spec_good_execution_rate,good_spec_good_execution_rate,good_spec_rate,good_execution_rate,spec_exec_gap,dominant_quadrant
+mock,oracle_spec,calendar,100,1.0,1.0,1.0,0.0,0,0,0,100,0.0,0.0,0.0,1.0,1.0,1.0,0.0,good_spec_good_execution
+mock,oracle_spec,crm_workflow,100,0.9866666666666667,1.0,1.0,0.0,0,0,0,100,0.0,0.0,0.0,1.0,1.0,1.0,0.0,good_spec_good_execution
+mock,oracle_spec,email,100,1.0,1.0,1.0,0.0,0,0,0,100,0.0,0.0,0.0,1.0,1.0,1.0,0.0,good_spec_good_execution
+mock,oracle_spec,file_doc,100,1.0,1.0,1.0,0.0,0,0,0,100,0.0,0.0,0.0,1.0,1.0,1.0,0.0,good_spec_good_execution
+mock,oracle_spec,sheet_db,100,0.9619607843137254,1.0,1.0,0.0,0,0,0,100,0.0,0.0,0.0,1.0,1.0,1.0,0.0,good_spec_good_execution

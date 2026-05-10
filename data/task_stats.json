@@ -1,5 +1,5 @@
 {
-  "generator_version": "topconf-4",
+  "generator_version": "topconf-4.1",
   "total_tasks": 600,
   "by_domain": {
     "calendar": 120,

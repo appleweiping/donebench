@@ -9,6 +9,9 @@
 - `reference_trace_final_state_causality` is cleared for the full 600-task corpus. Strict validation confirmed every reference trace executes from `initial_state` to the declared `reference_solution.final_state`, the executed final state passes DoneSpec, and every near miss fails DoneSpec.
 - `oracle_spec_reference` is complete on the repaired test split: 500 / 500 task success with 100% near-miss detection and 0% self-violation.
 - `token_matched_ablation` is complete for DeepSeek V4 Flash and V4 Pro: 3,000 / 3,000 trials, with no robust spec-first task-success advantage under matched prompt budget.
+- `repaired_diagnostic_slice` is complete for DeepSeek V4 Flash and V4 Pro: 600 / 600 confirmation trials over 100 repaired test tasks.
+- `claim_to_artifact_map`, `leaderboard_contamination_policy`, `release_manifest`, and `calibration_packets` are present.
+- `near_miss_violated_criteria_metadata` is cleared in `topconf-4.1`: policy-confirmation and unrelated-side-effect near misses now point to the intended failure criteria rather than incidental success criteria.
 - `near_miss_family_breakdown` is complete for the 18,000-trial full run: 126,000 expanded trial-by-near-miss rows across 15 mutation taxa and 10 fine failure families.
 - Parse transparency for the full run has no quarantined model-agent cells in `reports/full_runs/runs/topconf_deepseek_toolplan_full/parse/parse_transparency_by_model_agent.csv`.
 - `reports/full_run_readiness.json` now reports `full_run_ready = true` and no full-run blockers.
@@ -21,8 +24,10 @@
 - Paper-ready hosted-model claims still need provider/model identifiers, access dates, decoding settings, retry policy, trial counts, and cost/latency tables fixed in the paper text.
 - Cross-family model slices are configured but not claim-ready. The current slice targets DeepSeek, Qwen, GLM, and Kimi; do not report cross-family claims until at least three provider families produce rows. Any old DeepSeek-only smoke must not be reported as a cross-family result.
 - A TeX-enabled environment is needed to compile the final PDF and check table/figure placement.
+- Repaired confirmation slice caveat: `deepseek_v4_pro` + `spec_first` exceeded the parse fallback threshold and is marked `quarantine_recommended = True`; do not use that cell for a clean performance claim.
 - Residual quality caution, not a current gate blocker: the repaired queue remains structurally templated. It is executable and internally consistent, but future realism work should add more domain-native conditions beyond the current shared completion skeleton.
 - Optional calibration caution, not a gate blocker: `annotation/human_audit_queue.jsonl` still has 0 / 100 double-annotated rows. A 50-task balanced double annotation would strengthen semantic-validity claims, but many related agent benchmarks rely primarily on executable/functional grading rather than mandatory double annotation.
+- Calibration packet scope caution: `reports/calibration_packets/` is domain-balanced, not difficulty-balanced.
 
 ## Standing Cautions
 

@@ -1,16 +1,32 @@
 \section{Analysis}
-The expected analysis focuses on omitted negative, temporal, confirmation, policy, and no-side-effect criteria. The four-quadrant taxonomy separates agents that know what done means but fail to execute from agents that succeed by habit without explicit completion semantics.
+
+\subsection{Specification-to-Execution Diagnostic Protocol}
+
+DoneBench is intended as a diagnostic benchmark, not as a new agent algorithm. Its central analysis decomposes task completion into four observable gates. First, criterion inference asks whether the agent recovers the hard completion conditions from the user goal, visible tools, state, and policies. Second, executable encoding asks whether those criteria become a runnable DoneSpec verifier. Third, near-miss robustness asks whether the verifier rejects plausible but invalid final states. Fourth, own-spec compliance asks whether the agent's tool execution satisfies the hard criteria it stated for itself.
+
+This protocol exposes failures hidden by task success alone. The four-quadrant table in \texttt{paper/tables/four\_quadrants\_full\_toolplan.csv} separates good-spec/good-execution, good-spec/bad-execution, bad-spec/good-execution, and bad-spec/bad-execution cases by model, agent, and domain. The current DeepSeek tool-plan full run is dominated by bad-spec/bad-execution, with good-spec/bad-execution as the important secondary mass. That pattern supports a narrow claim: agents can improve measured completion-criteria quality while still failing to operationalize those criteria during tool use.
+
+Self-violation diagnostics further show that explicit criteria are not enough. \texttt{paper/tables/self\_violation\_by\_signature\_full\_toolplan.csv} groups own-spec failures by observable trace signatures such as missing confirmation or state-only final-state mismatch. These signatures are not human-validated semantic labels; they are trace-grounded evidence that an agent can write a verifier and still produce a final state or action trace that fails it.
+
+Near-miss diagnostics link verifier robustness to execution outcomes. \texttt{paper/tables/near\_miss\_success\_full\_toolplan.csv} reports near-miss detection and task success by failure family. This makes the benchmark different from a single pass/fail workflow score: a model may reject some non-completions, accept others, and still fail the final task.
 
 \begin{table}[tbp]
 \centering
-\begin{tabular}{lll}
+\small
+\begin{tabularx}{\linewidth}{lX}
 \toprule
-Line of work & Evaluates & DoneBench distinction \\
+Diagnostic gate & Paper-facing artifact \\
 \midrule
-Agent benchmarks & Task completion & Tests inferred completion criteria \\
-Help seeking & Asking humans & Confirmation only when completion-relevant \\
-Spec generation & Requirements to tests & Stateful tool-workflow semantics \\
+Criterion inference & \texttt{paper/tables/main\_results\_full\_toolplan.csv} \\
+Executable verifier encoding & \texttt{paper/tables/main\_results\_full\_toolplan.csv} \\
+Near-miss robustness & \texttt{paper/tables/near\_miss\_success\_full\_toolplan.csv} \\
+Own-spec compliance & \texttt{paper/tables/self\_violation\_by\_signature\_full\_toolplan.csv} \\
+Spec/execution disagreement & \texttt{paper/tables/four\_quadrants\_full\_toolplan.csv} \\
 \bottomrule
-\end{tabular}
-\caption{Related work comparison.}
+\end{tabularx}
+\caption{Specification-to-execution diagnostic protocol. These artifacts reorganize existing DeepSeek tool-plan full-run evidence and should not be read as a new performance-improving method.}
 \end{table}
+
+\subsection{Boundaries}
+
+The main 18,000-trial DeepSeek run predates the full-corpus reference-artifact repair. We therefore use it as the largest completed diagnostic run and report repaired-corpus strict validation, oracle reference replay, token-matched controls, and a 600-trial repaired-corpus confirmation slice separately. The confirmation slice is not a replacement for the full-run table: it covers 100 repaired tasks with DeepSeek V4 Flash/Pro and has one quarantined model-agent cell because \texttt{deepseek\_v4\_pro} with \texttt{spec\_first} exceeded the parse fallback threshold. Cross-family suites are configured for DeepSeek, Qwen, GLM, and Kimi, but they remain pending until at least three provider families produce complete rows. Human calibration is useful but optional; model- or agent-assisted packets must not be described as completed human annotation.

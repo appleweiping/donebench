@@ -14,6 +14,7 @@ def refresh_paper_tables(
     strict_dir: Path = Path("reports/strict_validation"),
     near_miss_dir: Path = Path("reports/full_runs/runs/topconf_deepseek_toolplan_full/near_miss"),
     output_dir: Path = Path("paper/tables"),
+    repaired_slice_dir: Path = Path("reports/ablations/runs/topconf_deepseek_repaired_diagnostic_slice"),
 ) -> dict[str, Any]:
     output_dir.mkdir(parents=True, exist_ok=True)
     copied: dict[str, str] = {}
@@ -40,6 +41,21 @@ def refresh_paper_tables(
     _copy(token_dir / "paper_tables" / "main_results_with_execution.csv", output_dir / "token_matched_results.csv", copied)
     _copy(token_dir / "parse" / "parse_transparency_by_model_agent.csv", output_dir / "token_matched_parse_transparency.csv", copied)
     _copy(token_dir / "costs" / "api_cost_summary.json", output_dir / "token_matched_cost_summary.json", copied)
+    _copy(
+        repaired_slice_dir / "paper_tables" / "main_results_with_execution.csv",
+        output_dir / "repaired_diagnostic_slice_results.csv",
+        copied,
+    )
+    _copy(
+        repaired_slice_dir / "parse" / "parse_transparency_by_model_agent.csv",
+        output_dir / "repaired_diagnostic_slice_parse_transparency.csv",
+        copied,
+    )
+    _copy(
+        repaired_slice_dir / "costs" / "api_cost_summary.json",
+        output_dir / "repaired_diagnostic_slice_cost_summary.json",
+        copied,
+    )
 
     ablations = _ablation_checklist()
     ablations.to_csv(output_dir / "ablation_checklist.csv", index=False)
@@ -91,6 +107,12 @@ def _ablation_checklist() -> pd.DataFrame:
                 "purpose": "Control for prompt-budget differences between protocols",
                 "status": "reported_repaired_corpus",
                 "artifact": "paper/tables/token_matched_results.csv",
+            },
+            {
+                "ablation": "Repaired-corpus DeepSeek confirmation slice",
+                "purpose": "Check whether the main diagnostic pattern remains visible on repaired tasks for Flash/Pro",
+                "status": "reported_repaired_corpus_with_parse_caveat",
+                "artifact": "paper/tables/repaired_diagnostic_slice_results.csv",
             },
             {
                 "ablation": "Cross-family model slice",

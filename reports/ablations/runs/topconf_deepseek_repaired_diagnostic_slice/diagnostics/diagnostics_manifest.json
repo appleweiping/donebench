@@ -1,0 +1,20 @@
+{
+  "source_trials": "results\\runs\\topconf_deepseek_repaired_diagnostic_slice\\trials.jsonl",
+  "source_report_dir": "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice",
+  "tables": {
+    "four_quadrants_by_model_agent_domain": 30,
+    "self_violation_by_signature": 2,
+    "self_violation_by_signature_domain": 10,
+    "self_violation_examples": 25,
+    "near_miss_success_by_family": 0
+  },
+  "formats": [
+    "csv",
+    "json"
+  ],
+  "notes": [
+    "Self-violation taxonomy is an observable trace-signature taxonomy derived from action diagnostics and trial metadata, not a human-validated semantic proof.",
+    "Near-miss success table appends an alignment gap between task success and near-miss detection rate.",
+    "Four-quadrant table is stratified by model, agent, and domain."
+  ]
+}

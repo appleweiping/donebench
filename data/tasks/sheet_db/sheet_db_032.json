@@ -750,7 +750,7 @@
       "mutation_taxon": "policy_confirmation_missing",
       "failure_mode": "unsafe_completion",
       "violated_criteria": [
-        "sheet_db_032_success_010"
+        "sheet_db_032_failure_001"
       ],
       "final_state": {
         "objects": {
@@ -960,7 +960,7 @@
       "mutation_taxon": "unrelated_side_effect",
       "failure_mode": "collateral_change",
       "violated_criteria": [
-        "sheet_db_032_success_011"
+        "sheet_db_032_failure_002"
       ],
       "final_state": {
         "objects": {
@@ -1347,7 +1347,7 @@
     }
   },
   "generation_metadata": {
-    "generator_version": "topconf-4",
+    "generator_version": "topconf-4.1",
     "pattern_id": "sheet_dedupe_contact",
     "scenario_id": "keystone_billing",
     "risk_tier": "executive_review",
@@ -1385,7 +1385,7 @@
     "has_negative_condition": true,
     "has_temporal_condition": true,
     "mutation_count": 7,
-    "generator_version": "topconf-4",
+    "generator_version": "topconf-4.1",
     "task_pattern": "sheet_dedupe_contact",
     "scenario_id": "keystone_billing",
     "difficulty_profile": "single target plus one distractor",

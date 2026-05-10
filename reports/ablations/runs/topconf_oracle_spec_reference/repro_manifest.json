@@ -1,6 +1,6 @@
 {
   "donebench_version": "0.1.0",
-  "git_commit": "061df7e64765e3cbca8f9c4837bdf595354c8bc2",
+  "git_commit": "ecae7fea5002d51bb6de68299ca6956269c19c61",
   "python": "3.12.0",
   "platform": "Windows-11-10.0.26200-SP0",
   "results": "results\\runs\\topconf_oracle_spec_reference\\trials.jsonl",
@@ -70,6 +70,7 @@
       "topconf_deepseek_core",
       "topconf_deepseek_full",
       "topconf_deepseek_pilot",
+      "topconf_deepseek_repaired_diagnostic_slice",
       "topconf_deepseek_replicates",
       "topconf_deepseek_stress",
       "topconf_deepseek_token_matched",
@@ -215,6 +216,20 @@
       }
     },
     {
+      "id": "glm_5_1",
+      "provider": "openai_compatible",
+      "provider_model": "glm-5.1",
+      "enabled": true,
+      "credential_env": "ZAI_API_KEY",
+      "base_url": "https://api.z.ai/api/paas/v4/",
+      "credentials_available_at_manifest_time": false,
+      "notes": "GLM-5.1 through the Z.AI OpenAI-compatible API. Set ZAI_API_KEY.",
+      "extra": {
+        "temperature": 0,
+        "max_tokens": 2400
+      }
+    },
+    {
       "id": "gpt_4_1",
       "provider": "openai_compatible",
       "provider_model": "gpt-4.1",
@@ -278,6 +293,20 @@
       "extra": {}
     },
     {
+      "id": "kimi_k2_6",
+      "provider": "openai_compatible",
+      "provider_model": "kimi-k2.6",
+      "enabled": true,
+      "credential_env": "MOONSHOT_API_KEY",
+      "base_url": "https://api.moonshot.ai/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "Kimi K2.6 through the Moonshot/Kimi OpenAI-compatible API. Set MOONSHOT_API_KEY.",
+      "extra": {
+        "temperature": 0,
+        "max_tokens": 2400
+      }
+    },
+    {
       "id": "mock",
       "provider": "mock",
       "provider_model": "mock",
@@ -309,6 +338,20 @@
       "credentials_available_at_manifest_time": false,
       "notes": "OpenRouter-compatible endpoint; set OPENROUTER_API_KEY.",
       "extra": {}
+    },
+    {
+      "id": "qwen_3_6_plus",
+      "provider": "openai_compatible",
+      "provider_model": "qwen3.6-plus",
+      "enabled": true,
+      "credential_env": "DASHSCOPE_API_KEY",
+      "base_url": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+      "credentials_available_at_manifest_time": false,
+      "notes": "Qwen 3.6 Plus through Alibaba Cloud Model Studio/DashScope OpenAI-compatible API. Set DASHSCOPE_API_KEY.",
+      "extra": {
+        "temperature": 0,
+        "max_tokens": 2400
+      }
     },
     {
       "id": "vllm_local",
@@ -349,7 +392,7 @@
       "path": "README.md",
       "present": true,
       "kind": "file",
-      "bytes": 10392
+      "bytes": 11634
     },
     {
       "path": "Dockerfile",
@@ -367,7 +410,7 @@
       "path": "Makefile",
       "present": true,
       "kind": "file",
-      "bytes": 1954
+      "bytes": 1960
     },
     {
       "path": "pyproject.toml",
@@ -379,13 +422,13 @@
       "path": "configs/experiments.yaml",
       "present": true,
       "kind": "file",
-      "bytes": 5087
+      "bytes": 5273
     },
     {
       "path": "configs/models.yaml",
       "present": true,
       "kind": "file",
-      "bytes": 4749
+      "bytes": 5682
     },
     {
       "path": "data/tasks",
@@ -397,7 +440,7 @@
       "path": "donebench",
       "present": true,
       "kind": "directory",
-      "files": 115
+      "files": 121
     },
     {
       "path": "tests",
@@ -439,19 +482,19 @@
       "path": "reports/openreview_package_manifest.md",
       "present": true,
       "kind": "file",
-      "bytes": 2751
+      "bytes": 2848
     },
     {
       "path": "reports/openreview_checklist.md",
       "present": true,
       "kind": "file",
-      "bytes": 1437
+      "bytes": 1710
     },
     {
       "path": "reports/model_access_cost_latency_retry.md",
       "present": true,
       "kind": "file",
-      "bytes": 1624
+      "bytes": 5380
     },
     {
       "path": "reports/quality/task_construction_datasheet.md",
@@ -481,13 +524,13 @@
       "path": "paper/main.tex",
       "present": true,
       "kind": "file",
-      "bytes": 1010
+      "bytes": 1032
     },
     {
       "path": "paper/tables",
       "present": true,
       "kind": "directory",
-      "files": 23
+      "files": 33
     },
     {
       "path": "paper/figures",

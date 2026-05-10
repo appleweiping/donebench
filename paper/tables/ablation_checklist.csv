@@ -4,4 +4,5 @@ Oracle reference upper bound,Verify gold DoneSpec and reference trace can solve 
 Full-corpus strict validation,"Validate reference replay, DoneSpec acceptance, near-miss rejection, and domain-specific coverage",reported_repaired_corpus,paper/tables/strict_validation_summary.json
 Near-miss family breakdown,Report verifier robustness by mutation taxon and failure family,reported_full_toolplan_pre_repair,paper/tables/near_miss_by_family_full_toolplan.csv
 Token-matched prompting,Control for prompt-budget differences between protocols,reported_repaired_corpus,paper/tables/token_matched_results.csv
+Repaired-corpus DeepSeek confirmation slice,Check whether the main diagnostic pattern remains visible on repaired tasks for Flash/Pro,reported_repaired_corpus_with_parse_caveat,paper/tables/repaired_diagnostic_slice_results.csv
 Cross-family model slice,Check that DoneBench effects are not DeepSeek-family artifacts,configured_pending_credentials,configs/experiments.yaml:cross_family_slice

@@ -1,0 +1,7 @@
+model,agent,n,tool_plan_rate,task_success,own_spec_pass,mean_self_violation_rate,mean_tool_calls,mean_mutating_tool_calls,mean_missing_precondition_steps,mean_unknown_tool_steps,mean_permission_denied_steps,mean_side_effect_steps,mean_confirmation_steps,mean_spec_prompt_chars,mean_action_prompt_chars
+deepseek_v4_flash,direct,100,1.0,0.0,0.0,0.4061904761904762,2.08,0.8,0.0,0.0,0.0,0.0,0.4,1947.36,2904.88
+deepseek_v4_flash,plan_first,100,1.0,0.0,0.0,0.44273809523809526,1.4,0.46,0.0,0.0,0.0,0.0,0.23,1966.36,3158.12
+deepseek_v4_flash,spec_first,100,1.0,0.06,0.1,0.40946428571428567,1.87,0.63,0.0,0.0,0.0,0.0,0.31,1975.36,4771.63
+deepseek_v4_pro,direct,100,1.0,0.0,0.0,0.4767857142857143,0.83,0.28,0.0,0.0,0.0,0.0,0.14,1947.36,2976.11
+deepseek_v4_pro,plan_first,100,1.0,0.0,0.0,0.5067857142857143,0.84,0.26,0.0,0.0,0.0,0.0,0.13,1966.36,3283.09
+deepseek_v4_pro,spec_first,100,1.0,0.07,0.1,0.5681746031746031,1.84,0.58,0.0,0.0,0.0,0.0,0.3,1975.36,4523.38

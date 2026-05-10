@@ -1,0 +1,601 @@
+task_id,domain,difficulty,model,agent,provider,provider_model,parse_status,json_repair_strategy,json_repair_attempts,llm_error,parsed,fallback,attempts,latency_s,prompt_chars,raw_output_chars,prompt_tokens,completion_tokens,total_tokens
+email_026,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.387126500019804,1940.0,1170.0,449.0,942.0,1391.0
+sheet_db_025,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.416084099997533,1902.0,1249.0,451.0,657.0,1108.0
+email_022,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,10.463764600019203,1923.0,995.0,444.0,532.0,976.0
+email_024,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.156193100003293,1942.0,1580.0,445.0,784.0,1229.0
+email_025,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,9.160821500001475,1892.0,966.0,439.0,449.0,888.0
+sheet_db_026,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.785956900013844,1951.0,986.0,459.0,773.0,1232.0
+crm_workflow_026,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,11.326007600000594,1969.0,1098.0,469.0,604.0,1073.0
+email_023,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.95478689999436,1917.0,1631.0,434.0,743.0,1177.0
+calendar_024,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.306444799993187,1988.0,661.0,454.0,895.0,1349.0
+sheet_db_024,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.58208600000944,1925.0,1511.0,450.0,729.0,1179.0
+file_doc_021,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.566050699999323,1898.0,1564.0,447.0,869.0,1316.0
+crm_workflow_027,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.343330899981083,1957.0,1258.0,473.0,1031.0,1504.0
+calendar_026,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,25.320522099995287,2016.0,1736.0,456.0,1362.0,1818.0
+file_doc_022,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.082087899994804,1897.0,961.0,439.0,899.0,1338.0
+calendar_021,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.562703499977943,2008.0,1425.0,456.0,853.0,1309.0
+sheet_db_023,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.604671600012807,1939.0,841.0,447.0,1028.0,1475.0
+email_021,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.891943499998888,1916.0,1240.0,441.0,1036.0,1477.0
+crm_workflow_025,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,31.214050100010354,1941.0,1443.0,468.0,1689.0,2157.0
+file_doc_023,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,29.037641100003384,1911.0,1374.0,446.0,1590.0,2036.0
+file_doc_024,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.34885760000907,1931.0,1077.0,453.0,1487.0,1940.0
+file_doc_025,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.117096100002527,1886.0,1367.0,446.0,1249.0,1695.0
+calendar_022,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.763065300008748,2002.0,1861.0,451.0,1148.0,1599.0
+sheet_db_021,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.614238900016062,1918.0,2017.0,452.0,1171.0,1623.0
+sheet_db_022,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.831419499998447,1936.0,1298.0,454.0,1184.0,1638.0
+crm_workflow_024,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.1935661000025,1971.0,1895.0,471.0,1274.0,1745.0
+calendar_027,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.566950199980056,1987.0,1676.0,449.0,1682.0,2131.0
+calendar_025,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.768107299983967,1989.0,1512.0,454.0,1578.0,2032.0
+file_doc_026,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,31.5796105999907,1913.0,1634.0,444.0,1885.0,2329.0
+crm_workflow_021,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,31.08473239999148,1955.0,2123.0,470.0,1867.0,2337.0
+calendar_023,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,39.90635870001279,1995.0,0.0,448.0,2400.0,2848.0
+crm_workflow_023,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.572685799998,1961.0,1487.0,470.0,2074.0,2544.0
+sheet_db_027,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.735346699977526,1935.0,1500.0,448.0,839.0,1287.0
+crm_workflow_022,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,43.638109699997585,1956.0,0.0,465.0,2400.0,2865.0
+email_028,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.328298100008396,1948.0,1820.0,446.0,943.0,1389.0
+email_027,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.822641200007638,1919.0,1724.0,436.0,1124.0,1560.0
+crm_workflow_028,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.88244859999395,1987.0,1959.0,472.0,1157.0,1629.0
+file_doc_029,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.408509600005345,1908.0,1247.0,446.0,840.0,1286.0
+file_doc_027,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,30.55510509997839,1902.0,1500.0,447.0,1757.0,2204.0
+calendar_028,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.661069199995836,1994.0,1225.0,456.0,946.0,1402.0
+crm_workflow_029,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.252760799980024,1960.0,1894.0,467.0,791.0,1258.0
+sheet_db_028,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.737124799983576,1939.0,1281.0,453.0,939.0,1392.0
+crm_workflow_030,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.8657569999923,1964.0,1722.0,468.0,1043.0,1511.0
+email_030,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,10.648085299995728,1941.0,1017.0,447.0,636.0,1083.0
+calendar_031,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,11.447909699985757,1983.0,1477.0,450.0,631.0,1081.0
+file_doc_028,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,32.53647880000062,1949.0,1821.0,455.0,1987.0,2442.0
+crm_workflow_032,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.951910499978112,1975.0,1471.0,470.0,866.0,1336.0
+sheet_db_029,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.175014400010696,1923.0,1207.0,451.0,1490.0,1941.0
+email_033,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,6.998654800001532,1918.0,944.0,438.0,405.0,843.0
+calendar_030,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.29198309997446,2009.0,1176.0,453.0,879.0,1332.0
+sheet_db_030,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.110300199972698,1946.0,1782.0,456.0,811.0,1267.0
+sheet_db_031,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.208615899988217,1925.0,1410.0,447.0,1047.0,1494.0
+email_032,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,11.74250680001569,1940.0,1899.0,445.0,656.0,1101.0
+calendar_029,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.713891699997475,2014.0,2360.0,455.0,1417.0,1872.0
+email_029,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.055681199999526,1915.0,1875.0,439.0,1588.0,2027.0
+crm_workflow_031,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.95431309999549,1949.0,865.0,471.0,1119.0,1590.0
+calendar_032,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.5643604999932,1997.0,1317.0,458.0,913.0,1371.0
+sheet_db_032,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.08100700000068,1927.0,2040.0,451.0,1237.0,1688.0
+email_031,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,29.048469299974386,1901.0,1144.0,434.0,1657.0,2091.0
+file_doc_032,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.824495500011835,1940.0,2424.0,454.0,1524.0,1978.0
+calendar_033,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.537863400008064,2019.0,2687.0,456.0,1010.0,1466.0
+file_doc_033,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,8.09661700000288,1900.0,907.0,444.0,413.0,857.0
+file_doc_030,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,29.525056799990125,1903.0,2119.0,441.0,1671.0,2112.0
+file_doc_031,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.6076849999954,1896.0,2037.0,446.0,1486.0,1932.0
+crm_workflow_033,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.57775379999657,1957.0,1548.0,467.0,1356.0,1823.0
+sheet_db_034,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,10.057861399982357,1933.0,1482.0,455.0,546.0,1001.0
+sheet_db_033,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,25.886382400000002,1920.0,1155.0,449.0,1507.0,1956.0
+file_doc_034,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.349682100000791,1894.0,1569.0,440.0,794.0,1234.0
+crm_workflow_035,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.39585570001509,1952.0,1141.0,471.0,779.0,1250.0
+crm_workflow_034,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.92076750000706,1953.0,1521.0,466.0,1630.0,2096.0
+email_034,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.341295399994124,1920.0,1254.0,445.0,1465.0,1910.0
+email_036,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.644899000006262,1929.0,1917.0,444.0,982.0,1426.0
+calendar_034,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,35.379257299995515,2016.0,1400.0,456.0,2102.0,2558.0
+sheet_db_035,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.742143099982059,1930.0,1390.0,448.0,702.0,1150.0
+calendar_035,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.029498000018066,2003.0,1243.0,453.0,1592.0,2045.0
+crm_workflow_037,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.98919950000709,1962.0,1906.0,468.0,793.0,1261.0
+sheet_db_036,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.644911200011848,1912.0,1910.0,449.0,885.0,1334.0
+email_037,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.512098000006517,1913.0,1621.0,439.0,694.0,1133.0
+email_035,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.598711500002537,1908.0,2714.0,435.0,1265.0,1700.0
+file_doc_035,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.93506809999235,1902.0,1434.0,447.0,1470.0,1917.0
+file_doc_036,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.3449179000163,1918.0,2138.0,452.0,1631.0,2083.0
+calendar_036,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.370582500007004,1992.0,1544.0,457.0,1101.0,1558.0
+crm_workflow_036,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.501644400006626,1958.0,1478.0,470.0,1454.0,1924.0
+file_doc_037,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.692143399995985,1907.0,1784.0,446.0,951.0,1397.0
+crm_workflow_038,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.111755699996138,1977.0,1899.0,469.0,1534.0,2003.0
+calendar_038,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.664081299997633,2040.0,1434.0,459.0,680.0,1139.0
+sheet_db_037,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.1269226000004,1923.0,1114.0,451.0,1547.0,1998.0
+calendar_037,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.079766799986828,2026.0,2621.0,457.0,1260.0,1717.0
+file_doc_038,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.71135980001418,1921.0,1226.0,444.0,968.0,1412.0
+sheet_db_039,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,10.859489800001029,1945.0,970.0,448.0,647.0,1095.0
+email_038,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.978000700008124,1948.0,964.0,449.0,1094.0,1543.0
+crm_workflow_039,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.10132430001977,1967.0,687.0,473.0,1023.0,1496.0
+crm_workflow_040,crm_workflow,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.108922500017798,1988.0,1513.0,473.0,1098.0,1571.0
+file_doc_039,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.615770100004738,1912.0,1717.0,447.0,927.0,1374.0
+calendar_039,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.8077441000205,2013.0,1648.0,452.0,1052.0,1504.0
+sheet_db_038,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.048999899998307,1959.0,1780.0,459.0,1200.0,1659.0
+sheet_db_040,sheet_db,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.116598900000099,1940.0,1374.0,454.0,733.0,1187.0
+email_040,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.290711599984206,1949.0,1578.0,447.0,973.0,1420.0
+calendar_040,calendar,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.991629900003318,2012.0,1429.0,460.0,1436.0,1896.0
+email_039,email,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.80026339998585,1929.0,2340.0,436.0,1989.0,2425.0
+file_doc_040,file_doc,L2,deepseek_v4_flash,direct,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.03242259999388,1950.0,3555.0,456.0,2216.0,2672.0
+calendar_021,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.10318710000138,2008.0,2601.0,456.0,1745.0,2201.0
+calendar_025,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,47.10492019998492,1989.0,1971.0,454.0,1360.0,1814.0
+calendar_023,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.2543766000017,1995.0,2397.0,448.0,2127.0,2575.0
+email_022,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,42.52204609999899,1923.0,1411.0,444.0,1288.0,1732.0
+sheet_db_026,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,64.39377659998718,1951.0,2259.0,459.0,1814.0,2273.0
+email_024,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,37.79162829997949,1942.0,1839.0,445.0,1079.0,1524.0
+crm_workflow_023,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,43.199254200008,1961.0,1713.0,470.0,1278.0,1748.0
+crm_workflow_026,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.92742819999694,1969.0,2261.0,469.0,1848.0,2317.0
+crm_workflow_021,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,80.4434039000189,1955.0,792.0,470.0,2400.0,2870.0
+crm_workflow_022,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.5068322000152,1956.0,2555.0,465.0,1809.0,2274.0
+file_doc_022,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.81123779999325,1897.0,2739.0,439.0,1799.0,2238.0
+sheet_db_024,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,55.168731299985666,1925.0,1843.0,450.0,1602.0,2052.0
+calendar_024,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,60.46092269997462,1988.0,2436.0,454.0,1790.0,2244.0
+sheet_db_025,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,50.13664250000147,1902.0,2804.0,451.0,1449.0,1900.0
+file_doc_021,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.382468900003,1898.0,1427.0,447.0,2400.0,2847.0
+sheet_db_021,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,82.3384447999997,1918.0,0.0,452.0,2400.0,2852.0
+sheet_db_022,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.54769350000424,1936.0,3041.0,454.0,2126.0,2580.0
+file_doc_023,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.9162340000039,1911.0,2184.0,446.0,1809.0,2255.0
+crm_workflow_025,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,62.7298873999971,1941.0,1830.0,468.0,1859.0,2327.0
+email_023,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.43925799999852,1917.0,2322.0,434.0,2400.0,2834.0
+file_doc_025,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,69.25442149999435,1886.0,1866.0,446.0,2085.0,2531.0
+email_021,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,77.97309290000703,1916.0,2139.0,441.0,2181.0,2622.0
+calendar_022,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,82.78323840000667,2002.0,0.0,451.0,2400.0,2851.0
+crm_workflow_024,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,74.93141109999851,1971.0,2349.0,471.0,2214.0,2685.0
+file_doc_024,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.28747139999177,1931.0,389.0,453.0,2400.0,2853.0
+sheet_db_023,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.8474547000078,1939.0,1149.0,447.0,2400.0,2847.0
+email_025,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,79.66589450000902,1892.0,2469.0,439.0,2181.0,2620.0
+calendar_026,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,78.3180219999922,2016.0,2362.0,456.0,2285.0,2741.0
+email_026,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,74.46124140001484,1940.0,2399.0,449.0,2148.0,2597.0
+calendar_027,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.63267220000853,1987.0,0.0,449.0,2400.0,2849.0
+file_doc_026,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.2565964999958,1913.0,1067.0,444.0,2400.0,2844.0
+crm_workflow_027,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.85576840001158,1957.0,274.0,473.0,2400.0,2873.0
+crm_workflow_028,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.65664319999632,1987.0,1646.0,472.0,2400.0,2872.0
+email_029,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,44.08891790002235,1915.0,1670.0,439.0,1239.0,1678.0
+sheet_db_027,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,49.035193500021705,1935.0,2889.0,448.0,1428.0,1876.0
+calendar_029,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,56.85168469999917,2014.0,1906.0,455.0,1639.0,2094.0
+calendar_028,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,63.30141420001746,1994.0,1658.0,456.0,1842.0,2298.0
+file_doc_028,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.0248115999857,1949.0,622.0,455.0,2400.0,2855.0
+email_030,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,35.41662540001562,1941.0,2544.0,447.0,990.0,1437.0
+email_027,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.40508110000519,1919.0,3313.0,436.0,2400.0,2836.0
+file_doc_027,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.68135139998049,1902.0,2642.0,447.0,2400.0,2847.0
+crm_workflow_031,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,44.784635599993635,1949.0,1571.0,471.0,1222.0,1693.0
+calendar_030,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,51.08575130000827,2009.0,2144.0,453.0,1436.0,1889.0
+file_doc_031,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,48.89989760000026,1896.0,2916.0,446.0,1371.0,1817.0
+email_028,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,85.96037789998809,1948.0,280.0,446.0,2400.0,2846.0
+file_doc_029,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,65.7037223999796,1908.0,1588.0,446.0,1885.0,2331.0
+file_doc_032,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,36.998456300003454,1940.0,2925.0,454.0,1017.0,1471.0
+crm_workflow_030,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.96763830000418,1964.0,1897.0,468.0,1739.0,2207.0
+sheet_db_030,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,64.16449170000851,1946.0,3599.0,456.0,1813.0,2269.0
+sheet_db_028,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.98677809999208,1939.0,3129.0,453.0,2400.0,2853.0
+crm_workflow_029,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.5142936000193,1960.0,0.0,467.0,2400.0,2867.0
+email_031,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,69.05367600001046,1901.0,2683.0,434.0,1927.0,2361.0
+sheet_db_029,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,86.01310819998616,1923.0,2354.0,451.0,2375.0,2826.0
+file_doc_030,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,76.23259520001011,1903.0,3566.0,441.0,2209.0,2650.0
+sheet_db_032,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,58.2440687000053,1927.0,3022.0,451.0,1611.0,2062.0
+email_033,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,42.94257640000433,1918.0,1796.0,438.0,1183.0,1621.0
+calendar_032,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,79.37806029999047,1997.0,2319.0,458.0,2242.0,2700.0
+sheet_db_031,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,86.01225239998894,1925.0,1642.0,447.0,2400.0,2847.0
+crm_workflow_033,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,56.10660110000754,1957.0,2187.0,467.0,1554.0,2021.0
+crm_workflow_032,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.7999351999897,1975.0,1542.0,470.0,2400.0,2870.0
+email_032,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,"No parseable JSON object found in model output; attempts=['raw', 'raw+repair']; last_error=raw+repair:Expecting ':' delimiter",False,True,1.0,85.80250259998138,1940.0,1123.0,445.0,2400.0,2845.0
+calendar_033,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,83.30827099998714,2019.0,1694.0,456.0,2318.0,2774.0
+sheet_db_033,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.27566610000213,1920.0,2154.0,449.0,2062.0,2511.0
+file_doc_033,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,86.67243059998145,1900.0,0.0,444.0,2400.0,2844.0
+crm_workflow_034,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,47.40574749998632,1953.0,2305.0,466.0,1337.0,1803.0
+email_034,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,71.83932410000125,1920.0,2116.0,445.0,1972.0,2417.0
+crm_workflow_037,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.43430520000402,1962.0,1050.0,468.0,2400.0,2868.0
+email_035,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,86.01113999998779,1908.0,2926.0,435.0,2400.0,2835.0
+calendar_034,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,86.8634929000109,2016.0,834.0,456.0,2400.0,2856.0
+email_036,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,40.73203009998542,1929.0,1951.0,444.0,1116.0,1560.0
+file_doc_034,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,80.40886789999786,1894.0,2730.0,440.0,2281.0,2721.0
+sheet_db_035,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,63.41000679999706,1930.0,2148.0,448.0,1753.0,2201.0
+sheet_db_036,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,47.74206829999457,1912.0,2128.0,449.0,1312.0,1761.0
+crm_workflow_035,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.28152779999073,1952.0,1834.0,471.0,2023.0,2494.0
+file_doc_035,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.90837209997699,1902.0,2475.0,447.0,1897.0,2344.0
+email_038,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,32.762576500012074,1948.0,1273.0,449.0,909.0,1358.0
+calendar_038,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,58.03824760002317,2040.0,2455.0,459.0,1612.0,2071.0
+calendar_037,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,56.1748990000051,2026.0,2269.0,457.0,1575.0,2032.0
+sheet_db_038,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,63.5432209999999,1959.0,3718.0,459.0,1793.0,2252.0
+sheet_db_034,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,86.41932650000672,1933.0,2992.0,455.0,2400.0,2855.0
+calendar_035,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,87.54690660000779,2003.0,0.0,453.0,2400.0,2853.0
+file_doc_038,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,43.85779099998763,1921.0,2742.0,444.0,1241.0,1685.0
+file_doc_036,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,85.07921180000994,1918.0,747.0,452.0,2400.0,2852.0
+email_037,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.30962050001835,1913.0,2591.0,439.0,1863.0,2302.0
+calendar_036,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,86.03899719999754,1992.0,1479.0,457.0,2392.0,2849.0
+crm_workflow_036,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,86.62337869999465,1958.0,1039.0,470.0,2400.0,2870.0
+crm_workflow_021,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,9.0290440999961,1974.0,1440.0,478.0,504.0,982.0
+crm_workflow_022,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.526133799983654,1975.0,1775.0,473.0,874.0,1347.0
+email_022,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.030343299993547,1942.0,1109.0,452.0,1216.0,1668.0
+file_doc_037,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,86.46800819999771,1907.0,1961.0,446.0,2400.0,2846.0
+sheet_db_037,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,86.18599699999322,1923.0,0.0,451.0,2400.0,2851.0
+calendar_031,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,245.04956089999177,1983.0,3464.0,450.0,2400.0,2850.0
+crm_workflow_038,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,83.14269720000448,1977.0,2832.0,469.0,2379.0,2848.0
+sheet_db_039,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,31.77822500001639,1945.0,1584.0,448.0,871.0,1319.0
+sheet_db_021,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,32.44845450000139,1937.0,2014.0,460.0,1977.0,2437.0
+crm_workflow_039,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,66.273348000017,1967.0,2563.0,473.0,1909.0,2382.0
+calendar_023,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.10541240000748,2014.0,1618.0,456.0,1014.0,1470.0
+email_039,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,64.05024450001656,1929.0,2798.0,436.0,1806.0,2242.0
+calendar_022,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.044428599998355,2021.0,1397.0,459.0,1075.0,1534.0
+email_023,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.696967500000028,1936.0,1817.0,442.0,1391.0,1833.0
+sheet_db_022,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.964328900008695,1955.0,1362.0,462.0,779.0,1241.0
+file_doc_021,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.467354599997634,1917.0,1090.0,455.0,1418.0,1873.0
+file_doc_023,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.415642300009495,1930.0,1443.0,454.0,738.0,1192.0
+email_021,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.31329040002311,1935.0,1390.0,449.0,1917.0,2366.0
+calendar_021,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.34945099998731,2027.0,1759.0,464.0,2210.0,2674.0
+email_024,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.742297399992822,1961.0,1523.0,453.0,811.0,1264.0
+calendar_039,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.93106929998612,2013.0,0.0,452.0,2400.0,2852.0
+crm_workflow_023,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.50382839998929,1980.0,1597.0,478.0,1165.0,1643.0
+sheet_db_023,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.294014899991453,1958.0,2216.0,455.0,1454.0,1909.0
+crm_workflow_024,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.27747860000818,1990.0,2251.0,479.0,1037.0,1516.0
+file_doc_039,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.32050490000984,1912.0,2182.0,447.0,2400.0,2847.0
+email_025,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.14640700002201,1911.0,1231.0,447.0,1130.0,1577.0
+calendar_024,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.92195429999265,2007.0,1623.0,462.0,1511.0,1973.0
+calendar_025,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,10.64208449999569,2008.0,1035.0,462.0,574.0,1036.0
+calendar_026,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.372730500006583,2035.0,1375.0,464.0,966.0,1430.0
+file_doc_022,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.80456440002308,1916.0,115.0,447.0,2400.0,2847.0
+file_doc_024,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.448711400007596,1950.0,2664.0,461.0,2400.0,2861.0
+file_doc_025,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.399232600000687,1905.0,1622.0,454.0,957.0,1411.0
+sheet_db_024,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,41.507036800001515,1944.0,2318.0,458.0,2297.0,2755.0
+email_026,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.726926700008335,1959.0,2378.0,457.0,1342.0,1799.0
+crm_workflow_040,crm_workflow,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,outer_slice+repair,4,,True,False,1.0,82.65582980000181,1988.0,2270.0,473.0,2400.0,2873.0
+calendar_040,calendar,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,balanced_slice+repair,2,,True,False,1.0,82.88430580002023,2012.0,2139.0,460.0,2400.0,2860.0
+crm_workflow_025,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.179850299988175,1960.0,1644.0,476.0,1772.0,2248.0
+sheet_db_025,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,25.849741300015012,1921.0,1379.0,459.0,1450.0,1909.0
+crm_workflow_026,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.010934199992334,1988.0,1858.0,477.0,1319.0,1796.0
+calendar_028,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.64252480000141,2013.0,1482.0,464.0,771.0,1235.0
+crm_workflow_027,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.230612600018503,1976.0,1097.0,481.0,998.0,1479.0
+sheet_db_027,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.031494500028202,1954.0,1958.0,456.0,1067.0,1523.0
+email_027,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.47664189999341,1938.0,826.0,444.0,2400.0,2844.0
+file_doc_028,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,10.708836000005249,1968.0,1637.0,463.0,620.0,1083.0
+calendar_027,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,20.496438600006513,2006.0,1982.0,457.0,1112.0,1569.0
+sheet_db_026,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,20.9394300999993,1970.0,1830.0,467.0,1276.0,1743.0
+file_doc_026,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.49633370002266,1932.0,1658.0,452.0,1493.0,1945.0
+file_doc_027,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.968829599994933,1921.0,1228.0,455.0,1116.0,1571.0
+email_040,email,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,58.823753600008786,1949.0,2773.0,447.0,1680.0,2127.0
+sheet_db_028,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.390243999980157,1958.0,2301.0,461.0,942.0,1403.0
+crm_workflow_028,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,32.045287699991604,2006.0,1886.0,480.0,1832.0,2312.0
+calendar_029,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.758284999988973,2033.0,1675.0,463.0,1018.0,1481.0
+email_028,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,38.63448340000468,1967.0,1131.0,454.0,2400.0,2854.0
+crm_workflow_029,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.130123799986904,1979.0,1422.0,475.0,1288.0,1763.0
+file_doc_040,file_doc,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,77.12150380000821,1950.0,4739.0,456.0,2211.0,2667.0
+email_029,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.350380099989707,1934.0,1301.0,447.0,977.0,1424.0
+file_doc_029,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.794269499980146,1927.0,1260.0,454.0,1504.0,1958.0
+calendar_030,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,12.456798300001537,2028.0,1184.0,461.0,746.0,1207.0
+email_030,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.1472131999908,1960.0,1389.0,455.0,1068.0,1523.0
+sheet_db_040,sheet_db,L2,deepseek_v4_pro,direct,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,84.68966419997741,1940.0,0.0,454.0,2400.0,2854.0
+sheet_db_029,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.49203879997367,1942.0,1606.0,459.0,1300.0,1759.0
+file_doc_030,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.077508099988336,1922.0,1639.0,449.0,1332.0,1781.0
+sheet_db_030,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,25.716317700018408,1965.0,2196.0,464.0,1415.0,1879.0
+email_031,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,11.641246800019871,1920.0,1528.0,442.0,631.0,1073.0
+sheet_db_031,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.499270800006343,1944.0,2315.0,455.0,1608.0,2063.0
+crm_workflow_031,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.004543599992758,1968.0,1201.0,479.0,873.0,1352.0
+crm_workflow_030,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.42392140001175,1983.0,1446.0,476.0,1957.0,2433.0
+crm_workflow_033,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,14.94717440000386,1976.0,1358.0,475.0,847.0,1322.0
+file_doc_031,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,25.626218999997946,1915.0,1841.0,454.0,1490.0,1944.0
+calendar_033,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.836494699993636,2038.0,1828.0,464.0,1257.0,1721.0
+crm_workflow_032,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.71133170000394,1994.0,1936.0,478.0,1452.0,1930.0
+file_doc_032,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.418307999992976,1959.0,2257.0,462.0,1614.0,2076.0
+email_032,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,30.060912699991604,1959.0,1715.0,453.0,1741.0,2194.0
+file_doc_033,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.125044100015657,1919.0,1852.0,452.0,1510.0,1962.0
+calendar_032,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,35.12210010000854,2016.0,2329.0,466.0,1993.0,2459.0
+calendar_031,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,40.35123819997534,2002.0,1846.0,458.0,2369.0,2827.0
+sheet_db_034,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.99255950000952,1952.0,1430.0,463.0,1176.0,1639.0
+email_034,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.887044699979015,1939.0,1495.0,453.0,1001.0,1454.0
+file_doc_034,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.428334299998824,1913.0,2272.0,448.0,1154.0,1602.0
+email_033,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,32.747663299989654,1937.0,1888.0,446.0,2017.0,2463.0
+sheet_db_032,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,36.223529299983056,1946.0,2333.0,459.0,2290.0,2749.0
+crm_workflow_035,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.33495230000699,1971.0,2247.0,479.0,1284.0,1763.0
+crm_workflow_034,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,31.144772300001932,1972.0,1341.0,474.0,1706.0,2180.0
+sheet_db_033,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.33167070001946,1939.0,1473.0,457.0,1987.0,2444.0
+file_doc_036,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.724449700006517,1937.0,1512.0,460.0,945.0,1405.0
+email_036,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.921087599999737,1948.0,1733.0,452.0,776.0,1228.0
+sheet_db_036,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.201777900016168,1931.0,1906.0,457.0,986.0,1443.0
+crm_workflow_036,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.297422900010133,1977.0,1367.0,478.0,993.0,1471.0
+file_doc_035,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.315103599976283,1921.0,1836.0,455.0,1514.0,1969.0
+calendar_034,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.954043000005186,2035.0,76.0,464.0,2400.0,2864.0
+sheet_db_035,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,31.50659530001576,1949.0,1900.0,456.0,1792.0,2248.0
+calendar_035,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,38.376614899985725,2022.0,1829.0,461.0,2131.0,2592.0
+calendar_037,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.142040100006852,2045.0,2364.0,465.0,1244.0,1709.0
+email_037,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.41029709999566,1932.0,1154.0,447.0,845.0,1292.0
+calendar_036,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.44817260000855,2011.0,1410.0,465.0,1888.0,2353.0
+email_038,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.351400499988813,1967.0,1528.0,457.0,748.0,1205.0
+email_039,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.20468090000213,1948.0,1844.0,444.0,969.0,1413.0
+email_035,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,43.042600799992215,1927.0,1855.0,443.0,2400.0,2843.0
+file_doc_037,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.334248099999968,1926.0,2432.0,454.0,1090.0,1544.0
+calendar_038,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.085608199995477,2059.0,2328.0,467.0,1286.0,1753.0
+calendar_039,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,16.097360099985963,2032.0,1851.0,460.0,905.0,1365.0
+sheet_db_037,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.719071900006384,1942.0,1678.0,459.0,1689.0,2148.0
+crm_workflow_039,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.160497600008966,1986.0,1783.0,481.0,738.0,1219.0
+sheet_db_039,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.90478479999001,1964.0,1804.0,456.0,1370.0,1826.0
+crm_workflow_037,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,35.523553400009405,1981.0,2107.0,476.0,2076.0,2552.0
+calendar_040,calendar,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,20.22984769998584,2031.0,1147.0,468.0,1176.0,1644.0
+file_doc_038,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.016520999983186,1940.0,1878.0,452.0,1522.0,1974.0
+file_doc_040,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.525182699988363,1969.0,1136.0,464.0,961.0,1425.0
+crm_workflow_038,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.82222310002544,1996.0,2101.0,477.0,1972.0,2449.0
+email_040,email,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.413893199991435,1968.0,2274.0,455.0,1551.0,2006.0
+sheet_db_038,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.097607999981847,1978.0,1589.0,467.0,1633.0,2100.0
+file_doc_039,file_doc,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,31.399141399975633,1931.0,2469.0,455.0,1807.0,2262.0
+sheet_db_040,sheet_db,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.274273600021843,1959.0,1834.0,462.0,1750.0,2212.0
+crm_workflow_040,crm_workflow,L2,deepseek_v4_flash,plan_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.43749980002758,2007.0,1704.0,481.0,2268.0,2749.0
+calendar_021,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,80.06206019999809,2027.0,1398.0,464.0,2332.0,2796.0
+calendar_024,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,74.40697969999746,2007.0,1263.0,462.0,2101.0,2563.0
+calendar_022,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,31.367252900003223,2021.0,1888.0,459.0,900.0,1359.0
+email_025,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,39.45342740000342,1911.0,2339.0,447.0,1131.0,1578.0
+file_doc_022,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,44.88220419999561,1916.0,1986.0,447.0,1252.0,1699.0
+email_021,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,59.72123900000588,1935.0,2155.0,449.0,1684.0,2133.0
+crm_workflow_022,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,59.26224139999249,1975.0,1852.0,473.0,1702.0,2175.0
+email_024,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,71.32083010001224,1961.0,2907.0,453.0,2037.0,2490.0
+calendar_025,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,83.09154819999821,2008.0,2175.0,462.0,2371.0,2833.0
+crm_workflow_021,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,82.105040800001,1974.0,0.0,478.0,2400.0,2878.0
+sheet_db_021,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,fallback,,0,"No parseable JSON object found in model output; attempts=['raw', 'raw+repair']; last_error=raw+repair:Expecting ':' delimiter",False,True,1.0,83.68716359999962,1937.0,747.0,460.0,2400.0,2860.0
+email_022,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.22796889999881,1942.0,2329.0,452.0,2125.0,2577.0
+crm_workflow_023,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,74.05410939999274,1980.0,1733.0,478.0,2100.0,2578.0
+email_026,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,45.93417990001035,1959.0,2052.0,457.0,1261.0,1718.0
+sheet_db_022,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,84.55145810000249,1955.0,2324.0,462.0,2400.0,2862.0
+calendar_023,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.83290330000455,2014.0,0.0,456.0,2400.0,2856.0
+sheet_db_025,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,49.44577869999921,1921.0,1833.0,459.0,1368.0,1827.0
+crm_workflow_025,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,62.030168900004355,1960.0,1888.0,476.0,1764.0,2240.0
+file_doc_021,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,89.27628540000296,1917.0,387.0,455.0,2400.0,2855.0
+crm_workflow_024,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,76.80588610001723,1990.0,1991.0,479.0,2248.0,2727.0
+sheet_db_023,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,74.9314563999942,1958.0,1097.0,455.0,2120.0,2575.0
+file_doc_023,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.21738459999324,1930.0,1852.0,454.0,2400.0,2854.0
+email_023,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,88.90937340000528,1936.0,1299.0,442.0,2400.0,2842.0
+file_doc_024,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,81.9376392000122,1950.0,1412.0,461.0,2358.0,2819.0
+calendar_026,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,64.89802910000435,2035.0,2183.0,464.0,1726.0,2190.0
+file_doc_026,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,67.55652220000047,1932.0,1567.0,452.0,1986.0,2438.0
+sheet_db_024,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.64696840001852,1944.0,0.0,458.0,2400.0,2858.0
+file_doc_025,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.58785020001233,1905.0,447.0,454.0,2400.0,2854.0
+calendar_027,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,62.772188100003405,2006.0,2424.0,457.0,1778.0,2235.0
+crm_workflow_026,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.89277459998266,1988.0,1378.0,477.0,2400.0,2877.0
+crm_workflow_027,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,71.04342070000712,1976.0,1908.0,481.0,2078.0,2559.0
+sheet_db_026,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,93.21718589999364,1970.0,1765.0,467.0,2400.0,2867.0
+email_027,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.8752506999881,1938.0,2412.0,444.0,2012.0,2456.0
+file_doc_027,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,66.75281530001666,1921.0,1835.0,455.0,1951.0,2406.0
+crm_workflow_029,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,54.40235140000004,1979.0,2597.0,475.0,1550.0,2025.0
+sheet_db_032,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,43.42853360000299,1946.0,2067.0,459.0,1226.0,1685.0
+sheet_db_027,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,77.0232274000009,1954.0,3249.0,456.0,2239.0,2695.0
+crm_workflow_028,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.72447530002682,2006.0,2157.0,480.0,2102.0,2582.0
+calendar_028,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.68675930000609,2013.0,2494.0,464.0,1969.0,2433.0
+email_030,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,55.50055560001056,1960.0,1946.0,455.0,1538.0,1993.0
+calendar_029,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,52.5169370000076,2033.0,2548.0,463.0,1498.0,1961.0
+email_028,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.09583620002377,1967.0,1376.0,454.0,2400.0,2854.0
+sheet_db_029,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,49.71581670001615,1942.0,1900.0,459.0,1368.0,1827.0
+email_029,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,67.58126060001086,1934.0,2068.0,447.0,1939.0,2386.0
+crm_workflow_031,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,46.34066200000234,1968.0,2428.0,479.0,1294.0,1773.0
+file_doc_028,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.2882518999977,1968.0,2086.0,463.0,2400.0,2863.0
+file_doc_029,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.10779099998763,1927.0,2396.0,454.0,2017.0,2471.0
+crm_workflow_030,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,60.280952400004026,1983.0,1983.0,476.0,1723.0,2199.0
+file_doc_031,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,56.575148600008106,1915.0,1708.0,454.0,1642.0,2096.0
+sheet_db_030,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.854692399996566,1965.0,2456.0,464.0,1806.0,2270.0
+email_031,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,58.115855800017016,1920.0,2688.0,442.0,1660.0,2102.0
+email_032,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,48.90227340001729,1959.0,1516.0,453.0,1352.0,1805.0
+sheet_db_028,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,85.34598029998597,1958.0,220.0,461.0,2400.0,2861.0
+calendar_030,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,70.92268309998326,2028.0,1982.0,461.0,1897.0,2358.0
+sheet_db_031,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.74415549999685,1944.0,1777.0,455.0,2006.0,2461.0
+crm_workflow_032,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,63.64359900000272,1994.0,1681.0,478.0,1808.0,2286.0
+file_doc_030,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.16465459999745,1922.0,1643.0,449.0,2400.0,2849.0
+file_doc_032,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,82.7202664000215,1959.0,0.0,462.0,2400.0,2862.0
+calendar_031,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,89.62147559999721,2002.0,1601.0,458.0,2400.0,2858.0
+crm_workflow_033,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,56.544294399995124,1976.0,1654.0,475.0,1599.0,2074.0
+email_033,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,58.26445880002575,1937.0,2813.0,446.0,1619.0,2065.0
+calendar_033,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,74.17153629998211,2038.0,3291.0,464.0,2170.0,2634.0
+calendar_032,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.43734900001436,2016.0,0.0,466.0,2400.0,2866.0
+file_doc_033,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,63.808588700019754,1919.0,1735.0,452.0,1845.0,2297.0
+crm_workflow_034,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,42.10910130001139,1972.0,2574.0,474.0,1205.0,1679.0
+calendar_034,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,52.158930500008864,2035.0,2636.0,464.0,1455.0,1919.0
+sheet_db_033,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.05937390000327,1939.0,2262.0,457.0,1940.0,2397.0
+sheet_db_034,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,40.97475160000613,1952.0,2347.0,463.0,1159.0,1622.0
+crm_workflow_035,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,40.61915250000311,1971.0,2396.0,479.0,1114.0,1593.0
+file_doc_034,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,47.87126799998805,1913.0,2544.0,448.0,1335.0,1783.0
+calendar_036,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,33.65457849999075,2011.0,1942.0,465.0,938.0,1403.0
+email_034,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,60.90549239999382,1939.0,1852.0,453.0,1595.0,2048.0
+file_doc_035,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,48.619731799990404,1921.0,2182.0,455.0,1408.0,1863.0
+email_036,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,62.90777469999739,1948.0,2328.0,452.0,1834.0,2286.0
+email_035,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,51.22520760001498,1927.0,2319.0,443.0,1475.0,1918.0
+sheet_db_035,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,50.92323519999627,1949.0,1457.0,456.0,1457.0,1913.0
+calendar_035,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,78.48104809998767,2022.0,2098.0,461.0,2241.0,2702.0
+calendar_037,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,41.84315189998597,2045.0,2670.0,465.0,1174.0,1639.0
+crm_workflow_036,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,55.97845929997857,1977.0,1261.0,478.0,1598.0,2076.0
+email_038,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,81.42566290000104,1967.0,2766.0,457.0,2373.0,2830.0
+crm_workflow_037,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,44.29067459999351,1981.0,1788.0,476.0,1281.0,1757.0
+calendar_021,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.15196470002411,2036.0,2227.0,457.0,1904.0,2361.0
+email_021,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.249466199980816,1944.0,1997.0,442.0,1517.0,1959.0
+calendar_038,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,52.67185489999247,2059.0,1737.0,467.0,1522.0,1989.0
+file_doc_036,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.48310510002193,1937.0,41.0,460.0,2400.0,2860.0
+crm_workflow_021,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,38.166337099974044,1983.0,1889.0,471.0,2400.0,2871.0
+file_doc_037,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,58.911202599992976,1926.0,2002.0,454.0,1673.0,2127.0
+file_doc_021,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,40.62292970000999,1926.0,0.0,448.0,2400.0,2848.0
+sheet_db_037,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,71.3993244000012,1942.0,2767.0,459.0,2040.0,2499.0
+calendar_040,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,67.7711244999955,2031.0,2353.0,468.0,1977.0,2445.0
+file_doc_038,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,51.57744640001329,1940.0,2619.0,452.0,1479.0,1931.0
+email_037,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,74.45712939999066,1932.0,2289.0,447.0,2119.0,2566.0
+sheet_db_036,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.67118169998867,1931.0,1072.0,457.0,2400.0,2857.0
+email_022,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,41.71596179998596,1951.0,574.0,445.0,2400.0,2845.0
+calendar_039,calendar,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.1057530999824,2032.0,2924.0,460.0,2095.0,2555.0
+sheet_db_038,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,70.16220260001137,1978.0,2847.0,467.0,1992.0,2459.0
+crm_workflow_039,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,66.8749886000005,1986.0,2516.0,481.0,1909.0,2390.0
+crm_workflow_038,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.29303800000343,1996.0,3057.0,477.0,2400.0,2877.0
+email_039,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,60.770131199999014,1948.0,1774.0,444.0,1745.0,2189.0
+file_doc_022,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.008943199994974,1925.0,1271.0,440.0,2400.0,2840.0
+sheet_db_021,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,42.497474399977364,1946.0,0.0,453.0,2400.0,2853.0
+email_024,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.54700039999443,1970.0,2196.0,446.0,1435.0,1881.0
+file_doc_023,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,30.763312099996256,1939.0,2658.0,447.0,1750.0,2197.0
+crm_workflow_022,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,36.43648529998609,1984.0,2530.0,466.0,2116.0,2582.0
+crm_workflow_024,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,40.25763060001191,1999.0,2363.0,472.0,2276.0,2748.0
+email_025,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.957757399999537,1920.0,1771.0,440.0,1089.0,1529.0
+calendar_022,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.90818350002519,2030.0,868.0,452.0,2400.0,2852.0
+email_023,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.103786300023785,1945.0,2121.0,435.0,1902.0,2337.0
+crm_workflow_023,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.543414699990535,1989.0,2560.0,471.0,2227.0,2698.0
+sheet_db_022,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,38.694969700009096,1964.0,0.0,455.0,2400.0,2855.0
+calendar_026,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.88624130000244,2044.0,1532.0,457.0,1426.0,1883.0
+file_doc_039,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,78.02554020000389,1931.0,3925.0,455.0,2223.0,2678.0
+sheet_db_023,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,38.39413499998045,1967.0,1966.0,448.0,2304.0,2752.0
+calendar_023,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,37.64861329999985,2023.0,1709.0,449.0,2339.0,2788.0
+file_doc_024,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,38.41286760001094,1959.0,0.0,454.0,2400.0,2854.0
+file_doc_040,file_doc,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,52.794414500007406,1969.0,2084.0,464.0,1412.0,1876.0
+sheet_db_039,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.68878660001792,1964.0,1030.0,456.0,2400.0,2856.0
+calendar_024,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,32.21329339998192,2016.0,1540.0,455.0,1829.0,2284.0
+sheet_db_025,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,38.00701139998273,1930.0,2601.0,452.0,2400.0,2852.0
+sheet_db_024,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.51086170002236,1953.0,2860.0,451.0,1836.0,2287.0
+sheet_db_040,sheet_db,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,68.65897069999482,1959.0,3112.0,462.0,1914.0,2376.0
+email_028,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,13.50618100000429,1976.0,2271.0,447.0,809.0,1256.0
+crm_workflow_025,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,37.88197049999144,1969.0,2489.0,469.0,2400.0,2869.0
+crm_workflow_040,crm_workflow,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.984864500002,2007.0,2427.0,481.0,2400.0,2881.0
+email_026,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.595329100004165,1968.0,1618.0,450.0,1661.0,2111.0
+calendar_025,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,37.556859500007704,2017.0,2497.0,455.0,2357.0,2812.0
+email_040,email,L2,deepseek_v4_pro,plan_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.75558470000396,1968.0,2668.0,455.0,2400.0,2855.0
+file_doc_027,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.695742099982454,1930.0,2566.0,448.0,1304.0,1752.0
+file_doc_025,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.75254469999345,1914.0,2499.0,447.0,1910.0,2357.0
+crm_workflow_026,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.31654040000285,1997.0,2276.0,470.0,1385.0,1855.0
+sheet_db_026,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,43.32342209998751,1979.0,0.0,460.0,2400.0,2860.0
+email_029,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.465428099996643,1943.0,2422.0,440.0,1307.0,1747.0
+file_doc_026,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,29.252520200010622,1941.0,3042.0,445.0,1781.0,2226.0
+calendar_028,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,20.817291899991687,2022.0,1900.0,457.0,1241.0,1698.0
+sheet_db_027,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,37.864571499987505,1963.0,1979.0,449.0,2159.0,2608.0
+calendar_029,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.159773300023517,2042.0,1988.0,456.0,1342.0,1798.0
+file_doc_028,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,35.52672039999743,1977.0,2480.0,456.0,2249.0,2705.0
+crm_workflow_029,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.659852700016927,1988.0,2528.0,468.0,1557.0,2025.0
+email_027,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.607832799985772,1947.0,2946.0,437.0,1637.0,2074.0
+crm_workflow_027,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.93180890000076,1985.0,2505.0,474.0,2129.0,2603.0
+sheet_db_029,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,29.27333669998916,1951.0,3602.0,452.0,1630.0,2082.0
+calendar_027,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.619622099999106,2015.0,3277.0,450.0,2235.0,2685.0
+crm_workflow_030,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.211349399993196,1992.0,2639.0,469.0,1287.0,1756.0
+crm_workflow_028,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.72759149997728,2015.0,2338.0,473.0,2093.0,2566.0
+sheet_db_028,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,32.233325899986085,1967.0,2948.0,454.0,1807.0,2261.0
+calendar_030,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.284702000004472,2037.0,2402.0,454.0,1229.0,1683.0
+file_doc_030,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.003031900007045,1931.0,3219.0,442.0,1817.0,2259.0
+file_doc_029,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,37.48692870000377,1936.0,2046.0,447.0,2133.0,2580.0
+email_030,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.223741099995095,1969.0,1864.0,448.0,1912.0,2360.0
+file_doc_031,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.673792999994475,1924.0,1659.0,447.0,1139.0,1586.0
+calendar_032,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,20.297056100011105,2025.0,2307.0,459.0,1132.0,1591.0
+email_032,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,17.9770251000009,1968.0,2768.0,446.0,1064.0,1510.0
+sheet_db_031,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,29.442032799997833,1953.0,2189.0,448.0,1620.0,2068.0
+calendar_031,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.35066789999837,2011.0,2570.0,451.0,1601.0,2052.0
+sheet_db_030,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.449847600015346,1974.0,2449.0,457.0,1819.0,2276.0
+email_031,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,30.8861273000075,1929.0,2316.0,435.0,1698.0,2133.0
+crm_workflow_031,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,42.51792829998885,1977.0,2426.0,472.0,2392.0,2864.0
+crm_workflow_032,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,25.07716270000674,2003.0,2758.0,471.0,1391.0,1862.0
+crm_workflow_033,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.379773799999384,1985.0,2106.0,468.0,1310.0,1778.0
+file_doc_032,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.57420689999708,1968.0,3456.0,455.0,1348.0,1803.0
+crm_workflow_034,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.248496999993222,1981.0,2572.0,467.0,1240.0,1707.0
+email_033,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.36650629999349,1946.0,2260.0,439.0,1174.0,1613.0
+sheet_db_032,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.49838800000725,1955.0,2529.0,452.0,2399.0,2851.0
+crm_workflow_035,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,19.815633099991828,1980.0,2270.0,472.0,1220.0,1692.0
+sheet_db_035,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.562652299995534,1958.0,2530.0,449.0,1637.0,2086.0
+file_doc_033,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.584408099995926,1928.0,1665.0,445.0,1467.0,1912.0
+sheet_db_033,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.881875099992612,1948.0,2764.0,450.0,1221.0,1671.0
+calendar_033,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.630629899998894,2047.0,2288.0,457.0,2203.0,2660.0
+calendar_034,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,38.949644799984526,2044.0,0.0,457.0,2400.0,2857.0
+email_035,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,20.245761800004402,1936.0,2735.0,436.0,1220.0,1656.0
+email_036,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.703377300000284,1957.0,1964.0,445.0,1974.0,2419.0
+file_doc_034,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,28.10676210001111,1922.0,1848.0,441.0,1792.0,2233.0
+file_doc_035,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,26.302746400004253,1930.0,3196.0,448.0,1495.0,1943.0
+email_034,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,30.676933699985966,1948.0,1549.0,446.0,1782.0,2228.0
+calendar_036,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,24.70750119999866,2020.0,2478.0,458.0,1335.0,1793.0
+calendar_035,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,39.69983999998658,2031.0,2582.0,454.0,2288.0,2742.0
+email_038,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,21.008943499997258,1976.0,2748.0,450.0,1149.0,1599.0
+sheet_db_034,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.90935360000003,1961.0,941.0,456.0,2400.0,2856.0
+file_doc_036,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,30.857489799993346,1946.0,2200.0,453.0,1732.0,2185.0
+crm_workflow_036,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,36.40550799999619,1986.0,1598.0,471.0,2094.0,2565.0
+crm_workflow_037,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.14579069998581,1990.0,2408.0,469.0,1430.0,1899.0
+email_037,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,38.47230190000846,1941.0,0.0,440.0,2400.0,2840.0
+calendar_037,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.979246000002604,2054.0,1928.0,458.0,1536.0,1994.0
+file_doc_038,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,18.04935879999539,1949.0,2629.0,445.0,979.0,1424.0
+crm_workflow_038,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,38.53372540001874,2005.0,0.0,470.0,2400.0,2870.0
+crm_workflow_039,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,15.271621199994115,1995.0,2838.0,474.0,828.0,1302.0
+sheet_db_036,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,27.478496800002176,1940.0,3487.0,450.0,1567.0,2017.0
+file_doc_037,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.10074419999728,1935.0,2100.0,447.0,1287.0,1734.0
+sheet_db_037,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,42.388898499979405,1951.0,341.0,452.0,2400.0,2852.0
+sheet_db_038,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,23.440883599978406,1987.0,2121.0,460.0,1288.0,1748.0
+email_040,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,35.08523550000973,1977.0,2373.0,448.0,2239.0,2687.0
+sheet_db_039,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,41.66364759998396,1973.0,0.0,449.0,2400.0,2849.0
+calendar_038,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,34.18072460000985,2068.0,2535.0,460.0,2134.0,2594.0
+file_doc_039,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,37.50494250000338,1940.0,3073.0,448.0,2063.0,2511.0
+email_039,email,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,38.956926200015005,1957.0,2958.0,437.0,2238.0,2675.0
+crm_workflow_040,crm_workflow,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,22.73073189999559,2016.0,2201.0,474.0,1255.0,1729.0
+calendar_039,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw+repair,2,,True,False,1.0,38.397346700017806,2041.0,1881.0,453.0,2400.0,2853.0
+calendar_040,calendar,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,32.11231039999984,2040.0,2685.0,461.0,2037.0,2498.0
+sheet_db_040,sheet_db,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,33.44370890001301,1968.0,2285.0,455.0,1896.0,2351.0
+file_doc_040,file_doc,L2,deepseek_v4_flash,spec_first,openai_compatible,deepseek-v4-flash,parsed,raw,1,,True,False,1.0,38.69344300002558,1978.0,2203.0,457.0,2190.0,2647.0
+email_021,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,51.08317790000001,1944.0,2250.0,442.0,1432.0,1874.0
+sheet_db_021,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.33969799999613,1946.0,0.0,453.0,2400.0,2853.0
+sheet_db_023,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,84.81849119998515,1967.0,0.0,448.0,2400.0,2848.0
+calendar_023,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.29563120001694,2023.0,0.0,449.0,2400.0,2849.0
+sheet_db_022,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,96.02104880000115,1964.0,1071.0,455.0,2400.0,2855.0
+sheet_db_024,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.65669800000614,1953.0,0.0,451.0,2400.0,2851.0
+crm_workflow_021,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,82.11227650000365,1983.0,2215.0,471.0,2383.0,2854.0
+calendar_021,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,60.271956100012176,2036.0,2420.0,457.0,1717.0,2174.0
+file_doc_023,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,59.836357399995904,1939.0,2407.0,447.0,1692.0,2139.0
+sheet_db_026,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.55874030000996,1979.0,209.0,460.0,2400.0,2860.0
+email_024,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,70.2646099999838,1970.0,2844.0,446.0,1984.0,2430.0
+email_022,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,71.06494169999496,1951.0,2267.0,445.0,2031.0,2476.0
+calendar_022,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.54754290002165,2030.0,0.0,452.0,2400.0,2852.0
+file_doc_022,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,82.8461313000007,1925.0,4047.0,440.0,2307.0,2747.0
+email_025,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,90.90378360002069,1920.0,0.0,440.0,2400.0,2840.0
+crm_workflow_022,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,89.23216889999458,1984.0,0.0,466.0,2400.0,2866.0
+file_doc_021,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,87.83953779999865,1926.0,1964.0,448.0,2400.0,2848.0
+file_doc_024,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.88327010002104,1959.0,0.0,454.0,2400.0,2854.0
+calendar_024,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,91.10107769997558,2016.0,0.0,455.0,2400.0,2855.0
+email_023,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,85.38298600001144,1945.0,1084.0,435.0,2400.0,2835.0
+crm_workflow_023,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.05955119998544,1989.0,1400.0,471.0,2400.0,2871.0
+crm_workflow_024,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,84.71001169999363,1999.0,0.0,472.0,2400.0,2872.0
+calendar_025,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,77.75466110001435,2017.0,1750.0,455.0,2198.0,2653.0
+crm_workflow_025,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,77.81684410001617,1969.0,2854.0,469.0,2241.0,2710.0
+file_doc_025,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,84.71513160000904,1914.0,0.0,447.0,2400.0,2847.0
+crm_workflow_027,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,64.47533759998623,1985.0,3029.0,474.0,1775.0,2249.0
+sheet_db_027,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,"No parseable JSON object found in model output; attempts=['raw', 'raw+repair']; last_error=raw+repair:Expecting ':' delimiter",False,True,1.0,82.7272493999917,1963.0,2271.0,449.0,2400.0,2849.0
+sheet_db_025,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,"No parseable JSON object found in model output; attempts=['raw', 'raw+repair']; last_error=raw+repair:Expecting ':' delimiter",False,True,1.0,84.80082100001164,1930.0,2277.0,452.0,2400.0,2852.0
+crm_workflow_026,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,88.35225860000355,1997.0,2610.0,470.0,2400.0,2870.0
+email_026,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,81.13773909999873,1968.0,2774.0,450.0,2304.0,2754.0
+calendar_026,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.73022119997768,2044.0,0.0,457.0,2400.0,2857.0
+file_doc_026,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.06629610000527,1941.0,3255.0,445.0,2400.0,2845.0
+calendar_027,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.37089779999224,2015.0,1171.0,450.0,2400.0,2850.0
+email_027,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,"No parseable JSON object found in model output; attempts=['raw', 'raw+repair']; last_error=raw+repair:Expecting ':' delimiter",False,True,1.0,84.69975610001711,1947.0,1304.0,437.0,2400.0,2837.0
+crm_workflow_029,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,80.93146609998075,1988.0,3565.0,468.0,2309.0,2777.0
+email_028,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.48155499997665,1976.0,2334.0,447.0,2122.0,2569.0
+file_doc_027,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,82.42199599999003,1930.0,3148.0,448.0,2328.0,2776.0
+sheet_db_028,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,59.24725780001609,1967.0,3290.0,454.0,1682.0,2136.0
+email_030,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,81.02382109998143,1969.0,2485.0,448.0,2364.0,2812.0
+crm_workflow_028,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,76.0852855000121,2015.0,3182.0,473.0,2174.0,2647.0
+calendar_029,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.22819569997955,2042.0,0.0,456.0,2400.0,2856.0
+file_doc_031,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.31387000001268,1924.0,0.0,447.0,2400.0,2847.0
+email_029,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,49.513245500013,1943.0,2451.0,440.0,1385.0,1825.0
+calendar_028,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.66400900000008,2022.0,0.0,457.0,2400.0,2857.0
+file_doc_028,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.95236950000981,1977.0,635.0,456.0,2400.0,2856.0
+file_doc_032,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,80.1905020000122,1968.0,2890.0,455.0,2300.0,2755.0
+sheet_db_029,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.59251879999647,1951.0,0.0,452.0,2400.0,2852.0
+calendar_033,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.57440690000658,2047.0,0.0,457.0,2400.0,2857.0
+calendar_030,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,62.41211380000459,2037.0,3539.0,454.0,1766.0,2220.0
+email_033,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,83.29720770000131,1946.0,1992.0,439.0,2318.0,2757.0
+sheet_db_030,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,72.62783569999738,1974.0,2972.0,457.0,2058.0,2515.0
+file_doc_029,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.74418030001107,1936.0,492.0,447.0,2400.0,2847.0
+sheet_db_031,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.66141820000485,1953.0,0.0,448.0,2400.0,2848.0
+email_032,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,49.58507480000844,1968.0,2349.0,446.0,1381.0,1827.0
+crm_workflow_031,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.92116289999103,1977.0,2622.0,472.0,1998.0,2470.0
+email_031,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,72.53817369998433,1929.0,2747.0,435.0,2092.0,2527.0
+crm_workflow_030,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.757007600012,1992.0,1139.0,469.0,2400.0,2869.0
+file_doc_030,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.83708669999032,1931.0,1826.0,442.0,2400.0,2842.0
+sheet_db_032,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.06668029999128,1955.0,729.0,452.0,2400.0,2852.0
+calendar_031,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,84.4231054999982,2011.0,3508.0,451.0,2400.0,2851.0
+sheet_db_033,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,89.12848309997935,1948.0,2932.0,450.0,2400.0,2850.0
+crm_workflow_033,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,84.2863389000122,1985.0,0.0,468.0,2400.0,2868.0
+calendar_032,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.3871635000105,2025.0,2685.0,459.0,2400.0,2859.0
+file_doc_033,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.77132659999188,1928.0,2974.0,445.0,1754.0,2199.0
+crm_workflow_032,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,85.0162907000049,2003.0,1206.0,471.0,2400.0,2871.0
+file_doc_034,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,79.97208780000801,1922.0,3147.0,441.0,2248.0,2689.0
+file_doc_036,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.38881709999987,1946.0,2848.0,453.0,1743.0,2196.0
+sheet_db_034,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.4447591000062,1961.0,1783.0,456.0,2400.0,2856.0
+crm_workflow_035,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,85.32540969998809,1980.0,0.0,472.0,2400.0,2872.0
+crm_workflow_034,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,67.5971850999922,1981.0,2166.0,467.0,1969.0,2436.0
+calendar_034,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.8221867000102,2044.0,0.0,457.0,2400.0,2857.0
+crm_workflow_036,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,72.11012329999357,1986.0,2400.0,471.0,2061.0,2532.0
+email_036,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.85515499999747,1957.0,2494.0,445.0,2400.0,2845.0
+email_034,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.79359180000029,1948.0,1101.0,446.0,2400.0,2846.0
+email_039,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,61.86245190000045,1957.0,2884.0,437.0,1821.0,2258.0
+sheet_db_035,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,77.064606800006,1958.0,2465.0,449.0,2216.0,2665.0
+calendar_035,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,82.59153540001716,2031.0,0.0,454.0,2400.0,2854.0
+file_doc_035,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,75.23517319999519,1930.0,2657.0,448.0,2183.0,2631.0
+calendar_036,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,84.23708150000311,2020.0,2384.0,458.0,2386.0,2844.0
+email_035,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,85.0473794999998,1936.0,1591.0,436.0,2400.0,2836.0
+email_038,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,60.769702799996594,1976.0,2496.0,450.0,1760.0,2210.0
+sheet_db_036,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.58277040001121,1940.0,0.0,450.0,2400.0,2850.0
+file_doc_037,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,84.48393460002262,1935.0,0.0,447.0,2400.0,2847.0
+calendar_037,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,76.88612080001622,2054.0,3450.0,458.0,2229.0,2687.0
+email_037,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.20582280002418,1941.0,1159.0,440.0,2400.0,2840.0
+calendar_038,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,63.22866069999873,2068.0,2348.0,460.0,1827.0,2287.0
+file_doc_038,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,59.25362950001727,1949.0,2503.0,445.0,1752.0,2197.0
+calendar_039,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,65.849853599997,2041.0,2586.0,453.0,1884.0,2337.0
+crm_workflow_038,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,82.63951080001425,2005.0,765.0,470.0,2400.0,2870.0
+crm_workflow_037,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,83.53128480000305,1990.0,515.0,469.0,2400.0,2869.0
+sheet_db_037,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.8982718999905,1951.0,0.0,452.0,2400.0,2852.0
+email_040,email,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,"No parseable JSON object found in model output; attempts=['raw', 'raw+repair']; last_error=raw+repair:Expecting ':' delimiter",False,True,1.0,81.68648930001655,1977.0,1627.0,448.0,2400.0,2848.0
+crm_workflow_039,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,82.775928499992,1995.0,2405.0,474.0,2306.0,2780.0
+sheet_db_038,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,83.35654900001828,1987.0,0.0,460.0,2400.0,2860.0
+sheet_db_039,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,73.04533829999855,1973.0,2879.0,449.0,2082.0,2531.0
+calendar_040,calendar,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,No parseable JSON object found in model output; attempts=[]; last_error=,False,True,1.0,82.45992029999616,2040.0,0.0,461.0,2400.0,2861.0
+crm_workflow_040,crm_workflow,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw+repair,2,,True,False,1.0,81.38908150000498,2016.0,1837.0,474.0,2400.0,2874.0
+file_doc_039,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,fallback,,0,"No parseable JSON object found in model output; attempts=['raw', 'raw+repair']; last_error=raw+repair:Expecting ':' delimiter",False,True,1.0,83.41548389999662,1940.0,3307.0,448.0,2400.0,2848.0
+file_doc_040,file_doc,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,71.0037786999892,1978.0,2963.0,457.0,2113.0,2570.0
+sheet_db_040,sheet_db,L2,deepseek_v4_pro,spec_first,openai_compatible,deepseek-v4-pro,parsed,raw,1,,True,False,1.0,70.38372650000383,1968.0,3459.0,455.0,2045.0,2500.0

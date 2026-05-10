@@ -1,0 +1,25 @@
+{
+  "input": "results\\runs\\topconf_deepseek_repaired_diagnostic_slice\\trials.jsonl",
+  "rows": 600,
+  "status_counts": {
+    "parsed": 541,
+    "fallback": 59
+  },
+  "parse_rate": 0.9016666666666666,
+  "fallback_rate": 0.09833333333333333,
+  "max_paper_ready_fallback_rate": 0.3,
+  "num_quarantined_model_agent_cells": 1,
+  "paper_ready_parse_gate": false,
+  "outputs": [
+    "parse_transparency_by_domain.csv",
+    "parse_transparency_by_domain.json",
+    "parse_transparency_by_model_agent.csv",
+    "parse_transparency_by_model_agent.json",
+    "parse_transparency_by_repair.csv",
+    "parse_transparency_by_repair.json",
+    "parse_transparency_by_status.csv",
+    "parse_transparency_by_status.json",
+    "parse_transparency_trials.csv",
+    "parse_transparency_trials.json"
+  ]
+}

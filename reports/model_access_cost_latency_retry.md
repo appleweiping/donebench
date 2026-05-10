@@ -11,8 +11,8 @@ Current checked-in paper results use these live DeepSeek model IDs:
 
 | Model id in config | Provider model | Env var | Base URL | Access date | Decoding |
 | --- | --- | --- | --- | --- | --- |
-| `deepseek_v4_flash` | `deepseek-v4-flash` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
-| `deepseek_v4_pro` | `deepseek-v4-pro` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
+| `deepseek_v4_flash` | `deepseek-v4-flash` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08; 2026-05-10 repaired slice | `temperature=0`, `max_tokens=2400` |
+| `deepseek_v4_pro` | `deepseek-v4-pro` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08; 2026-05-10 repaired slice | `temperature=0`, `max_tokens=2400` |
 | `deepseek_chat` | `deepseek-chat` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
 | `deepseek_reasoner` | `deepseek-reasoner` | `DEEPSEEK_API_KEY` | `https://api.deepseek.com` | 2026-05-08 | `temperature=0`, `max_tokens=2400` |
 
@@ -43,6 +43,7 @@ Checked-in result traces:
 | `topconf_deepseek_toolplan_full` | `results/runs/topconf_deepseek_toolplan_full/trials.jsonl` | 18,000 | 0 |
 | `topconf_deepseek_token_matched` | `results/runs/topconf_deepseek_token_matched/trials.jsonl` | 3,000 | 0 |
 | `topconf_oracle_spec_reference` | `results/runs/topconf_oracle_spec_reference/trials.jsonl` | 500 | 0 |
+| `topconf_deepseek_repaired_diagnostic_slice` | `results/runs/topconf_deepseek_repaired_diagnostic_slice/trials.jsonl` | 600 | 0 |
 
 Pending cross-family commands:
 
@@ -68,6 +69,16 @@ DeepSeek token-matched ablation:
 
 - API calls: 3,000
 - Cost artifact: `paper/tables/token_matched_cost_summary.json`
+
+DeepSeek repaired-corpus confirmation slice:
+
+- API calls: 600
+- Input tokens: 273,510
+- Output tokens: 1,047,905
+- Estimated cost: 0.73 USD under `donebench/scripts/cost_report.py`
+- Summed provider latency: 29,212 seconds
+- Cost artifact: `paper/tables/repaired_diagnostic_slice_cost_summary.json`
+- Parse caveat: `deepseek_v4_pro` + `spec_first` has a 0.32 fallback rate and is marked `quarantine_recommended = True` in `paper/tables/repaired_diagnostic_slice_parse_transparency.csv`.
 
 Cost reports for Qwen/GLM/Kimi should not claim dollar totals until `donebench/scripts/cost_report.py` is updated with the current provider price sheet.
 

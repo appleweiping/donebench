@@ -1,0 +1,15 @@
+{
+  "instructions_version": "calibration-packet-v1",
+  "annotation_schema_version": "human-audit-v2",
+  "num_items": 50,
+  "per_domain": 10,
+  "target_task_numbers": "021..030",
+  "balanced_by": "domain",
+  "not_balanced_by": [
+    "difficulty"
+  ],
+  "items_path": "reports\\calibration_packets\\items.jsonl",
+  "optional_for_paper_gate": true,
+  "human_fields_modified": false,
+  "do_not_use_model_opinions_as_human_labels": true
+}

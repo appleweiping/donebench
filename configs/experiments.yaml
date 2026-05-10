@@ -96,6 +96,12 @@ experiment_suites:
     models: [deepseek_v4_flash, deepseek_v4_pro, deepseek_chat, deepseek_reasoner]
     trials_per_model: 3
     recommended_max_workers: 64
+  topconf_deepseek_repaired_diagnostic_slice:
+    split: test
+    agents: [direct, plan_first, spec_first]
+    models: [deepseek_v4_flash, deepseek_v4_pro]
+    trials_per_model: 1
+    recommended_max_workers: 32
   topconf_oracle_spec_reference:
     split: test
     agents: [oracle_spec]

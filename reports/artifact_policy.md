@@ -34,5 +34,8 @@ The current paper claims should use these refreshed table artifacts:
 - `paper/tables/token_matched_results.csv`
 - `paper/tables/token_matched_parse_transparency.csv`
 - `paper/tables/token_matched_cost_summary.json`
+- `paper/tables/repaired_diagnostic_slice_results.csv`
+- `paper/tables/repaired_diagnostic_slice_parse_transparency.csv`
+- `paper/tables/repaired_diagnostic_slice_cost_summary.json`
 
 Older pilot/template files in `paper/tables/` are retained for provenance and scripts, but they are not the official result source for the current paper.

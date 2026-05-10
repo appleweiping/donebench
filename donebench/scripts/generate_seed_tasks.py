@@ -6,7 +6,7 @@ from pathlib import Path
 from typing import Any, Callable
 
 
-GENERATOR_VERSION = "topconf-4"
+GENERATOR_VERSION = "topconf-4.1"
 TASKS_PER_DOMAIN = 120
 DEV_TASKS_PER_DOMAIN = 20
 
@@ -1036,10 +1036,10 @@ def make_task(domain: str, i: int, split: str) -> dict[str, Any]:
     near_misses = []
     mutations: list[tuple[str, Callable[[dict[str, Any]], None], list[str]]] = [
         ("participant_omission", lambda s: s["objects"][obj][0].update({"participants": participant_values[:-1]}), [atoms[1]["id"]]),
-        ("policy_confirmation_missing", lambda s: s.update({"satisfied_policies": []}), [atoms[5]["id"]]),
+        ("policy_confirmation_missing", lambda s: s.update({"satisfied_policies": []}), [f"{task_id}_failure_001"]),
         ("conflict_injection", lambda s: s.update({"conflicts": [{"participants": participant_values}]}), [atoms[3]["id"]]),
         ("terminal_state_incomplete", lambda s: (s["sent"].clear(), s["objects"][obj][0].update({"status": "draft"})), [atoms[2]["id"], atoms[4]["id"]]),
-        ("unrelated_side_effect", lambda s: s.update({"modified_objects": ["unrelated_record"]}), [atoms[6]["id"]]),
+        ("unrelated_side_effect", lambda s: s.update({"modified_objects": ["unrelated_record"]}), [f"{task_id}_failure_002"]),
     ]
     mutations.extend(domain_specific_mutations(task_id, domain, obj, participant_values))
     for mutation_id, mutator, violated in mutations:

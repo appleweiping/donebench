@@ -1,0 +1,7 @@
+model,agent,n,precondition_failure_rate,unknown_tool_rate,permission_failure_rate,side_effect_failure_rate,no_confirmation_rate
+deepseek_v4_flash,direct,100,0.0,0.0,0.0,0.0,0.6
+deepseek_v4_flash,plan_first,100,0.0,0.0,0.0,0.0,0.77
+deepseek_v4_flash,spec_first,100,0.0,0.0,0.0,0.0,0.69
+deepseek_v4_pro,direct,100,0.0,0.0,0.0,0.0,0.86
+deepseek_v4_pro,plan_first,100,0.0,0.0,0.0,0.0,0.87
+deepseek_v4_pro,spec_first,100,0.0,0.0,0.0,0.0,0.7

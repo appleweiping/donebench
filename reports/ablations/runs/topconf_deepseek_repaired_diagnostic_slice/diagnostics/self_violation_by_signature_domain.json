@@ -1,0 +1,92 @@
+[
+  {
+    "domain": "calendar",
+    "self_violation_signature": "no_confirmation",
+    "n": 113,
+    "mean_cc_f1": 0.5396720672342157,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.5353982300884956,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "calendar",
+    "self_violation_signature": "state_only",
+    "n": 7,
+    "mean_cc_f1": 0.5902636916835701,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.2857142857142857,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "crm_workflow",
+    "self_violation_signature": "no_confirmation",
+    "n": 83,
+    "mean_cc_f1": 0.540194827659791,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.536144578313253,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "crm_workflow",
+    "self_violation_signature": "state_only",
+    "n": 33,
+    "mean_cc_f1": 0.6465200642273589,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.23460798460798457,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "email",
+    "self_violation_signature": "no_confirmation",
+    "n": 82,
+    "mean_cc_f1": 0.6469677262639254,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.5609756097560976,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "email",
+    "self_violation_signature": "state_only",
+    "n": 33,
+    "mean_cc_f1": 0.6345061914023845,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.23358585858585856,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "file_doc",
+    "self_violation_signature": "no_confirmation",
+    "n": 89,
+    "mean_cc_f1": 0.6313020079790828,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.5674157303370787,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "file_doc",
+    "self_violation_signature": "state_only",
+    "n": 24,
+    "mean_cc_f1": 0.5336115125601429,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.2595899470899471,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "sheet_db",
+    "self_violation_signature": "no_confirmation",
+    "n": 82,
+    "mean_cc_f1": 0.6192129573060106,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.5121951219512195,
+    "mean_own_spec_pass": 0.0
+  },
+  {
+    "domain": "sheet_db",
+    "self_violation_signature": "state_only",
+    "n": 34,
+    "mean_cc_f1": 0.5943511391756742,
+    "mean_task_success": 0.0,
+    "mean_self_violation_rate": 0.4068627450980392,
+    "mean_own_spec_pass": 0.0
+  }
+]

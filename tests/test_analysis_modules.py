@@ -6,6 +6,7 @@ import pandas as pd
 from donebench.scripts.advanced_stats import write_advanced_stats
 from donebench.scripts.action_diagnostics import write_action_diagnostics
 from donebench.scripts.audit_gate import write_audit_gate
+from donebench.scripts.calibration_packet import write_calibration_packet
 from donebench.scripts.diagnostic_tables import write_diagnostic_tables
 from donebench.scripts.experiment_pipeline import run_experiment_pipeline
 from donebench.scripts.failure_mining import mine_failures
@@ -20,6 +21,7 @@ from donebench.scripts.paper_refresh import refresh_paper_tables
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.generate_seed_tasks import DOMAINS, TASKS_PER_DOMAIN
 from donebench.scripts.readiness_report import write_readiness_report
+from donebench.scripts.release_manifest import write_release_manifest
 from donebench.scripts.strict_validation import write_strict_validation
 
 
@@ -458,3 +460,29 @@ def test_full_run_readiness_passes_with_trusted_ai(tmp_path):
     )
     assert summary["full_run_ready"] is True
     assert summary["planned_trials"] == 6
+
+
+def test_calibration_packet_outputs_without_human_labels(tmp_path):
+    summary = write_calibration_packet(Path("data/tasks"), tmp_path / "calibration", per_domain=2, start_index=21, end_index=22)
+    items = [
+        json.loads(line)
+        for line in (tmp_path / "calibration" / "items.jsonl").read_text(encoding="utf-8").splitlines()
+        if line.strip()
+    ]
+    assert summary["num_items"] == 10
+    assert summary["balanced_by"] == "domain"
+    assert "difficulty" in summary["not_balanced_by"]
+    assert summary["human_fields_modified"] is False
+    assert len(items) == 10
+    assert items[0]["optional_for_paper_gate"] is True
+    assert items[0]["do_not_use_model_opinions_as_human_labels"] is True
+    assert "human_annotation.annotator_a.*" in items[0]["human_annotation_fields_to_leave_blank_until_true_human_review"]
+    assert (tmp_path / "calibration" / "README.md").exists()
+
+
+def test_release_manifest_outputs(tmp_path):
+    summary = write_release_manifest(tmp_path)
+    assert summary["dataset_version"] == "topconf-4.1-repaired-2026-05-10"
+    assert "claims_not_supported" in summary
+    assert (tmp_path / "release_manifest.json").exists()
+    assert (tmp_path / "release_manifest.md").exists()

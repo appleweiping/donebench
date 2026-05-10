@@ -1,6 +1,6 @@
 # Agent Handoff: DoneBench
 
-Date: 2026-05-09
+Date: 2026-05-10
 
 This file is the first place a future Codex agent should read. It records what is complete, what remains blocked, what must not be overstated, and where the next useful work ends.
 
@@ -24,7 +24,7 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
 
 ## Current Ground Truth
 
-- Dataset: topconf-4, 600 generated tasks across 5 domains, with 100 dev and 500 test tasks.
+- Dataset: current repaired corpus is `topconf-4.1`, with 600 generated tasks across 5 domains, 100 dev tasks, and 500 test tasks. The 18,000-trial DeepSeek full run remains the largest completed pre-4.1 diagnostic run.
 - Per-task structure: user goal, visible tool surface, typed tools, preconditions, side-effect metadata, policies, criterion atoms, gold DoneSpec, six near-miss final states in the repaired corpus, reference trace, and audit metadata.
 - Official execution path: use only rows with `diagnostics.execution_mode = "tool_plan_executor"` for paper execution claims.
 - Historical parsed DeepSeek topconf-4 rows remain useful for specification-grounding analysis, but not as the official execution result table.
@@ -37,7 +37,7 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
 - Full-run readiness was first refreshed on 2026-05-09 using `reports/audit_deepseek_merged/ai_audit_opinions.jsonl`, which cleared trusted coverage. A later GPT-5.5 targeted model-assisted audit was merged into `reports/audit_deepseek_gpt55_merged/`; that merge improved trusted coverage to 1.0 but identified 23 high-risk tasks.
 - A requested GPT-5.2 full-domain audit was attempted on 2026-05-09, but all five domain workers failed before producing opinions because the model route returned `503 Service Unavailable: No available channel for model gpt-5.2`. The failed-attempt note is in `reports/audit_gpt52_full_domain/README.md`.
 - A separate full-domain model-assisted audit was completed in `reports/audit_full_domain_model_assisted/` using the current available strong model path. It covered 100 / 100 human-audit queue tasks and marked 100 / 100 high risk, mainly because reference traces inspected absent target objects and then produced fully populated final states through status-only patches.
-- The full 600-task corpus was repaired/regenerated on 2026-05-09. The repaired source generator now creates initial target records, reference traces replay causally into final states, DoneSpec includes task/domain-specific predicates, and near misses include domain-specific semantic failures.
+- The full 600-task corpus was repaired/regenerated on 2026-05-09 and metadata-patched on 2026-05-10 as `topconf-4.1`. The repaired source generator creates initial target records, reference traces replay causally into final states, DoneSpec includes task/domain-specific predicates, near misses include domain-specific semantic failures, and `violated_criteria` metadata now maps policy-confirmation and unrelated-side-effect near misses to the corresponding failure criteria.
 - Full-corpus strict validation now passes:
   - Report: `reports/strict_validation/`
   - `600 / 600` strict pass
@@ -63,6 +63,20 @@ The paper should not claim that DoneBench is more realistic than WebArena, OSWor
   - Paper tables: `paper/tables/four_quadrants_full_toolplan.csv`, `paper/tables/self_violation_by_signature_full_toolplan.csv`, `paper/tables/self_violation_by_signature_domain_full_toolplan.csv`, and `paper/tables/near_miss_success_full_toolplan.csv`
   - Outputs: four-quadrant counts by model/agent/domain, observable self-violation trace signatures, domain-stratified self-violation signatures, representative self-violation examples, and near-miss family x task-success diagnostics.
   - Caveat: these tables reorganize existing DeepSeek full-run artifacts. They are not a new model run, not cross-family evidence, and not a human-validated taxonomy.
+- M6.2 paper hardening is complete:
+  - `paper/sections/analysis.tex` now frames the contribution as a Specification-to-Execution Diagnostic Protocol with four gates: criterion inference, executable DoneSpec encoding, near-miss robustness, and own-spec compliance.
+  - `topconf_deepseek_repaired_diagnostic_slice` completed on 2026-05-10 with 600 / 600 trials and no skipped rows.
+  - Results: `results/runs/topconf_deepseek_repaired_diagnostic_slice/trials.jsonl`
+  - Reports: `reports/ablations/runs/topconf_deepseek_repaired_diagnostic_slice/`
+  - Paper tables: `paper/tables/repaired_diagnostic_slice_results.csv`, `paper/tables/repaired_diagnostic_slice_parse_transparency.csv`, and `paper/tables/repaired_diagnostic_slice_cost_summary.json`
+  - Caveat: `deepseek_v4_pro` + `spec_first` is parse-quarantined with fallback rate 0.32, so the slice is confirmation evidence with caveat, not a clean replacement for the 18,000-trial full run.
+- Claim/release policy artifacts now exist:
+  - `reports/claim_to_artifact_map.md`
+  - `reports/leaderboard_contamination_policy.md`
+  - `reports/release_manifest.json`
+  - `reports/release_manifest.md`
+- Optional calibration packet is prepared at `reports/calibration_packets/`. This is not completed human annotation and does not modify human annotator fields.
+- A domain/task-sampling reviewer flagged that the calibration packet is domain-balanced but not difficulty-balanced; the packet README and summary state this explicitly.
 
 ## Main Empirical Result So Far
 
@@ -83,7 +97,7 @@ Unsafe claim: spec-first solves execution, or the benchmark proves a general fro
 
 ## Method Extension Direction
 
-The next non-benchmark contribution should be the **Specification-to-Execution Diagnostic Protocol**, documented in `reports/method_extension_plan.md`.
+The current non-benchmark contribution is the **Specification-to-Execution Diagnostic Protocol**, documented in `reports/method_extension_plan.md` and framed in `paper/sections/analysis.tex`.
 
 Safe extension:
 

@@ -16,6 +16,7 @@ from donebench.scripts.ai_audit import run_ai_audit
 from donebench.scripts.audit_gate import write_audit_gate
 from donebench.scripts.cost_report import write_cost_report
 from donebench.scripts.action_diagnostics import write_action_diagnostics
+from donebench.scripts.calibration_packet import write_calibration_packet
 from donebench.scripts.diagnostic_tables import write_diagnostic_tables
 from donebench.scripts.experiment_pipeline import run_experiment_pipeline
 from donebench.scripts.export_openreview_package import export_package
@@ -30,6 +31,7 @@ from donebench.scripts.parse_transparency import write_parse_transparency
 from donebench.scripts.pilot_findings import write_pilot_findings
 from donebench.scripts.quality_audit import quality_audit
 from donebench.scripts.repro_manifest import write_repro_manifest
+from donebench.scripts.release_manifest import write_release_manifest
 from donebench.scripts.readiness_report import write_readiness_report
 from donebench.scripts.run_experiments import run as run_experiment
 from donebench.scripts.run_experiments import run_matrix
@@ -313,9 +315,17 @@ def refresh_paper_tables_cmd(
     oracle_dir: Path = typer.Option(Path("reports/ablations/runs/topconf_oracle_spec_reference"), "--oracle-dir"),
     strict_dir: Path = typer.Option(Path("reports/strict_validation"), "--strict-dir"),
     near_miss_dir: Path = typer.Option(Path("reports/full_runs/runs/topconf_deepseek_toolplan_full/near_miss"), "--near-miss-dir"),
+    repaired_slice_dir: Path = typer.Option(Path("reports/ablations/runs/topconf_deepseek_repaired_diagnostic_slice"), "--repaired-slice-dir"),
     output_dir: Path = typer.Option(Path("paper/tables"), "--output-dir"),
 ) -> None:
-    summary = refresh_paper_tables(full_run_dir, oracle_dir, strict_dir, near_miss_dir, output_dir)
+    summary = refresh_paper_tables(
+        full_run_dir,
+        oracle_dir,
+        strict_dir,
+        near_miss_dir,
+        output_dir,
+        repaired_slice_dir,
+    )
     console.print(summary)
 
 
@@ -329,6 +339,18 @@ def repro_manifest_cmd(output: Path = typer.Argument(Path("reports/repro_manifes
 def human_audit_queue_cmd(root: Path = typer.Argument(Path("data/tasks")), output: Path = typer.Argument(Path("annotation/human_audit_queue.jsonl")), per_domain: int = typer.Option(10, "--per-domain")) -> None:
     count = write_human_audit_queue(root, output, per_domain=per_domain)
     console.print(f"Wrote {count} audit items to {output}")
+
+
+@app.command("calibration-packet")
+def calibration_packet_cmd(
+    root: Path = typer.Argument(Path("data/tasks")),
+    output_dir: Path = typer.Argument(Path("reports/calibration_packets")),
+    per_domain: int = typer.Option(10, "--per-domain"),
+    start_index: int = typer.Option(21, "--start-index"),
+    end_index: int = typer.Option(30, "--end-index"),
+) -> None:
+    summary = write_calibration_packet(root, output_dir, per_domain=per_domain, start_index=start_index, end_index=end_index)
+    console.print(summary)
 
 
 @app.command("ai-audit")
@@ -420,6 +442,12 @@ def make_figures(root: Path = typer.Argument(Path("results")), figures: Path = t
 def export_paper_package() -> None:
     path = export_package(Path("."))
     console.print(f"Wrote {path}")
+
+
+@app.command("release-manifest")
+def release_manifest_cmd(output_dir: Path = typer.Argument(Path("reports"))) -> None:
+    manifest = write_release_manifest(output_dir)
+    console.print(manifest)
 
 
 if __name__ == "__main__":

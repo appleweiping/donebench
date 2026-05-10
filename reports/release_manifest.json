@@ -1,0 +1,405 @@
+{
+  "release_id": "donebench-2026-05-10",
+  "release_date": "2026-05-10",
+  "git_commit_at_generation": "ecae7fea5002d51bb6de68299ca6956269c19c61",
+  "dataset_version": "topconf-4.1-repaired-2026-05-10",
+  "current_readiness_path": "reports/full_run_readiness.json",
+  "paper_table_policy_path": "reports/artifact_policy.md",
+  "raw_trace_policy": "Existing tracked raw traces are included when already tracked. Future hosted-model raw trials under results/runs/*/trials.jsonl should be published via Git LFS or release artifacts, with manifests and aggregate tables committed.",
+  "included_artifacts": [
+    {
+      "path": "README.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 11634,
+      "sha256": "93fe6757b3a228c0d2a1ce1043fa2159ee9bf34f64d76011976399ee5aa6fbfa"
+    },
+    {
+      "path": "Dockerfile",
+      "present": true,
+      "kind": "file",
+      "bytes": 448,
+      "sha256": "c0b1605a73eed8621d99dbf3f03ffce4899191702a34f07992bd3923b6100397"
+    },
+    {
+      "path": ".devcontainer\\devcontainer.json",
+      "present": true,
+      "kind": "file",
+      "bytes": 838,
+      "sha256": "a287e06db2dab65dc9dbd02e96a0dcd1f4551773db443d1ac78a8acbc9f7e405"
+    },
+    {
+      "path": "Makefile",
+      "present": true,
+      "kind": "file",
+      "bytes": 1960,
+      "sha256": "afc8238b389b27a375f8eafdd828883fc20522fb688330152782ba7ea3354602"
+    },
+    {
+      "path": "pyproject.toml",
+      "present": true,
+      "kind": "file",
+      "bytes": 806,
+      "sha256": "18b364302cb820b5ecaf6088c92ac24620feb56dcf838e3e90864b9ee7027024"
+    },
+    {
+      "path": "configs\\experiments.yaml",
+      "present": true,
+      "kind": "file",
+      "bytes": 5273,
+      "sha256": "2833375222933eadf1767536dec1b7ffe771925106f77e6e132c2c67a8fb24a8"
+    },
+    {
+      "path": "configs\\models.yaml",
+      "present": true,
+      "kind": "file",
+      "bytes": 5682,
+      "sha256": "7effac1983ad347fbf67323297f5675ea935ff688dcdbf760d1a2d6d21d22d3e"
+    },
+    {
+      "path": "data\\tasks",
+      "present": true,
+      "kind": "directory",
+      "files": 600,
+      "sample_files": [
+        "data\\tasks\\calendar\\calendar_001.json",
+        "data\\tasks\\calendar\\calendar_002.json",
+        "data\\tasks\\calendar\\calendar_003.json",
+        "data\\tasks\\calendar\\calendar_004.json",
+        "data\\tasks\\calendar\\calendar_005.json",
+        "data\\tasks\\calendar\\calendar_006.json",
+        "data\\tasks\\calendar\\calendar_007.json",
+        "data\\tasks\\calendar\\calendar_008.json",
+        "data\\tasks\\calendar\\calendar_009.json",
+        "data\\tasks\\calendar\\calendar_010.json"
+      ]
+    },
+    {
+      "path": "donebench",
+      "present": true,
+      "kind": "directory",
+      "files": 63,
+      "sample_files": [
+        "donebench\\__init__.py",
+        "donebench\\agents\\__init__.py",
+        "donebench\\agents\\base.py",
+        "donebench\\agents\\direct_agent.py",
+        "donebench\\agents\\heuristic_agent.py",
+        "donebench\\agents\\llm_actions.py",
+        "donebench\\agents\\llm_adapters.py",
+        "donebench\\agents\\llm_spec.py",
+        "donebench\\agents\\oracle_spec_agent.py",
+        "donebench\\agents\\plan_first_agent.py"
+      ]
+    },
+    {
+      "path": "tests",
+      "present": true,
+      "kind": "directory",
+      "files": 10,
+      "sample_files": [
+        "tests\\test_analysis_modules.py",
+        "tests\\test_artifact_modules.py",
+        "tests\\test_cli_smoke.py",
+        "tests\\test_dsl.py",
+        "tests\\test_envs.py",
+        "tests\\test_gold_graders.py",
+        "tests\\test_metrics.py",
+        "tests\\test_mutations.py",
+        "tests\\test_run_matrix.py",
+        "tests\\test_schema.py"
+      ]
+    },
+    {
+      "path": "paper\\main.tex",
+      "present": true,
+      "kind": "file",
+      "bytes": 1032,
+      "sha256": "59e7620c5a0f834e7c212cfbc815e7b3193138600db73a42ef7202daefac8ffb"
+    },
+    {
+      "path": "paper\\sections",
+      "present": true,
+      "kind": "directory",
+      "files": 9,
+      "sample_files": [
+        "paper\\sections\\analysis.tex",
+        "paper\\sections\\benchmark.tex",
+        "paper\\sections\\experiments.tex",
+        "paper\\sections\\intro.tex",
+        "paper\\sections\\limitations.tex",
+        "paper\\sections\\metrics.tex",
+        "paper\\sections\\related_work.tex",
+        "paper\\sections\\reproducibility.tex",
+        "paper\\sections\\results.tex"
+      ]
+    },
+    {
+      "path": "paper\\tables",
+      "present": true,
+      "kind": "directory",
+      "files": 33,
+      "sample_files": [
+        "paper\\tables\\ablation_checklist.csv",
+        "paper\\tables\\api_results_template.csv",
+        "paper\\tables\\cost_by_model_full_toolplan.csv",
+        "paper\\tables\\cost_summary_full_toolplan.json",
+        "paper\\tables\\dataset_statistics.csv",
+        "paper\\tables\\domain_results_full_toolplan.csv",
+        "paper\\tables\\domain_results_spec_first.csv",
+        "paper\\tables\\experiment_matrix.csv",
+        "paper\\tables\\four_quadrants_full_toolplan.csv",
+        "paper\\tables\\main_results.csv"
+      ]
+    },
+    {
+      "path": "reports\\artifact_policy.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 2043,
+      "sha256": "79a302863926fcdeb1897f9f3b7e009906bcaec57e64a21872bb01643a70374b"
+    },
+    {
+      "path": "reports\\claim_to_artifact_map.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 5107,
+      "sha256": "4378150818288bcb0b02f3c8ae680e50b5ca8953b3b9fd25eefd0709fc0ef3e5"
+    },
+    {
+      "path": "reports\\leaderboard_contamination_policy.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 3676,
+      "sha256": "23fd37284987b048bb69e14b493034e03e83ad9cdd60bec7398325ba70fa43c8"
+    },
+    {
+      "path": "reports\\model_access_cost_latency_retry.md",
+      "present": true,
+      "kind": "file",
+      "bytes": 5380,
+      "sha256": "f62d6a0af53555b688064b7b9c086c0d841d737c6713dcabf470ddcf6a0a2e63"
+    },
+    {
+      "path": "reports\\full_run_readiness.json",
+      "present": true,
+      "kind": "file",
+      "bytes": 4794,
+      "sha256": "090a2d8eba4d103e8c85f524bebcba5d3ab9b372e618832a32fdc557106dcbf8"
+    },
+    {
+      "path": "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full",
+      "present": true,
+      "kind": "directory",
+      "files": 87,
+      "sample_files": [
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_diagnostics_by_model_agent.csv",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_diagnostics_by_model_agent.json",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_diagnostics_by_status.csv",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_diagnostics_by_status.json",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_diagnostics_summary.json",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_diagnostics_trials.csv",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_diagnostics_trials.json",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_failure_modes.csv",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\actions\\action_failure_modes.json",
+        "reports\\full_runs\\runs\\topconf_deepseek_toolplan_full\\audit_gate.json"
+      ]
+    },
+    {
+      "path": "reports\\ablations\\runs\\topconf_oracle_spec_reference",
+      "present": true,
+      "kind": "directory",
+      "files": 79,
+      "sample_files": [
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_diagnostics_by_model_agent.csv",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_diagnostics_by_model_agent.json",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_diagnostics_by_status.csv",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_diagnostics_by_status.json",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_diagnostics_summary.json",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_diagnostics_trials.csv",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_diagnostics_trials.json",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_failure_modes.csv",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\actions\\action_failure_modes.json",
+        "reports\\ablations\\runs\\topconf_oracle_spec_reference\\audit_gate.json"
+      ]
+    },
+    {
+      "path": "reports\\ablations\\runs\\topconf_deepseek_token_matched",
+      "present": true,
+      "kind": "directory",
+      "files": 67,
+      "sample_files": [
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_diagnostics_by_model_agent.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_diagnostics_by_model_agent.json",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_diagnostics_by_status.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_diagnostics_by_status.json",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_diagnostics_summary.json",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_diagnostics_trials.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_diagnostics_trials.json",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_failure_modes.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\actions\\action_failure_modes.json",
+        "reports\\ablations\\runs\\topconf_deepseek_token_matched\\audit_gate.json"
+      ]
+    },
+    {
+      "path": "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice",
+      "present": true,
+      "kind": "directory",
+      "files": 79,
+      "sample_files": [
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_diagnostics_by_model_agent.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_diagnostics_by_model_agent.json",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_diagnostics_by_status.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_diagnostics_by_status.json",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_diagnostics_summary.json",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_diagnostics_trials.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_diagnostics_trials.json",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_failure_modes.csv",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\actions\\action_failure_modes.json",
+        "reports\\ablations\\runs\\topconf_deepseek_repaired_diagnostic_slice\\audit_gate.json"
+      ]
+    },
+    {
+      "path": "reports\\strict_validation",
+      "present": true,
+      "kind": "directory",
+      "files": 4,
+      "sample_files": [
+        "reports\\strict_validation\\README.md",
+        "reports\\strict_validation\\strict_validation_errors.json",
+        "reports\\strict_validation\\strict_validation_summary.json",
+        "reports\\strict_validation\\strict_validation_tasks.csv"
+      ]
+    },
+    {
+      "path": "reports\\audit_repaired_human_queue_structured",
+      "present": true,
+      "kind": "directory",
+      "files": 7,
+      "sample_files": [
+        "reports\\audit_repaired_human_queue_structured\\ai_audit_adjudication.jsonl",
+        "reports\\audit_repaired_human_queue_structured\\ai_audit_fallback_queue.jsonl",
+        "reports\\audit_repaired_human_queue_structured\\ai_audit_high_risk.jsonl",
+        "reports\\audit_repaired_human_queue_structured\\ai_audit_opinions.jsonl",
+        "reports\\audit_repaired_human_queue_structured\\ai_audit_summary.json",
+        "reports\\audit_repaired_human_queue_structured\\README.md",
+        "reports\\audit_repaired_human_queue_structured\\structured_repair_errors.json"
+      ]
+    },
+    {
+      "path": "reports\\calibration_packets",
+      "present": true,
+      "kind": "directory",
+      "files": 3,
+      "sample_files": [
+        "reports\\calibration_packets\\items.jsonl",
+        "reports\\calibration_packets\\README.md",
+        "reports\\calibration_packets\\summary.json"
+      ]
+    }
+  ],
+  "raw_traces": [
+    {
+      "path": "results\\runs\\topconf_deepseek_toolplan_full\\trials.jsonl",
+      "present": true,
+      "kind": "file",
+      "bytes": 52532352,
+      "sha256": "e3ff004744f64335edb6a534e16b14ee5541f23c66d4306ed36c7334502c3325"
+    },
+    {
+      "path": "results\\runs\\topconf_deepseek_token_matched\\trials.jsonl",
+      "present": true,
+      "kind": "file",
+      "bytes": 10621458,
+      "sha256": "ce4c89bb493aa8fa8f4c3611afa66ab37e6067d2e3ad4f76f5c8796b2827b533"
+    },
+    {
+      "path": "results\\runs\\topconf_oracle_spec_reference\\trials.jsonl",
+      "present": true,
+      "kind": "file",
+      "bytes": 1878944,
+      "sha256": "e2d33f79d79ebc32483fb3d0bce3388c90d43e6b2aeb80195c033065b96fe6bc"
+    },
+    {
+      "path": "results\\runs\\topconf_deepseek_repaired_diagnostic_slice\\trials.jsonl",
+      "present": true,
+      "kind": "file",
+      "bytes": 1867145,
+      "sha256": "e263cff83696af3754e3f69103726bd67e86a98fdef65bba5d0510eee92d254c"
+    }
+  ],
+  "excluded_or_historical_artifacts": [
+    {
+      "path": "reports\\audit_full_domain_model_assisted",
+      "present": true,
+      "kind": "directory",
+      "files": 12,
+      "sample_files": [
+        "reports\\audit_full_domain_model_assisted\\ai_audit_adjudication.jsonl",
+        "reports\\audit_full_domain_model_assisted\\ai_audit_fallback_queue.jsonl",
+        "reports\\audit_full_domain_model_assisted\\ai_audit_high_risk.jsonl",
+        "reports\\audit_full_domain_model_assisted\\ai_audit_opinions.jsonl",
+        "reports\\audit_full_domain_model_assisted\\ai_audit_summary.json",
+        "reports\\audit_full_domain_model_assisted\\audit_gate.json",
+        "reports\\audit_full_domain_model_assisted\\calendar_ai_audit_opinions.jsonl",
+        "reports\\audit_full_domain_model_assisted\\crm_workflow_ai_audit_opinions.jsonl",
+        "reports\\audit_full_domain_model_assisted\\email_ai_audit_opinions.jsonl",
+        "reports\\audit_full_domain_model_assisted\\file_doc_ai_audit_opinions.jsonl"
+      ]
+    },
+    {
+      "path": "reports\\audit_deepseek_gpt55_merged",
+      "present": true,
+      "kind": "directory",
+      "files": 5,
+      "sample_files": [
+        "reports\\audit_deepseek_gpt55_merged\\ai_audit_adjudication.jsonl",
+        "reports\\audit_deepseek_gpt55_merged\\ai_audit_fallback_queue.jsonl",
+        "reports\\audit_deepseek_gpt55_merged\\ai_audit_high_risk.jsonl",
+        "reports\\audit_deepseek_gpt55_merged\\ai_audit_opinions.jsonl",
+        "reports\\audit_deepseek_gpt55_merged\\ai_audit_summary.json"
+      ]
+    },
+    {
+      "path": "reports\\audit_gpt52_full_domain",
+      "present": true,
+      "kind": "directory",
+      "files": 1,
+      "sample_files": [
+        "reports\\audit_gpt52_full_domain\\README.md"
+      ]
+    },
+    {
+      "path": "results\\topconf_deepseek_core_trial0.jsonl",
+      "present": true,
+      "kind": "file",
+      "bytes": 1316406,
+      "sha256": "bbf09ff705c5089572948117445eebbd04554c9bb90762331bae73737614ec35"
+    }
+  ],
+  "large_artifact_locations": [
+    {
+      "path": "results/runs/*/trials.jsonl",
+      "policy": "Use Git LFS or external release artifact for new large hosted-model traces."
+    }
+  ],
+  "reproduction_commands": {
+    "offline_smoke": "make repro-smoke",
+    "validate": "python -m donebench.cli validate data\\tasks",
+    "strict_validation": "python -m donebench.cli strict-validation data\\tasks reports\\strict_validation",
+    "main_postprocess": "python -m donebench.cli experiment-pipeline topconf_deepseek_toolplan_full --output results\\runs\\topconf_deepseek_toolplan_full\\trials.jsonl --report-root reports\\full_runs --postprocess-only",
+    "refresh_paper_tables": "python -m donebench.cli refresh-paper-tables",
+    "repaired_confirmation_slice": "python -m donebench.cli experiment-pipeline topconf_deepseek_repaired_diagnostic_slice --output results\\runs\\topconf_deepseek_repaired_diagnostic_slice\\trials.jsonl --report-root reports\\ablations --limit 100 --max-workers 0 --resume"
+  },
+  "known_blockers": [
+    "LaTeX PDF compile and visual inspection require a TeX-enabled environment.",
+    "Cross-family slices remain pending provider credentials/results and must not support cross-family claims yet.",
+    "Optional true human calibration remains incomplete until real annotators fill the human annotation fields."
+  ],
+  "claims_not_supported": [
+    "DoneBench is more realistic than WebArena, OSWorld, WorkArena, or tau-bench.",
+    "spec_first robustly improves task execution success.",
+    "The diagnostic taxonomy is human-validated.",
+    "Current results generalize across model families."
+  ]
+}

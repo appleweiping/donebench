@@ -1,0 +1,68 @@
+[
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "direct",
+    "n": 100,
+    "cc_f1": 0.5075337085213699,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 0.714285714285714,
+    "task_success": 0.0,
+    "self_violation_rate": 0.40619047619047616
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "plan_first",
+    "n": 100,
+    "cc_f1": 0.5118221454589741,
+    "donespec_valid": 1.0,
+    "near_miss_detection_rate": 0.714285714285714,
+    "task_success": 0.0,
+    "self_violation_rate": 0.44273809523809526
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_flash",
+    "agent": "spec_first",
+    "n": 100,
+    "cc_f1": 0.6333920649202095,
+    "donespec_valid": 0.94,
+    "near_miss_detection_rate": 0.6714285714285713,
+    "task_success": 0.06,
+    "self_violation_rate": 0.40946428571428567
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "direct",
+    "n": 100,
+    "cc_f1": 0.6240224686951656,
+    "donespec_valid": 0.99,
+    "near_miss_detection_rate": 0.707142857142857,
+    "task_success": 0.0,
+    "self_violation_rate": 0.4767857142857143
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "plan_first",
+    "n": 100,
+    "cc_f1": 0.6153091080555247,
+    "donespec_valid": 0.92,
+    "near_miss_detection_rate": 0.657142857142857,
+    "task_success": 0.0,
+    "self_violation_rate": 0.5067857142857143
+  },
+  {
+    "difficulty": "L2",
+    "model": "deepseek_v4_pro",
+    "agent": "spec_first",
+    "n": 100,
+    "cc_f1": 0.7193860355462326,
+    "donespec_valid": 0.68,
+    "near_miss_detection_rate": 0.48571428571428577,
+    "task_success": 0.07,
+    "self_violation_rate": 0.5681746031746031
+  }
+]

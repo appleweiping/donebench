@@ -18,6 +18,9 @@
     "token_matched_results": "paper\\tables\\token_matched_results.csv",
     "token_matched_parse_transparency": "paper\\tables\\token_matched_parse_transparency.csv",
     "token_matched_cost_summary": "paper\\tables\\token_matched_cost_summary.json",
+    "repaired_diagnostic_slice_results": "paper\\tables\\repaired_diagnostic_slice_results.csv",
+    "repaired_diagnostic_slice_parse_transparency": "paper\\tables\\repaired_diagnostic_slice_parse_transparency.csv",
+    "repaired_diagnostic_slice_cost_summary": "paper\\tables\\repaired_diagnostic_slice_cost_summary.json",
     "ablation_checklist": "paper\\tables\\ablation_checklist.csv"
   },
   "outputs": "paper\\tables"
